@@ -128,6 +128,7 @@ pub fn run() {
             cmd::data::item_names,
             cmd::data::parse_items,
             cmd::data::items_to_cheat,
+            cmd::data::item_set,
             cmd::player::player_profile,
             cmd::player::set_player_profile,
             cmd::player::player_photo,

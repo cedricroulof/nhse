@@ -167,15 +167,54 @@ impl HorizonSave {
 
     // --- custom design paths ("my design" tiles on the ground) ------------------------
 
-    /// One u16 per terrain tile (row-major 112×96): design index, or 0xF800 for none.
+    /// Size of the ground-design grid in terrain tiles: (acre width × 16, 96).
+    /// It grew from 7 to 9 acres wide with 3.0, like the field item layers.
+    pub fn map_design_dims(&self) -> (usize, usize) {
+        (self.main_ofs.field_item_acre_width * 16, 6 * 16)
+    }
+
+    /// One u16 per tile, column-major (`x * 96 + y`): design index, or 0xF800 for none.
     pub fn map_design_tiles(&self) -> Vec<u16> {
+        let (w, h) = self.map_design_dims();
         let o = self.main_ofs.my_design_map;
-        read_u16_array(&self.main.data[o..o + TILES_W * TILES_H * 2])
+        read_u16_array(&self.main.data[o..o + w * h * 2])
     }
 
     pub fn set_map_design_tiles(&mut self, v: &[u16]) {
+        let (w, h) = self.map_design_dims();
         let o = self.main_ofs.my_design_map;
-        let n = v.len().min(TILES_W * TILES_H);
+        let n = v.len().min(w * h);
         write_u16_array(&mut self.main.data[o..o + n * 2], &v[..n]);
+    }
+
+    /// Imports a `.nhmd` dump, converting between the 7- and 9-acre layouts if needed.
+    pub fn import_map_design_bytes(&mut self, bytes: &[u8]) -> crate::Result<()> {
+        let (w, h) = self.map_design_dims();
+        let expect = w * h * 2;
+        let small = 7 * 16 * h * 2;
+        let large = 9 * 16 * h * 2;
+        let column = 16 * h * 2;
+        let data: Vec<u8> = if bytes.len() == expect {
+            bytes.to_vec()
+        } else if expect == large && bytes.len() == small {
+            let pad: Vec<u8> = MAP_DESIGN_NONE.to_le_bytes().repeat(column / 2);
+            [pad.as_slice(), bytes, pad.as_slice()].concat()
+        } else if expect == small && bytes.len() == large {
+            bytes[column..column + small].to_vec()
+        } else if expect == large && bytes.len() > large {
+            // older dumps appended unrelated trailing data
+            bytes[..large].to_vec()
+        } else {
+            return Err(crate::Error::Invalid(format!("design map dump must be {expect} bytes (got {})", bytes.len())));
+        };
+        let o = self.main_ofs.my_design_map;
+        self.main.data[o..o + expect].copy_from_slice(&data);
+        Ok(())
+    }
+
+    pub fn map_design_bytes(&self) -> Vec<u8> {
+        let (w, h) = self.map_design_dims();
+        let o = self.main_ofs.my_design_map;
+        self.main.data[o..o + w * h * 2].to_vec()
     }
 }

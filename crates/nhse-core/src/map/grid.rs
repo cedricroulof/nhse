@@ -22,7 +22,11 @@ pub enum Placement {
 impl ItemGrid {
     pub fn new(width: usize, height: usize, tiles: Vec<Item>) -> Self {
         assert_eq!(tiles.len(), width * height);
-        Self { width, height, tiles }
+        Self {
+            width,
+            height,
+            tiles,
+        }
     }
 
     #[inline]
@@ -65,10 +69,19 @@ impl ItemGrid {
 
     fn clamped_footprint(&self, it: &Item, x: usize, y: usize) -> (usize, usize) {
         let (w, h) = Self::footprint(it);
-        (w.min(self.width.saturating_sub(x)), h.min(self.height.saturating_sub(y)))
+        (
+            w.min(self.width.saturating_sub(x)),
+            h.min(self.height.saturating_sub(y)),
+        )
     }
 
-    pub fn check_placement(&self, it: &Item, x: usize, y: usize, ignore: Option<(usize, usize)>) -> Placement {
+    pub fn check_placement(
+        &self,
+        it: &Item,
+        x: usize,
+        y: usize,
+        ignore: Option<(usize, usize)>,
+    ) -> Placement {
         let (w, h) = Self::footprint(it);
         if x + w > self.width || y + h > self.height {
             return Placement::OutOfBounds;
@@ -84,7 +97,10 @@ impl ItemGrid {
                     if (x + ix, y + iy) == (rx, ry) {
                         continue;
                     }
-                    if t.is_extension() && (x + ix) as i64 - t.extension_x() as i64 == rx as i64 && (y + iy) as i64 - t.extension_y() as i64 == ry as i64 {
+                    if t.is_extension()
+                        && (x + ix) as i64 - t.extension_x() as i64 == rx as i64
+                        && (y + iy) as i64 - t.extension_y() as i64 == ry as i64
+                    {
                         continue;
                     }
                 }
@@ -142,7 +158,14 @@ impl ItemGrid {
     }
 
     /// Places an item with its extension tiles. `force` skips the collision check.
-    pub fn place(&mut self, it: Item, x: usize, y: usize, auto_extension: bool, force: bool) -> Placement {
+    pub fn place(
+        &mut self,
+        it: Item,
+        x: usize,
+        y: usize,
+        auto_extension: bool,
+        force: bool,
+    ) -> Placement {
         if !force {
             match self.check_placement(&it, x, y, None) {
                 Placement::Free => {}
@@ -175,7 +198,14 @@ impl ItemGrid {
     }
 
     /// Clears every tile inside the rectangle matching `pred`. Returns how many were removed.
-    pub fn remove_where(&mut self, x0: usize, y0: usize, w: usize, h: usize, pred: impl Fn(&Item) -> bool) -> usize {
+    pub fn remove_where(
+        &mut self,
+        x0: usize,
+        y0: usize,
+        w: usize,
+        h: usize,
+        pred: impl Fn(&Item) -> bool,
+    ) -> usize {
         let mut n = 0;
         for x in x0..(x0 + w).min(self.width) {
             for y in y0..(y0 + h).min(self.height) {
@@ -190,7 +220,15 @@ impl ItemGrid {
     }
 
     /// Applies `f` to every root tile inside the rectangle matching `pred`.
-    pub fn modify_where(&mut self, x0: usize, y0: usize, w: usize, h: usize, pred: impl Fn(&Item) -> bool, f: impl Fn(&mut Item)) -> usize {
+    pub fn modify_where(
+        &mut self,
+        x0: usize,
+        y0: usize,
+        w: usize,
+        h: usize,
+        pred: impl Fn(&Item) -> bool,
+        f: impl Fn(&mut Item),
+    ) -> usize {
         let mut n = 0;
         for x in x0..(x0 + w).min(self.width) {
             for y in y0..(y0 + h).min(self.height) {
@@ -206,7 +244,17 @@ impl ItemGrid {
 
     /// Replaces every occurrence of `old` (exact match) with `new` inside the rectangle.
     /// Returns `None` if the footprints differ (could overlap neighbours).
-    pub fn replace_all(&mut self, old: &Item, new: &Item, x0: usize, y0: usize, w: usize, h: usize, match_id_only: bool) -> Option<usize> {
+    #[allow(clippy::too_many_arguments)]
+    pub fn replace_all(
+        &mut self,
+        old: &Item,
+        new: &Item,
+        x0: usize,
+        y0: usize,
+        w: usize,
+        h: usize,
+        match_id_only: bool,
+    ) -> Option<usize> {
         if Self::footprint(old) != Self::footprint(new) && !match_id_only {
             return None;
         }
@@ -217,7 +265,11 @@ impl ItemGrid {
                 if !t.is_root() {
                     continue;
                 }
-                let hit = if match_id_only { t.id == old.id } else { t == *old };
+                let hit = if match_id_only {
+                    t.id == old.id
+                } else {
+                    t == *old
+                };
                 if !hit {
                     continue;
                 }
@@ -265,7 +317,15 @@ impl ItemGrid {
     }
 
     /// Pastes a row-major rectangle; tiles outside the grid are skipped. Returns tiles written.
-    pub fn paste(&mut self, x0: i64, y0: i64, w: usize, h: usize, data: &[Item], skip_none: bool) -> usize {
+    pub fn paste(
+        &mut self,
+        x0: i64,
+        y0: i64,
+        w: usize,
+        h: usize,
+        data: &[Item],
+        skip_none: bool,
+    ) -> usize {
         let mut n = 0;
         for y in 0..h {
             for x in 0..w {

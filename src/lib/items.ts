@@ -5,7 +5,10 @@ const isWindows = navigator.userAgent.includes("Windows");
 /** URL of the custom image protocol served by the Rust backend. */
 export const asset = (path: string) => (isWindows ? `http://nhse.localhost/${path}` : `nhse://localhost/${path}`);
 
-export const itemSprite = (id: number, variant = 0) => asset(`item/${id}?v=${variant}`);
+/** Bumped when the image pack changes so the year-long image cache is bypassed. */
+let spriteEpoch = "0";
+export const setSpriteEpoch = (e: number | string) => { spriteEpoch = String(e); };
+export const itemSprite = (id: number, variant = 0) => asset(`item/${id}?v=${variant}&e=${spriteEpoch}`);
 export const villagerSprite = (internal: string) => asset(`villager/${internal}`);
 
 export const NONE_ID = 0xfffe;

@@ -143,7 +143,7 @@ function RoomEditor({ house, room }: { house: number; room: number }) {
           <Segmented value={tool} onChange={setTool} options={[
             { value: "select", label: "Select", icon: <MousePointer2 /> }, { value: "place", label: "Place", icon: <Brush /> }, { value: "erase", label: "Erase", icon: <Eraser /> }]} />
           <div style={{ flex: 1 }} />
-          <Select value={layer} onChange={(l) => { setLayer(l); setSelTile(null); }} options={gd.enums.RoomLayerSurface.map(([n, v]) => ({ value: v, label: prettify(n) }))} />
+          <Select value={layer} onChange={(l) => { setLayer(l); setSelTile(null); }} options={(gd.enums.RoomLayerSurface ?? []).map(([n, v]) => ({ value: v, label: prettify(n) }))} />
         </div>
         <div style={{ position: "relative", width: 20 * cell + 2, height: 20 * cell + 2, borderRadius: 10, border: "1px solid var(--border-strong)", overflow: "hidden",
           background: `repeating-conic-gradient(var(--card-2) 0 25%, var(--card) 0 50%) 0 0 / ${cell * 2}px ${cell * 2}px` }}

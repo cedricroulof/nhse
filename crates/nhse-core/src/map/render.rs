@@ -9,22 +9,22 @@ const ACRE_TEMPLATE_MAX: u16 = 317; // FldOutNGardenRFront00
 /// Collision type → color for pre-defined (exterior) acres.
 fn collision_color(c: u8) -> Option<Rgb> {
     Some(match c {
-        0 => [76, 154, 74],     // grass
+        0 => [76, 154, 74],             // grass
         1 | 12 | 15 => [104, 196, 214], // river / river mouth
-        3 => [192, 192, 192],   // stone
-        4 => [238, 222, 160],   // sand
-        5 => [86, 176, 210],    // sea
-        6 => [190, 140, 100],   // wood
-        8 => [60, 60, 70],      // building
-        10 => [70, 70, 80],     // door
-        22 | 49 => [176, 120, 86], // thin wood, pier
-        29 => [230, 214, 150],  // beach edge
-        41 | 45 => [118, 122, 132], // rocks
-        42 => [128, 133, 147],  // tall rocks
-        43 => [70, 210, 220],   // tide pool
-        44 => [96, 160, 84],    // grass/beach edge
-        46 => [96, 186, 214],   // sea edge
-        47 => [150, 140, 70],   // sandstone
+        3 => [192, 192, 192],           // stone
+        4 => [238, 222, 160],           // sand
+        5 => [86, 176, 210],            // sea
+        6 => [190, 140, 100],           // wood
+        8 => [60, 60, 70],              // building
+        10 => [70, 70, 80],             // door
+        22 | 49 => [176, 120, 86],      // thin wood, pier
+        29 => [230, 214, 150],          // beach edge
+        41 | 45 => [118, 122, 132],     // rocks
+        42 => [128, 133, 147],          // tall rocks
+        43 => [70, 210, 220],           // tide pool
+        44 => [96, 160, 84],            // grass/beach edge
+        46 => [96, 186, 214],           // sea edge
+        47 => [150, 140, 70],           // sandstone
         51 => [52, 152, 52],
         70 => [109, 113, 124],
         149 => [179, 207, 252], // ice
@@ -83,7 +83,10 @@ pub fn render_terrain(view: &TerrainView, px: usize) -> (usize, usize, Vec<u8>) 
             let rel_x = tx as i64 - 16;
             let rel_y = ty as i64 - 16;
             let acre = view.acre_at(rel_x, rel_y);
-            let inside = rel_x >= 0 && rel_y >= 0 && (rel_x as usize) < TILES_W && (rel_y as usize) < TILES_H;
+            let inside = rel_x >= 0
+                && rel_y >= 0
+                && (rel_x as usize) < TILES_W
+                && (rel_y as usize) < TILES_H;
             for sy in 0..px {
                 for sx in 0..px {
                     // sample the 16×16 tile pattern
@@ -93,7 +96,11 @@ pub fn render_terrain(view: &TerrainView, px: usize) -> (usize, usize, Vec<u8>) 
                     let iy = iy.min(15);
                     let c = match acre_pixel(acre, (tx % 16).min(15), (ty % 16).min(15)) {
                         Some(c) if !inside || acre != 0 => c,
-                        _ if inside => tile_pixel(view.tile(rel_x as usize, rel_y as usize), ix as i32, iy as i32),
+                        _ if inside => tile_pixel(
+                            view.tile(rel_x as usize, rel_y as usize),
+                            ix as i32,
+                            iy as i32,
+                        ),
                         Some(c) => c,
                         None => [86, 176, 210],
                     };
@@ -134,8 +141,14 @@ pub fn decode_png(bytes: &[u8]) -> Option<(usize, usize, Vec<u8>)> {
     let src = &buf[..info.buffer_size()];
     let rgba = match info.color_type {
         png::ColorType::Rgba => src.to_vec(),
-        png::ColorType::Rgb => src.chunks_exact(3).flat_map(|c| [c[0], c[1], c[2], 255]).collect(),
-        png::ColorType::GrayscaleAlpha => src.chunks_exact(2).flat_map(|c| [c[0], c[0], c[0], c[1]]).collect(),
+        png::ColorType::Rgb => src
+            .chunks_exact(3)
+            .flat_map(|c| [c[0], c[1], c[2], 255])
+            .collect(),
+        png::ColorType::GrayscaleAlpha => src
+            .chunks_exact(2)
+            .flat_map(|c| [c[0], c[0], c[0], c[1]])
+            .collect(),
         png::ColorType::Grayscale => src.iter().flat_map(|c| [*c, *c, *c, 255]).collect(),
         png::ColorType::Indexed => return None,
     };
@@ -145,21 +158,26 @@ pub fn decode_png(bytes: &[u8]) -> Option<(usize, usize, Vec<u8>)> {
 // --- item colors ------------------------------------------------------------------
 
 const KIND_PALETTE: [u32; 174] = [
-    0xD9D9D9, 0xCCD9E8, 0x7F7F7F, 0xD5D5D5, 0xF7F7F7, 0xCFCFCF, 0xB4B4B4, 0xF1F1F1, 0xFFFFFF, 0x7F7F7F, 0x7F7F7F, 0xB6B6B6,
-    0x7FBBEB, 0xFFFFFF, 0x7FB2E5, 0xF9FBFD, 0xDFE6ED, 0x7F7F7F, 0xFFFFF0, 0x7F7F7F, 0xF7F7F7, 0x7F7F7F, 0xE3E3E3, 0xFFFFFF,
-    0xB1B1B1, 0x7F7F7F, 0xFFFFFF, 0xF7FBFF, 0xFCF5EB, 0x7FFFFF, 0xBFFFE9, 0xF7FFFF, 0xFAFAED, 0xFFF1E1, 0x7F7F7F, 0xFFF5E6,
-    0x7F7FFF, 0xC495F0, 0xD29494, 0xEEDBC3, 0xAFCECF, 0xBFFF7F, 0xE8B48E, 0xFFBFA7, 0xB1CAF6, 0xFFFBED, 0xED899D, 0x7FFFFF,
-    0x7F7FC5, 0x7FC5C5, 0xDBC285, 0xD4D4D4, 0x7FB17F, 0xDEDBB5, 0xC57FC5, 0xAAB597, 0xFFC57F, 0xCC98E5, 0xC57F7F, 0xF4CABC,
-    0xC7DDC5, 0xA39EC5, 0x97A7A7, 0x7FE6E8, 0xC97FE9, 0xFF89C9, 0x7FDFFF, 0xB4B4B4, 0x8EC7FF, 0xD89090, 0xFFFCF7, 0x90C590,
-    0xFF7FFF, 0xEDEDED, 0xFBFBFF, 0xFFEB7F, 0xECD28F, 0xBFBFBF, 0x7FBF7F, 0xD6FF97, 0xF7FFF7, 0xFFB4D9, 0xE6ADAD, 0xA57FC0,
-    0xFFFFF7, 0xF7F2C5, 0xF2F2FC, 0xFFF7FA, 0xBDFD7F, 0xFFFCE6, 0xD6EBF2, 0xF7BFBF, 0xEFFFFF, 0xFCFCE8, 0xE9E9E9, 0xC7F6C7,
-    0xFFDAE0, 0xFFCFBC, 0x8FD8D4, 0xC3E6FC, 0xBBC3CC, 0xD7E1EE, 0xFFFFEF, 0x7FFF7F, 0x98E698, 0xFCF7F2, 0xFF7FFF, 0xBF7F7F,
-    0xB2E6D4, 0x7F7FE6, 0xDCAAE9, 0xC9B7ED, 0x9DD9B8, 0xBDB3F6, 0x7FFCCC, 0xA3E8E5, 0xE38AC2, 0x8C8CB7, 0xFAFFFC, 0xFFF1F0,
-    0xFFF1DA, 0xFFEED6, 0x7F7FBF, 0xFEFAF2, 0xBFBF7F, 0xB5C691, 0xFFD27F, 0xFFA27F, 0xECB7EA, 0xF6F3D4, 0xCBFDCB, 0xD7F6F6,
-    0xEDB7C9, 0xFFF7EA, 0xFFECDC, 0xE6C29F, 0xFFDFE5, 0xEECFEE, 0xD7EFF2, 0xBF7FBF, 0xFF7F7F, 0xDDC7C7, 0xA0B4F0, 0xC5A289,
-    0xFCBFB8, 0xF9D1AF, 0x96C5AB, 0xFFFAF6, 0xCFA896, 0xDFDFDF, 0xC3E6F5, 0xB4ACE6, 0xB7BFC7, 0xFFFCFC, 0x7FFFBF, 0xA2C0D9,
-    0xE8D9C5, 0x7FBFBF, 0xEBDFEB, 0xFFB1A3, 0x9FEFE7, 0xF6C0F6, 0xFAEED9, 0xFFFFFF, 0xFAFAFA, 0xFFFF7F, 0xCCE698, 0xF7F7F7,
-    0xFFFFFF, 0xCFCFCF, 0xDCE8F4, 0xEBF1F8, 0xF7F7F7, 0x99CCFF,
+    0xD9D9D9, 0xCCD9E8, 0x7F7F7F, 0xD5D5D5, 0xF7F7F7, 0xCFCFCF, 0xB4B4B4, 0xF1F1F1, 0xFFFFFF,
+    0x7F7F7F, 0x7F7F7F, 0xB6B6B6, 0x7FBBEB, 0xFFFFFF, 0x7FB2E5, 0xF9FBFD, 0xDFE6ED, 0x7F7F7F,
+    0xFFFFF0, 0x7F7F7F, 0xF7F7F7, 0x7F7F7F, 0xE3E3E3, 0xFFFFFF, 0xB1B1B1, 0x7F7F7F, 0xFFFFFF,
+    0xF7FBFF, 0xFCF5EB, 0x7FFFFF, 0xBFFFE9, 0xF7FFFF, 0xFAFAED, 0xFFF1E1, 0x7F7F7F, 0xFFF5E6,
+    0x7F7FFF, 0xC495F0, 0xD29494, 0xEEDBC3, 0xAFCECF, 0xBFFF7F, 0xE8B48E, 0xFFBFA7, 0xB1CAF6,
+    0xFFFBED, 0xED899D, 0x7FFFFF, 0x7F7FC5, 0x7FC5C5, 0xDBC285, 0xD4D4D4, 0x7FB17F, 0xDEDBB5,
+    0xC57FC5, 0xAAB597, 0xFFC57F, 0xCC98E5, 0xC57F7F, 0xF4CABC, 0xC7DDC5, 0xA39EC5, 0x97A7A7,
+    0x7FE6E8, 0xC97FE9, 0xFF89C9, 0x7FDFFF, 0xB4B4B4, 0x8EC7FF, 0xD89090, 0xFFFCF7, 0x90C590,
+    0xFF7FFF, 0xEDEDED, 0xFBFBFF, 0xFFEB7F, 0xECD28F, 0xBFBFBF, 0x7FBF7F, 0xD6FF97, 0xF7FFF7,
+    0xFFB4D9, 0xE6ADAD, 0xA57FC0, 0xFFFFF7, 0xF7F2C5, 0xF2F2FC, 0xFFF7FA, 0xBDFD7F, 0xFFFCE6,
+    0xD6EBF2, 0xF7BFBF, 0xEFFFFF, 0xFCFCE8, 0xE9E9E9, 0xC7F6C7, 0xFFDAE0, 0xFFCFBC, 0x8FD8D4,
+    0xC3E6FC, 0xBBC3CC, 0xD7E1EE, 0xFFFFEF, 0x7FFF7F, 0x98E698, 0xFCF7F2, 0xFF7FFF, 0xBF7F7F,
+    0xB2E6D4, 0x7F7FE6, 0xDCAAE9, 0xC9B7ED, 0x9DD9B8, 0xBDB3F6, 0x7FFCCC, 0xA3E8E5, 0xE38AC2,
+    0x8C8CB7, 0xFAFFFC, 0xFFF1F0, 0xFFF1DA, 0xFFEED6, 0x7F7FBF, 0xFEFAF2, 0xBFBF7F, 0xB5C691,
+    0xFFD27F, 0xFFA27F, 0xECB7EA, 0xF6F3D4, 0xCBFDCB, 0xD7F6F6, 0xEDB7C9, 0xFFF7EA, 0xFFECDC,
+    0xE6C29F, 0xFFDFE5, 0xEECFEE, 0xD7EFF2, 0xBF7FBF, 0xFF7F7F, 0xDDC7C7, 0xA0B4F0, 0xC5A289,
+    0xFCBFB8, 0xF9D1AF, 0x96C5AB, 0xFFFAF6, 0xCFA896, 0xDFDFDF, 0xC3E6F5, 0xB4ACE6, 0xB7BFC7,
+    0xFFFCFC, 0x7FFFBF, 0xA2C0D9, 0xE8D9C5, 0x7FBFBF, 0xEBDFEB, 0xFFB1A3, 0x9FEFE7, 0xF6C0F6,
+    0xFAEED9, 0xFFFFFF, 0xFAFAFA, 0xFFFF7F, 0xCCE698, 0xF7F7F7, 0xFFFFFF, 0xCFCFCF, 0xDCE8F4,
+    0xEBF1F8, 0xF7F7F7, 0x99CCFF,
 ];
 const KIND_PALETTE_LEN: usize = 174;
 
@@ -183,7 +201,9 @@ pub fn kind_color(kind: u8) -> u32 {
 
 fn field_item_color(id: u16) -> u32 {
     let t = tables();
-    let Some(def) = t.field_items.get(&id) else { return 0x006400 };
+    let Some(def) = t.field_items.get(&id) else {
+        return 0x006400;
+    };
     let fk = |n: &str| enum_value("FieldItemKind", n).unwrap_or(-1) as u8;
     let k = def.kind;
     let in_range = |a: &str, b: &str| (fk(a)..=fk(b)).contains(&k);
@@ -237,7 +257,13 @@ pub fn item_color(id: u16) -> Option<u32> {
 
 /// Color table for all regular item ids plus field items, for the UI.
 pub fn item_color_table() -> (Vec<u32>, Vec<(u16, u32)>) {
-    let regular = (0..item_count()).map(|i| kind_color(item_kind(i as u16))).collect();
-    let field = tables().field_items_sorted.iter().map(|f| (f.id, field_item_color(f.id))).collect();
+    let regular = (0..item_count())
+        .map(|i| kind_color(item_kind(i as u16)))
+        .collect();
+    let field = tables()
+        .field_items_sorted
+        .iter()
+        .map(|f| (f.id, field_item_color(f.id)))
+        .collect();
     (regular, field)
 }

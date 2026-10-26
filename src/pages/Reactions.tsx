@@ -10,7 +10,7 @@ export default function Reactions() {
   const [r, setR] = useLoad(() => api.playerReactions(player), [player]);
   if (!r) return <Loading />;
   const all = (gd.enums.Reaction ?? []).filter(([n, v]) => v !== 0 && !n.startsWith("UNUSED"));
-  const name = (v: number) => prettify(gd.enums.Reaction.find(([, x]) => x === v)?.[0] ?? `#${v}`);
+  const name = (v: number) => prettify((gd.enums.Reaction ?? []).find(([, x]) => x === v)?.[0] ?? `#${v}`);
   const upd = (next: R) => { setR(next); api.setPlayerReactions(player, next).then(touch); };
   const known = new Set(r.learned.filter((x) => x !== 0));
   const learnAll = () => {

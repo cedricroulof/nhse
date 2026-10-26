@@ -87,8 +87,12 @@ fn raw(ident: &str, lang: &str) -> &'static str {
         ("mail", "zhs") => include_str!("../../resources/text/zhs/text_mail_zhs.txt"),
         ("body_parts", "zhs") => include_str!("../../resources/text/zhs/text_body_parts_zhs.txt"),
         ("body_color", "zhs") => include_str!("../../resources/text/zhs/text_body_color_zhs.txt"),
-        ("fabric_parts", "zhs") => include_str!("../../resources/text/zhs/text_fabric_parts_zhs.txt"),
-        ("fabric_color", "zhs") => include_str!("../../resources/text/zhs/text_fabric_color_zhs.txt"),
+        ("fabric_parts", "zhs") => {
+            include_str!("../../resources/text/zhs/text_fabric_parts_zhs.txt")
+        }
+        ("fabric_color", "zhs") => {
+            include_str!("../../resources/text/zhs/text_fabric_color_zhs.txt")
+        }
         ("internal", "zhs") => include_str!("../../resources/text/zhs/internal_zhs.txt"),
         ("villager", "zht") => include_str!("../../resources/text/zht/text_villager_zht.txt"),
         ("phrase", "zht") => include_str!("../../resources/text/zht/text_phrase_zht.txt"),
@@ -96,8 +100,12 @@ fn raw(ident: &str, lang: &str) -> &'static str {
         ("mail", "zht") => include_str!("../../resources/text/zht/text_mail_zht.txt"),
         ("body_parts", "zht") => include_str!("../../resources/text/zht/text_body_parts_zht.txt"),
         ("body_color", "zht") => include_str!("../../resources/text/zht/text_body_color_zht.txt"),
-        ("fabric_parts", "zht") => include_str!("../../resources/text/zht/text_fabric_parts_zht.txt"),
-        ("fabric_color", "zht") => include_str!("../../resources/text/zht/text_fabric_color_zht.txt"),
+        ("fabric_parts", "zht") => {
+            include_str!("../../resources/text/zht/text_fabric_parts_zht.txt")
+        }
+        ("fabric_color", "zht") => {
+            include_str!("../../resources/text/zht/text_fabric_color_zht.txt")
+        }
         ("internal", "zht") => include_str!("../../resources/text/zht/internal_zht.txt"),
         _ => "",
     }
@@ -109,7 +117,10 @@ fn lines(ident: &str, lang: &str) -> Vec<String> {
         s = raw(ident, "en");
     }
     let s = s.strip_prefix('\u{feff}').unwrap_or(s);
-    s.trim_end_matches(['\r', '\n']).split('\n').map(|l| l.trim_end_matches('\r').to_string()).collect()
+    s.trim_end_matches(['\r', '\n'])
+        .split('\n')
+        .map(|l| l.trim_end_matches('\r').to_string())
+        .collect()
 }
 
 fn map(lines: &[String], sep: char) -> HashMap<String, String> {
@@ -142,7 +153,11 @@ pub struct GameStrings {
 }
 
 fn pairs(lines: &[String]) -> Vec<(String, String)> {
-    lines.iter().filter_map(|l| l.split_once('\t')).map(|(k, v)| (k.to_string(), v.to_string())).collect()
+    lines
+        .iter()
+        .filter_map(|l| l.split_once('\t'))
+        .map(|(k, v)| (k.to_string(), v.to_string()))
+        .collect()
 }
 
 impl GameStrings {
@@ -170,7 +185,11 @@ impl GameStrings {
     /// Name of an item id, including field items (60000+).
     pub fn item_name(&self, id: u16) -> String {
         if id == 0xFFFE {
-            return self.items.first().cloned().unwrap_or_else(|| "(None)".into());
+            return self
+                .items
+                .first()
+                .cloned()
+                .unwrap_or_else(|| "(None)".into());
         }
         if let Some(n) = self.items_display.get(id as usize) {
             return n.clone();
@@ -185,7 +204,10 @@ impl GameStrings {
     }
 
     pub fn villager_name(&self, internal: &str) -> String {
-        self.villager_map.get(internal).cloned().unwrap_or_else(|| internal.to_string())
+        self.villager_map
+            .get(internal)
+            .cloned()
+            .unwrap_or_else(|| internal.to_string())
     }
 
     pub fn villager_phrase(&self, internal: &str) -> String {
@@ -215,9 +237,15 @@ pub fn display_list(items: &[String]) -> Vec<String> {
 }
 
 static CACHE: [OnceLock<GameStrings>; 9] = [
-    OnceLock::new(), OnceLock::new(), OnceLock::new(),
-    OnceLock::new(), OnceLock::new(), OnceLock::new(),
-    OnceLock::new(), OnceLock::new(), OnceLock::new(),
+    OnceLock::new(),
+    OnceLock::new(),
+    OnceLock::new(),
+    OnceLock::new(),
+    OnceLock::new(),
+    OnceLock::new(),
+    OnceLock::new(),
+    OnceLock::new(),
+    OnceLock::new(),
 ];
 
 /// Returns the (cached) strings for a language code; unknown codes fall back to English.

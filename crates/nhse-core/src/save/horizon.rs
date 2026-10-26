@@ -37,13 +37,20 @@ impl PlayerFiles {
     }
 
     pub fn files(&self) -> impl Iterator<Item = &SaveFile> {
-        [&self.personal, &self.photo, &self.postbox, &self.profile].into_iter().chain(self.wherearen.iter())
+        [&self.personal, &self.photo, &self.postbox, &self.profile]
+            .into_iter()
+            .chain(self.wherearen.iter())
     }
 
     pub fn files_mut(&mut self) -> impl Iterator<Item = &mut SaveFile> {
-        [&mut self.personal, &mut self.photo, &mut self.postbox, &mut self.profile]
-            .into_iter()
-            .chain(self.wherearen.iter_mut())
+        [
+            &mut self.personal,
+            &mut self.photo,
+            &mut self.postbox,
+            &mut self.profile,
+        ]
+        .into_iter()
+        .chain(self.wherearen.iter_mut())
     }
 }
 
@@ -72,10 +79,21 @@ impl HorizonSave {
     pub fn open(path: &Path) -> Result<Self> {
         let src = if path.is_dir() {
             SaveSource::folder(path)?
-        } else if path.extension().map(|e| e.eq_ignore_ascii_case("zip")).unwrap_or(false) {
+        } else if path
+            .extension()
+            .map(|e| e.eq_ignore_ascii_case("zip"))
+            .unwrap_or(false)
+        {
             SaveSource::zip(path)?
-        } else if path.file_name().map(|n| n.eq_ignore_ascii_case("main.dat") || n.eq_ignore_ascii_case("mainHeader.dat")).unwrap_or(false) {
-            SaveSource::folder(path.parent().ok_or_else(|| Error::Invalid("invalid path".into()))?)?
+        } else if path
+            .file_name()
+            .map(|n| n.eq_ignore_ascii_case("main.dat") || n.eq_ignore_ascii_case("mainHeader.dat"))
+            .unwrap_or(false)
+        {
+            SaveSource::folder(
+                path.parent()
+                    .ok_or_else(|| Error::Invalid("invalid path".into()))?,
+            )?
         } else {
             return Err(Error::Invalid(format!(
                 "Unsupported selection: {}. Choose the save folder (containing main.dat), main.dat itself, or a .zip of the save.",
@@ -116,10 +134,21 @@ impl HorizonSave {
             players.push(PlayerFiles::load(&src, &dir)?);
         }
         if players.is_empty() {
-            return Err(Error::Invalid("No players (Villager0 … Villager7 folders) were found next to main.dat.".into()));
+            return Err(Error::Invalid(
+                "No players (Villager0 … Villager7 folders) were found next to main.dat.".into(),
+            ));
         }
 
-        let mut save = Self { source: src, revision: detected, main, players, main_ofs, personal_ofs, postbox_ofs, warnings };
+        let mut save = Self {
+            source: src,
+            revision: detected,
+            main,
+            players,
+            main_ofs,
+            personal_ofs,
+            postbox_ofs,
+            warnings,
+        };
         save.validate_sizes()?;
         Ok(save)
     }
@@ -138,7 +167,13 @@ impl HorizonSave {
         let check = |f: &SaveFile| -> Option<String> {
             let expect = revision::expected_size(idx, &f.file_name())?;
             (f.data.len() != expect).then(|| {
-                format!("{}: size 0x{:X} does not match expected 0x{:X} for {}", f.data_path(), f.data.len(), expect, REVISIONS[idx].version)
+                format!(
+                    "{}: size 0x{:X} does not match expected 0x{:X} for {}",
+                    f.data_path(),
+                    f.data.len(),
+                    expect,
+                    REVISIONS[idx].version
+                )
             })
         };
         if let Some(e) = check(&self.main) {
@@ -181,7 +216,10 @@ impl HorizonSave {
         let mut out = Vec::new();
         let mut push = |f: &SaveFile, r: Vec<HashRegion>| {
             for x in r {
-                out.push(InvalidHash { file: f.data_path(), region: x.to_string() });
+                out.push(InvalidHash {
+                    file: f.data_path(),
+                    region: x.to_string(),
+                });
             }
         };
         push(&self.main, self.main.invalid_hashes(rev));
@@ -246,7 +284,10 @@ impl HorizonSave {
             }
         }
         if n == 0 {
-            return Err(Error::MissingFile(format!("no decrypted files (main.dat, Villager0/personal.dat, …) found in {}", dir.display())));
+            return Err(Error::MissingFile(format!(
+                "no decrypted files (main.dat, Villager0/personal.dat, …) found in {}",
+                dir.display()
+            )));
         }
         Ok(n)
     }

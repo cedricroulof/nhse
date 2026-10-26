@@ -1,7 +1,9 @@
 //! Static game data for the UI (names, kinds, enums, …).
 use crate::error::CmdResult;
 use crate::state::AppState;
-use nhse_core::data::items::{item_count, item_kind, item_size_type, kinds, max_stack, size_dimensions};
+use nhse_core::data::items::{
+    item_count, item_kind, item_size_type, kinds, max_stack, size_dimensions,
+};
 use nhse_core::data::tables::{enum_name, tables, FlagDef, NO_COLOR};
 use nhse_core::data::{strings, GameStrings};
 use nhse_core::map::render::item_color_table;
@@ -107,7 +109,10 @@ pub fn game_data(state: State<AppState>, lang: Option<String>) -> CmdResult<Game
         sizes.push(w);
         sizes.push(h);
     }
-    let templates: std::collections::HashSet<&String> = nhse_core::editing::villagers::available_templates().iter().collect();
+    let templates: std::collections::HashSet<&String> =
+        nhse_core::editing::villagers::available_templates()
+            .iter()
+            .collect();
     let villagers = s
         .villagers
         .iter()
@@ -146,17 +151,45 @@ pub fn game_data(state: State<AppState>, lang: Option<String>) -> CmdResult<Game
     .map(|(a, b)| (a.to_string(), b))
     .collect();
     let enum_list = [
-        "ItemKind", "Reaction", "VillagerPersonality", "VillagerSpecies", "Hemisphere", "AirportColor", "IslandFlowers",
-        "TurnipPattern", "VisitorNPC", "ItemWrappingPaper", "ItemRemakeCommonPattern", "OutsideAcre", "BuildingType",
-        "TerrainUnitModel", "SoundAmbientKind", "WallType", "RoofType", "DoorKind", "BridgeType", "BridgeMaterial",
-        "SlopeType", "FieldItemKind", "ItemCustomColor", "ItemMenuIconType",
+        "ItemKind",
+        "Reaction",
+        "VillagerPersonality",
+        "VillagerSpecies",
+        "Hemisphere",
+        "AirportColor",
+        "IslandFlowers",
+        "TurnipPattern",
+        "VisitorNPC",
+        "ItemWrappingPaper",
+        "ItemRemakeCommonPattern",
+        "OutsideAcre",
+        "BuildingType",
+        "TerrainUnitModel",
+        "SoundAmbientKind",
+        "WallType",
+        "RoofType",
+        "DoorKind",
+        "BridgeType",
+        "BridgeMaterial",
+        "SlopeType",
+        "FieldItemKind",
+        "ItemCustomColor",
+        "ItemMenuIconType",
+        "RoomLayerSurface",
     ];
     Ok(GameData {
         lang: s.lang.to_string(),
         items: s.items_display.clone(),
-        named: s.items.iter().enumerate().map(|(i, x)| i == 0 || !x.trim().is_empty()).collect(),
+        named: s
+            .items
+            .iter()
+            .enumerate()
+            .map(|(i, x)| i == 0 || !x.trim().is_empty())
+            .collect(),
         kinds: (0..n).map(|i| item_kind(i as u16)).collect(),
-        kind_names: (0..=255).map(|k| enum_name("ItemKind", k).unwrap_or("").to_string()).collect(),
+        kind_names: (0..=255)
+            .map(|k| enum_name("ItemKind", k).unwrap_or("").to_string())
+            .collect(),
         colors,
         sizes,
         field_items: t
@@ -166,13 +199,18 @@ pub fn game_data(state: State<AppState>, lang: Option<String>) -> CmdResult<Game
                 id: f.id,
                 name: f.name.clone(),
                 kind: f.kind,
-                kind_name: enum_name("FieldItemKind", f.kind as i64).unwrap_or("").to_string(),
+                kind_name: enum_name("FieldItemKind", f.kind as i64)
+                    .unwrap_or("")
+                    .to_string(),
                 held: f.held_item_id(),
                 color: fc.get(&f.id).copied().unwrap_or(0x006400),
             })
             .collect(),
         villagers,
-        enums: enum_list.iter().map(|e| (e.to_string(), nhse_core::data::enum_values(e).to_vec())).collect(),
+        enums: enum_list
+            .iter()
+            .map(|e| (e.to_string(), nhse_core::data::enum_values(e).to_vec()))
+            .collect(),
         recipes: t.recipes.clone(),
         achievements: t
             .achievements
@@ -190,12 +228,25 @@ pub fn game_data(state: State<AppState>, lang: Option<String>) -> CmdResult<Game
         flags_house: flags(&t.flags_house, s),
         flags_villager: flags(&t.flags_villager, s),
         flags_memory: flags(&t.flags_memory, s),
-        lists: t.game_lists.iter().map(|(k, v)| (k.clone(), v.clone())).collect(),
+        lists: t
+            .game_lists
+            .iter()
+            .map(|(k, v)| (k.clone(), v.clone()))
+            .collect(),
         mail: s.mail.clone(),
         stationery: nhse_core::structs::mail::STATIONERY.to_vec(),
-        npc_senders: nhse_core::structs::mail::NPC_SENDERS.iter().map(|(a, b, c)| (*a, b.to_string(), c.to_string())).collect(),
-        box_skins: nhse_core::structs::mail::BOX_SKINS.iter().map(|(a, b)| (*a, b.to_string())).collect(),
-        mail_languages: nhse_core::structs::mail::LANGUAGES.iter().map(|x| x.to_string()).collect(),
+        npc_senders: nhse_core::structs::mail::NPC_SENDERS
+            .iter()
+            .map(|(a, b, c)| (*a, b.to_string(), c.to_string()))
+            .collect(),
+        box_skins: nhse_core::structs::mail::BOX_SKINS
+            .iter()
+            .map(|(a, b)| (*a, b.to_string()))
+            .collect(),
+        mail_languages: nhse_core::structs::mail::LANGUAGES
+            .iter()
+            .map(|x| x.to_string())
+            .collect(),
         special_kinds,
     })
 }
@@ -229,7 +280,11 @@ pub struct ItemInfo {
 }
 
 fn color_text(c0: u8, c1: u8) -> String {
-    let name = |c: u8| enum_name("ItemCustomColor", c as i64).unwrap_or("?").to_string();
+    let name = |c: u8| {
+        enum_name("ItemCustomColor", c as i64)
+            .unwrap_or("?")
+            .to_string()
+    };
     if c0 == NO_COLOR {
         if c1 == NO_COLOR {
             return String::new();
@@ -256,11 +311,19 @@ pub fn item_info(state: State<AppState>, id: u16) -> CmdResult<ItemInfo> {
         for i in 0..8usize {
             let name = s.body_color.get(&format!("{key}_{i}")).cloned();
             if r.has_body_color(i) || name.is_some() {
-                body.push(Variant { index: i as u8, name: name.unwrap_or_default(), colors: color_text(r.body0[i], r.body1[i]) });
+                body.push(Variant {
+                    index: i as u8,
+                    name: name.unwrap_or_default(),
+                    colors: color_text(r.body0[i], r.body1[i]),
+                });
             }
             let fname = s.fabric_color.get(&format!("{key}_{i}")).cloned();
             if r.has_fabric_color(i) {
-                fabric.push(Variant { index: i as u8, name: fname.unwrap_or_default(), colors: color_text(r.fabric0[i], r.fabric1[i]) });
+                fabric.push(Variant {
+                    index: i as u8,
+                    name: fname.unwrap_or_default(),
+                    colors: color_text(r.fabric0[i], r.fabric1[i]),
+                });
             }
         }
     }
@@ -268,7 +331,9 @@ pub fn item_info(state: State<AppState>, id: u16) -> CmdResult<ItemInfo> {
         id,
         name: s.item_name(id),
         kind,
-        kind_name: enum_name("ItemKind", kind as i64).unwrap_or("Unknown").to_string(),
+        kind_name: enum_name("ItemKind", kind as i64)
+            .unwrap_or("Unknown")
+            .to_string(),
         max_stack: max_stack(id),
         width: w,
         height: h,
@@ -276,11 +341,17 @@ pub fn item_info(state: State<AppState>, id: u16) -> CmdResult<ItemInfo> {
         is_recipe: kind == kd.diy_recipe || kind == kd.message_bottle,
         is_fossil_unknown: kind == kd.fossil_unknown,
         is_tree: kind == kd.tree,
-        is_field_item: id >= 60_000 && id < 0xFFFD,
+        is_field_item: (60_000..0xFFFD).contains(&id),
         body_label: s.body_parts.get(&key).cloned(),
         body,
         fabric_label: s.fabric_parts.get(&key).cloned(),
-        fabric_customizable: remake.is_some_and(|r| r.fabric0.iter().chain(r.fabric1.iter()).any(|c| *c != NO_COLOR) || s.fabric_parts.contains_key(&key)),
+        fabric_customizable: remake.is_some_and(|r| {
+            r.fabric0
+                .iter()
+                .chain(r.fabric1.iter())
+                .any(|c| *c != NO_COLOR)
+                || s.fabric_parts.contains_key(&key)
+        }),
         fabric,
     })
 }
@@ -294,7 +365,10 @@ pub fn item_names(state: State<AppState>, items: Vec<nhse_core::Item>) -> CmdRes
 
 /// Parses pasted text (hex codes or names) into items.
 #[tauri::command]
-pub fn parse_items(state: State<AppState>, text: String) -> CmdResult<(Vec<nhse_core::Item>, Vec<String>)> {
+pub fn parse_items(
+    state: State<AppState>,
+    text: String,
+) -> CmdResult<(Vec<nhse_core::Item>, Vec<String>)> {
     let s = strings(&state.lang());
     Ok(nhse_core::editing::itemparse::parse_items(&text, s))
 }
@@ -313,10 +387,24 @@ pub fn is_unsafe_kind(k: &str) -> bool {
     k.starts_with("Kind_Dummy")
         || matches!(
             k,
-            "Kind_SequenceOnly" | "Kind_NpcOutfit" | "Kind_PlayerDemoOutfit" | "Kind_EventObjFtr" | "Kind_NnpcRoomMarker"
-                | "Kind_PhotoStudioList" | "Kind_ShopTorso" | "Kind_GardenEditList" | "Kind_OneRoomBox" | "Kind_MyDesignObject"
-                | "Kind_MyDesignTexture" | "Kind_CommonFabricRug" | "Kind_CommonFabricObject" | "Kind_CommonFabricTexture"
-                | "Kind_SmartPhone" | "Kind_DummyFtr" | "Unknown" | ""
+            "Kind_SequenceOnly"
+                | "Kind_NpcOutfit"
+                | "Kind_PlayerDemoOutfit"
+                | "Kind_EventObjFtr"
+                | "Kind_NnpcRoomMarker"
+                | "Kind_PhotoStudioList"
+                | "Kind_ShopTorso"
+                | "Kind_GardenEditList"
+                | "Kind_OneRoomBox"
+                | "Kind_MyDesignObject"
+                | "Kind_MyDesignTexture"
+                | "Kind_CommonFabricRug"
+                | "Kind_CommonFabricObject"
+                | "Kind_CommonFabricTexture"
+                | "Kind_SmartPhone"
+                | "Kind_DummyFtr"
+                | "Unknown"
+                | ""
         )
 }
 
@@ -328,7 +416,12 @@ pub fn item_set(category: String, variants: bool) -> CmdResult<Vec<nhse_core::It
     let t = tables();
     let kd = kinds();
     let skip: std::collections::HashSet<u16> = t.list("NoCheckReceived").iter().copied().collect();
-    let named = |id: u16| s.items.get(id as usize).is_some_and(|n| !n.trim().is_empty()) && !skip.contains(&id);
+    let named = |id: u16| {
+        s.items
+            .get(id as usize)
+            .is_some_and(|n| !n.trim().is_empty())
+            && !skip.contains(&id)
+    };
     let mut ids: Vec<u16> = match category.as_str() {
         "fish" => t.list("Fish").to_vec(),
         "bugs" => t.list("Bugs").to_vec(),
@@ -340,7 +433,12 @@ pub fn item_set(category: String, variants: bool) -> CmdResult<Vec<nhse_core::It
                 .recipes
                 .iter()
                 .filter(|(r, _)| *r != 0x1CA && *r != 0x1CD)
-                .map(|(r, _)| nhse_core::Item { id: nhse_core::Item::DIY_RECIPE, system: 0, additional: 0, free: *r as u32 })
+                .map(|(r, _)| nhse_core::Item {
+                    id: nhse_core::Item::DIY_RECIPE,
+                    system: 0,
+                    additional: 0,
+                    free: *r as u32,
+                })
                 .collect())
         }
         _ => (1..item_count() as u16)
@@ -353,11 +451,33 @@ pub fn item_set(category: String, variants: bool) -> CmdResult<Vec<nhse_core::It
                 match category.as_str() {
                     "wearables" => {
                         kd.is_clothing(item_kind(*id))
-                            || matches!(k, "Kind_Cap" | "Kind_Helmet" | "Kind_Accessory" | "Kind_Bag" | "Kind_Socks" | "Kind_Umbrella" | "Kind_HandBag")
+                            || matches!(
+                                k,
+                                "Kind_Cap"
+                                    | "Kind_Helmet"
+                                    | "Kind_Accessory"
+                                    | "Kind_Bag"
+                                    | "Kind_Socks"
+                                    | "Kind_Umbrella"
+                                    | "Kind_HandBag"
+                            )
                     }
-                    "furniture" => kd.is_furniture(item_kind(*id)) || matches!(k, "Kind_FtrWall" | "Kind_Counter" | "Kind_Pillar"),
+                    "furniture" => {
+                        kd.is_furniture(item_kind(*id))
+                            || matches!(k, "Kind_FtrWall" | "Kind_Counter" | "Kind_Pillar")
+                    }
                     "interior" => matches!(k, "Kind_RoomWall" | "Kind_RoomFloor" | "Kind_Rug"),
-                    "tools" => matches!(k, "Kind_FishingRod" | "Kind_Net" | "Kind_Shovel" | "Kind_Axe" | "Kind_Watering" | "Kind_Slingshot" | "Kind_Ladder" | "Kind_ChangeStick"),
+                    "tools" => matches!(
+                        k,
+                        "Kind_FishingRod"
+                            | "Kind_Net"
+                            | "Kind_Shovel"
+                            | "Kind_Axe"
+                            | "Kind_Watering"
+                            | "Kind_Slingshot"
+                            | "Kind_Ladder"
+                            | "Kind_ChangeStick"
+                    ),
                     "music" => k == "Kind_Music",
                     "materials" => kd.is_crafting(item_kind(*id)),
                     _ => false,

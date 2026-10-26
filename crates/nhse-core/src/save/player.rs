@@ -49,32 +49,46 @@ pub enum PlayerList {
 
 impl HorizonSave {
     fn pers(&self, p: usize) -> Result<(&[u8], &'static PersonalOffsets)> {
-        let pl = self.players.get(p).ok_or(Error::OutOfRange { index: p, max: self.players.len() })?;
+        let pl = self.players.get(p).ok_or(Error::OutOfRange {
+            index: p,
+            max: self.players.len(),
+        })?;
         Ok((&pl.personal.data, self.personal_ofs))
     }
 
     fn pers_mut(&mut self, p: usize) -> Result<(&mut Vec<u8>, &'static PersonalOffsets)> {
         let n = self.players.len();
         let ofs = self.personal_ofs;
-        let pl = self.players.get_mut(p).ok_or(Error::OutOfRange { index: p, max: n })?;
+        let pl = self
+            .players
+            .get_mut(p)
+            .ok_or(Error::OutOfRange { index: p, max: n })?;
         Ok((&mut pl.personal.data, ofs))
     }
 
     pub fn player_name(&self, p: usize) -> String {
-        self.pers(p).map(|(d, o)| get_string(d, o.personal_id + 0x20, 10)).unwrap_or_default()
+        self.pers(p)
+            .map(|(d, o)| get_string(d, o.personal_id + 0x20, 10))
+            .unwrap_or_default()
     }
 
     pub fn town_name(&self) -> String {
-        self.pers(0).map(|(d, o)| get_string(d, o.personal_id + 4, 10)).unwrap_or_default()
+        self.pers(0)
+            .map(|(d, o)| get_string(d, o.personal_id + 4, 10))
+            .unwrap_or_default()
     }
 
     /// Bytes identifying the player (id + name), used for identity replacement.
     pub fn player_identity(&self, p: usize) -> Vec<u8> {
-        self.pers(p).map(|(d, o)| d[o.personal_id + 0x1C..o.personal_id + 0x1C + 24].to_vec()).unwrap_or_default()
+        self.pers(p)
+            .map(|(d, o)| d[o.personal_id + 0x1C..o.personal_id + 0x1C + 24].to_vec())
+            .unwrap_or_default()
     }
 
     pub fn town_identity(&self) -> Vec<u8> {
-        self.pers(0).map(|(d, o)| d[o.personal_id..o.personal_id + 24].to_vec()).unwrap_or_default()
+        self.pers(0)
+            .map(|(d, o)| d[o.personal_id..o.personal_id + 24].to_vec())
+            .unwrap_or_default()
     }
 
     pub fn player_profile(&self, p: usize) -> Result<PlayerProfile> {
@@ -177,7 +191,9 @@ impl HorizonSave {
 
     /// Profile photo (JPEG bytes), empty if absent.
     pub fn player_photo(&self, p: usize) -> Vec<u8> {
-        let Ok((d, o)) = self.pers(p) else { return Vec::new() };
+        let Ok((d, o)) = self.pers(p) else {
+            return Vec::new();
+        };
         let off = o.profile_photo;
         if off + 2 > d.len() || u16le(d, off) != 0xD8FF {
             return Vec::new();
@@ -268,13 +284,18 @@ impl HorizonSave {
 
     pub fn player_flags(&self, p: usize) -> Result<Vec<i16>> {
         let (d, o) = self.pers(p)?;
-        Ok(read_i16_array(&d[o.event_flags_player..o.event_flags_player + o.event_flags_player_length]))
+        Ok(read_i16_array(
+            &d[o.event_flags_player..o.event_flags_player + o.event_flags_player_length],
+        ))
     }
 
     pub fn set_player_flags(&mut self, p: usize, flags: &[i16]) -> Result<()> {
         let (d, o) = self.pers_mut(p)?;
         let n = flags.len().min(o.event_flags_player_length / 2);
-        write_i16_array(&mut d[o.event_flags_player..o.event_flags_player + n * 2], &flags[..n]);
+        write_i16_array(
+            &mut d[o.event_flags_player..o.event_flags_player + n * 2],
+            &flags[..n],
+        );
         Ok(())
     }
 
@@ -283,8 +304,12 @@ impl HorizonSave {
     pub fn received_items(&self, p: usize) -> Result<(Vec<bool>, Vec<bool>)> {
         let (d, o) = self.pers(p)?;
         let n = crate::data::items::item_count();
-        let items = (0..n).map(|i| crate::util::bits::get_flag(d, o.item_collect_bit, i)).collect();
-        let remake = (0..o.max_remake_bit_flag).map(|i| crate::util::bits::get_flag(d, o.item_remake_collect_bit, i)).collect();
+        let items = (0..n)
+            .map(|i| crate::util::bits::get_flag(d, o.item_collect_bit, i))
+            .collect();
+        let remake = (0..o.max_remake_bit_flag)
+            .map(|i| crate::util::bits::get_flag(d, o.item_remake_collect_bit, i))
+            .collect();
         Ok((items, remake))
     }
 

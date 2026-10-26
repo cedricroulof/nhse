@@ -17,7 +17,10 @@ fn copy_dir(src: &std::path::Path, dst: &std::path::Path) {
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let (input, output) = (std::path::Path::new(&args[1]), std::path::Path::new(&args[2]));
+    let (input, output) = (
+        std::path::Path::new(&args[1]),
+        std::path::Path::new(&args[2]),
+    );
     copy_dir(input, output);
     let mut s = HorizonSave::open(output).unwrap();
     let mut prof = s.player_profile(0).unwrap();

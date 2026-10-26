@@ -11,10 +11,15 @@ static TEMPLATES: &[u8] = include_bytes!("../../resources/villagers.zip");
 fn template_names() -> &'static Vec<String> {
     static N: OnceLock<Vec<String>> = OnceLock::new();
     N.get_or_init(|| {
-        let mut z = zip::ZipArchive::new(std::io::Cursor::new(TEMPLATES)).expect("embedded templates");
+        let mut z =
+            zip::ZipArchive::new(std::io::Cursor::new(TEMPLATES)).expect("embedded templates");
         let mut names: Vec<String> = (0..z.len())
             .filter_map(|i| z.by_index(i).ok().map(|f| f.name().to_string()))
-            .filter_map(|n| n.strip_prefix("Villagers/").and_then(|s| s.strip_suffix("V.bin")).map(str::to_string))
+            .filter_map(|n| {
+                n.strip_prefix("Villagers/")
+                    .and_then(|s| s.strip_suffix("V.bin"))
+                    .map(str::to_string)
+            })
             .collect();
         names.sort();
         names
@@ -37,14 +42,25 @@ fn read_template(path: &str) -> Option<Vec<u8>> {
 /// Replaces villager `index` with a template, keeping the player relationships' identities and
 /// the house's links. The original editor copied the template's player id into the old memory,
 /// which left the new villager pointing at a stranger; here the real player ids are preserved.
-pub fn replace_villager(s: &mut HorizonSave, index: usize, internal: &str, move_out: bool) -> Result<()> {
+pub fn replace_villager(
+    s: &mut HorizonSave,
+    index: usize,
+    internal: &str,
+    move_out: bool,
+) -> Result<()> {
     if s.main_ofs.villager_format < 2 || s.main_ofs.villager_house_format < 2 {
-        return Err(Error::Invalid("Villager replacement requires a save from game version 2.0 or newer.".into()));
+        return Err(Error::Invalid(
+            "Villager replacement requires a save from game version 2.0 or newer.".into(),
+        ));
     }
-    let v = read_template(&format!("Villagers/{internal}V.bin")).ok_or_else(|| Error::Invalid(format!("No template for villager {internal}")))?;
-    let h = read_template(&format!("Houses/{internal}H.bin")).ok_or_else(|| Error::Invalid(format!("No house template for villager {internal}")))?;
+    let v = read_template(&format!("Villagers/{internal}V.bin"))
+        .ok_or_else(|| Error::Invalid(format!("No template for villager {internal}")))?;
+    let h = read_template(&format!("Houses/{internal}H.bin"))
+        .ok_or_else(|| Error::Invalid(format!("No house template for villager {internal}")))?;
     if v.len() != LAYOUT_V2.size || h.len() != VILLAGER_HOUSE2_SIZE {
-        return Err(Error::Invalid("Template data has an unexpected size.".into()));
+        return Err(Error::Invalid(
+            "Template data has an unexpected size.".into(),
+        ));
     }
     let old = s.villager_raw(index)?.to_vec();
     let mut new = v;
@@ -66,7 +82,10 @@ pub fn replace_villager(s: &mut HorizonSave, index: usize, internal: &str, move_
 
     // link the template house to this villager
     let houses = s.villager_houses();
-    let house_index = houses.iter().position(|x| x.npc1 as i64 == index as i64).unwrap_or(index);
+    let house_index = houses
+        .iter()
+        .position(|x| x.npc1 as i64 == index as i64)
+        .unwrap_or(index);
     let old_house = &houses[house_index];
     let mut nh = h;
     nh[0x1C4] = old_house.npc1 as u8;

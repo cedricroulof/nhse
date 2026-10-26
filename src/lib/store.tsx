@@ -1,6 +1,6 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { api, type AppInfo, type GameData, type SaveSummary, type Settings } from "./api";
-import { buildIndex, type SearchEntry } from "./items";
+import { buildIndex, setSpriteEpoch, type SearchEntry } from "./items";
 
 export type Toast = { id: number; kind: "ok" | "error" | "warn" | "info"; title: string; detail?: string };
 type ConfirmOpts = { title: string; message?: React.ReactNode; confirm?: string; danger?: boolean; cancel?: string };
@@ -90,7 +90,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   }, [settings?.theme]);
 
   useEffect(() => {
-    api.appInfo().then((i) => { setInfo(i); setSettings(i.settings); }).catch((e) => toast("error", "Failed to start", String(e)));
+    api.appInfo().then((i) => { setSpriteEpoch(i.image_pack_stamp); setInfo(i); setSettings(i.settings); }).catch((e) => toast("error", "Failed to start", String(e)));
   }, [toast]);
 
   // game data follows the language setting
@@ -118,6 +118,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       setRev((r) => r + 1);
       setRoute("overview");
       const i = await api.appInfo();
+      setSpriteEpoch(i.image_pack_stamp);
       setInfo(i);
       setSettings(i.settings);
       if (s.backup) toast("ok", `Opened ${s.town_name}`, "A backup of the save files was stored automatically.");

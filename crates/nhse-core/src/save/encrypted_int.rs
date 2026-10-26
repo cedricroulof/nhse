@@ -40,7 +40,12 @@ impl EncryptedInt32 {
         let adjust = u16le(d, o + 4);
         let shift = d[o + 6];
         let checksum = d[o + 7];
-        Self { value: Self::decrypt(enc, shift, adjust), adjust, shift, checksum }
+        Self {
+            value: Self::decrypt(enc, shift, adjust),
+            adjust,
+            shift,
+            checksum,
+        }
     }
 
     /// True if the stored checksum matches the stored value.
@@ -77,7 +82,10 @@ mod tests {
         assert!(EncryptedInt32::is_valid(&data, 0));
         let v = EncryptedInt32::read(&data, 0);
         assert_eq!(v.value, 31_280);
-        assert_eq!(EncryptedInt32::encrypt(31_280, v.shift, v.adjust), u32le(&data, 0));
+        assert_eq!(
+            EncryptedInt32::encrypt(31_280, v.shift, v.adjust),
+            u32le(&data, 0)
+        );
         let mut out = [0u8; 8];
         v.write(&mut out, 0);
         assert_eq!(out, data);

@@ -1,8 +1,8 @@
 //! Island map: field item layers, terrain, acres, buildings and rendering.
-pub mod grid;
-pub mod terrain;
-pub mod render;
 pub mod field;
+pub mod grid;
+pub mod render;
+pub mod terrain;
 
 pub use grid::ItemGrid;
 pub use terrain::TerrainTile;

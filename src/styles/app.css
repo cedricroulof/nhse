@@ -212,7 +212,7 @@ code, .mono { font-family: var(--mono); font-size: 12px; }
   transition: transform 0.08s, border-color 0.12s, box-shadow 0.12s;
 }
 .slot img { width: 80%; height: 80%; object-fit: contain; image-rendering: auto; pointer-events: none; -webkit-user-drag: none; }
-.slot.empty img { display: none; }
+.slot.vacant img { display: none; }
 .slot:hover { border-color: var(--border-strong); }
 .slot.sel { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
 .slot.multi { background: var(--active); }

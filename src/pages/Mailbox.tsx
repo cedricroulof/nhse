@@ -46,7 +46,7 @@ export default function Mailbox() {
     setBox(r); touch(); toast("ok", "Letter saved");
     setDraft({ ...r.mails[m.slot] });
   };
-  const villagerName = draft ? `${gd.enums.VillagerSpecies.find(([, v]) => v === draft.sender_species)?.[0] ?? "non"}${String(draft.sender_variant).padStart(2, "0")}` : "";
+  const villagerName = draft ? `${(gd.enums.VillagerSpecies ?? []).find(([, v]) => v === draft.sender_species)?.[0] ?? "non"}${String(draft.sender_variant).padStart(2, "0")}` : "";
   const stationeryNames = gd.mail;
 
   return (
@@ -101,7 +101,7 @@ export default function Mailbox() {
                   <Field label="Language"><Select value={draft.language || "en-US"} onChange={(v) => setDraft({ ...draft, language: v })} options={gd.mail_languages.map((l) => ({ value: l, label: l }))} /></Field>
                 </>}
                 {draft.sender_type === 1 && <>
-                  <Field label="Villager"><VillagerPicker value={villagerName} onChange={(n) => { const sp = gd.enums.VillagerSpecies.find(([k]) => k === n.slice(0, 3)); if (sp) setDraft({ ...draft, sender_species: sp[1], sender_variant: Number(n.slice(3)), sender_name: gd.villagers.find((v) => v.internal === n)?.name ?? draft.sender_name }); }} /></Field>
+                  <Field label="Villager"><VillagerPicker value={villagerName} onChange={(n) => { const sp = (gd.enums.VillagerSpecies ?? []).find(([k]) => k === n.slice(0, 3)); if (sp) setDraft({ ...draft, sender_species: sp[1], sender_variant: Number(n.slice(3)), sender_name: gd.villagers.find((v) => v.internal === n)?.name ?? draft.sender_name }); }} /></Field>
                   <Field label="Display name"><TextInput value={draft.sender_name} maxLength={10} onChange={(v) => setDraft({ ...draft, sender_name: v })} /></Field>
                 </>}
                 {draft.sender_type === 2 && (

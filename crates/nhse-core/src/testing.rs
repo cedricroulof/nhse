@@ -47,7 +47,13 @@ fn write_pair(dir: &Path, name: &str, data: &mut [u8], rev: usize, seed: u32, rn
 }
 
 fn enc_int(d: &mut [u8], o: usize, v: u32, rng: &mut Rng) {
-    EncryptedInt32 { value: v, adjust: rng.next() as u16 * 3, shift: rng.next() % 8, checksum: 0 }.write(d, o);
+    EncryptedInt32 {
+        value: v,
+        adjust: rng.next() as u16 * 3,
+        shift: rng.next() % 8,
+        checksum: 0,
+    }
+    .write(d, o);
 }
 
 /// Writes an encrypted synthetic save for revision index `rev` with `players` players.
@@ -79,7 +85,8 @@ pub fn write_synthetic_save(dir: &Path, rev: usize, players: usize, seed: u32) {
         rng.fill(&mut pers);
         pers[po.personal_id..po.personal_id + 4].copy_from_slice(&0x1234_5678u32.to_le_bytes());
         set_string(&mut pers, po.personal_id + 4, 10, "Testland");
-        pers[po.personal_id + 0x1C..po.personal_id + 0x20].copy_from_slice(&(0xABCD_0000u32 + p as u32).to_le_bytes());
+        pers[po.personal_id + 0x1C..po.personal_id + 0x20]
+            .copy_from_slice(&(0xABCD_0000u32 + p as u32).to_le_bytes());
         set_string(&mut pers, po.personal_id + 0x20, 10, &format!("Player{p}"));
         enc_int(&mut pers, po.wallet, 12_345 + p as u32, &mut rng);
         enc_int(&mut pers, po.bank, 999_999, &mut rng);
@@ -89,16 +96,25 @@ pub fn write_synthetic_save(dir: &Path, rev: usize, players: usize, seed: u32) {
             enc_int(&mut pers, o, 77, &mut rng);
         }
         for i in 0..po.pockets1_count {
-            pers[po.pockets1 + i * 8..po.pockets1 + i * 8 + 8].copy_from_slice(&0xFFFEu64.to_le_bytes());
+            pers[po.pockets1 + i * 8..po.pockets1 + i * 8 + 8]
+                .copy_from_slice(&0xFFFEu64.to_le_bytes());
         }
         for i in 0..po.pockets2_count {
-            let v: u64 = if i == 0 { 0x0001_0000_0000_0A54 } else { 0xFFFE };
+            let v: u64 = if i == 0 {
+                0x0001_0000_0000_0A54
+            } else {
+                0xFFFE
+            };
             pers[po.pockets2 + i * 8..po.pockets2 + i * 8 + 8].copy_from_slice(&v.to_le_bytes());
         }
         // no JPEG marker for the photo
         pers[po.profile_photo] = 0;
         write_pair(&pdir, "personal", &mut pers, rev, seed, &mut rng);
-        for (name, file) in [("photo_studio_island", "photo_studio_island.dat"), ("postbox", "postbox.dat"), ("profile", "profile.dat")] {
+        for (name, file) in [
+            ("photo_studio_island", "photo_studio_island.dat"),
+            ("postbox", "postbox.dat"),
+            ("profile", "profile.dat"),
+        ] {
             let mut d = vec![0u8; expected_size(rev, file).unwrap()];
             rng.fill(&mut d);
             write_pair(&pdir, name, &mut d, rev, seed, &mut rng);

@@ -2,6 +2,7 @@ import { Image, Languages, Moon, Monitor, ShieldCheck, Sun, Trash2, Wrench } fro
 import { useEffect, useState } from "react";
 import { listen } from "@tauri-apps/api/event";
 import { Button, Card, Field, NumberInput, Segmented, Select, ToggleRow } from "../components/ui";
+import { setSpriteEpoch } from "../lib/items";
 import { api } from "../lib/api";
 import { clearItemInfoCache } from "../components/ItemEditor";
 import { last } from "../lib/util";
@@ -41,11 +42,11 @@ export default function SettingsPage() {
             <div className="tiny faint">{(dl.done / 1e6).toFixed(1)} MB{dl.total ? ` of ${(dl.total / 1e6).toFixed(1)} MB` : ""}</div></div>}
           <div className="row">
             <Button variant="primary" disabled={!!dl} onClick={async () => {
-              try { const n = await api.downloadImages(); setHasPack(true); toast("ok", `Installed ${n.toLocaleString()} item images`, "Restart the app to refresh cached images."); }
+              try { const n = await api.downloadImages(); setSpriteEpoch(Date.now()); setHasPack(true); toast("ok", `Installed ${n.toLocaleString()} item images`); }
               catch (e) { toast("error", "Download failed", String(e)); }
               finally { setDl(null); }
-            }}>{hasPack ? "Re-download image pack" : "Download image pack (~100 MB)"}</Button>
-            {hasPack && <Button variant="danger" icon={<Trash2 />} onClick={async () => { await api.removeImages(); setHasPack(false); toast("ok", "Image pack removed"); }}>Remove</Button>}
+            }}>{hasPack ? "Re-download image pack" : "Download image pack (~90 MB)"}</Button>
+            {hasPack && <Button variant="danger" icon={<Trash2 />} onClick={async () => { await api.removeImages(); setSpriteEpoch(Date.now()); setHasPack(false); toast("ok", "Image pack removed"); }}>Remove</Button>}
           </div>
         </div>
       </Card>

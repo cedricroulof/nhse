@@ -45,7 +45,9 @@ pub fn put_u64(d: &mut [u8], o: usize, v: u64) {
 
 /// Reads a little-endian `i16` array.
 pub fn read_i16_array(d: &[u8]) -> Vec<i16> {
-    d.chunks_exact(2).map(|c| i16::from_le_bytes([c[0], c[1]])).collect()
+    d.chunks_exact(2)
+        .map(|c| i16::from_le_bytes([c[0], c[1]]))
+        .collect()
 }
 /// Writes a little-endian `i16` array into `d`.
 pub fn write_i16_array(d: &mut [u8], v: &[i16]) {
@@ -54,7 +56,9 @@ pub fn write_i16_array(d: &mut [u8], v: &[i16]) {
     }
 }
 pub fn read_u16_array(d: &[u8]) -> Vec<u16> {
-    d.chunks_exact(2).map(|c| u16::from_le_bytes([c[0], c[1]])).collect()
+    d.chunks_exact(2)
+        .map(|c| u16::from_le_bytes([c[0], c[1]]))
+        .collect()
 }
 pub fn write_u16_array(d: &mut [u8], v: &[u16]) {
     for (c, x) in d.chunks_exact_mut(2).zip(v) {
@@ -110,7 +114,7 @@ pub fn to_hex(d: &[u8]) -> String {
 
 pub fn from_hex(s: &str) -> Option<Vec<u8>> {
     let s: String = s.chars().filter(|c| !c.is_whitespace()).collect();
-    if s.len() % 2 != 0 {
+    if !s.len().is_multiple_of(2) {
         return None;
     }
     (0..s.len())

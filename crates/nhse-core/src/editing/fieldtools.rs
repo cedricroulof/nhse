@@ -25,7 +25,8 @@ pub enum ClearKind {
 }
 
 fn fk_range(a: &str, b: &str) -> std::ops::RangeInclusive<u8> {
-    (enum_value("FieldItemKind", a).unwrap_or(0) as u8)..=(enum_value("FieldItemKind", b).unwrap_or(0) as u8)
+    (enum_value("FieldItemKind", a).unwrap_or(0) as u8)
+        ..=(enum_value("FieldItemKind", b).unwrap_or(0) as u8)
 }
 
 /// `FieldItemKind` of a field item id, if it is one.
@@ -79,7 +80,14 @@ pub fn clear(g: &mut ItemGrid, kind: ClearKind, x0: usize, y0: usize, w: usize, 
 }
 
 /// Waters every flower in the rectangle (`all` = gold watering by all visitors).
-pub fn water_flowers(g: &mut ItemGrid, all: bool, x0: usize, y0: usize, w: usize, h: usize) -> usize {
+pub fn water_flowers(
+    g: &mut ItemGrid,
+    all: bool,
+    x0: usize,
+    y0: usize,
+    w: usize,
+    h: usize,
+) -> usize {
     let flowers = fk_range("PltFlwAnemone", "PltFlwYuri");
     g.modify_where(
         x0,
@@ -102,7 +110,14 @@ pub enum Arrangement {
 
 /// Places `items` starting at (x, y) in a grid. Occupied/out-of-bounds cells are skipped.
 /// Returns the number of items placed.
-pub fn spawn(g: &mut ItemGrid, items: &[Item], x: usize, y: usize, arrange: Arrangement, overwrite: bool) -> usize {
+pub fn spawn(
+    g: &mut ItemGrid,
+    items: &[Item],
+    x: usize,
+    y: usize,
+    arrange: Arrangement,
+    overwrite: bool,
+) -> usize {
     if items.is_empty() {
         return 0;
     }
@@ -161,7 +176,12 @@ pub fn spawn(g: &mut ItemGrid, items: &[Item], x: usize, y: usize, arrange: Arra
 }
 
 /// DIY recipe cards for a recipe index range, optionally sorted by crafted item name.
-pub fn diy_cards(min: u16, max: u16, alphabetical: bool, names: Option<&crate::data::GameStrings>) -> Vec<Item> {
+pub fn diy_cards(
+    min: u16,
+    max: u16,
+    alphabetical: bool,
+    names: Option<&crate::data::GameStrings>,
+) -> Vec<Item> {
     let mut v: Vec<(u16, u16)> = tables()
         .recipes
         .iter()
@@ -174,7 +194,12 @@ pub fn diy_cards(min: u16, max: u16, alphabetical: bool, names: Option<&crate::d
         }
     }
     v.into_iter()
-        .map(|(r, _)| Item { id: Item::DIY_RECIPE, system: 0, additional: 0, free: r as u32 })
+        .map(|(r, _)| Item {
+            id: Item::DIY_RECIPE,
+            system: 0,
+            additional: 0,
+            free: r as u32,
+        })
         .collect()
 }
 

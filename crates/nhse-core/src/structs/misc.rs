@@ -16,7 +16,11 @@ pub struct GDate {
 impl GDate {
     pub const SIZE: usize = 4;
     pub fn read(d: &[u8], o: usize) -> Self {
-        Self { year: u16le(d, o), month: d[o + 2], day: d[o + 3] }
+        Self {
+            year: u16le(d, o),
+            month: d[o + 2],
+            day: d[o + 3],
+        }
     }
     pub fn write(&self, d: &mut [u8], o: usize) {
         put_u16(d, o, self.year);
@@ -44,13 +48,20 @@ impl GDate {
         let day = e - (153 * m + 2) / 5 + 1;
         let month = m + 3 - 12 * (m / 10);
         let year = 100 * b + d - 4800 + m / 10;
-        Self { year: year as u16, month: month as u8, day: day as u8 }
+        Self {
+            year: year as u16,
+            month: month as u8,
+            day: day as u8,
+        }
     }
     pub fn add_days(&self, n: i64) -> Self {
         Self::from_days(self.to_days() + n)
     }
     pub fn today() -> Self {
-        let secs = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0);
+        let secs = std::time::SystemTime::now()
+            .duration_since(std::time::UNIX_EPOCH)
+            .map(|d| d.as_secs())
+            .unwrap_or(0);
         // 1970-01-01 is JDN 2440588
         Self::from_days(2_440_588 + (secs / 86_400) as i64)
     }
@@ -71,7 +82,10 @@ pub struct GDateMD {
 
 impl GDateMD {
     pub fn read(d: &[u8], o: usize) -> Self {
-        Self { month: d[o], day: d[o + 1] }
+        Self {
+            month: d[o],
+            day: d[o + 1],
+        }
     }
     pub fn write(&self, d: &mut [u8], o: usize) {
         d[o] = self.month;
@@ -92,10 +106,20 @@ pub struct GTime {
 
 impl GTime {
     pub fn read(d: &[u8], o: usize) -> Self {
-        Self { year: u16le(d, o), month: d[o + 2], day: d[o + 3], hour: d[o + 4], minute: d[o + 5], second: d[o + 6] }
+        Self {
+            year: u16le(d, o),
+            month: d[o + 2],
+            day: d[o + 3],
+            hour: d[o + 4],
+            minute: d[o + 5],
+            second: d[o + 6],
+        }
     }
     pub fn timestamp(&self) -> String {
-        format!("{:04}-{:02}-{:02} {:02}:{:02}:{:02}", self.year, self.month, self.day, self.hour, self.minute, self.second)
+        format!(
+            "{:04}-{:02}-{:02} {:02}:{:02}:{:02}",
+            self.year, self.month, self.day, self.hour, self.minute, self.second
+        )
     }
 }
 
@@ -116,7 +140,12 @@ impl Turnips {
         for (i, s) in sell.iter_mut().enumerate() {
             *s = u32le(d, o + 4 + i * 4);
         }
-        Self { buy_price: u32le(d, o), sell, pattern: u32le(d, o + 0x3C), fever_start: u32le(d, o + 0x40) }
+        Self {
+            buy_price: u32le(d, o),
+            sell,
+            pattern: u32le(d, o + 0x3C),
+            fever_start: u32le(d, o + 0x40),
+        }
     }
     pub fn write(&self, d: &mut [u8], o: usize) {
         put_u32(d, o, self.buy_price);
@@ -218,7 +247,9 @@ impl Museum {
     pub fn read(d: &[u8], o: usize) -> Self {
         Self {
             level: i32le(d, o),
-            dates: (0..Self::ENTRIES).map(|i| GDate::read(d, o + 4 + i * 4)).collect(),
+            dates: (0..Self::ENTRIES)
+                .map(|i| GDate::read(d, o + 4 + i * 4))
+                .collect(),
             items: Item::read_array(d, o + 0x1004, Self::ENTRIES),
             players: d[o + 0x3004..o + 0x3404].to_vec(),
         }
@@ -228,16 +259,26 @@ impl Museum {
         for (i, dt) in self.dates.iter().enumerate().take(Self::ENTRIES) {
             dt.write(d, o + 4 + i * 4);
         }
-        Item::write_array(d, o + 0x1004, &self.items[..self.items.len().min(Self::ENTRIES)]);
+        Item::write_array(
+            d,
+            o + 0x1004,
+            &self.items[..self.items.len().min(Self::ENTRIES)],
+        );
         let n = self.players.len().min(0x400);
         d[o + 0x3004..o + 0x3004 + n].copy_from_slice(&self.players[..n]);
     }
 
     /// Sorts donations chronologically, empty slots last.
     pub fn sort(&mut self) {
-        let mut rows: Vec<(GDate, Item, u8)> =
-            (0..self.items.len()).map(|i| (self.dates[i], self.items[i], self.players[i])).collect();
-        rows.sort_by(|a, b| a.1.is_none().cmp(&b.1.is_none()).then(a.0.is_empty().cmp(&b.0.is_empty())).then(a.0.cmp(&b.0)));
+        let mut rows: Vec<(GDate, Item, u8)> = (0..self.items.len())
+            .map(|i| (self.dates[i], self.items[i], self.players[i]))
+            .collect();
+        rows.sort_by(|a, b| {
+            a.1.is_none()
+                .cmp(&b.1.is_none())
+                .then(a.0.is_empty().cmp(&b.0.is_empty()))
+                .then(a.0.cmp(&b.0))
+        });
         for (i, (dt, it, p)) in rows.into_iter().enumerate() {
             self.dates[i] = dt;
             self.items[i] = it;
@@ -247,14 +288,27 @@ impl Museum {
 
     /// Donates every item from `ids` not yet donated. Returns how many were added.
     pub fn donate_all(&mut self, ids: &[u16], player: u8, per_day: usize) -> usize {
-        let have: std::collections::HashSet<u16> = self.items.iter().filter(|i| !i.is_none()).map(|i| i.id).collect();
-        let mut latest = self.dates.iter().filter(|d| !d.is_empty()).max().copied().unwrap_or_else(GDate::today);
+        let have: std::collections::HashSet<u16> = self
+            .items
+            .iter()
+            .filter(|i| !i.is_none())
+            .map(|i| i.id)
+            .collect();
+        let mut latest = self
+            .dates
+            .iter()
+            .filter(|d| !d.is_empty())
+            .max()
+            .copied()
+            .unwrap_or_else(GDate::today);
         let mut added = 0;
         for &id in ids {
             if have.contains(&id) {
                 continue;
             }
-            let Some(slot) = self.items.iter().position(|i| i.is_none()) else { break };
+            let Some(slot) = self.items.iter().position(|i| i.is_none()) else {
+                break;
+            };
             if added % per_day.max(1) == 0 {
                 latest = latest.add_days(1);
             }
@@ -354,7 +408,11 @@ impl Reactions {
         let n = Self::capacity(format);
         for i in 0..n {
             d[o + i] = self.learned.get(i).copied().unwrap_or(0);
-            put_bool(d, o + n + 8 + i, self.new_flags.get(i).copied().unwrap_or(false));
+            put_bool(
+                d,
+                o + n + 8 + i,
+                self.new_flags.get(i).copied().unwrap_or(false),
+            );
         }
         d[o + n..o + n + 8].copy_from_slice(&self.wheel);
     }
@@ -407,8 +465,12 @@ impl Achievements {
         let n = Self::MAX;
         Self {
             counts: (0..n).map(|i| u32le(d, o + i * 4)).collect(),
-            read: (0..n).map(|i| std::array::from_fn(|j| d[o + 0x800 + i * 6 + j] != 0)).collect(),
-            dates: (0..n).map(|i| std::array::from_fn(|j| GDate::read(d, o + 0x1400 + (i * 6 + j) * 4))).collect(),
+            read: (0..n)
+                .map(|i| std::array::from_fn(|j| d[o + 0x800 + i * 6 + j] != 0))
+                .collect(),
+            dates: (0..n)
+                .map(|i| std::array::from_fn(|j| GDate::read(d, o + 0x1400 + (i * 6 + j) * 4)))
+                .collect(),
             flags: d[o + 0x4400..o + 0x4600].to_vec(),
         }
     }
@@ -456,9 +518,32 @@ mod tests {
     use super::*;
     #[test]
     fn dates() {
-        let d = GDate { year: 2020, month: 3, day: 20 };
+        let d = GDate {
+            year: 2020,
+            month: 3,
+            day: 20,
+        };
         assert_eq!(GDate::from_days(d.to_days()), d);
-        assert_eq!(d.add_days(12), GDate { year: 2020, month: 4, day: 1 });
-        assert_eq!(GDate { year: 2020, month: 12, day: 31 }.add_days(1), GDate { year: 2021, month: 1, day: 1 });
+        assert_eq!(
+            d.add_days(12),
+            GDate {
+                year: 2020,
+                month: 4,
+                day: 1
+            }
+        );
+        assert_eq!(
+            GDate {
+                year: 2020,
+                month: 12,
+                day: 31
+            }
+            .add_days(1),
+            GDate {
+                year: 2021,
+                month: 1,
+                day: 1
+            }
+        );
     }
 }

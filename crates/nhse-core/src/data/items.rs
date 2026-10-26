@@ -92,22 +92,43 @@ pub fn kinds() -> &'static Kinds {
         picture_fake: k("Kind_PictureFake"),
         sculpture_fake: k("Kind_SculptureFake"),
         clothing: [
-            "Bottoms_Long", "Bottoms_Middle", "Bottoms_Short", "Onepiece_Dress", "Onepiece_Long", "Onepiece_Middle",
-            "Onepiece_Short", "Shoes_Boots", "Shoes_Pumps", "Top_Long", "Top_Middle", "Top_Short",
+            "Bottoms_Long",
+            "Bottoms_Middle",
+            "Bottoms_Short",
+            "Onepiece_Dress",
+            "Onepiece_Long",
+            "Onepiece_Middle",
+            "Onepiece_Short",
+            "Shoes_Boots",
+            "Shoes_Pumps",
+            "Top_Long",
+            "Top_Middle",
+            "Top_Short",
         ]
         .iter()
         .map(|n| k(n))
         .collect(),
-        furniture_like: ["Ftr_1x1_Chair", "Ftr_1x1_Floor", "Ftr_2x1_Bed", "Ftr_2x1_Floor", "Ftr_2x2_Floor"].iter().map(|n| k(n)).collect(),
+        furniture_like: [
+            "Ftr_1x1_Chair",
+            "Ftr_1x1_Floor",
+            "Ftr_2x1_Bed",
+            "Ftr_2x1_Floor",
+            "Ftr_2x2_Floor",
+        ]
+        .iter()
+        .map(|n| k(n))
+        .collect(),
     })
 }
 
 impl Kinds {
     pub fn is_flower(&self, kind: u8) -> bool {
-        (self.flower..=self.flower_bud).contains(&kind) || (self.unit_icon_flw_anemone..=self.unit_icon_flw_tulip).contains(&kind)
+        (self.flower..=self.flower_bud).contains(&kind)
+            || (self.unit_icon_flw_anemone..=self.unit_icon_flw_tulip).contains(&kind)
     }
     pub fn is_flower_picked(&self, kind: u8) -> bool {
-        kind == self.flower || (self.unit_icon_flw_anemone..=self.unit_icon_flw_tulip).contains(&kind)
+        kind == self.flower
+            || (self.unit_icon_flw_anemone..=self.unit_icon_flw_tulip).contains(&kind)
     }
     /// True if this item stores flower genes.
     pub fn is_flower_gene(&self, kind: u8, id: u16) -> bool {
@@ -117,7 +138,10 @@ impl Kinds {
         self.clothing.contains(&kind)
     }
     pub fn is_crafting(&self, kind: u8) -> bool {
-        kind == self.ore || kind == self.craft_material || kind == self.craft_phone_case || kind == self.craft_remake
+        kind == self.ore
+            || kind == self.craft_material
+            || kind == self.craft_phone_case
+            || kind == self.craft_remake
     }
     pub fn is_furniture(&self, kind: u8) -> bool {
         self.furniture_like.contains(&kind) || kind == self.ftr
@@ -144,7 +168,9 @@ pub fn item_kind(id: u16) -> u8 {
 
 fn field_item_kind(id: u16) -> u8 {
     let t = tables();
-    let Some(def) = t.field_items.get(&id) else { return KIND_UNKNOWN };
+    let Some(def) = t.field_items.get(&id) else {
+        return KIND_UNKNOWN;
+    };
     let held = def.held_item_id();
     if held < 60_000 {
         let k = KIND.get(held as usize).copied().unwrap_or(KIND_UNKNOWN);
@@ -157,7 +183,7 @@ fn field_item_kind(id: u16) -> u8 {
 
 /// Maps a `FieldItemKind` ordinal to an `ItemKind` ordinal (trees, flowers, weeds).
 pub fn field_kind_to_item_kind(fk: u8) -> u8 {
-    let fv = |n: &str| enum_value("FieldItemKind", n).unwrap_or(-1) as i64;
+    let fv = |n: &str| enum_value("FieldItemKind", n).unwrap_or(-1);
     let v = fk as i64;
     let kd = kinds();
     if (fv("PltTreeBamboo")..=fv("PltTreePalm")).contains(&v) {
@@ -232,15 +258,41 @@ pub fn max_stack(id: u16) -> Option<u16> {
     let name = crate::data::tables::enum_name("ItemKind", kind as i64)?;
     Some(match name {
         "Kind_CookingMaterial" | "Kind_CraftRemake" | "Kind_Fence" | "Kind_WeedLight" => 50,
-        "Kind_PartyPopper" | "Kind_BlowBubble" | "Kind_FierworkHand" | "Kind_TreeSeedling" | "Kind_BushSeedling"
-        | "Kind_VegeSeedling" | "Kind_Vegetable" | "Kind_FlowerSeed" | "Kind_Flower" | "Kind_Fruit" | "Kind_Mushroom"
-        | "Kind_Turnip" | "Kind_FishBait" | "Kind_PitFallSeed" | "Kind_Medicine" | "Kind_Honeycomb" | "Kind_SnowCrystal"
-        | "Kind_AutumnLeaf" | "Kind_Sakurapetal" | "Kind_XmasDeco" | "Kind_StarPiece" | "Kind_ShellDrift"
-        | "Kind_WrappingPaper" | "Kind_Otoshidama" | "Kind_Money" | "Kind_BdayCupcake" | "Kind_JohnnyQuest"
-        | "Kind_JohnnyQuestDust" | "Kind_PirateQuest" | "Kind_TailorTicket" | "Kind_MilePlaneTicket"
+        "Kind_PartyPopper"
+        | "Kind_BlowBubble"
+        | "Kind_FierworkHand"
+        | "Kind_TreeSeedling"
+        | "Kind_BushSeedling"
+        | "Kind_VegeSeedling"
+        | "Kind_Vegetable"
+        | "Kind_FlowerSeed"
+        | "Kind_Flower"
+        | "Kind_Fruit"
+        | "Kind_Mushroom"
+        | "Kind_Turnip"
+        | "Kind_FishBait"
+        | "Kind_PitFallSeed"
+        | "Kind_Medicine"
+        | "Kind_Honeycomb"
+        | "Kind_SnowCrystal"
+        | "Kind_AutumnLeaf"
+        | "Kind_Sakurapetal"
+        | "Kind_XmasDeco"
+        | "Kind_StarPiece"
+        | "Kind_ShellDrift"
+        | "Kind_WrappingPaper"
+        | "Kind_Otoshidama"
+        | "Kind_Money"
+        | "Kind_BdayCupcake"
+        | "Kind_JohnnyQuest"
+        | "Kind_JohnnyQuestDust"
+        | "Kind_PirateQuest"
+        | "Kind_TailorTicket"
+        | "Kind_MilePlaneTicket"
         | "Kind_SouvenirChocolate" => 10,
         "Kind_Weed" => 99,
-        "Kind_CraftMaterial" | "Kind_Ore" | "Kind_EasterEgg" | "Kind_LoveCrystal" | "Kind_Candy" | "Kind_Vine" => 30,
+        "Kind_CraftMaterial" | "Kind_Ore" | "Kind_EasterEgg" | "Kind_LoveCrystal"
+        | "Kind_Candy" | "Kind_Vine" => 30,
         "Kind_YutaroWisp" | "Kind_RollanTicket" => 5,
         "Kind_Feather" => 3,
         "Unknown" => return None,
@@ -250,26 +302,136 @@ pub fn max_stack(id: u16) -> Option<u16> {
 }
 
 const KNOWN_SINGLE: &[&str] = &[
-    "Kind_Ftr", "Kind_Dishes", "Kind_Drink", "Kind_RoomWall", "Kind_RoomFloor", "Kind_Rug", "Kind_RugMyDesign", "Kind_Socks",
-    "Kind_Cap", "Kind_Helmet", "Kind_Accessory", "Kind_Bag", "Kind_Umbrella", "Kind_FtrWall", "Kind_Counter", "Kind_Pillar",
-    "Kind_FishingRod", "Kind_Net", "Kind_Shovel", "Kind_Axe", "Kind_Watering", "Kind_Slingshot", "Kind_ChangeStick",
-    "Kind_WoodenStickTool", "Kind_Ladder", "Kind_GroundMaker", "Kind_RiverMaker", "Kind_CliffMaker", "Kind_HandBag",
-    "Kind_Ocarina", "Kind_Panflute", "Kind_Tambourine", "Kind_MaracasCarnival", "Kind_StickLight", "Kind_StickLightColorful",
-    "Kind_Uchiwa", "Kind_SubToolSensu", "Kind_Windmill", "Kind_Partyhorn", "Kind_Balloon", "Kind_HandheldPennant",
-    "Kind_BigbagPresent", "Kind_JuiceFuzzyapple", "Kind_Megaphone", "Kind_SoySet", "Kind_FlowerShower", "Kind_Candyfloss",
-    "Kind_SubToolDonut", "Kind_SubToolEat", "Kind_SubToolEatRemakeable", "Kind_Tapioca", "Kind_SubToolCan", "Kind_Icecandy",
-    "Kind_SubToolIcecream", "Kind_SubToolIcesoft", "Kind_SubToolEatDrop", "Kind_SubToolGeneric", "Kind_Basket", "Kind_Lantern",
-    "Kind_SubToolRemakeable", "Kind_Timer", "Kind_Gyroid", "Kind_GyroidScrap", "Kind_Tree", "Kind_Bush", "Kind_VegeTree",
-    "Kind_FlowerBud", "Kind_TurnipExpired", "Kind_CraftPhoneCase", "Kind_Trash", "Kind_Insect", "Kind_Fish", "Kind_DiveFish",
-    "Kind_ShellFish", "Kind_FishToy", "Kind_InsectToy", "Kind_Fossil", "Kind_FossilUnknown", "Kind_Music", "Kind_MusicMiss",
-    "Kind_Bromide", "Kind_Poster", "Kind_HousePost", "Kind_DoorDeco", "Kind_DummyRecipe", "Kind_DummyDIYRecipe",
-    "Kind_DummyHowtoBook", "Kind_LicenseItem", "Kind_BridgeItem", "Kind_SlopeItem", "Kind_DIYRecipe", "Kind_MessageBottle",
-    "Kind_HousingKit", "Kind_HousingKitRcoQuest", "Kind_HousingKitBirdge", "Kind_FireworkM", "Kind_QuestWrapping",
-    "Kind_QuestChristmasPresentbox", "Kind_LostQuest", "Kind_LostQuestDust", "Kind_TreasureQuest", "Kind_TreasureQuestDust",
-    "Kind_HarvestDish", "Kind_RainbowFeather", "Kind_SettingLadder", "Kind_SincerityTowel", "Kind_Giftbox", "Kind_PinataStick",
-    "Kind_NpcOutfit", "Kind_PlayerDemoOutfit", "Kind_Picture", "Kind_Sculpture", "Kind_PictureFake", "Kind_SculptureFake",
-    "Kind_SmartPhone", "Kind_DummyFtr", "Kind_SequenceOnly", "Kind_MyDesignObject", "Kind_MyDesignTexture",
-    "Kind_CommonFabricRug", "Kind_CommonFabricObject", "Kind_CommonFabricTexture", "Kind_OneRoomBox", "Kind_DummyWrapping",
-    "Kind_DummyPresentbox", "Kind_DummyCardboard", "Kind_EventObjFtr", "Kind_NnpcRoomMarker", "Kind_PhotoStudioList",
-    "Kind_ShopTorso", "Kind_DummyWrappingOtoshidama", "Kind_GardenEditList",
+    "Kind_Ftr",
+    "Kind_Dishes",
+    "Kind_Drink",
+    "Kind_RoomWall",
+    "Kind_RoomFloor",
+    "Kind_Rug",
+    "Kind_RugMyDesign",
+    "Kind_Socks",
+    "Kind_Cap",
+    "Kind_Helmet",
+    "Kind_Accessory",
+    "Kind_Bag",
+    "Kind_Umbrella",
+    "Kind_FtrWall",
+    "Kind_Counter",
+    "Kind_Pillar",
+    "Kind_FishingRod",
+    "Kind_Net",
+    "Kind_Shovel",
+    "Kind_Axe",
+    "Kind_Watering",
+    "Kind_Slingshot",
+    "Kind_ChangeStick",
+    "Kind_WoodenStickTool",
+    "Kind_Ladder",
+    "Kind_GroundMaker",
+    "Kind_RiverMaker",
+    "Kind_CliffMaker",
+    "Kind_HandBag",
+    "Kind_Ocarina",
+    "Kind_Panflute",
+    "Kind_Tambourine",
+    "Kind_MaracasCarnival",
+    "Kind_StickLight",
+    "Kind_StickLightColorful",
+    "Kind_Uchiwa",
+    "Kind_SubToolSensu",
+    "Kind_Windmill",
+    "Kind_Partyhorn",
+    "Kind_Balloon",
+    "Kind_HandheldPennant",
+    "Kind_BigbagPresent",
+    "Kind_JuiceFuzzyapple",
+    "Kind_Megaphone",
+    "Kind_SoySet",
+    "Kind_FlowerShower",
+    "Kind_Candyfloss",
+    "Kind_SubToolDonut",
+    "Kind_SubToolEat",
+    "Kind_SubToolEatRemakeable",
+    "Kind_Tapioca",
+    "Kind_SubToolCan",
+    "Kind_Icecandy",
+    "Kind_SubToolIcecream",
+    "Kind_SubToolIcesoft",
+    "Kind_SubToolEatDrop",
+    "Kind_SubToolGeneric",
+    "Kind_Basket",
+    "Kind_Lantern",
+    "Kind_SubToolRemakeable",
+    "Kind_Timer",
+    "Kind_Gyroid",
+    "Kind_GyroidScrap",
+    "Kind_Tree",
+    "Kind_Bush",
+    "Kind_VegeTree",
+    "Kind_FlowerBud",
+    "Kind_TurnipExpired",
+    "Kind_CraftPhoneCase",
+    "Kind_Trash",
+    "Kind_Insect",
+    "Kind_Fish",
+    "Kind_DiveFish",
+    "Kind_ShellFish",
+    "Kind_FishToy",
+    "Kind_InsectToy",
+    "Kind_Fossil",
+    "Kind_FossilUnknown",
+    "Kind_Music",
+    "Kind_MusicMiss",
+    "Kind_Bromide",
+    "Kind_Poster",
+    "Kind_HousePost",
+    "Kind_DoorDeco",
+    "Kind_DummyRecipe",
+    "Kind_DummyDIYRecipe",
+    "Kind_DummyHowtoBook",
+    "Kind_LicenseItem",
+    "Kind_BridgeItem",
+    "Kind_SlopeItem",
+    "Kind_DIYRecipe",
+    "Kind_MessageBottle",
+    "Kind_HousingKit",
+    "Kind_HousingKitRcoQuest",
+    "Kind_HousingKitBirdge",
+    "Kind_FireworkM",
+    "Kind_QuestWrapping",
+    "Kind_QuestChristmasPresentbox",
+    "Kind_LostQuest",
+    "Kind_LostQuestDust",
+    "Kind_TreasureQuest",
+    "Kind_TreasureQuestDust",
+    "Kind_HarvestDish",
+    "Kind_RainbowFeather",
+    "Kind_SettingLadder",
+    "Kind_SincerityTowel",
+    "Kind_Giftbox",
+    "Kind_PinataStick",
+    "Kind_NpcOutfit",
+    "Kind_PlayerDemoOutfit",
+    "Kind_Picture",
+    "Kind_Sculpture",
+    "Kind_PictureFake",
+    "Kind_SculptureFake",
+    "Kind_SmartPhone",
+    "Kind_DummyFtr",
+    "Kind_SequenceOnly",
+    "Kind_MyDesignObject",
+    "Kind_MyDesignTexture",
+    "Kind_CommonFabricRug",
+    "Kind_CommonFabricObject",
+    "Kind_CommonFabricTexture",
+    "Kind_OneRoomBox",
+    "Kind_DummyWrapping",
+    "Kind_DummyPresentbox",
+    "Kind_DummyCardboard",
+    "Kind_EventObjFtr",
+    "Kind_NnpcRoomMarker",
+    "Kind_PhotoStudioList",
+    "Kind_ShopTorso",
+    "Kind_DummyWrappingOtoshidama",
+    "Kind_GardenEditList",
 ];

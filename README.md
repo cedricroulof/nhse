@@ -14,7 +14,7 @@ It edits save data dumped from the Nintendo Switch. Bring your own save: the app
 ## Install (macOS, Apple Silicon)
 
 1. Download the latest `.dmg` from the
-   [**NHSE (Rust/Tauri)** pre-release](../../releases/tag/nightly-rust)
+   [**NHSE (Rust/Tauri)** pre-release](https://github.com/cedricroulof/nhse/releases/tag/nightly-rust)
    (or from the *Build macOS app* workflow artifacts).
 2. Open it and drag **NHSE** to **Applications**.
 3. The app is ad-hoc signed, not notarized, so macOS blocks the first launch. Run this once in Terminal:

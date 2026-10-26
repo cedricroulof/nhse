@@ -1,0 +1,18 @@
+[workspace]
+resolver = "2"
+members = ["crates/nhse-core", "src-tauri"]
+
+[workspace.package]
+version = "4.0.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+authors = ["NHSE contributors"]
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 4
+strip = true
+
+[profile.dev.package."*"]
+opt-level = 2

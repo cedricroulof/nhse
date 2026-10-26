@@ -351,3 +351,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Rust / Tauri / Node
+/target/
+node_modules/
+/dist/
+src-tauri/gen/
+*.dec

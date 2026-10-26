@@ -1,11 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { invoke } from "@tauri-apps/api/core";
+import "@fontsource-variable/inter";
+import "./styles/theme.css";
+import "./styles/app.css";
+import App from "./App";
+import { StoreProvider } from "./lib/store";
 
-function App() {
-  const [v, setV] = React.useState("");
-  React.useEffect(() => { invoke<string>("core_version").then(setV).catch(() => setV("?")); }, []);
-  return <h1>NHSE {v}</h1>;
-}
+// block the default browser context menu (custom menus are used where useful)
+window.addEventListener("contextmenu", (e) => {
+  const t = e.target as HTMLElement;
+  if (!["INPUT", "TEXTAREA"].includes(t.tagName)) e.preventDefault();
+});
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <StoreProvider>
+      <App />
+    </StoreProvider>
+  </React.StrictMode>,
+);

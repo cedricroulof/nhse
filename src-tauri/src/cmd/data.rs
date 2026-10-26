@@ -303,3 +303,89 @@ pub fn parse_items(state: State<AppState>, text: String) -> CmdResult<(Vec<nhse_
 pub fn items_to_cheat(items: Vec<nhse_core::Item>, offset: u32) -> CmdResult<String> {
     Ok(nhse_core::editing::formats::items_to_cheat(&items, offset))
 }
+
+fn kind_of(id: u16) -> &'static str {
+    enum_name("ItemKind", item_kind(id) as i64).unwrap_or("")
+}
+
+/// Kinds that must never be handed out in bulk (internal/dummy entries that can crash the game).
+pub fn is_unsafe_kind(k: &str) -> bool {
+    k.starts_with("Kind_Dummy")
+        || matches!(
+            k,
+            "Kind_SequenceOnly" | "Kind_NpcOutfit" | "Kind_PlayerDemoOutfit" | "Kind_EventObjFtr" | "Kind_NnpcRoomMarker"
+                | "Kind_PhotoStudioList" | "Kind_ShopTorso" | "Kind_GardenEditList" | "Kind_OneRoomBox" | "Kind_MyDesignObject"
+                | "Kind_MyDesignTexture" | "Kind_CommonFabricRug" | "Kind_CommonFabricObject" | "Kind_CommonFabricTexture"
+                | "Kind_SmartPhone" | "Kind_DummyFtr" | "Unknown" | ""
+        )
+}
+
+/// Builds a list of items for bulk actions: `wearables`, `furniture`, `interior`, `tools`, `fossils`,
+/// `art`, `fish`, `bugs`, `sea`, `music`, `recipes`, `materials`. With `variants`, every body color is included.
+#[tauri::command]
+pub fn item_set(category: String, variants: bool) -> CmdResult<Vec<nhse_core::Item>> {
+    let s = strings("en");
+    let t = tables();
+    let kd = kinds();
+    let skip: std::collections::HashSet<u16> = t.list("NoCheckReceived").iter().copied().collect();
+    let named = |id: u16| s.items.get(id as usize).is_some_and(|n| !n.trim().is_empty()) && !skip.contains(&id);
+    let mut ids: Vec<u16> = match category.as_str() {
+        "fish" => t.list("Fish").to_vec(),
+        "bugs" => t.list("Bugs").to_vec(),
+        "sea" => t.list("Dive").to_vec(),
+        "fossils" => t.list("Fossils").to_vec(),
+        "art" => t.list("Art").to_vec(),
+        "recipes" => {
+            return Ok(t
+                .recipes
+                .iter()
+                .filter(|(r, _)| *r != 0x1CA && *r != 0x1CD)
+                .map(|(r, _)| nhse_core::Item { id: nhse_core::Item::DIY_RECIPE, system: 0, additional: 0, free: *r as u32 })
+                .collect())
+        }
+        _ => (1..item_count() as u16)
+            .filter(|id| named(*id))
+            .filter(|id| {
+                let k = kind_of(*id);
+                if is_unsafe_kind(k) {
+                    return false;
+                }
+                match category.as_str() {
+                    "wearables" => {
+                        kd.is_clothing(item_kind(*id))
+                            || matches!(k, "Kind_Cap" | "Kind_Helmet" | "Kind_Accessory" | "Kind_Bag" | "Kind_Socks" | "Kind_Umbrella" | "Kind_HandBag")
+                    }
+                    "furniture" => kd.is_furniture(item_kind(*id)) || matches!(k, "Kind_FtrWall" | "Kind_Counter" | "Kind_Pillar"),
+                    "interior" => matches!(k, "Kind_RoomWall" | "Kind_RoomFloor" | "Kind_Rug"),
+                    "tools" => matches!(k, "Kind_FishingRod" | "Kind_Net" | "Kind_Shovel" | "Kind_Axe" | "Kind_Watering" | "Kind_Slingshot" | "Kind_Ladder" | "Kind_ChangeStick"),
+                    "music" => k == "Kind_Music",
+                    "materials" => kd.is_crafting(item_kind(*id)),
+                    _ => false,
+                }
+            })
+            .collect(),
+    };
+    ids.dedup();
+    let mut out = Vec::new();
+    for id in ids {
+        let mut it = nhse_core::Item::new(id);
+        if let Some(max) = max_stack(id) {
+            if max > 1 && matches!(category.as_str(), "materials") {
+                it.set_count(max - 1);
+            }
+        }
+        match (variants, t.remake_for_item(id)) {
+            (true, Some(r)) => {
+                for v in 0..8 {
+                    if r.has_body_color(v) {
+                        let mut x = it;
+                        x.set_body_type(v as u32);
+                        out.push(x);
+                    }
+                }
+            }
+            _ => out.push(it),
+        }
+    }
+    Ok(out)
+}

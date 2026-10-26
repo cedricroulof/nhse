@@ -1,0 +1,6579 @@
+00079_0	Madera natural
+00079_1	Madera oscura
+00079_2	Blanco
+00079_3	Rosa
+00079_4	Amarillo
+00079_5	Verde
+00079_6	Azul
+00079_7	Gris
+00080_0	Natural
+00080_1	Multicolor
+00080_2	Pop
+00080_3	Moderno
+00080_4	Tonos pastel
+00080_5	Adorable
+00083_0	Natural
+00083_1	Multicolor
+00083_2	Blanco
+00083_3	Tonos pastel
+00083_4	Azul
+00083_5	Pop
+00085_0	Primavera
+00085_1	Verano
+00085_2	Otoño
+00085_3	Invierno
+00086_0	Azul
+00086_1	Rosa
+00086_2	Rojo
+00086_3	Celeste
+00086_4	Amarillo
+00086_5	Blanco
+00086_6	Gris
+00086_7	Negro
+00088_0	Natural
+00088_1	Multicolor
+00088_2	Tonos pastel
+00088_3	Moderno
+00131_0	Blanco
+00131_1	Negro
+00144_0	Plateado
+00144_1	Bronce
+00144_2	Montaña
+00144_3	Barco
+00144_4	Castillo
+00146_0	Rojo
+00146_1	Azul
+00146_2	Amarillo
+00146_3	Blanco
+00146_4	Rayas rojas
+00146_5	Rayas verdes
+00146_6	Rayas reflectantes
+00146_7	Peligro
+00287_0	Negro
+00287_1	Rojo
+00287_2	Amarillo
+00287_3	Blanco
+00290_0	Negro
+00290_1	Rojo
+00290_2	Azul
+00290_3	Blanco
+00330_0	Rojo
+00330_1	Amarillo
+00330_2	Verde
+00330_3	Blanco
+00330_4	Negro
+00331_0	Natural
+00331_1	Rojo
+00331_2	Blanco
+00331_3	Negro
+00333_0	Natural
+00333_1	Marrón oscuro
+00333_2	Madera y blanco
+00333_3	Rojo y blanco
+00333_4	Azul
+00333_5	Blanco
+00335_0	Original
+00335_1	Blanca
+00336_0	Original
+00336_1	Blanca
+00338_0	Rojo
+00338_1	Naranja
+00338_2	Azul
+00338_3	Amarillo
+00338_4	Verde
+00383_0	Natural
+00383_1	Cereza
+00383_2	Marrón
+00383_3	Azul
+00383_4	Blanco
+00383_5	Negro
+00383_6	Rosa
+00522_0	Natural
+00522_1	Con musgo
+00530_0	Primavera
+00530_1	Verano
+00530_2	Otoño
+00530_3	Invierno
+00531_0	Primavera
+00531_1	Azalea
+00531_2	Verano
+00531_3	Hortensia
+00531_4	Hibisco
+00531_5	Otoño
+00531_6	Invierno
+00532_0	Primavera
+00532_1	Cerezos en flor
+00532_2	Verano
+00532_3	Kioto en verano
+00532_4	Otoño
+00532_5	Invierno
+00533_0	Primavera
+00533_1	Cerezos en flor
+00533_2	Verano
+00533_3	Otoño
+00533_4	Invierno
+00534_0	Blanco
+00534_1	Rosa
+00534_2	Verde
+00534_3	Marrón
+00537_0	Plateado
+00537_1	Azul
+00537_2	Rosa
+00537_3	Verde
+00538_0	Blanco
+00538_1	Azul
+00538_2	Rosa
+00538_3	Verde
+00538_4	Amarillo
+00546_0	Gris
+00546_1	Azul
+00546_2	Rosa
+00547_0	Plateado
+00547_1	Blanco
+00547_2	Negro y azul
+00547_3	Flores lacadas
+00664_0	Blanco
+00664_1	Negro
+00664_2	Azul
+00664_3	Naranja
+00664_4	Amarillo
+00664_5	Rosa
+00667_0	Verde
+00667_1	Plateado
+00669_0	Natural
+00669_1	Marrón
+00669_2	Blanco
+00669_3	Azul océano
+00676_0	Original
+00676_1	Blanca
+00676_2	Con musgo
+00677_0	Verde
+00677_1	Seco
+00677_2	Ahumado
+00682_0	Original
+00682_1	Verde y naranja
+00682_2	Marrón oscuro
+00682_3	Rojo y negro
+00682_4	Blanco y azul
+00683_0	Barco mercante
+00683_1	Barco de ocio
+00683_2	Barco pirata
+00685_0	Rojo
+00685_1	Azul
+00685_2	Blanco
+00688_0	Rojo
+00688_1	Madera natural
+00688_2	Madera oscura
+00690_0	Verde
+00690_1	Rojo
+00690_2	Rosa
+00690_3	Azul
+00690_4	Amarillo
+00690_5	Beis
+00704_0	Diseño geométrico
+00704_1	Ciervo
+00704_2	Floral
+00704_3	Cuento de hadas
+00704_4	Gallo
+00704_5	Copo de nieve
+00710_0	Verde
+00710_1	Seco
+00710_2	Ahumado
+00716_0	Bambú
+00716_1	Ciruelo
+00716_2	Pino
+00716_3	Tigre
+00716_4	Dragón
+00725_0	Madera natural
+00725_1	Madera oscura
+00725_2	Madera naranja
+00735_0	Madera natural
+00735_1	Madera oscura
+00735_2	Blanco
+00739_0	Madera natural
+00739_1	Madera oscura
+00739_2	Madera naranja
+00739_3	Madera clara
+00739_4	Madera roja
+00741_0	Marrón claro
+00741_1	Marrón oscuro
+00741_2	Amarillo
+00741_3	Verde
+00741_4	Negro
+00741_5	Plateado
+00742_0	Rojo
+00742_1	Marrón oscuro
+00742_2	Beis
+00742_3	Blanco
+00743_0	Natural
+00743_1	Azul
+00743_2	Rosa
+00743_3	Amarilla
+00743_4	Naranja
+00743_5	Verde
+00743_6	Morada
+00744_0	Madera clara
+00744_1	Madera oscura
+00744_2	Negro
+00744_3	Blanco
+00744_4	Rosa
+00744_5	Celeste
+00744_6	Verde claro
+00744_7	Azul
+00765_0	Marrón
+00765_1	Marrón oscuro
+00765_2	Azul
+00765_3	Verde
+00765_4	Artístico
+00766_0	Blanco
+00766_1	Negro
+00766_2	Gris
+00766_3	Beis
+00766_4	Verde
+00766_5	Rojo
+00766_6	Azul
+00766_7	Rosa
+00767_0	Plateado
+00767_1	Dorado
+00767_2	Cobre
+00767_3	Negro
+00767_4	Rojo
+00767_5	Azul
+00767_6	Verde
+00767_7	Rosa
+00769_0	Natural
+00769_1	Marrón
+00769_2	Marrón oscuro
+00769_3	Blanco
+00769_4	Acero inoxidable
+00770_0	Plateado
+00770_1	Dorado
+00770_2	Cobre
+00770_3	Negro
+00770_4	Rojo
+00770_5	Azul
+00770_6	Verde
+00770_7	Rosa
+00772_0	Blanco
+00772_1	Negro
+00772_2	Gris
+00772_3	Beis
+00772_4	Verde
+00772_5	Rojo
+00772_6	Azul
+00772_7	Rosa
+00773_0	Rojo
+00776_0	Azul
+00779_0	Rojo
+00781_0	Celeste
+00781_1	Rosa
+00781_2	Azul
+00781_3	Beis
+00781_4	Negro
+00781_5	Blanco
+00787_0	Plateado
+00787_1	Naranja
+00787_2	Blanco
+00787_3	Negro
+00796_0	Negro
+00796_1	Marrón
+00805_0	Común
+00805_1	Blanco
+00805_2	Misterioso
+00805_3	Rojo
+00805_4	Amarillo
+00807_0	Blanco
+00807_1	Negro
+00807_2	Gris
+00807_3	Beis
+00807_4	Verde
+00807_5	Rojo
+00807_6	Azul
+00807_7	Rosa
+00808_0	Común
+00808_1	Blanco
+00808_2	Misterioso
+00808_3	Rojo
+00808_4	Amarillo
+00817_0	Madera clara
+00817_1	Madera naranja
+00817_2	Madera oscura
+00817_3	Negro
+00817_4	Cereza
+00817_5	Blanco
+00822_0	Blanco
+00822_1	Negro
+00822_2	Gris
+00822_3	Beis
+00822_4	Verde
+00822_5	Rojo
+00822_6	Azul
+00822_7	Rosa
+00832_0	Azul
+00832_1	Verde
+00832_2	Amarillo
+00832_3	Rojo
+00832_4	Celeste
+00832_5	Rosa
+00832_6	Negro
+00833_0	Plateado
+00833_1	Blanco
+00833_2	Negro
+00833_3	Rojo
+00833_4	Azul
+00833_5	Verde
+00833_6	Amarillo
+00839_0	Plateado
+00839_1	Blanco
+00839_2	Negro
+00839_3	Dorado
+00840_0	Blanco
+00840_1	Blanco y madera
+00840_2	Negro y madera
+00840_3	Gris
+00843_0	Blanco
+00843_1	Negro
+00843_2	Gris
+00843_3	Beis
+00843_4	Verde
+00843_5	Rojo
+00843_6	Azul
+00843_7	Rosa
+00849_0	Negro
+00849_1	Blanco
+00849_2	Naranja
+00849_3	Marrón
+00849_4	Azul
+00849_5	Rojo
+00849_6	Rosa
+00854_0	Plateado
+00854_1	Dorado
+00854_2	Cobre
+00854_3	Negro
+00854_4	Rojo
+00854_5	Azul
+00854_6	Verde
+00854_7	Rosa
+00856_0	Plateado
+00856_1	Dorado
+00856_2	Blanco
+00858_0	Agua
+00858_1	Té helado
+00858_2	Café
+00858_3	Té verde
+00858_4	Zumo de naranja
+00858_5	Leche
+00859_0	Natural
+00859_1	Marrón
+00859_2	Negro
+00859_3	Blanco
+00862_0	Pop
+00862_1	Natural
+00862_2	Adorable
+00862_3	Chic
+00863_0	Verde
+00863_1	Rojo
+00863_2	Azul
+00865_0	Marrón
+00865_1	Rosa
+00865_2	Azul
+00865_3	Blanco
+00865_4	Negro
+00870_0	Blanco
+00870_1	Azul marino
+00870_2	Negro
+00870_3	Rosa
+00889_0	Amarillo
+00889_1	Rojo
+00889_2	Azul
+00889_3	Verde
+00889_4	Marrón
+00889_5	Negro
+00891_0	Rojo
+00891_1	Azul
+00891_2	Dorado
+00891_3	Marrón
+00891_4	Rosa
+00896_0	Beis
+00896_1	Marrón
+00896_2	Azul marino
+00896_3	Gris
+00896_4	Rosa
+00896_5	Blanco
+00904_0	Plateado
+00904_1	Dorado
+00904_2	Cobre
+00904_3	Negro
+00904_4	Rojo
+00904_5	Azul
+00904_6	Verde
+00904_7	Rosa
+00907_0	Rojo
+00907_1	Amarillo
+00907_2	Verde
+00907_3	Plateado
+00907_4	Negro
+00908_0	Plateado
+00908_1	Blanco
+00908_2	Negro
+00908_3	Rojo
+00908_4	Naranja
+00908_5	Verde
+00908_6	Rosa
+00912_0	Verde
+00912_1	Azul
+00912_2	Rojo
+00912_3	Púrpura
+00912_4	Plateado
+00912_5	Dorado
+00915_0	Natural
+00915_1	Verde
+00915_2	Azul
+00915_3	Amarillo
+00915_4	Rojo
+00915_5	Blanco
+00915_6	Negro
+00916_0	Sin ornamento
+00916_1	Aldea Kakariko
+00916_2	Ciudad Goron
+00916_3	Poblado orni
+00918_0	Sencillo
+00918_1	Floral
+00918_2	Lunares
+00918_3	Rosa
+00918_4	Regio
+00918_5	Elegante
+00922_0	Amarillo
+00922_1	Rojo
+00922_2	Verde
+00922_3	Azul
+00922_4	Negro
+00922_5	Blanco
+00922_6	Gris
+00928_0	Madera
+00928_1	Acero inoxidable
+00928_2	Pop
+00929_0	Blanco
+00929_1	Gris
+00929_2	Negro
+00929_3	Rosa
+00929_4	Azul
+00929_5	Marrón
+00941_0	Negro
+00941_1	Blanco
+00941_2	Marrón
+00941_3	Rosa
+00947_0	Amarillo
+00947_1	Púrpura
+00947_2	Rosa
+00947_3	Verde
+00947_4	Naranja
+00947_5	Azul
+00950_0	Negro
+00950_1	Blanco
+00950_2	Naranja
+00950_3	Azul
+00950_4	Rojo
+00950_5	Rosa
+00952_0	Plateado
+00952_1	Blanco
+00952_2	Negro
+00952_3	Rosa
+00952_4	Amarillo
+00952_5	Celeste
+00952_6	Azul
+00952_7	Gris deteriorado
+00954_0	Plateado
+00954_1	Rojo
+00954_2	Amarillo
+00954_3	Azul
+00954_4	Verde
+00954_5	Blanco
+00954_6	Negro
+00955_0	←
+00955_1	→
+00955_2	EXIT
+00955_3	← →
+00957_0	Blanco
+00957_1	Rosa
+00957_2	Azul
+00957_3	Verde
+00957_4	Naranja
+00958_0	Amarillo
+00958_1	Púrpura
+00958_2	Rosa
+00958_3	Verde
+00958_4	Naranja
+00958_5	Azul
+00963_0	Rojo
+00963_1	Amarillo
+00963_2	Verde
+00963_3	Negro
+00963_4	Azul
+00963_5	Blanco
+00963_6	Óxido
+00967_0	Marrón
+00967_1	Rosa pastel
+00967_2	Blanco
+00967_3	Marrón oscuro
+00971_0	Negro
+00971_1	Blanco
+00971_2	Rojo
+00971_3	Plateado
+00985_0	Original
+00985_1	Rojo
+00985_2	Amarillo
+00985_3	Verde
+00985_4	Negro
+00985_5	Blanco
+00985_6	Transparente
+00985_7	Azul
+00987_0	Marrón
+00987_1	Marrón claro
+00987_2	Marrón oscuro
+00987_3	Blanco
+00987_4	Negro
+00994_0	Naranja atigrado
+00994_1	Gris atigrado
+00994_2	Blanco
+00994_3	Negro
+00994_4	Calicó
+00994_5	Siamés
+00994_6	Gris
+00994_7	Amarillo
+00997_0	Rosa
+00997_1	Sándalo
+00997_2	Fondo oceánico
+00997_3	Bosque
+00997_4	Flor de cerezo
+00997_5	Té
+00998_0	Blanco
+00998_1	Azul
+00998_2	Rojo
+00998_3	Marrón claro
+00998_4	Marrón oscuro
+00998_5	Negro
+00998_6	Plateado
+01015_0	Amarillo
+01015_1	Púrpura
+01015_2	Rosa
+01015_3	Verde
+01015_4	Naranja
+01015_5	Azul
+01018_0	Plateado
+01018_1	Dorado
+01019_0	Natural
+01019_1	Blanco
+01029_0	Marrón claro
+01029_1	Marrón oscuro
+01029_2	Marrón
+01032_0	Natural
+01032_1	Naranja
+01032_2	Marrón
+01032_3	Blanco
+01032_4	Negro
+01032_5	Amarillo
+01032_6	Verde
+01032_7	Rojo
+01035_0	Plateado
+01035_1	Dorado
+01035_2	Cobre
+01035_3	Negro
+01035_4	Rojo
+01035_5	Azul
+01035_6	Verde
+01035_7	Rosa
+01037_0	Madera clara
+01037_1	Madera naranja
+01037_2	Madera oscura
+01037_3	Negro
+01037_4	Cereza
+01037_5	Blanco
+01042_0	Rojo
+01042_1	Crema
+01042_2	Azul
+01042_3	Negro
+01042_4	Marrón
+01043_0	Blanco
+01043_1	Negro
+01043_2	Rojo
+01043_3	Verde
+01050_0	Tomates
+01050_1	Verduras
+01050_2	Zanahorias
+01050_3	Naranjas
+01050_4	Arándanos
+01050_5	Plátanos
+01050_6	Fresas
+01050_7	Kiwis
+01051_0	Rojo
+01051_1	Azul
+01051_2	Verde
+01051_3	Amarillo
+01051_4	Rosa
+01058_0	Marrón
+01058_1	Natural
+01058_2	Blanco
+01058_3	Negro
+01072_0	Oro y rojo
+01072_1	Oro y azul
+01072_2	Plata y rojo
+01072_3	Plata y azul
+01072_4	Negro
+01072_5	Blanco
+01072_6	Bronce y amarillo
+01072_7	Verde y gris
+01077_0	Plateado
+01077_1	Negro
+01077_2	Blanco
+01077_3	Marrón
+01077_4	Óxido
+01081_0	Negro
+01081_1	Blanco
+01081_2	Nogal
+01081_3	Arce
+01082_0	Rojo
+01082_1	Azul
+01082_2	Amarillo
+01082_3	Verde
+01082_4	Blanco
+01082_5	Gris
+01087_0	Blanco
+01087_1	Rojo
+01087_2	Azul
+01087_3	Negro
+01087_4	Marrón
+01088_0	Madera clara
+01088_1	Madera naranja
+01088_2	Madera oscura
+01088_3	Negro
+01088_4	Cereza
+01088_5	Blanco
+01089_0	Pop
+01089_1	Natural
+01089_2	Adorable
+01089_3	Chic
+01090_0	Pop
+01090_1	Natural
+01090_2	Adorable
+01090_3	Chic
+01091_0	Pop
+01091_1	Natural
+01091_2	Adorable
+01091_3	Chic
+01092_0	Rojo
+01092_1	Verde
+01092_2	Rosa
+01092_3	Azul
+01092_4	Negro
+01099_0	Pop
+01099_1	Natural
+01099_2	Adorable
+01099_3	Chic
+01101_0	Madera clara
+01101_1	Madera naranja
+01101_2	Madera oscura
+01101_3	Negro
+01101_4	Cereza
+01101_5	Blanco
+01102_0	Madera clara
+01102_1	Madera naranja
+01102_2	Madera oscura
+01102_3	Negro
+01102_4	Cereza
+01102_5	Blanco
+01103_0	Madera clara
+01103_1	Madera natural
+01103_2	Madera oscura
+01103_3	Blanco
+01103_4	Negro
+01108_0	Marrón oscuro
+01108_1	Marrón
+01111_0	Gris
+01111_1	Negro
+01111_2	Marrón
+01111_3	Blanco
+01112_0	Multicolor
+01112_1	Azul y blanco
+01112_2	Ganar o perder
+01112_3	Negro y rojo
+01112_4	Objetos
+01117_0	Arena natural
+01117_1	Arena blanca
+01125_0	Marrón
+01125_1	Naranja
+01125_2	Plateado
+01127_0	Negro
+01127_1	Verde
+01127_2	Plateado
+01128_0	Blanco
+01128_1	Azul
+01128_2	Rojo
+01128_3	Rosa
+01128_4	Amarillo
+01128_5	Verde
+01128_6	Negro
+01141_0	Azul
+01141_1	Multicolor
+01141_2	Naranja
+01141_3	Blanco
+01141_4	Rosa
+01143_0	Negro
+01143_1	Verde
+01143_2	Plateado
+01157_0	Rojo
+01157_1	Marrón
+01157_2	Blanco
+01157_3	Negro
+01161_0	Marrón
+01161_1	Plateado
+01161_2	Blanco
+01161_3	Estampado floral
+01170_0	Madera clara
+01170_1	Madera natural
+01170_2	Madera blanca
+01170_3	Madera roja
+01170_4	Madera oscura
+01171_0	Negro
+01171_1	Rojo
+01171_2	Azul
+01171_3	Amarillo
+01171_4	Plateado
+01171_5	Marrón
+01177_0	Marrón
+01177_1	Marrón oscuro
+01177_2	Azul
+01179_0	Blanco
+01179_1	Negro
+01179_2	Marrón
+01179_3	Gris
+01179_4	Dorado
+01179_5	Plateado
+01185_0	Rojo
+01185_1	Verde
+01185_2	Azul
+01185_3	Amarillo
+01185_4	Marrón
+01185_5	Blanco
+01185_6	Negro
+01185_7	Dorado
+01189_0	Negro
+01189_1	Verde
+01189_2	Multicolor
+01189_3	Viejo
+01199_0	Rojo
+01199_1	Rosa
+01199_2	Azul
+01199_3	Amarillo
+01199_4	Negro
+01206_0	Dorado
+01206_1	Plateado
+01211_0	Negro
+01211_1	Azul
+01211_2	Marrón
+01211_3	Verde
+01211_4	Dorado
+01211_5	Plateado
+01221_0	Negro
+01221_1	Plateado
+01221_2	Rojo
+01222_0	Plateado
+01222_1	Negro
+01222_2	Rojo
+01222_3	Azul
+01227_0	Blanco
+01227_1	Negro
+01227_2	Azul
+01227_3	Rojo
+01227_4	Amarillo
+01227_5	Rosa
+01229_0	Blanco
+01229_1	Negro
+01229_2	Beis
+01232_0	Blanco
+01232_1	Negro
+01234_0	Menta
+01234_1	Rojo
+01234_2	Azul
+01234_3	Verde amarillento
+01234_4	Gris
+01235_0	Blanco
+01235_1	Plateado
+01235_2	Madera clara
+01235_3	Madera oscura
+01235_4	Azul
+01235_5	Rosa
+01235_6	Negro
+01241_0	Natural
+01241_1	Marrón ceniza
+01241_2	Marrón
+01241_3	Negro
+01241_4	Blanco
+01241_5	Azul fondo marino
+01241_6	Amarillo
+01241_7	Rojo
+01243_0	Pop
+01243_1	Adorable
+01243_2	Elegante
+01251_0	Natural
+01251_1	Marrón
+01251_2	Marrón oscuro
+01251_3	Blanco
+01253_0	Multicolor
+01253_1	Moderno
+01253_2	Adorable
+01253_3	Chic
+01263_0	Pera verde
+01263_1	Pera amarilla
+01274_0	Multicolor
+01274_1	Moderno
+01274_2	Adorable
+01274_3	Chic
+01275_0	Multicolor
+01275_1	Moderno
+01275_2	Adorable
+01275_3	Chic
+01276_0	Multicolor
+01276_1	Moderno
+01276_2	Adorable
+01276_3	Chic
+01278_0	Multicolor
+01278_1	Moderno
+01278_2	Adorable
+01278_3	Chic
+01279_0	Multicolor
+01279_1	Moderno
+01279_2	Adorable
+01279_3	Chic
+01286_0	Multicolor
+01286_1	Moderno
+01286_2	Adorable
+01286_3	Chic
+01288_0	Negro
+01288_1	Blanco
+01288_2	Marrón
+01288_3	Azul
+01288_4	Verde
+01288_5	Rojo
+01308_0	Natural y plateado
+01308_1	Marrón y blanco
+01308_2	Marrón claro y negro
+01308_3	Blanco y rojo
+01308_4	Gris y azul
+01308_5	Beis y verde
+01314_0	Beis
+01314_1	Gris
+01314_2	Plateado
+01314_3	Blanco
+01314_4	Rosa
+01314_5	Azulejo azul
+01319_0	Blanco
+01319_1	Plateado
+01319_2	Negro
+01328_0	Natural y plateado
+01328_1	Marrón y blanco
+01328_2	Marrón claro y negro
+01328_3	Blanco y rojo
+01328_4	Gris y azul
+01328_5	Beis y verde
+01330_0	Estándar
+01330_1	Madera
+01330_2	Blanco y negro
+01348_0	Azul
+01348_1	Rosa
+01348_2	Amarillo
+01348_3	Rojo
+01348_4	Marrón
+01411_0	Estándar
+01411_1	Sepia
+01411_2	Moderno
+01412_0	Negro
+01412_1	Blanco
+01432_0	Rojo
+01432_1	Azul
+01432_2	Verde
+01432_3	Amarillo
+01432_4	Rosa
+01432_5	Celeste
+01432_6	Negro
+01432_7	Dorado
+01434_0	Verde
+01434_1	Negro
+01434_2	Azul
+01434_3	Naranja
+01434_4	Amarillo
+01434_5	Púrpura
+01434_6	Blanco
+01434_7	Rojo
+01449_0	Natural
+01449_1	Blanco
+01449_2	Negro
+01493_0	Blanco
+01493_1	Azul
+01493_2	Rosa
+01493_3	Amarillo
+01493_4	Marrón
+01495_0	Rojo
+01495_1	Azul
+01495_2	Verde
+01495_3	Rosa
+01495_4	Púrpura
+01495_5	Blanco
+01499_0	Crema
+01499_1	Caramelo
+01499_2	Chocolate
+01499_3	Floral
+01499_4	Cuadros
+01499_5	Tweed
+01500_0	Crema
+01500_1	Caramelo
+01500_2	Chocolate
+01500_3	Floral
+01500_4	Cuadros
+01500_5	Tweed
+01501_0	Crema
+01501_1	Caramelo
+01501_2	Chocolate
+01501_3	Floral
+01501_4	Cuadros
+01501_5	Tweed
+01504_0	Crema
+01504_1	Caramelo
+01504_2	Chocolate
+01504_3	Floral
+01504_4	Cuadros
+01504_5	Tweed
+01507_0	Alegre
+01507_1	Clásico
+01507_2	Pastel
+01507_3	Elegante
+01509_0	Rojo
+01509_1	Azul
+01509_2	Amarillo
+01509_3	Verde
+01509_4	Rosa
+01509_5	Blanco
+01509_6	Negro
+01509_7	Plateado
+01557_0	Natural
+01557_1	Madera mixta
+01557_2	Multicolor
+01557_3	Tonos pastel
+01557_4	Tonos brillantes
+01558_0	Natural
+01558_1	Madera mixta
+01558_2	Multicolor
+01558_3	Tonos pastel
+01558_4	Tonos brillantes
+01559_0	Natural
+01559_1	Madera mixta
+01559_2	Multicolor
+01559_3	Tonos pastel
+01559_4	Tonos brillantes
+01561_0	Natural
+01561_1	Madera mixta
+01561_2	Multicolor
+01561_3	Tonos pastel
+01561_4	Tonos brillantes
+01565_0	Natural
+01565_1	Madera mixta
+01565_2	Multicolor
+01565_3	Tonos pastel
+01565_4	Tonos brillantes
+01567_0	Verde claro
+01567_1	Azul
+01567_2	Celeste
+01567_3	Naranja
+01567_4	Residuos peligrosos
+01567_5	Rojo
+01567_6	Verde
+01567_7	Oxidado
+01573_0	Rojo
+01573_1	Azul
+01573_2	Verde
+01573_3	Rosa claro
+01573_4	Negro
+01573_5	Blanco
+01573_6	Amarillo
+01573_7	Kanji «hisshou» (victoria)
+01598_0	Azul
+01598_1	Rosa
+01598_2	Blanco
+01598_3	Negro
+01598_4	Dorado
+01606_0	Natural
+01606_1	Marrón
+01606_2	Blanco
+01606_3	Blanco y plateado
+01606_4	Rojo
+01606_5	Negro
+01608_0	Negro
+01608_1	Blanco
+01608_2	Azul
+01620_0	Marrón
+01620_1	Marrón claro
+01620_2	Amarillo
+01620_3	Azul
+01620_4	Rosa
+01620_5	Blanco
+01620_6	Negro
+01621_0	Azul
+01621_1	Rojo, blanco y azul
+01621_2	Rosa
+01621_3	Amarillo
+01621_4	Verde
+01621_5	Negro
+01624_0	Alegre
+01624_1	Cansado
+01624_2	Sorprendido
+01624_3	Responsable
+01624_4	Hambriento
+01624_5	Despreocupado
+01624_6	Apasionado
+01624_7	Chulesco
+01625_0	Verde
+01625_1	Azul
+01625_2	Marrón
+01625_3	Negro
+01625_4	Blanco
+01626_0	Verde
+01626_1	Azul
+01626_2	Marrón
+01626_3	Negro
+01626_4	Blanco
+01627_0	Verde
+01627_1	Azul
+01627_2	Marrón
+01627_3	Negro
+01627_4	Blanco
+01628_0	Negro
+01628_1	Blanco
+01628_2	Bronce
+01631_0	Ladrillos rojos
+01631_1	Mosaico
+01631_2	Madera
+01631_3	Cemento
+01631_4	Acero inoxidable
+01632_0	Rojo
+01632_1	Verde
+01632_2	Rosa
+01632_3	Multicolor
+01632_4	Marrón
+01632_5	Plateado
+01644_0	Radiación solar
+01644_1	Rosa coral
+01644_2	Negro espacial
+01644_3	Rojo fuego
+01644_4	Amarillo anaranjado
+01644_5	Madera natural
+01644_6	Blanco chic
+01644_7	Azul hielo
+01645_0	Rojo oscuro
+01645_1	Madera natural
+01645_2	Cereza
+01645_3	Radiación solar
+01645_4	Verde mar
+01645_5	Blanco chic
+01645_6	Negro espacial
+01652_0	Rojo
+01652_1	Amarillo
+01652_2	Azul
+01652_3	Marrón
+01652_4	Verde
+01708_0	Rojo
+01708_1	Amarillo
+01708_2	Verde
+01708_3	Azul
+01708_4	Rosa
+01708_5	Plateado
+01708_6	Blanco
+01708_7	Negro
+01712_0	Negro
+01712_1	Plateado
+01712_2	Dorado
+01712_3	Blanco
+01712_4	Rojo
+01712_5	Azul
+01712_6	Verde
+01712_7	Marrón
+01716_0	Gris
+01716_1	Blanco
+01716_2	Negro
+01716_3	Madera oscura
+01716_4	Madera clara
+01744_0	Plateado
+01744_1	Blanco
+01744_2	Negro
+01744_3	Rojo
+01744_4	Azul
+01745_0	Blanco
+01745_1	Negro
+01753_0	Blanco
+01753_1	Marrón
+01753_2	Verde
+01753_3	Rosa
+01753_4	Crema
+01753_5	Negro
+01757_0	Blanco
+01757_1	Negro
+01757_2	Rojo
+01757_3	Azul
+01757_4	Rosa
+01757_5	Amarillo
+01759_0	Literatura
+01759_1	Cómics
+01759_2	Guías
+01759_3	Libros antiguos
+01778_0	Plateado
+01778_1	Azul
+01783_0	Natural
+01783_1	Blanco
+01783_2	Azul
+01797_0	Sin pintar
+01797_1	Ánade real
+01797_2	Picopinto
+01797_3	Porrón moñudo
+01797_4	Porrón común
+01797_5	Pato vapor austral
+01797_6	Pato común
+01799_0	Natural
+01799_1	Verde
+01799_2	Azul
+01799_3	Rojo
+01799_4	Negro
+01802_0	Rojo
+01802_1	Azul
+01802_2	Blanco
+01802_3	Negro
+01802_4	Verde
+01802_5	Rosa
+01803_0	Amarillo dorado
+01803_1	Negro espacial
+01803_2	Blanco perla
+01803_3	Madera natural
+01803_4	Azul metálico
+01803_5	Rojo metálico
+01803_6	Verde metálico
+01803_7	Gris metálico
+01804_0	Blanco chic
+01804_1	Madera natural
+01804_2	Radiación solar
+01804_3	Negro espacial
+01804_4	Mar profundo
+01804_5	Verde ceniza
+01804_6	Rosa eléctrico
+01804_7	Plata espacial
+01816_0	Gris
+01816_1	Beis
+01816_2	Marrón
+01816_3	Marrón oscuro
+01816_4	Negro
+01816_5	Azul
+01816_6	Rosa
+01816_7	Verde
+01823_0	Negro
+01823_1	Blanco
+01823_2	Azul
+01823_3	Amarillo
+01829_0	Marrón
+01829_1	Azul
+01829_2	Amarillo
+01829_3	Negro
+01829_4	Blanco
+01836_0	Blanco
+01836_1	Natural
+01836_2	Marrón
+01836_3	Rosa
+01836_4	Amarillo
+01836_5	Verde
+01836_6	Azul
+01836_7	Púrpura
+01840_0	Blanco
+01840_1	Negro
+01845_0	Rojo
+01845_1	Amarillo
+01845_2	Verde
+01845_3	Azul
+01845_4	Negro
+01845_5	Azul marino
+01845_6	Blanco
+01850_0	Negro
+01850_1	Plateado
+01850_2	Blanco
+01850_3	Rojo
+01850_4	Rosa
+01850_5	Azul
+01850_6	Dorado
+01851_0	Azul
+01851_1	Rojo
+01851_2	Amarillo
+01851_3	Turquesa
+01851_4	Púrpura
+01851_5	Verde
+01851_6	Rosa
+01852_0	Turquesa
+01852_1	Rosa
+01852_2	Naranja
+01852_3	Azul marino
+01852_4	Amarillo
+01852_5	Magenta
+01852_6	Blanco
+01852_7	Negro
+01853_0	Turquesa
+01853_1	Rosa
+01853_2	Naranja
+01853_3	Azul marino
+01853_4	Amarillo
+01853_5	Magenta
+01853_6	Blanco
+01853_7	Negro
+01866_0	Natural
+01866_1	Marrón oscuro
+01866_2	Blanco
+01866_3	Azul
+01866_4	Rojo
+01868_0	Dorado
+01868_1	Rojo
+01868_2	Rosa
+01868_3	Azul
+01868_4	Blanco
+01868_5	Negro
+01870_0	Blanco
+01870_1	Amarillo
+01870_2	Rojo
+01870_3	Azul
+01870_4	Verde
+01870_5	Rosa
+01870_6	Turquesa
+01870_7	Negro
+01875_0	Negro
+01875_1	Blanco
+01875_2	Nogal
+01875_3	Cerezo
+01877_0	Rosa
+01877_1	Azul
+01877_2	Verde
+01877_3	Blanco
+01877_4	Marrón
+01877_5	Negro
+01877_6	Estampado floral
+01881_0	Rojo
+01881_1	Azul
+01881_2	Verde
+01881_3	Blanco
+01881_4	Gris
+01888_0	Blanco
+01888_1	Plateado
+01888_2	Marrón
+01888_3	Burdeos
+01888_4	Negro
+01889_0	Rojo
+01889_1	Azul
+01889_2	Verde
+01889_3	Blanco
+01889_4	Turquesa
+01889_5	Marrón
+01889_6	Negro
+01889_7	Rosa
+01892_0	Natural
+01892_1	Blanco
+01892_2	Negro
+01892_3	Marrón
+01899_0	Firmas
+01899_1	Palmas
+01899_2	Ilustraciones
+01899_3	Citas célebres
+01906_0	Rojo
+01906_1	Negro
+01906_2	Blanco
+01906_3	Natural
+01913_0	Madera clara
+01913_1	Blanco
+01913_2	Cereza
+01913_3	Madera oscura
+01913_4	Negro
+01913_5	Verde
+01913_6	Azul
+01913_7	Rosa
+01929_0	Blanco
+01929_1	Madera natural
+01929_2	Madera oscura
+02010_0	Baloncesto
+02010_1	Fútbol
+02010_2	Voleibol
+02010_3	Balón prisionero
+02012_0	Vacía
+02012_1	Garabatos
+02012_2	Clase de idiomas
+02012_3	Matemáticas
+02012_4	Música
+02012_5	Torneo deportivo
+02012_6	Arte
+02013_0	Marrón claro
+02013_1	Marrón oscuro
+02014_0	Marrón claro
+02014_1	Marrón oscuro
+02014_2	Blanco
+02020_0	Marrón claro
+02020_1	Marrón oscuro
+02020_2	Blanco
+02020_3	Negro
+02099_0	Rojo
+02099_1	Amarillo
+02099_2	Verde
+02099_3	Azul
+02099_4	Púrpura
+02099_5	Rosa
+02099_6	Blanco
+02099_7	Negro
+02319_0	Marfil
+02319_1	Gris
+02319_2	Marrón
+02319_3	Negro
+02326_0	Verde
+02326_1	Negro
+02326_2	Plateado
+02326_3	Óxido
+02329_0	Negro
+02329_1	Rojo
+02329_2	Amarillo
+02329_3	Turquesa
+02329_4	Azul
+02329_5	Blanco
+02333_0	Azul
+02333_1	Negro
+02335_0	Rojo
+02335_1	Negro
+02335_2	Azul
+02335_3	Blanco
+02335_4	Amarillo
+02335_5	Marrón
+02352_0	Sin logo
+02352_1	Rojo
+02352_2	Verde
+02358_0	Blanco
+02358_1	Rojo
+02358_2	Amarillo
+02358_3	Verde
+02358_4	Azul
+02358_5	Púrpura
+02377_0	Azul
+02377_1	Amarillo
+02377_2	Verde
+02377_3	Rojo
+02377_4	Púrpura
+02377_5	Rosa
+02377_6	Blanco
+02377_7	Negro
+02379_0	Azul
+02379_1	Naranja
+02379_2	Verde
+02379_3	Rojo
+02379_4	Púrpura
+02379_5	Rosa
+02379_6	Blanco
+02379_7	Negro
+02553_0	Rojo
+02553_1	Gris
+02553_2	Negro
+02554_0	Rojo
+02554_1	Amarillo
+02554_2	Verde
+02554_3	Azul
+02554_4	Blanco
+02554_5	Marrón claro
+02554_6	Marrón oscuro
+02554_7	Negro
+02558_0	Natural
+02558_1	Madera mixta
+02558_2	Multicolor
+02558_3	Tonos pastel
+02558_4	Tonos brillantes
+02559_0	Marrón
+02559_1	Blanco
+02559_2	Negro
+02559_3	Beis
+02559_4	Gris
+02560_0	Madera clara
+02560_1	Blanco
+02560_2	Cereza
+02560_3	Madera oscura
+02560_4	Negro
+02560_5	Verde
+02560_6	Azul
+02560_7	Rosa
+02561_0	Natural
+02561_1	Marrón
+02561_2	Blanco
+02561_3	Negro
+02562_0	Dorado
+02562_1	Plateado
+02562_2	Cobre
+02562_3	Negro
+02562_4	Blanco
+02575_0	Natural
+02575_1	Marrón oscuro
+02575_2	Blanco
+02575_3	Azul
+02575_4	Rosa
+02575_5	Verde
+02575_6	Madera envejecida
+02586_0	Pino
+02586_1	Roble
+02586_2	Madera desgastada
+02596_0	Manzana roja
+02596_1	Manzana verde
+02605_0	Madera clara
+02605_1	Blanco
+02605_2	Cereza
+02605_3	Madera oscura
+02605_4	Negro
+02605_5	Verde
+02605_6	Azul
+02605_7	Rosa
+02606_0	Natural
+02606_1	Marrón oscuro
+02606_2	Blanco
+02606_3	Azul
+02606_4	Rosa
+02606_5	Verde
+02606_6	Madera envejecida
+02614_0	Verde
+02614_1	Amarillo
+02614_2	Rosa
+02614_3	Azul
+02614_4	Blanco
+02614_5	Negro
+02713_0	Blanco
+02713_1	Rojo
+02713_2	Rosa
+02713_3	Amarillo
+02713_4	Azul
+02713_5	Marrón
+02713_6	Negro
+02713_7	Plateado
+02731_0	Naranja
+02731_1	Lima
+02731_2	Celeste
+02731_3	Azul
+02731_4	Púrpura
+02731_5	Rosa
+02731_6	Blanco
+02731_7	Negro
+02736_0	Azul
+02736_1	Verde
+02736_2	Naranja
+02740_0	Blanco
+02740_1	Rosa
+02740_2	Azul
+02740_3	Verde
+02740_4	Amarillo
+02740_5	Negro
+02770_0	Marrón
+02770_1	Negro
+02771_0	Blanco
+02771_1	Negro
+02771_2	Rojo
+02771_3	Verde
+02771_4	Naranja
+02771_5	Celeste
+02772_0	Natural
+02772_1	Blanco
+02772_2	Negro
+02776_0	Blanco
+02776_1	Marfil
+02776_2	Rosa
+02776_3	Celeste
+02776_4	Negro
+02822_0	Rojo
+02822_1	Amarillo
+02822_2	Verde
+02822_3	Azul
+02822_4	Púrpura
+02822_5	Rosa
+02822_6	Blanco
+02822_7	Gris
+03063_0	Madera oscura
+03063_1	Madera natural
+03064_0	Azul
+03064_1	Rojo
+03064_2	Amarillo
+03064_3	Verde
+03078_0	Verde
+03078_1	Azul
+03078_2	Blanco
+03078_3	Gris
+03078_4	Negro
+03122_0	Natural
+03122_1	Marrón
+03122_2	Marrón ceniza
+03122_3	Gris
+03122_4	Amarillo
+03122_5	Verde
+03122_6	Azul
+03122_7	Rosa
+03191_0	Abedul
+03191_1	Teca
+03191_2	Nogal
+03191_3	Madera vieja
+03191_4	Roble
+03193_0	Abedul
+03193_1	Teca
+03193_2	Nogal
+03193_3	Madera vieja
+03193_4	Roble
+03194_0	Abedul
+03194_1	Teca
+03194_2	Nogal
+03194_3	Madera vieja
+03194_4	Roble
+03195_0	Abedul
+03195_1	Teca
+03195_2	Nogal
+03195_3	Madera vieja
+03195_4	Roble
+03196_0	Abedul
+03196_1	Teca
+03196_2	Nogal
+03196_3	Madera vieja
+03196_4	Roble
+03200_0	Abedul
+03200_1	Teca
+03200_2	Nogal
+03200_3	Madera vieja
+03200_4	Roble
+03205_0	Natural
+03205_1	Madera mixta
+03205_2	Multicolor
+03205_3	Tonos pastel
+03205_4	Tonos brillantes
+03206_0	Natural
+03206_1	Madera mixta
+03206_2	Multicolor
+03206_3	Tonos pastel
+03206_4	Tonos brillantes
+03208_0	Natural
+03208_1	Madera mixta
+03208_2	Multicolor
+03208_3	Tonos pastel
+03208_4	Tonos brillantes
+03251_0	Plateado
+03251_1	Blanco
+03251_2	Rojo
+03251_3	Azul
+03251_4	Negro
+03252_0	Negro
+03252_1	Blanco
+03252_2	Plateado
+03252_3	Rojo
+03252_4	Azul
+03270_0	Abedul
+03270_1	Teca
+03270_2	Nogal
+03270_3	Madera vieja
+03270_4	Roble
+03271_0	Abedul
+03271_1	Teca
+03271_2	Nogal
+03271_3	Madera vieja
+03271_4	Roble
+03275_0	Abedul
+03275_1	Teca
+03275_2	Nogal
+03275_3	Madera vieja
+03275_4	Roble
+03282_0	Blanco
+03282_1	Amarillo
+03282_2	Celeste
+03282_3	Verde
+03282_4	Rojo
+03282_5	Plateado
+03305_0	Rojo
+03305_1	Rosa
+03305_2	Amarillo
+03305_3	Verde
+03305_4	Azul
+03305_5	Blanco
+03305_6	Negro
+03307_0	Blanco
+03307_1	Negro
+03307_2	Rojo
+03307_3	Azul
+03307_4	Amarillo
+03307_5	Verde
+03307_6	Marrón
+03333_0	Negro
+03333_1	Blanco
+03333_2	Plateado
+03333_3	Rojo
+03333_4	Amarillo
+03333_5	Azul
+03333_6	Rosa
+03333_7	Celeste
+03340_0	Natural
+03340_1	Ceniza
+03340_2	Marfil
+03340_3	Blanco
+03340_4	Negro
+03345_0	Azul
+03345_1	Blanco
+03345_2	Amarillo
+03345_3	Verde
+03345_4	Rojo
+03346_0	Azul
+03346_1	Verde
+03346_2	Rojo
+03346_3	Blanco
+03346_4	Azul y amarillo
+03346_5	Verde y naranja
+03346_6	Celeste y rosa
+03346_7	Blanco y negro
+03348_0	Azul
+03348_1	Rosa
+03348_2	Verde
+03348_3	Naranja
+03348_4	Multicolor
+03348_5	Lunares
+03396_0	Pino
+03396_1	Roble
+03396_2	Madera desgastada
+03400_0	Blanco
+03400_1	Negro
+03400_2	Plateado
+03400_3	Rojo
+03400_4	Azul
+03400_5	Amarillo
+03402_0	Natural
+03402_1	Blanco
+03402_2	Negro
+03402_3	Verde
+03402_4	Azul
+03402_5	Rosa
+03402_6	Amarillo
+03402_7	Púrpura
+03406_0	Natural
+03406_1	Blanco
+03406_2	Rojo
+03406_3	Azul
+03406_4	Amarillo
+03407_0	Negro
+03407_1	Azul oscuro
+03407_2	Blanco
+03407_3	Rojo
+03407_4	Dorado
+03416_0	Vainilla
+03416_1	Mora
+03416_2	Mango
+03416_3	Tropical
+03416_4	Té verde
+03416_5	Nata y chocolate
+03416_6	Nata y fresa
+03416_7	Arcoíris
+03428_0	Negro
+03428_1	Blanco
+03428_2	Plateado
+03428_3	Rojo
+03428_4	Azul
+03430_0	Multicolor
+03430_1	Blanco y negro
+03430_2	Rojo
+03430_3	Azul
+03430_4	Verde
+03431_0	Verde
+03431_1	Azul
+03431_2	Rojo
+03431_3	Amarillo
+03431_4	Blanco
+03431_5	Negro
+03431_6	Plateado
+03431_7	Marrón
+03436_0	Madera clara
+03436_1	Blanco
+03436_2	Cereza
+03436_3	Madera oscura
+03436_4	Negro
+03436_5	Verde
+03436_6	Azul
+03436_7	Rosa
+03438_0	Madera clara
+03438_1	Blanco
+03438_2	Cereza
+03438_3	Madera oscura
+03438_4	Negro
+03438_5	Verde
+03438_6	Azul
+03438_7	Rosa
+03439_0	Madera clara
+03439_1	Blanco
+03439_2	Cereza
+03439_3	Madera oscura
+03439_4	Negro
+03439_5	Verde
+03439_6	Azul
+03439_7	Rosa
+03442_0	Natural
+03442_1	Marrón
+03442_2	Marrón oscuro
+03442_3	Blanco
+03442_4	Azul marino
+03442_5	Negro
+03443_0	Amarillo
+03443_1	Verde
+03443_2	Azul
+03443_3	Marfil
+03443_4	Rosa
+03443_5	Negro
+03445_0	Negro
+03445_1	Blanco
+03445_2	Plateado
+03445_3	Verde
+03446_0	Blanco
+03446_1	Gris
+03446_2	Negro
+03446_3	Marrón
+03446_4	Con musgo
+03449_0	Madera clara
+03449_1	Blanco
+03449_2	Cereza
+03449_3	Madera oscura
+03449_4	Negro
+03449_5	Verde
+03449_6	Azul
+03449_7	Rosa
+03465_0	Negro
+03465_1	Blanco
+03467_0	Verde
+03467_1	Azul
+03467_2	Rojo
+03467_3	Blanco
+03471_0	Plateado
+03471_1	Dorado
+03471_2	Blanco
+03471_3	Madera veteada
+03490_0	Madera clara
+03490_1	Madera natural
+03490_2	Cereza
+03490_3	Madera oscura
+03490_4	Negro
+03490_5	Madera blanca
+03497_0	Natural
+03497_1	Azul
+03497_2	Rosa
+03497_3	Amarilla
+03497_4	Naranja
+03497_5	Verde
+03497_6	Morada
+03498_0	Natural
+03498_1	Azul
+03498_2	Rosa
+03498_3	Amarilla
+03498_4	Naranja
+03498_5	Verde
+03498_6	Morada
+03499_0	Natural
+03499_1	Azul
+03499_2	Rosa
+03499_3	Amarilla
+03499_4	Naranja
+03499_5	Verde
+03499_6	Morada
+03500_0	Natural
+03500_1	Azul
+03500_2	Rosa
+03500_3	Amarilla
+03500_4	Naranja
+03500_5	Verde
+03500_6	Morada
+03501_0	Natural
+03501_1	Azul
+03501_2	Rosa
+03501_3	Amarilla
+03501_4	Naranja
+03501_5	Verde
+03501_6	Morada
+03502_0	Natural
+03502_1	Azul
+03502_2	Rosa
+03502_3	Amarilla
+03502_4	Naranja
+03502_5	Verde
+03502_6	Morada
+03503_0	Natural
+03503_1	Azul
+03503_2	Rosa
+03503_3	Amarilla
+03503_4	Naranja
+03503_5	Verde
+03503_6	Morada
+03504_0	Natural
+03504_1	Azul
+03504_2	Rosa
+03504_3	Amarilla
+03504_4	Naranja
+03504_5	Verde
+03504_6	Morada
+03505_0	Natural
+03505_1	Azul
+03505_2	Rosa
+03505_3	Amarilla
+03505_4	Naranja
+03505_5	Verde
+03505_6	Morada
+03509_0	Negro
+03509_1	Verde
+03509_2	Azul marino
+03509_3	Rojo
+03509_4	Plateado
+03509_5	Blanco
+03551_0	Verde
+03551_1	Seco
+03551_2	Ahumado
+03553_0	Verde
+03553_1	Seco
+03553_2	Ahumado
+03554_0	Verde
+03554_1	Seco
+03554_2	Ahumado
+03556_0	Verde
+03556_1	Seco
+03556_2	Ahumado
+03557_0	Verde
+03557_1	Seco
+03557_2	Ahumado
+03558_0	Verde
+03558_1	Seco
+03558_2	Ahumado
+03559_0	Negro
+03559_1	Blanco
+03560_0	Negro
+03560_1	Blanco
+03561_0	Negro
+03561_1	Blanco
+03562_0	Negro
+03562_1	Blanco
+03563_0	Negro
+03563_1	Blanco
+03581_0	Pescado
+03581_1	Calamares
+03581_2	Pulpos
+03582_0	Literatura occidental
+03582_1	Literatura oriental
+03582_2	Enciclopedia
+03582_3	Libro de texto
+03583_0	Gran pesca
+03583_1	Longevidad
+03583_2	Abundancia
+03583_3	Inauguración
+03584_0	Alfabeto
+03584_1	Tablas de multiplicar
+03584_2	Tabla periódica
+03584_3	Constelaciones
+03587_0	Natural
+03587_1	Blanco
+03587_2	Negro
+03588_0	Residencia
+03588_1	Bosque
+03588_2	Área de pesca
+03588_3	Oficina de gestión vecinal
+03588_4	Aeródromo
+03588_5	Tienda
+03588_6	Sastrería
+03588_7	Museo
+03590_0	Negro
+03590_1	Plateado
+03590_2	Blanco
+03590_3	Rosa
+03591_0	Multicolor
+03591_1	Rosa
+03591_2	Azul
+03591_3	Verde
+03591_4	Naranja
+03591_5	Elegante
+03592_0	Nata
+03592_1	Chocolate
+03592_2	Fresa
+03593_0	Multicolor
+03593_1	Rosa
+03593_2	Azul
+03593_3	Verde
+03593_4	Naranja
+03593_5	Elegante
+03594_0	Multicolor
+03594_1	Rosa
+03594_2	Azul
+03594_3	Verde
+03594_4	Naranja
+03594_5	Elegante
+03595_0	Negro
+03595_1	Plateado
+03595_2	Blanco
+03595_3	Marrón
+03596_0	Blanco
+03596_1	Marrón
+03596_2	Gris
+03616_0	Blanco
+03616_1	Rojo
+03616_2	Azul
+03616_3	Amarillo
+03616_4	Negro
+03616_5	Madera oscura
+03616_6	Madera natural
+03616_7	Madera blanca
+03617_0	Natural
+03617_1	Marrón oscuro
+03617_2	Marrón claro
+03617_3	Verde
+03617_4	Rosa
+03617_5	Blanco
+03617_6	Negro
+03617_7	Naranja y plata
+03618_0	Sin barnizar
+03618_1	Roble
+03618_2	Nogal
+03618_3	Natural
+03619_0	Sopa de maíz
+03619_1	Estofado
+03619_2	Curry
+03619_3	Sopa minestrone
+03619_4	Sopa de remolacha
+03619_5	Curry verde
+03619_6	Sopa agripicante
+03619_7	Sopa de arroz
+03621_0	Natural
+03621_1	Marrón
+03621_2	Blanco
+03621_3	Negro
+03621_4	Azul
+03621_5	Naranja
+03621_6	Celeste
+03621_7	Rosa
+03622_0	Natural
+03622_1	Madera clara
+03622_2	Madera oscura
+03622_3	Negro
+03623_0	Verde
+03623_1	Rosa
+03623_2	Azul
+03623_3	Gris
+03624_0	Blanco
+03624_1	Celeste
+03624_2	Amarillo
+03624_3	Rojo
+03624_4	Azul
+03658_0	Verde
+03658_1	Seco
+03658_2	Ahumado
+03672_0	Liso
+03672_1	Etiquetado
+03672_2	Naranjas
+03672_3	Manzanas
+03672_4	Melocotones
+03672_5	Peras
+03672_6	Cerezas
+03675_0	Marrón
+03675_1	Verde pálido
+03675_2	Verde
+03681_0	Negro
+03681_1	Rojo
+03681_2	Blanco
+03681_3	Azul
+03681_4	Marrón
+03681_5	Verde
+03681_6	Verde claro
+03681_7	Pardo
+03683_0	Natural
+03683_1	Ébano
+03683_2	Madera oscura
+03683_3	Madera clara y azulejos
+03683_4	Madera gris y azulejos
+03683_5	Madera negra y azulejos
+03692_0	Natural
+03692_1	Blanco
+03692_2	Madera oscura
+03697_0	Blanco
+03697_1	Amarillo
+03697_2	Rojo
+03697_3	Rosa
+03697_4	Azul
+03697_5	Celeste
+03697_6	Verde
+03697_7	Negro
+03699_0	Jurel gigante
+03699_1	Pargo rojo
+03699_2	Pez espada
+03699_3	Calamar
+03699_4	Perca
+03699_5	Carpa
+03699_6	Pez cabeza de serpiente
+03701_0	Natural
+03701_1	Marrón claro
+03701_2	Marrón oscuro
+03701_3	Blanco
+03702_0	Natural
+03702_1	Marrón claro
+03702_2	Marrón oscuro
+03702_3	Blanco
+03773_0	Negro
+03773_1	Dorado
+03773_2	Marrón
+03775_0	Negro
+03775_1	Dorado
+03775_2	Marrón
+03776_0	Rojo
+03776_1	Blanco
+03776_2	Gris
+03783_0	Madera oscura
+03783_1	Ébano
+03783_2	Madera roja
+03783_3	Madera natural
+03783_4	Blanco
+03784_0	Negro
+03784_1	Blanco
+03784_2	Pardo
+03784_3	Marrón
+03784_4	Verde
+03784_5	Rojo
+03785_0	Verde claro
+03785_1	Amarillo
+03785_2	Rojo
+03785_3	Verde
+03805_0	Común
+03805_1	Blanco
+03805_2	Misterioso
+03805_3	Rojo
+03805_4	Amarillo
+03806_0	Común
+03806_1	Blanco
+03806_2	Misterioso
+03806_3	Rojo
+03806_4	Amarillo
+03808_0	Común
+03808_1	Blanco
+03808_2	Misterioso
+03808_3	Rojo
+03808_4	Amarillo
+03816_0	Verde
+03816_1	Marrón
+03816_2	Blanco
+03816_3	Negro
+03818_0	Deporte
+03818_1	Universidad
+03818_2	Clásico
+03818_3	Patrocinador
+03818_4	Souvenir
+03819_0	Sin pintar
+03819_1	Verde
+03819_2	Amarillo
+03819_3	Rojo
+03819_4	Blanco
+03819_5	Oxidado
+03820_0	Blanco
+03820_1	Negro
+03820_2	Celeste
+03820_3	Rosa
+03821_0	Blanco
+03821_1	Negro
+03821_2	Rosa
+03821_3	Verde
+03821_4	Amarillo
+03822_0	Gris
+03822_1	Marrón
+03822_2	Negro
+03943_0	Abedul
+03943_1	Teca
+03943_2	Nogal
+03943_3	Madera vieja
+03943_4	Roble
+03946_0	Blanco
+03946_1	Negro
+03946_2	Verde
+03946_3	Azul
+03946_4	Rojo
+03947_0	Blanco
+03947_1	Negro
+03947_2	Verde
+03947_3	Azul
+03947_4	Rojo
+03948_0	Blanco
+03948_1	Rosa
+03948_2	Negro
+03948_3	Marrón
+03948_4	Celeste
+03949_0	Rojo
+03949_1	Burdeos
+03949_2	Verde
+03949_3	Rosa
+03949_4	Blanco
+03950_0	Marrón
+03950_1	Natural
+03950_2	Negro
+03951_0	Marrón
+03951_1	Natural
+03951_2	Negro
+03952_0	Marrón
+03952_1	Natural
+03952_2	Negro
+03953_0	Marrón
+03953_1	Natural
+03953_2	Negro
+03954_0	Marrón
+03954_1	Natural
+03954_2	Negro
+03955_0	Marrón
+03955_1	Natural
+03955_2	Negro
+03956_0	Marrón
+03956_1	Natural
+03956_2	Negro
+03957_0	Marrón
+03957_1	Natural
+03957_2	Negro
+03958_0	Marrón
+03958_1	Natural
+03958_2	Negro
+03959_0	Marrón
+03959_1	Natural
+03959_2	Negro
+03960_0	Azul
+03960_1	Rojo
+03960_2	Verde
+03960_3	Amarillo
+03960_4	Verde bosque
+03960_5	Cuadros
+03961_0	Púrpura
+03961_1	Negro
+03962_0	Azul
+03962_1	Verde
+03962_2	Púrpura
+03962_3	Rosa
+03962_4	Lima
+03962_5	Lunares
+03962_6	Arcoíris
+03962_7	Camuflaje
+03965_0	Amarillo
+03965_1	Rosa
+03965_2	Celeste
+03965_3	Blanco
+03966_0	Multicolor
+03966_1	Azul
+03966_2	Rojo
+03966_3	Rosa
+03966_4	Dorado
+03966_5	Blanco
+03967_0	Natural
+03967_1	Blanco
+03967_2	Marrón oscuro
+03967_3	Multicolor
+03970_0	Rojo
+03970_1	Azul
+03970_2	Marrón
+03970_3	Negro
+03971_0	Rojo
+03971_1	Azul
+03971_2	Marrón
+03971_3	Negro
+03972_0	Rojo
+03972_1	Azul
+03972_2	Marrón
+03972_3	Negro
+03973_0	Rojo
+03973_1	Azul
+03973_2	Marrón
+03973_3	Negro
+03974_0	Rojo
+03974_1	Azul
+03974_2	Marrón
+03974_3	Negro
+03975_0	Naranja
+03975_1	Naranja sanguina
+03976_0	Naranja
+03976_1	Naranja sanguina
+03977_0	Blanco
+03977_1	Marrón
+03977_2	Rosa
+03977_3	Amarillo
+03977_4	Morado
+03977_5	Perlado
+03978_0	Blanco
+03978_1	Marrón
+03978_2	Rosa
+03978_3	Amarillo
+03978_4	Morado
+03978_5	Perlado
+03979_0	Blanco
+03979_1	Marrón
+03979_2	Rosa
+03979_3	Amarillo
+03979_4	Morado
+03979_5	Perlado
+03980_0	Blanco
+03980_1	Marrón
+03980_2	Rosa
+03980_3	Amarillo
+03980_4	Morado
+03980_5	Perlado
+03982_0	Blanco
+03982_1	Marrón
+03982_2	Rosa
+03982_3	Amarillo
+03982_4	Morado
+03982_5	Perlado
+03983_0	Blanco
+03983_1	Marrón
+03983_2	Rosa
+03983_3	Amarillo
+03983_4	Morado
+03983_5	Perlado
+03984_0	Blanco
+03984_1	Marrón
+03984_2	Rosa
+03984_3	Amarillo
+03984_4	Morado
+03984_5	Perlado
+03986_0	Negro
+03986_1	Blanco
+03986_2	Plateado
+03986_3	Rojo
+03986_4	Amarillo
+03986_5	Azul
+03986_6	Rosa
+03986_7	Celeste
+03987_0	Blanco
+03987_1	Negro
+03987_2	Plateado
+03987_3	Gris
+03987_4	Rojo
+03987_5	Azul
+03991_0	Multicolor
+03991_1	Azul
+03991_2	Rojo
+03991_3	Rosa
+03991_4	Dorado
+03991_5	Blanco
+03992_0	Madera oscura
+03992_1	Ébano
+03992_2	Blanco
+03992_3	Negro
+03993_0	Rojo
+03993_1	Amarillo
+03993_2	Verde
+03993_3	Azul
+03993_4	Rosa
+03993_5	Marfil
+03993_6	Celeste
+03993_7	Plateado
+03995_0	Blanco
+03995_1	Celeste
+03995_2	Amarillo
+03995_3	Rojo
+03995_4	Azul
+03996_0	Blanco
+03996_1	Celeste
+03996_2	Amarillo
+03996_3	Rojo
+03996_4	Azul
+03997_0	Blanco
+03997_1	Celeste
+03997_2	Amarillo
+03997_3	Rojo
+03997_4	Azul
+03998_0	Blanco
+03998_1	Celeste
+03998_2	Amarillo
+03998_3	Rojo
+03998_4	Azul
+03999_0	Blanco
+03999_1	Celeste
+03999_2	Amarillo
+03999_3	Rojo
+03999_4	Azul
+04000_0	Blanco
+04000_1	Celeste
+04000_2	Amarillo
+04000_3	Rojo
+04000_4	Azul
+04001_0	Blanco
+04001_1	Celeste
+04001_2	Amarillo
+04001_3	Rojo
+04001_4	Azul
+04002_0	Blanco
+04002_1	Celeste
+04002_2	Amarillo
+04002_3	Rojo
+04002_4	Azul
+04003_0	Blanco
+04003_1	Celeste
+04003_2	Amarillo
+04003_3	Rojo
+04003_4	Azul
+04006_0	Natural
+04006_1	Rosa
+04006_2	Azul
+04006_3	Blanco
+04009_0	Blanco
+04009_1	Negro
+04009_2	Plateado
+04009_3	Rojo
+04009_4	Celeste
+04009_5	Rosa
+04009_6	Amarillo
+04011_0	Cereza
+04011_1	Picota
+04012_0	Cereza
+04012_1	Picota
+04013_0	Rojo
+04013_1	Azul
+04013_2	Negro
+04014_0	Negro
+04014_1	Blanco
+04014_2	Amarillo
+04014_3	Rojo
+04014_4	Azul
+04014_5	Verde claro
+04014_6	Gris
+04014_7	Plateado
+04015_0	Blanco
+04015_1	Rosa
+04015_2	Azul
+04015_3	Negro
+04017_0	Plateado
+04017_1	Dorado
+04017_2	Cobre
+04017_3	Negro
+04019_0	Plateado
+04019_1	Rojo
+04019_2	Rosa
+04019_3	Celeste
+04019_4	Amarillo
+04019_5	Negro
+04023_0	Marrón
+04023_1	Negro
+04023_2	Plateado
+04025_0	Sin esmaltar
+04025_1	Blanco
+04025_2	Índigo
+04025_3	Estilo Oribe
+04025_4	Moderno
+04025_5	Estampado
+04027_0	Amarillo
+04027_1	Rosa
+04027_2	Azul
+04027_3	Blanco
+04027_4	Multicolor
+04029_0	Negro
+04029_1	Blanco
+04029_2	Verde
+04029_3	Azul
+04029_4	Rojo
+04029_5	Amarillo
+04029_6	Naranja
+04029_7	Plateado
+04030_0	Plateado
+04030_1	Dorado
+04030_2	Cobre
+04030_3	Negro
+04033_0	Sencillo
+04033_1	Carpas
+04033_2	Floral
+04035_0	Madera oscura
+04035_1	Madera naranja
+04035_2	Madera blanca
+04035_3	Abedul
+04036_0	Madera oscura
+04036_1	Madera naranja
+04036_2	Madera blanca
+04036_3	Abedul
+04037_0	Madera oscura
+04037_1	Madera naranja
+04037_2	Madera blanca
+04037_3	Abedul
+04038_0	Madera oscura
+04038_1	Madera naranja
+04038_2	Madera blanca
+04038_3	Abedul
+04039_0	Madera oscura
+04039_1	Madera naranja
+04039_2	Madera blanca
+04039_3	Abedul
+04040_0	Madera oscura
+04040_1	Madera naranja
+04040_2	Madera blanca
+04040_3	Abedul
+04041_0	Madera oscura
+04041_1	Madera naranja
+04041_2	Madera blanca
+04041_3	Abedul
+04042_0	Madera oscura
+04042_1	Madera naranja
+04042_2	Madera blanca
+04042_3	Abedul
+04043_0	Madera oscura
+04043_1	Madera naranja
+04043_2	Madera blanca
+04043_3	Abedul
+04044_0	Madera oscura
+04044_1	Madera naranja
+04044_2	Madera blanca
+04044_3	Abedul
+04045_0	Marrón
+04045_1	Marrón rojizo
+04045_2	Marrón claro
+04045_3	Blanco
+04045_4	Gris
+04045_5	Negro
+04046_0	Marrón
+04046_1	Marrón rojizo
+04046_2	Marrón claro
+04046_3	Blanco
+04046_4	Gris
+04046_5	Negro
+04047_0	Marrón
+04047_1	Marrón rojizo
+04047_2	Marrón claro
+04047_3	Blanco
+04047_4	Gris
+04047_5	Negro
+04048_0	Marrón
+04048_1	Marrón rojizo
+04048_2	Marrón claro
+04048_3	Blanco
+04048_4	Gris
+04048_5	Negro
+04049_0	Marrón
+04049_1	Marrón rojizo
+04049_2	Marrón claro
+04049_3	Blanco
+04049_4	Gris
+04049_5	Negro
+04050_0	Marrón
+04050_1	Marrón rojizo
+04050_2	Marrón claro
+04050_3	Blanco
+04050_4	Gris
+04050_5	Negro
+04051_0	Marrón
+04051_1	Marrón rojizo
+04051_2	Marrón claro
+04051_3	Blanco
+04051_4	Gris
+04051_5	Negro
+04052_0	Marrón
+04052_1	Marrón rojizo
+04052_2	Marrón claro
+04052_3	Blanco
+04052_4	Gris
+04052_5	Negro
+04053_0	Marrón
+04053_1	Marrón rojizo
+04053_2	Marrón claro
+04053_3	Blanco
+04053_4	Gris
+04053_5	Negro
+04054_0	Marrón
+04054_1	Marrón rojizo
+04054_2	Marrón claro
+04054_3	Blanco
+04054_4	Gris
+04054_5	Negro
+04066_0	Multicolor
+04066_1	Rosa
+04066_2	Azul
+04066_3	Naranja
+04066_4	Blanco
+04066_5	Arcoíris
+04067_0	Multicolor
+04067_1	Azul
+04067_2	Rojo
+04067_3	Rosa
+04067_4	Dorado
+04067_5	Blanco
+04068_0	Blanco
+04068_1	Rosa
+04068_2	Amarillo
+04068_3	Celeste
+04068_4	Negro
+04070_0	Natural
+04070_1	Azul
+04070_2	Amarillo
+04070_3	Marrón oscuro
+04071_0	Verde
+04071_1	Negro
+04072_0	Blanco y negro
+04072_1	Multicolor
+04073_0	Sin esmaltar
+04073_1	Sencillo
+04073_2	Celeste
+04073_3	Ámbar
+04073_4	Frutal
+04073_5	Artístico
+04074_0	Amarillo
+04074_1	Rosa
+04074_2	Azul
+04074_3	Verde
+04074_4	Blanco
+04075_0	Marrón
+04075_1	Rojo
+04076_0	Rosa
+04076_1	Negro
+04077_0	Multicolor
+04077_1	Tonos pastel
+04077_2	Náutico
+04077_3	Naranja y negro
+04077_4	Pop
+04077_5	Elegante
+04078_0	Negro
+04078_1	Blanco
+04078_2	Rojo
+04078_3	Multicolor
+04080_0	Blanco
+04080_1	Mármol negro
+04080_2	Mármol blanco
+04080_3	Rosa
+04080_4	Celeste
+04080_5	Verde
+04080_6	Loza bicolor
+04081_0	Verde
+04081_1	Amarillo
+04081_2	Rojo
+04081_3	Azul
+04081_4	Camuflaje gris
+04081_5	Camuflaje
+04081_6	Estampado sencillo
+04081_7	Estampado pop
+04083_0	Naranja
+04083_1	Amarillo
+04083_2	Verde
+04083_3	Blanco
+04084_0	Naranja
+04084_1	Amarillo
+04084_2	Verde
+04084_3	Blanco
+04086_0	Naranja
+04086_1	Amarillo
+04086_2	Verde
+04086_3	Blanco
+04087_0	Naranja
+04087_1	Amarillo
+04087_2	Verde
+04087_3	Blanco
+04088_0	Naranja
+04088_1	Amarillo
+04088_2	Verde
+04088_3	Blanco
+04089_0	Naranja
+04089_1	Amarillo
+04089_2	Verde
+04089_3	Blanco
+04090_0	Naranja
+04090_1	Amarillo
+04090_2	Verde
+04090_3	Blanco
+04092_0	Naranja
+04092_1	Amarillo
+04092_2	Verde
+04092_3	Blanco
+04093_0	Verde
+04093_1	Seco
+04093_2	Ahumado
+04094_0	Marrón
+04094_1	Artístico
+04094_2	Blanco
+04094_3	Negro
+04099_0	Marrón
+04099_1	Marrón claro
+04099_2	Marrón oscuro
+04101_0	Blanco
+04101_1	Rosa
+04101_2	Marrón
+04101_3	Negro
+04102_0	Marrón claro
+04102_1	Marrón
+04102_2	Marrón oscuro
+04104_0	Vacía
+04104_1	Salteado de verduras
+04104_2	Pasta
+04104_3	Ratatouille
+04104_4	Pizza
+04104_5	Intento fallido
+04108_0	Amarillo con lazo rojo
+04108_1	Rosa con lazo verde
+04108_2	Azul con lazo amarillo
+04108_3	Blanco con lazo azul
+04109_0	Plateado
+04109_1	Blanco
+04109_2	Negro
+04109_3	Rojo
+04110_0	En blanco
+04110_1	Falta de inspiración
+04110_2	En proceso
+04110_3	Carta
+04111_0	Celeste
+04111_1	Rojo
+04111_2	Amarillo
+04111_3	Blanco
+04111_4	Negro
+04111_5	Cobre
+04111_6	Plateado
+04111_7	Dorado
+04113_0	Plateado
+04113_1	Amarillo
+04113_2	Rojo
+04113_3	Verde
+04113_4	Azul
+04113_5	Negro
+04114_0	Rojo
+04114_1	Amarillo
+04114_2	Azul
+04114_3	Blanco
+04114_4	Madera natural
+04114_5	Mimbre
+04116_0	En blanco
+04116_1	Agenda
+04116_2	Reunión de ventas
+04116_3	Clase de idiomas
+04116_4	Reunión de estrategia
+04116_5	Lluvia de ideas
+04116_6	Reunión de análisis
+04118_0	Acero inoxidable
+04118_1	Madera
+04118_2	Pop
+04119_0	Blanco
+04119_1	Verde
+04119_2	Rosa
+04119_3	Azul
+04122_0	Negro
+04122_1	Plateado
+04122_2	Rosa
+04122_3	Marrón
+04124_0	Madera de alcanfor
+04124_1	Madera sin barnizar
+04124_2	Madera de zelkova
+04125_0	Marrón claro
+04125_1	Marrón
+04125_2	Marrón oscuro
+04125_3	Blanco
+04127_0	Melocotón blanco
+04127_1	Melocotón anaranjado
+04128_0	Melocotón blanco
+04128_1	Melocotón anaranjado
+04129_0	Negro
+04129_1	Marrón
+04129_2	Rojo
+04129_3	Amarillo
+04129_4	Azul
+04129_5	Blanco
+04131_0	Blanco
+04131_1	Rosa
+04131_2	Amarillo
+04131_3	Arcoíris
+04132_0	Blanco
+04132_1	Marrón
+04132_2	Verde
+04132_3	Azul
+04132_4	Negro
+04133_0	Negro
+04133_1	Blanco
+04133_2	Plateado
+04133_3	Verde
+04133_4	Rojo
+04133_5	Amarillo
+04134_0	Manzana roja
+04134_1	Manzana verde
+04135_0	Blanco
+04135_1	Negro
+04135_2	Beis
+04135_3	Plateado
+04137_0	Rojo
+04137_1	Azul
+04137_2	Amarillo
+04137_3	Aguamarina
+04137_4	Rosa
+04137_5	Crema
+04137_6	Negro
+04138_0	Rojo
+04138_1	Azul
+04138_2	Amarillo
+04138_3	Aguamarina
+04138_4	Rosa
+04138_5	Crema
+04138_6	Negro
+04139_0	Rojo
+04139_1	Azul
+04139_2	Amarillo
+04139_3	Aguamarina
+04139_4	Rosa
+04139_5	Crema
+04139_6	Negro
+04140_0	Rojo
+04140_1	Verde
+04140_2	Amarillo
+04140_3	Blanco
+04140_4	Negro
+04140_5	Madera envejecida
+04141_0	Rojo
+04141_1	Azul
+04141_2	Amarillo
+04141_3	Aguamarina
+04141_4	Rosa
+04141_5	Crema
+04141_6	Negro
+04142_0	Rojo
+04142_1	Azul
+04142_2	Amarillo
+04142_3	Aguamarina
+04142_4	Rosa
+04142_5	Crema
+04142_6	Negro
+04143_0	Rojo
+04143_1	Naranja
+04143_2	Verde
+04143_3	Púrpura
+04143_4	Azul
+04144_0	Rojo
+04144_1	Azul
+04144_2	Amarillo
+04144_3	Aguamarina
+04144_4	Rosa
+04144_5	Blanco
+04144_6	Púrpura
+04196_0	Negro
+04196_1	Blanco
+04196_2	Amarillo
+04196_3	Verde
+04196_4	Rojo
+04226_0	Azul
+04226_1	Verde
+04226_2	Negro
+04230_0	Blanco
+04230_1	Rojo
+04230_2	Rosa
+04230_3	Verde
+04230_4	Azul
+04230_5	Púrpura
+04279_0	Tropical
+04279_1	Vainilla y chocolate
+04279_2	Cítrico
+04279_3	Frutas del bosque
+04279_4	Kiwi
+04279_5	Chocolate con menta
+04309_0	Natural
+04309_1	Blanco
+04309_2	Negro
+04309_3	Multicolor
+04309_4	Tonos azules
+04309_5	Envejecido
+04338_0	Rojo
+04338_1	Amarillo
+04338_2	Azul
+04338_3	Verde
+04338_4	Rosa
+04338_5	Negro
+04338_6	Naranja
+04357_0	Celeste
+04357_1	Rojo
+04357_2	Verde
+04357_3	Amarillo
+04357_4	Azul
+04357_5	Naranja
+04357_6	Blanco
+04357_7	Negro
+04377_0	Azul
+04377_1	Dorado
+04377_2	Plateado
+04377_3	Verde
+04377_4	Rojo
+04377_5	Verde claro
+04377_6	Rosa
+04377_7	Púrpura
+04379_0	Blanco
+04379_1	Marrón
+04379_2	Marrón oscuro
+04379_3	Rojo
+04379_4	Amarillo
+04379_5	Rosa
+04379_6	Cebra
+04392_0	Rojo
+04392_1	Azul
+04412_0	Rosa
+04412_1	Azul
+04412_2	Negro
+04441_0	Rojo
+04441_1	Azul
+04441_2	Amarillo
+04441_3	Aguamarina
+04441_4	Rosa
+04441_5	Crema
+04441_6	Negro
+04445_0	Dorado
+04445_1	Plateado
+04445_2	Cobre
+04445_3	Negro
+04546_0	Pera verde
+04546_1	Pera amarilla
+04572_0	Amarillo
+04572_1	Azul
+04572_2	Rojo
+04572_3	Verde
+04572_4	Lima
+04572_5	Rosa
+04572_6	Púrpura
+04572_7	Blanco
+04687_0	Rojo
+04687_1	Verde
+04687_2	Azul
+04687_3	Naranja
+04687_4	Turquesa
+04687_5	Rosa
+04708_0	Común
+04708_1	Blanco
+04708_2	Misterioso
+04708_3	Rojo
+04708_4	Amarillo
+04719_0	Marrón
+04719_1	Marrón claro
+04719_2	Negro
+04719_3	Azul
+04719_4	Blanco
+04722_0	Marrón
+04722_1	Azul
+04722_2	Rojo
+04722_3	Negro
+04738_0	Marrón
+04738_1	Blanco
+04751_0	Marrón
+04751_1	Blanco
+04751_2	Negro
+04751_3	Rosa
+04751_4	Rojo
+04751_5	Amarillo
+04751_6	Azul
+04751_7	Madera natural
+04752_0	Negro
+04752_1	Blanco
+04752_2	Azul
+04752_3	Plateado
+04752_4	Marrón ceniza
+04752_5	Dorado
+04752_6	Rosa
+04752_7	Marrón
+04753_0	Rojo
+04753_1	Azul
+04753_2	Verde
+04753_3	Rosa
+04753_4	Negro
+04753_5	Dorado
+04754_0	Negro
+04754_1	Blanco
+04754_2	Rojo
+04756_0	Amarillo
+04756_1	Rojo
+04756_2	Verde
+04756_3	Azul
+04756_4	Blanco
+04756_5	Gris
+04756_6	Púrpura
+04757_0	Blanco
+04757_1	Rojo
+04757_2	Negro
+04757_3	Ceniza
+04757_4	Verde
+04757_5	Plateado
+04758_0	Pardo
+04758_1	Marrón
+04758_2	Rojo
+04758_3	Azul
+04758_4	Verde
+04758_5	Blanco
+04759_0	Rojo
+04759_1	Azul
+04759_2	Amarillo
+04759_3	Rosa
+04759_4	Verde
+04759_5	Blanco
+04759_6	Negro
+04760_0	Rojo
+04760_1	Azul
+04760_2	Verde
+04760_3	Negro y naranja
+04760_4	Negro y amarillo
+04760_5	Blanco y azul
+04760_6	Blanco y rojo
+04760_7	Béisbol
+04761_0	Plateado
+04761_1	Amarillo
+04761_2	Rojo
+04761_3	Verde
+04761_4	Azul
+04761_5	Negro
+04762_0	Verde
+04762_1	Rojo
+04762_2	Azul
+04762_3	Amarillo
+04762_4	Celeste
+04762_5	Blanco
+04762_6	Negro
+04764_0	Celeste
+04764_1	Rojo
+04764_2	Naranja
+04764_3	Amarillo
+04764_4	Verde
+04764_5	Azul
+04764_6	Negro
+04764_7	Gris
+05150_0	Blanco
+05150_1	Marrón
+05150_2	Rosa
+05150_3	Amarillo
+05150_4	Morado
+05150_5	Perlado
+05165_0	Dorado
+05165_1	Plateado
+05165_2	Cobre
+05165_3	Negro
+05165_4	Blanco
+05207_0	Negro
+05207_1	Azul
+05207_2	Rojo
+05207_3	Naranja
+05207_4	Amarillo
+05207_5	Beis
+05207_6	Verde
+05207_7	Púrpura
+05208_0	Natural
+05208_1	Blanco
+05208_2	Marrón
+05208_3	Negro
+05208_4	Azul
+05208_5	Marrón oscuro
+05208_6	Verde
+05208_7	Púrpura
+05309_0	Rosa
+05309_1	Azul
+05309_2	Blanco y negro
+05309_3	Celeste
+05309_4	Verde
+05309_5	Naranja
+05309_6	Rojo
+05309_7	Púrpura
+05310_0	Negro
+05310_1	Amarillo
+05310_2	Verde
+05310_3	Rosa
+05310_4	Púrpura
+05310_5	Rojo
+05310_6	Gris
+05310_7	Azul
+05337_0	Azul
+05337_1	Rosa
+05337_2	Celeste
+05337_3	Amarillo
+05338_0	Gris claro
+05338_1	Negro
+05338_2	Blanco
+05338_3	Marrón
+05338_4	Marrón claro
+05338_5	Marrón oscuro
+05338_6	Gris
+05338_7	Dorado
+05543_0	Natural
+05543_1	Madera mixta
+05543_2	Multicolor
+05543_3	Tonos pastel
+05543_4	Tonos brillantes
+05635_0	Natural
+05635_1	Rojo
+05635_2	Tonos pastel
+05635_3	Moderno
+05635_4	Forestal
+05635_5	Cuento de hadas
+05636_0	Natural
+05636_1	Marrón oscuro
+05636_2	Marrón
+05636_3	Rojo
+05716_0	Madera clara
+05716_1	Celeste
+05716_2	Gris oscuro
+05716_3	Madera natural
+05716_4	Marrón oscuro
+05716_5	Blanco
+05716_6	Azul
+05716_7	Rosa
+05717_0	Plateado
+05717_1	Dorado y plateado
+05717_2	Plateado y azul
+05717_3	Rojo y blanco
+05717_4	Plateado y verde
+05717_5	Multicolor
+05718_0	Madera natural
+05718_1	Marrón
+05718_2	Marrón oscuro
+05718_3	Marrón claro
+05718_4	Marrón ceniza
+05718_5	Negro
+05718_6	Azul
+05718_7	Rosa
+05719_0	Gris
+05719_1	Azul
+05784_0	Rojo
+05784_1	Amarillo
+05784_2	Verde
+05784_3	Azul
+05784_4	Púrpura
+05784_5	Rosa
+05784_6	Blanco
+05784_7	Negro
+05931_0	Plateado
+05931_1	Negro
+05931_2	Hierro oxidado
+05972_0	Madera oscura
+05972_1	Madera naranja
+05972_2	Madera blanca
+05972_3	Abedul
+05973_0	Madera oscura
+05973_1	Madera naranja
+05973_2	Madera blanca
+05973_3	Abedul
+05976_0	Verde
+05976_1	Seco
+05976_2	Ahumado
+05978_0	Verde
+05978_1	Seco
+05978_2	Ahumado
+06075_0	Marrón
+06075_1	Blanco
+06078_0	Marrón
+06078_1	Blanco
+06079_0	Marrón
+06079_1	Blanco
+06080_0	Marrón
+06080_1	Blanco
+06081_0	Marrón
+06081_1	Blanco
+06426_0	Madera natural
+06426_1	Madera oscura
+06426_2	Tonos pastel
+06426_3	Blanco
+06426_4	Pop
+06426_5	Multicolor
+06426_6	Plateado
+06426_7	Dorado
+06818_0	Multicolor
+06818_1	Azul
+06818_2	Rojo
+06818_3	Rosa
+06818_4	Dorado
+06818_5	Blanco
+06826_0	Amarillo
+06826_1	Verde
+06826_2	Azul
+06826_3	Morado
+06826_4	Rosa
+06826_5	Naranja
+06826_6	Blanco
+06827_0	Amarillo
+06827_1	Verde
+06827_2	Azul
+06827_3	Morado
+06827_4	Rosa
+06827_5	Naranja
+06827_6	Blanco
+06829_0	Amarillo
+06829_1	Verde
+06829_2	Azul
+06829_3	Morado
+06829_4	Rosa
+06829_5	Naranja
+06829_6	Blanco
+06830_0	Blanco perlado
+06830_1	Negro perlado
+06830_2	Rosa perlado
+06830_3	Ocre perlado
+06830_4	Púrpura perlado
+06831_0	Madera oscura
+06831_1	Madera clara
+06832_0	Rosa
+06832_1	Blanco rosado
+07045_0	Sin etiqueta
+07045_1	Aceitunas
+07045_2	Fruta
+07045_3	Pescado
+07045_4	Salsa de tomate
+07045_5	Comida para mascotas
+07132_0	Madera clara
+07132_1	Blanco
+07132_2	Cereza
+07132_3	Madera oscura
+07132_4	Negro
+07132_5	Verde
+07132_6	Azul
+07132_7	Rosa
+07133_0	Madera clara
+07133_1	Blanco
+07133_2	Cereza
+07133_3	Madera oscura
+07133_4	Negro
+07133_5	Verde
+07133_6	Azul
+07133_7	Rosa
+07134_0	Madera clara
+07134_1	Blanco
+07134_2	Cereza
+07134_3	Madera oscura
+07134_4	Negro
+07134_5	Verde
+07134_6	Azul
+07134_7	Rosa
+07135_0	Blanco
+07135_1	Naranja
+07135_2	Rojo
+07135_3	Rosa
+07135_4	Púrpura
+07135_5	Azul
+07135_6	Celeste
+07135_7	Verde
+07136_0	Blanco
+07136_1	Negro
+07136_2	Rojo
+07136_3	Celeste
+07136_4	Rosa
+07137_0	Madera clara
+07137_1	Blanco
+07137_2	Cereza
+07137_3	Madera oscura
+07137_4	Negro
+07137_5	Verde
+07137_6	Azul
+07137_7	Rosa
+07138_0	Florecitas
+07138_1	Oveja
+07138_2	Ramo de flores
+07138_3	Adorable
+07138_4	Gato azul
+07138_5	Urbano
+07139_0	Bodegón
+07139_1	Paseo arbolado
+07139_2	Nostalgia
+07139_3	Ángel
+07139_4	Rosas adorables
+07139_5	Campo de flores
+07139_6	Perro
+07139_7	En flor
+07140_0	Retales y M
+07140_1	Flores
+07140_2	Animales bordados
+07140_3	Retales multicolor
+07140_4	Frutas
+07140_5	Tela vaquera con rayas
+07141_0	Casa a rayas
+07141_1	Casa de piedra
+07141_2	Casa de ladrillos
+07141_3	Casa de cuento
+07141_4	Casa sencilla
+07141_5	Casa de madera
+07143_0	Cubos
+07143_1	Flores elegantes
+07143_2	Flores delicadas
+07143_3	Tonos pastel
+07143_4	Cuento de hadas
+07143_5	Marítimo
+07144_0	Corazones
+07144_1	Flores
+07144_2	Multicolor
+07144_3	Pop
+07144_4	Animalito
+07144_5	Tejana
+07145_0	Flores
+07145_1	Pájaro
+07145_2	Ramo de flores
+07145_3	Niña
+07145_4	Cuento de hadas
+07145_5	Árboles
+07146_0	Gato
+07146_1	Fresas y flores
+07146_2	Zanahorias
+07146_3	Perro
+07146_4	Pájaro
+07146_5	Chocolate
+07147_0	Bigotitos
+07147_1	Lunarcín
+07147_2	Puchi
+07147_3	Roseta
+07147_4	Garaberta
+07147_5	Nocturnino
+07148_0	Rojo
+07148_1	Azul
+07148_2	Amarillo
+07148_3	Naranja
+07153_0	Madera clara
+07153_1	Madera natural
+07153_2	Madera oscura
+07154_0	Natural
+07154_1	Marrón
+07154_2	Marrón oscuro
+07154_3	Verde
+07154_4	Rosa
+07154_5	Blanco
+07154_6	Negro
+07154_7	Rojo
+07159_0	Liso
+07159_1	Etiquetado
+07160_0	Liso
+07160_1	Etiquetado
+07161_0	Liso
+07161_1	Etiquetado
+07163_0	Liso
+07163_1	Etiquetado
+07189_0	Blanco
+07189_1	Amarillo
+07189_2	Naranja
+07189_3	Rojo
+07189_4	Rosa
+07189_5	Púrpura
+07189_6	Azul
+07189_7	Verde
+07190_0	Blanco
+07190_1	Amarillo
+07190_2	Naranja
+07190_3	Rojo
+07190_4	Rosa
+07190_5	Púrpura
+07190_6	Azul
+07190_7	Verde
+07229_0	Verde
+07229_1	Azul
+07229_2	Marrón
+07229_3	Amarillo
+07229_4	Rojo
+07229_5	Plateado
+07230_0	Rosa
+07230_1	Rojo
+07230_2	Blanco
+07231_0	Rojo
+07231_1	Blanco
+07231_2	Amarillo
+07232_0	Amarillo
+07232_1	Rojo
+07232_2	Blanco
+07233_0	Rojo
+07233_1	Rosa
+07233_2	Púrpura
+07234_0	Púrpura
+07234_1	Azul
+07234_2	Amarillo
+07235_0	Rojo
+07235_1	Púrpura
+07235_2	Negro
+07236_0	Blanco
+07236_1	Rosa
+07236_2	Amarillo
+07237_0	Amarillo
+07237_1	Rojo
+07237_2	Blanco
+07238_0	Negro
+07238_1	Plateado
+07238_2	Dorado
+07238_3	Blanco
+07238_4	Azul
+07238_5	Antiguo
+07247_0	Rojo y marrón
+07247_1	Verde y marrón oscuro
+07247_2	Azul y gris
+07247_3	Negro y blanco
+07247_4	Turquesa y rosado
+07253_0	Amarillo
+07253_1	Verde
+07253_2	Azul
+07253_3	Morado
+07253_4	Rosa
+07253_5	Naranja
+07253_6	Blanco
+07257_0	Negro
+07257_1	Rosa
+07257_2	Verde
+07258_0	Sin usar
+07258_1	Dinosaurio gris
+07258_2	Tarta gris
+07258_3	Dinosaurio de colores
+07258_4	Tarta de colores
+07258_5	Dinosaurio marrón
+07258_6	Tarta marrón
+07259_0	Natural
+07259_1	Tropical
+07259_2	Adorable
+07259_3	Moderno
+07260_0	Peligro
+07260_1	Alto
+07260_2	Prohibida la entrada
+07260_3	Suelo mojado
+07260_4	Prohibido aparcar
+07264_0	Rojo
+07264_1	Azul
+07264_2	Verde
+07264_3	Negro
+07280_0	Plateado
+07280_1	Cobre
+07280_2	Negro
+07280_3	Multicolor
+07280_4	Madera
+07281_0	Natural
+07281_1	Marrón oscuro
+07281_2	Rojo
+07281_3	Blanco
+07282_0	Verde
+07282_1	Marrón
+07282_2	Rosa
+07282_3	Azul
+07282_4	Púrpura
+07284_0	Rojo
+07284_1	Azul
+07317_0	Granito blanco
+07317_1	Andesita
+07317_2	Granito negro
+07317_3	Granito marrón
+07317_4	Con musgo
+07379_0	Azul
+07379_1	Rojo
+07390_0	Marrón
+07390_1	Rojo
+07390_2	Amarillo
+07390_3	Verde
+07391_0	Marrón oscuro
+07391_1	Natural
+07391_2	Negro
+07391_3	Marrón claro
+07392_0	Rojo
+07392_1	Azul
+07392_2	Amarillo
+07392_3	Rosa
+07393_0	Blanca
+07393_1	Con musgo
+07453_0	Fajos de billetes
+07453_1	Lingotes de oro
+07454_0	Natural
+07454_1	Marrón oscuro
+07454_2	Tonos pastel
+07454_3	Verde bosque
+07525_0	Blanco
+07525_1	Verde
+07525_2	Azul
+07525_3	Negro
+07526_0	Rojo
+07526_1	Azul
+07526_2	Amarillo
+07526_3	Turquesa
+07526_4	Naranja
+07526_5	Plateado
+07527_0	Multicolor
+07527_1	Rojo
+07527_2	Rosa
+07527_3	Amarillo
+07527_4	Púrpura
+07527_5	Azul
+07527_6	Blanco
+07528_0	Rojo
+07528_1	Naranja
+07528_2	Amarillo
+07528_3	Verde
+07528_4	Azul
+07528_5	Rosa
+07528_6	Negro
+07528_7	Plateado
+07529_0	Azul
+07529_1	Verde
+07529_2	Rojo
+07529_3	Marrón
+07529_4	Negro
+07529_5	Blanco
+07535_0	Negro
+07535_1	Rojo
+07535_2	Azul
+07535_3	Amarillo
+07535_4	Verde
+07535_5	Rosa
+07588_0	Común
+07588_1	Blanco
+07588_2	Misterioso
+07588_3	Rojo
+07588_4	Amarillo
+07599_0	Juego de carreras
+07599_1	Juego de conquista
+07599_2	Juego infantil
+07653_0	Rojo y negro
+07653_1	Azul y blanco
+07653_2	Negro y plata
+07654_0	Rojo
+07654_1	Blanco
+07654_2	Amarillo
+07654_3	Verde
+07654_4	Azul
+07654_5	Rosa
+07788_0	Ninguna
+07788_1	Malvaviscos
+07789_0	Plateado
+07789_1	Marfil
+07789_2	Negro
+07789_3	Blanco
+07795_0	Original
+07795_1	Blanca
+07795_2	Con musgo
+07796_0	Rojo
+07796_1	Marrón
+07797_0	Negro
+07797_1	Marrón
+07800_0	Neutro
+07800_1	Vainilla
+07800_2	Chocolate
+07800_3	Fresa
+07801_0	Azul
+07801_1	Naranja
+07801_2	Rojo
+07801_3	Verde
+07801_4	Rosa
+07802_0	Natural
+07802_1	Marrón oscuro
+07802_2	Blanco
+07803_0	Blanco
+07803_1	Naranja
+07803_2	Verde
+07803_3	Celeste
+07803_4	Rosa
+07803_5	Marrón
+07803_6	Negro
+07804_0	Natural
+07804_1	Plateado
+07804_2	Negro
+07805_0	Madera oscura
+07805_1	Madera natural
+07845_0	Negro
+07845_1	Rojo
+07845_2	Amarillo
+07845_3	Azul
+07865_0	Grullas
+07865_1	Peonías
+07865_2	Glicinia
+07865_3	Bolas
+07865_4	Halcón
+07867_0	Residencia
+07867_1	Bosque
+07867_2	Área de pesca
+07867_3	Oficina de gestión vecinal
+07867_4	Aeródromo
+07867_5	Tienda
+07867_6	Sastrería
+07867_7	Museo
+07868_0	Blanco
+07868_1	Rojo
+07868_2	Hibiscos
+07868_3	Moderno
+07868_4	Rayas
+07868_5	Marrón
+08031_0	Gris
+08031_1	Marrón
+08031_2	Negro
+08031_3	Blanco
+08096_0	Negro
+08096_1	Blanco
+08096_2	Rojo
+08096_3	Amarillo
+08096_4	Verde
+08096_5	Azul
+08096_6	Gris
+08096_7	Rosa
+08176_0	Amarillo
+08176_1	Rojo
+08176_2	Azul
+08176_3	Verde claro
+08176_4	Rosa
+08176_5	Púrpura
+08176_6	Celeste
+08176_7	Verde
+08177_0	Amarillo y naranja
+08177_1	Rojo y amarillo
+08177_2	Naranja y azul
+08177_3	Rosa y amarillo
+08177_4	Verde y azul
+08177_5	Morado y rosa
+08177_6	Blanco y azul
+08177_7	Gris y verde
+08178_0	Verde bosque
+08178_1	Naranja
+08178_2	Celeste
+08178_3	Rojo
+08178_4	Beis
+08178_5	Rosa
+08178_6	Amarillo
+08178_7	Negro
+08297_0	Plateado
+08297_1	Negro
+08297_2	Rojo
+08298_0	Plateado
+08298_1	Negro
+08298_2	Blanco
+08298_3	Rojo
+08298_4	Azul
+08298_5	Amarillo
+08298_6	Rosa
+08415_0	Dorado
+08415_1	Negro
+08415_2	Azul
+08415_3	Rojo
+08417_0	Blanco
+08417_1	Pardo
+08417_2	Amarillo
+08417_3	Rojo
+08417_4	Azul
+08417_5	Negro
+08418_0	Blanco
+08418_1	Amarillo
+08418_2	Rosa
+08418_3	Verde
+08418_4	Azul
+08419_0	Marrón
+08419_1	Marrón oscuro
+08419_2	Verde
+08419_3	Blanco
+08471_0	Verde
+08471_1	Amarillo
+08471_2	Naranja
+08471_3	Celeste
+08471_4	Azul
+08471_5	Púrpura
+08471_6	Rosa
+08471_7	Rojo
+08472_0	Amarillo
+08472_1	Naranja
+08472_2	Azul
+08472_3	Rosa
+08472_4	Verde
+08472_5	Púrpura
+08472_6	Blanco
+08472_7	Gris
+08473_0	Verde bosque
+08473_1	Naranja
+08473_2	Celeste
+08473_3	Rojo
+08473_4	Beis
+08473_5	Rosa
+08473_6	Amarillo
+08473_7	Negro
+08534_0	Amarillo
+08534_1	Naranja
+08534_2	Azul
+08534_3	Rosa
+08534_4	Verde
+08534_5	Púrpura
+08534_6	Blanco
+08534_7	Gris
+08535_0	Gris
+08535_1	Verde
+08535_2	Azul
+08535_3	Rosa
+08535_4	Rojo
+08535_5	Amarillo
+08535_6	Celeste
+08535_7	Negro
+08536_0	Verde bosque
+08536_1	Naranja
+08536_2	Celeste
+08536_3	Rojo
+08536_4	Beis
+08536_5	Rosa
+08536_6	Amarillo
+08536_7	Negro
+08575_0	Verde bosque
+08575_1	Naranja
+08575_2	Celeste
+08575_3	Rojo
+08575_4	Beis
+08575_5	Rosa
+08575_6	Amarillo
+08575_7	Negro
+08576_0	Celeste
+08576_1	Blanco
+08576_2	Amarillo
+08576_3	Rosa
+08576_4	Verde
+08576_5	Azul
+08576_6	Púrpura
+08576_7	Negro
+08577_0	Amarillo
+08577_1	Naranja
+08577_2	Azul
+08577_3	Rosa
+08577_4	Verde
+08577_5	Púrpura
+08577_6	Blanco
+08577_7	Gris
+08579_0	Verde bosque
+08579_1	Naranja
+08579_2	Celeste
+08579_3	Rojo
+08579_4	Beis
+08579_5	Rosa
+08579_6	Amarillo
+08579_7	Negro
+08580_0	Amarillo
+08580_1	Naranja
+08580_2	Azul
+08580_3	Rosa
+08580_4	Verde
+08580_5	Púrpura
+08580_6	Blanco
+08580_7	Gris
+08826_0	Madera clara
+08826_1	Blanco
+08826_2	Cereza
+08826_3	Madera oscura
+08826_4	Negro
+08826_5	Verde
+08826_6	Azul
+08826_7	Rosa
+09502_0	Blanco
+09502_1	Negro
+09502_2	Naranja
+09502_3	Azul
+09502_4	Rosa
+09502_5	Celeste
+09565_0	Globos aerostáticos
+09565_1	Ovejas
+09565_2	Vida marina
+09565_3	Espacio
+09565_4	Elegante
+09568_0	Obras
+09568_1	Obras (hermano pequeño)
+09568_2	Obras (hermano mayor)
+09568_3	Obras más adelante
+09568_4	Aviso de peligro
+09584_0	Multicolor
+09584_1	Azul
+09584_2	Rojo
+09584_3	Sandía
+09619_0	Sin publicidad
+09619_1	Con publicidad
+09642_0	Negro
+09642_1	Blanco
+09766_0	Blanco
+09766_1	Rojo
+09766_2	Rosa
+09766_3	Amarillo
+09766_4	Azul
+09766_5	Madera veteada
+09766_6	Negro
+09766_7	Gris
+09767_0	Verde
+09767_1	Amarillo
+09767_2	Marrón
+09767_3	Negro
+09767_4	Blanco
+09767_5	Rojo
+09767_6	Azul
+10244_0	Verde
+10244_1	Azul
+10244_2	Marrón
+10244_3	Negro
+10742_0	Verde
+10742_1	Seco
+10742_2	Ahumado
+10743_0	Verde
+10743_1	Seco
+10743_2	Ahumado
+11711_0	Natural
+11711_1	Blanco
+11711_2	Marrón
+11711_3	Negro
+11711_4	Verde
+11711_5	Azul
+11711_6	Rosa
+11711_7	Púrpura
+11712_0	Natural
+11712_1	Blanco
+11712_2	Negro
+11712_3	Azul
+11712_4	Rosa
+11712_5	Celeste
+11712_6	Amarillo
+11712_7	Púrpura
+11941_0	Original
+11941_1	Con musgo
+11942_0	Grafiti
+11942_1	Adorable
+11943_0	Negra
+11943_1	Con musgo
+12140_0	Azul
+12140_1	Amarillo
+12140_2	Naranja
+12140_3	Verde
+12207_0	Rojo
+12207_1	Gris
+12207_2	Azul
+12305_0	Blanco
+12305_1	Rosa
+12305_2	Rojo
+12305_3	Amarillo
+12305_4	Púrpura
+12308_0	Verde
+12308_1	Marfil
+12308_2	Azul
+12308_3	Rojo
+12311_0	Rojo
+12311_1	Verde
+12311_2	Celeste
+12311_3	Blanco
+12311_4	Negro
+12311_5	Naranja
+12312_0	Madera clara
+12312_1	Madera naranja
+12312_2	Madera oscura
+12312_3	Con corteza
+12313_0	Rosa
+12313_1	Rojo
+12313_2	Azul
+12314_0	Madera natural
+12314_1	Madera oscura
+12314_2	Madera clara
+12332_0	Pino
+12332_1	Roble
+12332_2	Madera desgastada
+12340_0	Rojo
+12340_1	Verde
+12340_2	Negro
+12340_3	Azul
+12340_4	Verde claro
+12341_0	Azul
+12341_1	Verde
+12341_2	Naranja
+12341_3	Marfil
+12343_0	Plateado
+12343_1	Negro
+12343_2	Rojo
+12343_3	Azul
+12343_4	Amarillo
+12344_0	Rojo y tostado
+12344_1	Beis y marrón
+12344_2	Marrón y rojo
+12344_3	Gris y azul
+12344_4	Amarillo y verde
+12344_5	Negro y amarillo
+12344_6	Índigo y azul marino
+12344_7	Negro y blanco
+12345_0	Madera clara
+12345_1	Madera natural
+12345_2	Madera oscura
+12346_0	Madera clara
+12346_1	Madera natural
+12346_2	Madera oscura
+12348_0	Verde
+12348_1	Rosa
+12348_2	Celeste
+12348_3	Amarillo
+12348_4	Naranja
+12348_5	Azul
+12349_0	Madera natural
+12349_1	Madera clara
+12349_2	Madera oscura
+12350_0	Madera natural
+12350_1	Madera clara
+12350_2	Madera oscura
+12356_0	Marrón claro
+12356_1	Verde
+12356_2	Marrón
+12356_3	Azul
+12356_4	Negro
+12356_5	Blanco
+12358_0	Blanco con sol
+12358_1	Blanco con flores
+12358_2	Rojo
+12358_3	Verde
+12365_0	Blanco
+12365_1	Negro
+12365_2	Marrón
+12365_3	Rojo
+12365_4	Amarillo
+12365_5	Verde
+12365_6	Naranja
+12365_7	Azul
+12366_0	Azul
+12366_1	Blanco
+12366_2	Amarillo
+12366_3	Rojo
+12366_4	Verde
+12366_5	Rosa
+12366_6	Negro
+12372_0	Kétchup y mostaza
+12372_1	Tartán
+12372_2	Camuflaje jungla
+12372_3	Puzle
+12372_4	Callejón
+12372_5	Perrito caliente
+12373_0	Lunares
+12373_1	Palacio
+12373_2	Remaches
+12373_3	Tonos pastel
+12373_4	Años 70
+12373_5	Textil
+12401_0	Adorable
+12401_1	Chic
+12401_2	Jardín
+12402_0	Adorable
+12402_1	Chic
+12402_2	Jardín
+12403_0	Adorable
+12403_1	Chic
+12403_2	Jardín
+12404_0	Adorable
+12404_1	Chic
+12404_2	Jardín
+12405_0	Adorable
+12405_1	Chic
+12405_2	Jardín
+12406_0	Adorable
+12406_1	Chic
+12406_2	Jardín
+12407_0	Adorable
+12407_1	Chic
+12407_2	Jardín
+12408_0	Adorable
+12408_1	Chic
+12408_2	Jardín
+12409_0	Blanco
+12409_1	Marrón oscuro
+12409_2	Natural
+12410_0	Adorable
+12410_1	Chic
+12410_2	Jardín
+12411_0	Adorable
+12411_1	Chic
+12411_2	Jardín
+12516_0	Gris claro
+12516_1	Azul y negro
+12516_2	Multicolor
+12516_3	Camuflaje
+12516_4	Marrón
+12543_0	Rojo neón / azul néon
+12543_1	Gris
+12599_0	Gris
+12599_1	Marrón
+12599_2	Negro
+12599_3	Verde
+12600_0	Amarillo
+12600_1	Azul
+12600_2	Rojo
+12600_3	Gris
+12601_0	Amarillo
+12601_1	Azul
+12601_2	Rojo
+12601_3	Gris
+12602_0	Amarillo
+12602_1	Azul
+12602_2	Rojo
+12602_3	Gris
+12603_0	Amarillo
+12603_1	Verde
+12603_2	Rojo
+12603_3	Gris
+12604_0	Amarillo
+12604_1	Verde
+12604_2	Rojo
+12604_3	Gris
+12605_0	Amarillo
+12605_1	Azul
+12605_2	Verde
+12605_3	Rojo
+12606_0	Rojo
+12606_1	Amarillo
+12606_2	Verde
+12606_3	Azul
+12608_0	Plateado
+12608_1	Verde
+12608_2	Rojo
+12608_3	Blanco
+12608_4	Negro
+12610_0	Natural
+12610_1	Adorable
+12610_2	Moderno
+12611_0	Como nueva
+12611_1	Oxidada
+12612_0	Azul
+12612_1	Rojo
+12612_2	Verde claro
+12612_3	Amarillo
+12612_4	Verde
+12612_5	Rosa
+12612_6	Negro
+12613_0	Azul
+12613_1	Verde
+12613_2	Amarillo
+12613_3	Rojo
+12613_4	Celeste
+12613_5	Rosa
+12614_0	Beis y rojo
+12614_1	Pardo y blanco
+12614_2	Blanco y verde
+12614_3	Negro
+12614_4	Azul pavo real
+12614_5	Rosa
+12614_6	Pardo y verde
+12637_0	Tapete verde
+12637_1	Blanco
+12637_2	Negro
+12637_3	Madera
+12653_0	Azul
+12653_1	Rosa
+12653_2	Marrón claro
+12653_3	Marrón oscuro
+12669_0	Plateado
+12669_1	Blanco
+12669_2	Negro
+12670_0	Blanco
+12670_1	Blanco y madera
+12670_2	Negro
+12670_3	Gris
+12673_0	Plateado
+12673_1	Negro
+12673_2	Blanco
+12674_0	Plateado
+12674_1	Negro
+12674_2	Blanco
+12675_0	Blanco
+12675_1	Madera natural
+12675_2	Madera clara
+12675_3	Negro
+12675_4	Ladrillo rojo
+12675_5	Ladrillo pálido
+12675_6	Hormigón
+12675_7	Terracota
+12676_0	Madera clara
+12676_1	Madera natural
+12676_2	Madera oscura
+12676_3	Marfil
+12676_4	Verde claro
+12677_0	Marfil
+12677_1	Blanco y rosa
+12677_2	Plateado
+12677_3	Madera oscura
+12678_0	Blanco
+12678_1	Madera clara
+12678_2	Nogal y plata
+12678_3	Marrón
+12678_4	Azul
+12678_5	Rosa
+12678_6	Blanco y marrón
+12678_7	Beis
+12679_0	Blanco
+12679_1	Negro
+12679_2	Madera natural
+12679_3	Madera oscura
+12679_4	Azul
+12679_5	Rosa
+12679_6	Mármol negro
+12679_7	Ladrillo blanco
+12683_0	Alegre
+12683_1	Clásico
+12683_2	Pastel
+12683_3	Elegante
+12684_0	Alegre
+12684_1	Clásico
+12684_2	Pastel
+12684_3	Elegante
+12685_0	Alegre
+12685_1	Clásico
+12685_2	Pastel
+12685_3	Elegante
+12688_0	Alegre
+12688_1	Clásico
+12688_2	Pastel
+12688_3	Elegante
+12689_0	Alegre
+12689_1	Clásico
+12689_2	Pastel
+12689_3	Elegante
+12690_0	Alegre
+12690_1	Clásico
+12690_2	Pastel
+12690_3	Elegante
+12691_0	Alegre
+12691_1	Clásico
+12691_2	Pastel
+12691_3	Elegante
+12692_0	Alegre
+12692_1	Clásico
+12692_2	Pastel
+12692_3	Elegante
+12693_0	Verde
+12693_1	Bronce
+12693_2	Blanco
+12693_3	Negro
+12693_4	Azul
+12693_5	Rosa
+12699_0	Plateado
+12699_1	Blanco
+12699_2	Negro
+12700_0	Gris
+12700_1	Plateado con tapete
+12700_2	Gris con documentos
+12700_3	Madera veteada
+12700_4	Blanco
+12700_5	Blanco y pino
+12701_0	Plateado
+12701_1	Gris
+12701_2	Blanco
+12701_3	Multicolor
+12701_4	Negro
+12702_0	Rojo
+12702_1	Azul
+12702_2	Verde oscuro
+12702_3	Marrón
+12702_4	Verde
+12703_0	Azul
+12703_1	Verde
+12703_2	Negro
+12703_3	Amarillo
+12703_4	Rojo
+12703_5	Blanco
+12704_0	Azul
+12704_1	Negro
+12704_2	Rojo
+12704_3	Verde
+12704_4	Amarillo
+12704_5	Madera
+12705_0	Vacía
+12705_1	Crema de marisco
+12705_2	Curry
+12705_3	Chili
+12705_4	Caldo para ramen
+12705_5	Sopa de miso
+12706_0	Vacío
+12706_1	Mapo tofu
+12706_2	Tortilla de tomates
+12706_3	Arroz frito
+12706_4	Salteado de pimientos
+12706_5	Babaocai
+12706_6	Gambas en salsa picante
+12707_0	Frutas y verduras
+12707_1	Pescado y marisco
+12707_2	Platos preparados
+12708_0	Metalizado
+12708_1	Multicolor
+12709_0	Negro
+12709_1	Amarillo
+12709_2	Rojo
+12712_0	Plateado
+12712_1	Marrón
+12712_2	Blanco
+12713_0	Dorado
+12713_1	Plateado
+12713_2	Cobre
+12713_3	Negro
+12713_4	Blanco
+12714_0	Blanco
+12714_1	Negro
+12715_0	Formal
+12715_1	Estudiantil
+12715_2	Escolar
+12717_0	Vacía
+12717_1	Matemáticas
+12717_2	Lengua
+12718_0	Vacía
+12718_1	Matemáticas
+12718_2	Lengua
+12720_0	Plateado
+12720_1	Dorado
+12741_0	Océano Pacífico
+12741_1	Océano Atlántico
+12744_0	Blanco
+12744_1	Gris
+12744_2	Verde
+12744_3	Rosa
+12744_4	Burdeos
+12744_5	Dorado
+12744_6	Celeste
+12744_7	Estampado floral
+12745_0	Blanco
+12745_1	Gris
+12745_2	Verde
+12745_3	Rosa
+12745_4	Burdeos
+12745_5	Dorado
+12745_6	Celeste
+12745_7	Estampado floral
+12766_0	Natural
+12766_1	Marrón claro
+12766_2	Marrón oscuro
+12766_3	Blanco
+12766_4	Negro
+12767_0	Natural
+12767_1	Marrón claro
+12767_2	Marrón oscuro
+12767_3	Blanco
+12767_4	Negro
+12768_0	Gris claro
+12768_1	Rosa
+12768_2	Marrón claro
+12768_3	Marrón oscuro
+12768_4	Blanco
+12768_5	Madera natural
+12768_6	Blanco y madera
+12768_7	Verde y negro
+12769_0	Blanco
+12769_1	Madera natural
+12769_2	Azulejo rosado
+12769_3	Madera oscura
+12772_0	Rayas azules
+12772_1	Rayas rosas
+12772_2	Blanco
+12773_0	Madera natural
+12773_1	Madera oscura
+12773_2	Blanco
+12773_3	Negro
+12773_4	Rojo
+12773_5	Verde
+12773_6	Azul
+12773_7	Rosa
+12774_0	Plateado
+12774_1	Blanco
+12774_2	Madera clara
+12774_3	Madera oscura
+12775_0	Plateado
+12775_1	Dorado
+12775_2	Blanco
+12776_0	Madera natural
+12776_1	Madera blanca
+12776_2	Negro y madera
+12776_3	Ladrillo y madera
+12776_4	Rosa
+12776_5	Negro y rojo
+12776_6	Blanco
+12776_7	Amarillo y negro
+12777_0	Madera oscura
+12777_1	Madera natural
+12777_2	Blanco
+12777_3	Rosa
+12778_0	Blanco
+12778_1	Negro
+12779_0	Madera clara
+12779_1	Madera natural
+12779_2	Madera oscura
+12779_3	Blanco
+12779_4	Negro
+12779_5	Rosa
+12779_6	Rayas azules
+12779_7	Madera envejecida
+12780_0	Madera natural
+12780_1	Plateado
+12780_2	Amarillo
+12780_3	Madera envejecida
+12781_0	Negro
+12781_1	Plateado
+12781_2	Marrón claro
+12782_0	Madera clara
+12782_1	Madera natural
+12782_2	Negro
+12782_3	Blanco
+12803_0	Alegre
+12803_1	Clásico
+12803_2	Pastel
+12803_3	Elegante
+12880_0	Plateado
+12880_1	Negro
+12881_0	Blanco
+12881_1	Marrón
+12881_2	Negro
+12882_0	Blanco
+12882_1	Marrón
+12882_2	Negro
+12883_0	Madera clara
+12883_1	Madera natural
+12883_2	Madera oscura
+12883_3	Tonos pastel
+12883_4	Multicolor
+12884_0	Madera clara
+12884_1	Madera natural
+12884_2	Madera oscura
+12884_3	Tonos pastel
+12884_4	Multicolor
+12885_0	Madera clara
+12885_1	Madera oscura
+12885_2	Madera blanca
+12886_0	Madera clara
+12886_1	Madera natural
+12886_2	Madera oscura
+12886_3	Tonos pastel
+12886_4	Multicolor
+12887_0	Blanco
+12887_1	Marrón claro
+12887_2	Marrón oscuro
+12887_3	Rosa
+12888_0	Plateado
+12888_1	Negro
+12888_2	Blanco
+12888_3	Dorado
+12889_0	Blanco
+12889_1	Marrón
+12889_2	Negro
+12889_3	Rojo
+12889_4	Amarillo
+12889_5	Verde
+12889_6	Azul
+12889_7	Rosa
+12890_0	Blanco
+12890_1	Negro
+12890_2	Rojo
+12890_3	Madera
+12891_0	Marrón claro
+12891_1	Marrón oscuro
+12891_2	Negro
+12891_3	Blanco
+12891_4	Dorado
+12893_0	Sencillo
+12893_1	Chic
+12893_2	Tonos pastel
+12893_3	Multicolor
+12894_0	Blanco
+12894_1	Rosa
+12894_2	Menta
+12894_3	Rojo
+12894_4	Celeste
+12894_5	Amarillo
+12894_6	Púrpura
+12894_7	Negro
+12949_0	Naranja
+12949_1	Amarillo
+12949_2	Verde
+12949_3	Blanco
+12951_0	Naranja
+12951_1	Amarillo
+12951_2	Verde
+12951_3	Blanco
+12976_0	Rojo
+12976_1	Azul
+12976_2	Verde
+12976_3	Rosa claro
+12976_4	Negro
+12976_5	Blanco
+12976_6	Amarillo
+12976_7	Goukaku (éxito)
+12993_0	Natural
+12993_1	Marrón
+12993_2	Blanco
+12993_3	Rosa
+12993_4	Amarillo
+12993_5	Verde
+12993_6	Azul
+12993_7	Púrpura
+12994_0	Natural
+12994_1	Marrón
+12994_2	Blanco
+12994_3	Rosa
+12994_4	Amarillo
+12994_5	Verde
+12994_6	Azul
+12994_7	Púrpura
+12995_0	Natural
+12995_1	Marrón
+12995_2	Blanco
+12995_3	Rosa
+12995_4	Amarillo
+12995_5	Verde
+12995_6	Azul
+12995_7	Púrpura
+12996_0	Natural
+12996_1	Marrón
+12996_2	Blanco
+12996_3	Rosa
+12996_4	Amarillo
+12996_5	Verde
+12996_6	Azul
+12996_7	Púrpura
+12997_0	Natural
+12997_1	Marrón
+12997_2	Blanco
+12997_3	Rosa
+12997_4	Amarillo
+12997_5	Verde
+12997_6	Azul
+12997_7	Púrpura
+12998_0	Natural
+12998_1	Marrón
+12998_2	Blanco
+12998_3	Rosa
+12998_4	Amarillo
+12998_5	Verde
+12998_6	Azul
+12998_7	Púrpura
+12999_0	Natural
+12999_1	Marrón
+12999_2	Blanco
+12999_3	Rosa
+12999_4	Amarillo
+12999_5	Verde
+12999_6	Azul
+12999_7	Púrpura
+13004_0	Rojo
+13004_1	Azul
+13004_2	Naranja
+13004_3	Verde
+13004_4	Blanco
+13004_5	Negro
+13004_6	Marrón
+13004_7	Amarillo
+13005_0	Plateado
+13005_1	Negro
+13005_2	Naranja
+13005_3	Azul
+13005_4	Rojo
+13006_0	Plateado
+13006_1	Negro
+13006_2	Blanco
+13007_0	Plateado
+13007_1	Negro
+13007_2	Blanco
+13008_0	Plateado
+13008_1	Negro
+13008_2	Blanco
+13009_0	Plateado
+13009_1	Negro
+13009_2	Blanco
+13010_0	Plateado
+13010_1	Negro
+13010_2	Blanco
+13073_0	Madera clara
+13073_1	Madera natural
+13073_2	Madera oscura
+13073_3	Blanco
+13073_4	Rojo
+13073_5	Azul
+13073_6	Gris
+13073_7	Negro
+13075_0	Madera clara
+13075_1	Madera natural
+13075_2	Madera oscura
+13075_3	Blanco
+13075_4	Rojo
+13075_5	Azul
+13075_6	Gris
+13075_7	Negro
+13076_0	Madera clara
+13076_1	Madera natural
+13076_2	Madera oscura
+13076_3	Blanco
+13076_4	Rojo
+13076_5	Azul
+13076_6	Gris
+13076_7	Negro
+13077_0	Madera clara
+13077_1	Madera natural
+13077_2	Madera oscura
+13077_3	Blanco
+13077_4	Rojo
+13077_5	Azul
+13077_6	Gris
+13077_7	Negro
+13078_0	Madera clara
+13078_1	Madera natural
+13078_2	Madera oscura
+13078_3	Blanco
+13078_4	Rojo
+13078_5	Azul
+13078_6	Gris
+13078_7	Negro
+13079_0	Madera clara
+13079_1	Madera natural
+13079_2	Madera oscura
+13079_3	Blanco
+13079_4	Rojo
+13079_5	Azul
+13079_6	Gris
+13079_7	Negro
+13080_0	Natural
+13080_1	Marrón oscuro
+13080_2	Blanco
+13080_3	Azul
+13080_4	Rosa
+13080_5	Verde
+13080_6	Madera envejecida
+13081_0	Natural
+13081_1	Marrón oscuro
+13081_2	Blanco
+13081_3	Azul
+13081_4	Rosa
+13081_5	Verde
+13081_6	Madera envejecida
+13082_0	Natural
+13082_1	Marrón oscuro
+13082_2	Blanco
+13082_3	Azul
+13082_4	Rosa
+13082_5	Verde
+13082_6	Madera envejecida
+13083_0	Rojo
+13083_1	Amarillo
+13083_2	Azul
+13083_3	Rosa
+13083_4	Blanco
+13083_5	Verde
+13083_6	Púrpura
+13083_7	Marrón
+13084_0	Marrón ceniza
+13084_1	Dorado
+13084_2	Bronce
+13084_3	Plateado
+13084_4	Azul
+13084_5	Verde
+13084_6	Púrpura
+13084_7	Negro
+13085_0	Rojo
+13085_1	Amarillo
+13085_2	Azul
+13085_3	Rosa
+13085_4	Blanco
+13085_5	Verde
+13085_6	Púrpura
+13085_7	Marrón
+13108_0	Blanco
+13108_1	Negro
+13108_2	Marrón claro
+13108_3	Marrón
+13108_4	Verde
+13108_5	Rosa
+13108_6	Azul
+13108_7	Amarillo
+13109_0	Blanco
+13109_1	Negro
+13109_2	Marrón claro
+13109_3	Marrón
+13109_4	Verde
+13109_5	Rosa
+13109_6	Azul
+13109_7	Amarillo
+13110_0	Negro
+13110_1	Gris
+13110_2	Blanco
+13110_3	Marrón
+13110_4	Verde
+13110_5	Rosa
+13110_6	Azul
+13110_7	Naranja
+13111_0	Madera de paulonia
+13111_1	Marrón
+13111_2	Marrón oscuro
+13111_3	Negro
+13111_4	Rojo
+13111_5	Madera antigua
+13112_0	Madera clara
+13112_1	Madera natural
+13112_2	Madera oscura
+13112_3	Negro
+13112_4	Rojo
+13112_5	Madera envejecida
+13113_0	Tradicional
+13113_1	Celosía
+13113_2	Arte traslúcido
+13113_3	Paneles tostados
+13113_4	Paneles color pastel
+13113_5	Artesanía kumiko
+13113_6	Multicolor
+13113_7	Pintura japonesa
+13114_0	Natural
+13114_1	Marrón
+13114_2	Plateado
+13114_3	Verde
+13114_4	Blanco
+13114_5	Negro
+13115_0	Natural
+13115_1	Marrón
+13115_2	Plateado
+13115_3	Verde
+13115_4	Blanco
+13115_5	Negro
+13116_0	Marrón
+13116_1	Gris
+13116_2	Verde
+13116_3	Naranja
+13116_4	Azul
+13116_5	Negro
+13117_0	Natural
+13117_1	Marrón
+13117_2	Plateado
+13117_3	Verde
+13117_4	Blanco
+13117_5	Negro
+13118_0	Natural
+13118_1	Marrón
+13118_2	Plateado
+13118_3	Verde
+13118_4	Blanco
+13118_5	Negro
+13119_0	Verde
+13119_1	Azul
+13119_2	Rojo
+13119_3	Amarillo
+13119_4	Rosa
+13119_5	Blanco
+13119_6	Negro
+13120_0	Negro
+13120_1	Plateado
+13120_2	Dorado
+13121_0	Madera natural
+13121_1	Madera clara
+13121_2	Madera oscura
+13121_3	Gris
+13121_4	Amarillo
+13121_5	Azul
+13121_6	Rosa
+13122_0	Madera natural
+13122_1	Madera oscura
+13122_2	Madera clara
+13138_0	Dorado
+13138_1	Plateado
+13138_2	Marrón
+13138_3	Blanco
+13138_4	Negro
+13138_5	Azul
+13138_6	Rosa
+13138_7	Marrón claro
+13139_0	Dorado
+13139_1	Plateado
+13139_2	Marrón
+13139_3	Blanco
+13139_4	Negro
+13139_5	Azul
+13139_6	Rosa
+13139_7	Marrón claro
+13140_0	Dorado
+13140_1	Plateado
+13140_2	Marrón
+13140_3	Blanco
+13140_4	Negro
+13140_5	Azul
+13140_6	Rosa
+13140_7	Marrón claro
+13141_0	Dorado
+13141_1	Plateado
+13141_2	Marrón
+13141_3	Blanco
+13141_4	Negro
+13141_5	Azul
+13141_6	Rosa
+13141_7	Marrón claro
+13142_0	Dorado
+13142_1	Plateado
+13142_2	Marrón
+13142_3	Blanco
+13142_4	Negro
+13142_5	Azul
+13142_6	Rosa
+13142_7	Marrón claro
+13143_0	Dorado
+13143_1	Plateado
+13143_2	Marrón
+13143_3	Blanco
+13143_4	Negro
+13143_5	Azul
+13143_6	Rosa
+13143_7	Marrón claro
+13144_0	Negro
+13144_1	Blanco
+13144_2	Rojo
+13144_3	Amarillo
+13144_4	Rosa
+13144_5	Azul
+13144_6	Verde
+13145_0	Multicolor
+13145_1	Roja y amarilla
+13145_2	Verde y roja
+13145_3	Gris
+13145_4	Púrpura
+13145_5	Rosas
+13145_6	Uvas
+13145_7	Periquitos
+13146_0	Blanco
+13146_1	Azul
+13146_2	Rosa
+13146_3	Amarillo
+13146_4	Verde
+13147_0	Blanco
+13147_1	Negro
+13147_2	Plateado
+13148_0	Negro
+13148_1	Blanco
+13148_2	Plateado
+13148_3	Dorado
+13148_4	Rojo
+13148_5	Amarillo
+13148_6	Azul
+13148_7	Multicolor
+13149_0	Verde
+13149_1	Azul
+13149_2	Naranja
+13149_3	Rojo
+13149_4	Rosa
+13149_5	Gris
+13149_6	Blanco
+13150_0	Plateado
+13150_1	Dorado
+13150_2	Cobre
+13150_3	Blanco
+13150_4	Azul
+13150_5	Verde
+13150_6	Púrpura
+13150_7	Negro
+13151_0	Dorado
+13151_1	Negro
+13151_2	Rojo
+13151_3	Cobrizo
+13152_0	Marfil
+13152_1	Rosa
+13152_2	Amarillo
+13152_3	Rojo
+13152_4	Verde
+13152_5	Azul
+13152_6	Blanco
+13153_0	Madera natural
+13153_1	Negro
+13153_2	Madera clara
+13153_3	Blanco
+13154_0	Dorado
+13154_1	Plateado
+13154_2	Blanco
+13154_3	Rojo
+13154_4	Azul
+13154_5	Verde
+13154_6	Rosa
+13154_7	Púrpura
+13155_0	Plateado
+13155_1	Dorado
+13155_2	Negro
+13156_0	Blanco
+13156_1	Negro
+13156_2	Plateado
+13156_3	Cobrizo
+13156_4	Verde
+13156_5	Rojo
+13156_6	Amarillo
+13156_7	Madera
+13157_0	Negro
+13157_1	Blanco
+13157_2	Plateado
+13158_0	Madera clara
+13158_1	Madera naranja
+13158_2	Madera oscura
+13158_3	Madera envejecida
+13158_4	Madera natural
+13158_5	Negro
+13158_6	Verde
+13158_7	Rosa
+13161_0	Verde claro
+13161_1	Rojo
+13161_2	Flor
+13161_3	Amarillo
+13161_4	Verde
+13161_5	Negro
+13161_6	Celeste
+13161_7	Marrón
+13163_0	Marrón claro
+13163_1	Marrón
+13163_2	Marrón oscuro
+13163_3	Blanco
+13164_0	Plateado
+13164_1	Dorado
+13164_2	Púrpura
+13164_3	Azul
+13164_4	Verde
+13164_5	Arcoíris
+13185_0	Botánico
+13185_1	Grullas y olas
+13185_2	Narcisos
+13185_3	Pájaros y flores
+13185_4	Mariposas y flores
+13186_0	Liso
+13186_1	Grullas
+13186_2	Glicinia
+13186_3	Degradado
+13187_0	Dragón
+13187_1	Monte Fuji
+13187_2	Flor del ciruelo
+13187_3	Rosas
+13188_0	De baloncesto
+13188_1	De fútbol
+13188_2	De voleibol
+13188_3	De balón prisionero
+13189_0	Madera de paulonia
+13189_1	Marrón
+13189_2	Marrón oscuro
+13189_3	Negro
+13189_4	Rojo
+13189_5	Madera antigua
+13190_0	Negro
+13190_1	Rojo
+13190_2	Azul
+13190_3	Plateado
+13190_4	Dorado
+13191_0	Negro
+13191_1	Rojo
+13191_2	Azul
+13191_3	Plateado
+13191_4	Dorado
+13192_0	Negro
+13192_1	Rojo
+13192_2	Azul
+13192_3	Púrpura
+13192_4	Plateado
+13201_0	Blanco
+13201_1	Amarillo
+13201_2	Rojo
+13201_3	Marrón
+13201_4	Azul
+13201_5	Rosa
+13201_6	Verde
+13201_7	Púrpura
+13202_0	Blanco
+13202_1	Amarillo
+13202_2	Rojo
+13202_3	Marrón
+13202_4	Azul
+13202_5	Rosa
+13202_6	Verde
+13202_7	Púrpura
+13203_0	Azulejo azul
+13203_1	Azulejo blanco
+13203_2	Azulejo rosado
+13203_3	Azulejo verde
+13203_4	Piedra gris
+13203_5	Piedra parda
+13203_6	Con musgo
+13205_0	Blanco
+13205_1	Negro
+13205_2	Plateado
+13205_3	Madera clara
+13205_4	Madera oscura
+13206_0	Marrón claro
+13206_1	Marrón oscuro
+13206_2	Blanco
+13207_0	Negro
+13207_1	Plateado
+13209_0	Negro
+13209_1	Blanco
+13209_2	Marrón
+13209_3	Rojo
+13209_4	Amarillo
+13209_5	Verde
+13209_6	Azul
+13209_7	Rosa
+13210_0	Naranja
+13210_1	Verde
+13210_2	Rojo
+13210_3	Azul
+13210_4	Amarillo
+13210_5	Rosa
+13210_6	Blanco
+13210_7	Negro
+13211_0	Blanco
+13211_1	Negro
+13211_2	Rojo
+13211_3	Amarillo
+13211_4	Verde
+13211_5	Azul
+13211_6	Plateado
+13214_0	Plateado
+13214_1	Blanco
+13214_2	Marrón
+13214_3	Negro
+13214_4	Rojo
+13214_5	Amarillo
+13214_6	Verde
+13214_7	Azul
+13220_0	Dorado
+13220_1	Negro
+13220_2	Rojo
+13220_3	Cobrizo
+13222_0	Naranja
+13222_1	Amarillo
+13222_2	Verde
+13222_3	Blanco
+13223_0	Naranja
+13223_1	Amarillo
+13223_2	Verde
+13223_3	Blanco
+13229_0	Plateado
+13229_1	Blanco
+13229_2	Negro
+13229_3	Rojo
+13229_4	Azul
+13242_0	Azul
+13242_1	Rojo
+13242_2	Amarillo
+13242_3	Verde
+13242_4	Rosa
+13242_5	Celeste
+13242_6	Púrpura
+13243_0	Beis
+13243_1	Rojo
+13243_2	Pardo y blanco
+13243_3	A topos
+13243_4	Negro
+13243_5	Tricolor
+13243_6	Gris y blanco
+13243_7	Rosa
+13244_0	Rojo y verde
+13244_1	Multicolor
+13244_2	Adorable
+13244_3	Moderno
+13244_4	Chic
+13244_5	Elegante
+13244_6	Natural
+13245_0	Chocolate
+13245_1	Avellana
+13245_2	Nata montada
+13245_3	Fresa
+13245_4	Té verde
+13246_0	El amplio océano
+13246_1	La era mesozoica
+13246_2	La sabana
+13246_3	El mundo de las flores
+13247_0	Plateado
+13247_1	Azul
+13247_2	Rojo
+13247_3	Naranja
+13247_4	Amarillo
+13247_5	Verde
+13247_6	Rosa
+13247_7	Negro
+13249_0	Blanco
+13249_1	Rosa
+13249_2	Negro
+13249_3	Rayas
+13249_4	Floral
+13249_5	Azul
+13249_6	Marrón
+13249_7	Multicolor
+13250_0	Rojo y blanco
+13250_1	Azul y amarillo
+13250_2	Negro y plateado
+13250_3	Rosa y morado
+13251_0	Gris
+13251_1	Marrón
+13251_2	Verde
+13251_3	Azul
+13251_4	Rojo
+13252_0	Rojo
+13252_1	Marrón
+13252_2	Azul
+13252_3	Naranja
+13252_4	Verde
+13252_5	Rosa
+13252_6	Púrpura
+13255_0	Negro
+13255_1	Madera oscura
+13255_2	Madera clara
+13255_3	Blanco
+13255_4	Dorado
+13266_0	Madera natural
+13266_1	Madera oscura
+13266_2	Madera clara
+13266_3	Madera blanca
+13268_0	Marrón claro
+13268_1	Marrón
+13268_2	Azul
+13268_3	Rojo
+13268_4	Verde
+13269_0	Marrón
+13269_1	Marrón claro
+13269_2	Blanco
+13269_3	Azul
+13269_4	Rojo
+13269_5	Verde
+13269_6	Amarillo
+13270_0	Marrón
+13270_1	Natural
+13270_2	Negro
+13271_0	Plateado
+13271_1	Blanco
+13271_2	Negro
+13271_3	Madera
+13271_4	Rojo
+13271_5	Amarillo
+13271_6	Azul
+13271_7	Verde
+13272_0	Rojo
+13272_1	Blanco
+13272_2	Amarillo
+13272_3	Marrón
+13272_4	Azul
+13272_5	Verde
+13272_6	Gris
+13272_7	Negro
+13273_0	Sin flores
+13273_1	En flor
+13274_0	Plateado
+13274_1	Negro
+13274_2	Blanco
+13274_3	Rojo
+13274_4	Azul
+13274_5	Marrón
+13274_6	Amarillo
+13288_0	Madera natural
+13288_1	Madera oscura
+13288_2	Blanco
+13288_3	Rosa
+13288_4	Amarillo
+13288_5	Verde
+13288_6	Azul
+13288_7	Gris
+13294_0	Blanco
+13294_1	Negro
+13294_2	Azul
+13294_3	Naranja
+13294_4	Amarillo
+13294_5	Rosa
+13295_0	Rojo
+13295_1	Amarillo
+13295_2	Verde
+13295_3	Azul
+13295_4	Rosa
+13295_5	Naranja
+13295_6	Púrpura
+13295_7	Marrón
+13296_0	Azul
+13296_1	Burdeos
+13296_2	Amarillo
+13296_3	Verde
+13296_4	Marfil
+13296_5	Gris
+13296_6	Marrón
+13296_7	Negro
+13299_0	Verde
+13299_1	Celeste
+13299_2	Marrón
+13299_3	Azul
+13299_4	Verde claro
+13299_5	Rosa
+13299_6	Blanco
+13300_0	Blanco
+13300_1	Negro
+13300_2	Plateado
+13302_0	Ladrillo ocre
+13302_1	Ladrillo rojo
+13302_2	Piedra blanca
+13302_3	Mármol negro
+13302_4	Hormigón
+13302_5	Piedra gris
+13302_6	Madera
+13303_0	Sal
+13303_1	Pasta
+13303_2	Frutos secos
+13303_3	Café en grano
+13303_4	Fruta en almíbar
+13303_5	Galletas
+13303_6	Nubes
+13303_7	Ovillos
+13304_0	Azul
+13304_1	Verde
+13304_2	Rojo
+13304_3	Verde claro
+13304_4	Plateado
+13304_5	Negro
+13305_0	Plateado
+13305_1	Blanco
+13305_2	Negro
+13305_3	Amarillo
+13305_4	Azul
+13305_5	Verde
+13306_0	Plateado
+13306_1	Blanco
+13306_2	Negro
+13306_3	Amarillo
+13306_4	Azul
+13306_5	Verde
+13307_0	Blanco
+13307_1	Negro
+13307_2	Plateado
+13312_0	Negro
+13312_1	Plateado
+13312_2	Blanco
+13312_3	Marrón
+13313_0	Negro
+13313_1	Blanco
+13313_2	Marrón
+13313_3	Verde
+13335_0	Natural
+13335_1	Blanco
+13335_2	Rojo
+13335_3	Amarillo
+13335_4	Azul
+13335_5	Rosa
+13335_6	Marrón
+13335_7	Negro
+13337_0	Madera clara
+13337_1	Madera natural
+13337_2	Madera oscura
+13337_3	Blanco
+13337_4	Gris
+13337_5	Celeste
+13337_6	Rosa
+13337_7	Marrón ceniza
+13338_0	Madera clara
+13338_1	Madera natural
+13338_2	Madera oscura
+13338_3	Blanco
+13338_4	Gris
+13338_5	Celeste
+13338_6	Rosa
+13338_7	Marrón ceniza
+13339_0	Beis
+13339_1	Gris
+13339_2	Azul marino
+13339_3	Amarillo
+13339_4	Verde
+13339_5	Celeste
+13339_6	Rosa
+13339_7	Marrón
+13340_0	Blanco
+13340_1	Negro
+13340_2	Marrón
+13340_3	Rojo
+13340_4	Amarillo
+13340_5	Verde
+13340_6	Naranja
+13340_7	Azul
+13341_0	Madera clara
+13341_1	Madera natural
+13341_2	Madera oscura
+13341_3	Blanco
+13341_4	Gris
+13341_5	Celeste
+13341_6	Rosa
+13341_7	Marrón ceniza
+13342_0	Rosa
+13342_1	Azul
+13342_2	Verde
+13342_3	Amarillo
+13342_4	Blanco
+13342_5	Negro
+13343_0	Rosa
+13343_1	Azul
+13343_2	Verde
+13343_3	Amarillo
+13343_4	Blanco
+13343_5	Negro
+13344_0	Rosa
+13344_1	Azul
+13344_2	Verde
+13344_3	Amarillo
+13344_4	Blanco
+13344_5	Negro
+13345_0	Patatas fritas
+13345_1	Patatas onduladas «light»
+13345_2	Galletitas de arroz
+13345_3	Galletas pepitas chocolate
+13345_4	Galletitas saladas
+13345_5	Chocolatinas
+13345_6	Palitos sabor queso
+13345_7	Palitos picantes
+13347_0	Blanco
+13347_1	Azul
+13347_2	Rojo
+13347_3	Amarillo y blanco
+13347_4	Marrón
+13347_5	Deteriorado
+13356_0	Azul
+13356_1	Verde
+13356_2	Rojo
+13356_3	Negro
+13360_0	Transparente
+13360_1	Azul
+13360_2	Marrón
+13360_3	Negro
+13360_4	Verde
+13360_5	Naranja
+13360_6	Púrpura
+13361_0	Rojo, azul y amarillo
+13361_1	Verde, amarillo y naranja
+13361_2	Púrpura, rojo y turquesa
+13361_3	Tonos pastel
+13361_4	Tonos sepia
+13361_5	Blanco, gris y negro
+13362_0	Marrón
+13362_1	Azul
+13362_2	Dorado
+13362_3	Oro y negro
+13362_4	Oxidada
+13363_0	Plateado
+13363_1	Blanco
+13363_2	Negro
+13363_3	Amarillo
+13363_4	Azul
+13363_5	Verde
+13365_0	Blanco
+13365_1	Amarillo
+13365_2	Rojo
+13365_3	Azul
+13365_4	Naranja
+13365_5	Verde
+13365_6	Púrpura
+13365_7	Gris
+13366_0	Rojo
+13366_1	Amarillo
+13366_2	Azul
+13366_3	Naranja
+13366_4	Blanco
+13366_5	Verde
+13367_0	Marfil
+13367_1	Terracota
+13367_2	Marrón
+13367_3	Gris
+13367_4	Negro
+13367_5	Blanco
+13367_6	Rosa
+13367_7	Azul
+13368_0	Dorado
+13368_1	Plateado
+13368_2	Marrón
+13368_3	Blanco
+13368_4	Negro
+13368_5	Azul
+13368_6	Rosa
+13368_7	Marrón claro
+13369_0	Plateado
+13369_1	Cobre
+13369_2	Blanco
+13369_3	Verde
+13369_4	Azul
+13369_5	Rojo
+13369_6	Negro
+13369_7	Pátina
+13370_0	Dorado
+13370_1	Verde pálido
+13370_2	Verde
+13447_0	Otoñal
+13447_1	Primaveral
+13448_0	Otoñal
+13448_1	Primaveral
+13449_0	Otoñal
+13449_1	Primaveral
+13450_0	Otoñal
+13450_1	Primaveral
+13453_0	Otoñal
+13453_1	Primaveral
+13454_0	Plateado
+13454_1	Negro
+13454_2	Blanco
+13455_0	Naranja
+13455_1	Verde
+13455_2	Rojo
+13455_3	Azul
+13455_4	Amarillo
+13455_5	Rosa
+13455_6	Blanco
+13455_7	Negro
+13464_0	Rojo
+13464_1	Amarillo
+13464_2	Verde
+13464_3	Azul
+13464_4	Rosa
+13464_5	Celeste
+13464_6	Blanco
+13464_7	Negro
+13465_0	Negro
+13465_1	Blanco
+13466_0	Plateado
+13466_1	Dorado
+13466_2	Azul
+13466_3	Rosa
+13466_4	Verde
+13467_0	Rojo
+13467_1	Amarillo
+13467_2	Púrpura
+13467_3	Azul
+13467_4	Verde
+13468_0	Blanco
+13468_1	Amarillo
+13468_2	Naranja
+13468_3	Rojo
+13468_4	Rosa
+13468_5	Púrpura
+13468_6	Azul
+13468_7	Verde
+13469_0	Blanco
+13469_1	Amarillo
+13469_2	Naranja
+13469_3	Rojo
+13469_4	Rosa
+13469_5	Púrpura
+13469_6	Azul
+13469_7	Verde
+13472_0	Blanco
+13472_1	Verde
+13472_2	Naranja
+13472_3	Azul
+13472_4	Negro
+13472_5	Óxido
+13474_0	Rojo
+13474_1	Amarillo
+13474_2	Verde
+13474_3	Azul
+13474_4	Púrpura
+13474_5	Blanco
+13475_0	Negro
+13475_1	Blanco
+13475_2	Plateado
+13475_3	Dorado
+13475_4	Óxido
+13478_0	Plateado
+13478_1	Negro
+13478_2	Blanco
+13478_3	Rojo
+13478_4	Azul
+13478_5	Amarillo
+13478_6	Rosa
+13478_7	Marrón
+13479_0	Negro
+13479_1	Plateado
+13479_2	Rojo
+13479_3	Amarillo
+13479_4	Azul
+13479_5	Marrón
+13488_0	Chocolate con leche
+13488_1	Chocolate negro
+13488_2	Chocolate blanco
+13488_3	Chocolate con fresas
+13496_0	Gris
+13496_1	Beis
+13496_2	Blanco
+13496_3	Negro
+13496_4	Con musgo
+13502_0	Azul
+13502_1	Verde
+13502_2	Naranja
+13502_3	Rojo
+13503_0	Plateado
+13503_1	Cobre
+13503_2	Negro
+13503_3	Blanco
+13503_4	Óxido
+13504_0	Azul
+13504_1	Verde
+13504_2	Naranja
+13504_3	Rojo
+13505_0	Marrón
+13505_1	Rojo
+13505_2	Azul
+13505_3	Amarillo
+13505_4	Verde
+13505_5	Negro
+13506_0	Azul
+13506_1	Verde
+13506_2	Naranja
+13506_3	Rojo
+13507_0	Verde
+13507_1	Azul
+13507_2	Blanco
+13507_3	Negro
+13507_4	Naranja
+13508_0	Azul
+13508_1	Verde
+13508_2	Naranja
+13508_3	Rojo
+13509_0	Plateado
+13509_1	Cobre
+13509_2	Negro
+13509_3	Multicolor
+13509_4	Marrón
+13509_5	Óxido
+13510_0	Azul
+13510_1	Verde
+13510_2	Naranja
+13510_3	Rojo
+13511_0	Plateado
+13511_1	Cobre
+13511_2	Negro
+13511_3	Multicolor
+13511_4	Marrón
+13511_5	Óxido
+13512_0	Gris
+13512_1	Amarillo
+13512_2	Verde
+13512_3	Azul
+13512_4	Rojo
+13512_5	Óxido
+13513_0	Celeste
+13513_1	Amarillo
+13513_2	Verde
+13513_3	Naranja
+13513_4	Gris
+13513_5	Blanco
+13513_6	Rojo
+13513_7	Azul
+13514_0	Estándar
+13514_1	Coqueto
+13514_2	Moderno
+13514_3	Gótico
+13514_4	Lujoso
+13515_0	Plateado
+13515_1	Blanco
+13515_2	Amarillo
+13515_3	Verde
+13515_4	Azul
+13515_5	Rojo
+13515_6	Negro
+13515_7	Óxido
+13516_0	Plateado
+13516_1	Blanco
+13516_2	Negro
+13516_3	Verde
+13516_4	Azul
+13516_5	Rojo
+13516_6	Amarillo
+13516_7	Óxido
+13517_0	Plateado
+13517_1	Blanco
+13517_2	Negro
+13517_3	Verde
+13517_4	Azul
+13517_5	Rojo
+13517_6	Amarillo
+13517_7	Óxido
+13518_0	Plateado
+13518_1	Blanco
+13518_2	Negro
+13518_3	Verde
+13518_4	Azul
+13518_5	Rojo
+13518_6	Amarillo
+13518_7	Óxido
+13519_0	Negro y rojo
+13519_1	Negro y naranja
+13519_2	Negro y verde
+13519_3	Negro y azul
+13519_4	Negro
+13519_5	Blanco
+13519_6	Rosa
+13519_7	Celeste
+13520_0	Gris
+13520_1	Marrón
+13520_2	Negro
+13520_3	Con musgo
+13521_0	Negro y rojo
+13521_1	Negro y naranja
+13521_2	Negro y verde
+13521_3	Negro y azul
+13521_4	Negro
+13521_5	Blanco
+13521_6	Rosa
+13521_7	Celeste
+13522_0	Media melena rubia
+13522_1	Melena morena
+13522_2	Corto castaño
+13522_3	Media melena platino
+13522_4	Melena pelirroja
+13522_5	Corto rosa
+13522_6	Media melena morena
+13523_0	Negro
+13523_1	Amarillo
+13523_2	Azul
+13523_3	Rosa
+13523_4	Rojo
+13523_5	Púrpura
+13523_6	Blanco
+13523_7	Deteriorado
+13524_0	Gris
+13524_1	Marfil
+13524_2	Marrón
+13524_3	Gris oscuro
+13524_4	Amarillo
+13524_5	Rosa
+13524_6	Azul
+13524_7	Con musgo
+13526_0	Marrón claro
+13526_1	Marrón oscuro
+13526_2	Blanco
+13530_0	Natural
+13530_1	Azul
+13530_2	Rojo
+13530_3	Amarillo
+13530_4	Verde
+13530_5	Blanco
+13534_0	Plateado
+13534_1	Rojo
+13534_2	Marrón
+13573_0	Madera clara
+13573_1	Blanco
+13573_2	Cereza
+13573_3	Madera oscura
+13573_4	Negro
+13573_5	Verde
+13573_6	Azul
+13573_7	Rosa
+13574_0	Madera clara
+13574_1	Blanco
+13574_2	Cereza
+13574_3	Madera oscura
+13574_4	Negro
+13574_5	Verde
+13574_6	Azul
+13574_7	Rosa
+13575_0	Negro
+13575_1	Plateado
+13575_2	Blanco
+13575_3	Marrón
+13575_4	Azul oscuro
+13575_5	Rojo
+13575_6	Rosa
+13576_0	Negro
+13576_1	Blanco
+13576_2	Verde
+13576_3	Marrón
+13576_4	Beis
+13576_5	Gris
+13576_6	Terracota
+13577_0	Negro
+13577_1	Verde
+13577_2	Azul
+13577_3	Blanco
+13577_4	Rosa
+13577_5	Gris
+13578_0	Rosa
+13578_1	Salmón
+13578_2	Blanco
+13578_3	Negro
+13578_4	Verde
+13578_5	Púrpura
+13579_0	Frondosa
+13579_1	Desnuda
+13580_0	Sencillo
+13580_1	Pop
+13580_2	Tonos pastel
+13580_3	Moderno
+13580_4	Deteriorado
+13581_0	Gris
+13581_1	Marfil
+13581_2	Marrón
+13581_3	Gris oscuro
+13581_4	Rosa pastel
+13581_5	Azul y blanco
+13581_6	Marrón claro
+13581_7	Deteriorado
+13582_0	Gris
+13582_1	Marfil
+13582_2	Marrón
+13582_3	Gris oscuro
+13582_4	Rosa pastel
+13582_5	Azul y blanco
+13582_6	Marrón claro
+13582_7	Deteriorado
+13583_0	Gris claro
+13583_1	Beis
+13583_2	Marrón
+13584_0	Naranja
+13584_1	Rojo
+13584_2	Rosa
+13584_3	Púrpura
+13586_0	Plateado
+13586_1	Blanco
+13586_2	Negro
+13586_3	Marrón
+13587_0	Naranja
+13587_1	Amarillo
+13587_2	Rosa
+13587_3	Azul
+13587_4	Blanco
+13587_5	Multicolor
+13588_0	Natural
+13588_1	Blanco
+13588_2	Cereza
+13588_3	Marrón
+13588_4	Ceniza
+13588_5	Verde
+13588_6	Azul
+13588_7	Rosa
+13589_0	Negro
+13589_1	Plateado
+13589_2	Blanco
+13589_3	Marrón
+13589_4	Rojo
+13589_5	Naranja
+13589_6	Verde
+13589_7	Azul
+13590_0	Gris
+13590_1	Marfil
+13590_2	Marrón
+13590_3	Gris oscuro
+13590_4	Rosa pastel
+13590_5	Azul y blanco
+13590_6	Marrón claro
+13590_7	Deteriorado
+13591_0	Moderno
+13591_1	Natural
+13591_2	Estándar
+13591_3	Elegante
+13591_4	Opulento
+13591_5	De diseño
+13591_6	Dulce
+13606_0	Celeste
+13606_1	Amarillo
+13606_2	Verde
+13606_3	Naranja
+13606_4	Gris
+13606_5	Blanco
+13606_6	Rojo
+13606_7	Azul
+13614_0	Marrón claro
+13614_1	Plateado
+13614_2	Rosa
+13614_3	Cobrizo
+13615_0	Marfil
+13615_1	Plateado
+13615_2	Negro
+13615_3	Azul
+13615_4	Rojo
+13615_5	Amarillo
+13615_6	Verde
+13615_7	Celeste
+13616_0	Negro
+13616_1	Plateado
+13616_2	Dorado
+13616_3	Cobre
+13618_0	Pastel
+13618_1	Alegre
+13618_2	Frío
+13618_3	Chic
+13618_4	Rural
+13618_5	Cuna
+13618_6	Hojas
+13618_7	Pop
+13620_0	Cinta de pintor
+13620_1	Cinta de embalar
+13620_2	Cinta de tela
+13620_3	Cinta aislante
+13621_0	Blanco
+13621_1	Negro
+13621_2	Azul
+13621_3	Rojo
+13621_4	Amarillo
+13621_5	Verde
+13621_6	Rosa
+13621_7	Deteriorado
+13622_0	Negro eterno
+13622_1	Metalizado clásico
+13622_2	Blanco nuclear
+13622_3	Rojo pasión
+13622_4	Azul océano
+13622_5	Verde bosque
+13622_6	Oro infinito
+13623_0	Esplendor de verano
+13623_1	Cumbre otoñal
+13623_2	Pico nevado
+13623_3	Roca roja
+13623_4	Piedra gris
+13624_0	Verde
+13624_1	Blanco
+13624_2	Negro
+13625_0	Pastel
+13625_1	Alegre
+13625_2	Frío
+13625_3	Chic
+13625_4	Rural
+13625_5	Cuna
+13625_6	Hojas
+13625_7	Pop
+13626_0	Blanco
+13626_1	Marrón
+13626_2	Rojo
+13626_3	Amarillo
+13626_4	Azul
+13627_0	Pastel
+13627_1	Alegre
+13627_2	Frío
+13627_3	Chic
+13627_4	Rural
+13627_5	Cuna
+13627_6	Hojas
+13627_7	Pop
+13628_0	Rojo
+13628_1	Blanco
+13628_2	Amarillo
+13628_3	Azul
+13628_4	Verde
+13628_5	Negro
+13628_6	Sin pintar
+13629_0	Pastel
+13629_1	Alegre
+13629_2	Frío
+13629_3	Chic
+13629_4	Rural
+13629_5	Cuna
+13629_6	Hojas
+13629_7	Pop
+13630_0	Plateado
+13630_1	Dorado
+13630_2	Cobre
+13631_0	Bermellón
+13631_1	Gris
+13631_2	Marrón
+13631_3	Pátina
+13632_0	Saladas y cola
+13632_1	Saladas y café helado
+13632_2	Saladas y zumo de naranja
+13632_3	Dulces y té helado
+13632_4	Dulces y lima-limón
+13632_5	Al curry y frutas del bosque
+13633_0	Dorado
+13633_1	Plateado
+13633_2	Blanco
+13633_3	Negro
+13633_4	Cobre
+13634_0	Filete de salmón
+13634_1	Filete de pescado blanco
+13634_2	Filete de pez espada
+13634_3	Lomo de salmón
+13634_4	Lomo de pescado blanco
+13634_5	Tiras de calamar
+13634_6	Lomo de atún
+13636_0	Gris
+13636_1	Blanco
+13636_2	Negro
+13636_3	Madera oscura
+13636_4	Madera clara
+13637_0	Plateado
+13637_1	Negro
+13637_2	Rojo
+13637_3	Azul
+13638_0	Negro
+13638_1	Plateado
+13638_2	Rojo
+13638_3	Verde
+13639_0	Gris claro
+13639_1	Negro
+13639_2	Blanco
+13639_3	Marrón
+13639_4	Marrón claro
+13639_5	Marrón oscuro
+13639_6	Gris
+13639_7	Dorado
+13642_0	Multicolor
+13642_1	Tonos pastel
+13642_2	Rojo
+13642_3	Amarillo
+13642_4	Verde
+13642_5	Azul
+13642_6	Negro y morado
+13642_7	Oro y plata
+13643_0	Blanco
+13643_1	Negro
+13643_2	Rojo
+13643_3	Amarillo
+13643_4	Verde
+13643_5	Azul
+13643_6	Madera
+13643_7	Metálico
+13645_0	Marrón
+13645_1	Amarillo
+13645_2	Negro
+13645_3	Blanco
+13645_4	Azul
+13645_5	Rosa
+13645_6	Verde
+13645_7	Beis
+13647_0	Verde
+13647_1	Azul
+13647_2	Naranja
+13647_3	Negro
+13647_4	Blanco
+13647_5	Rosa
+13647_6	Plateado
+13647_7	Óxido
+13649_0	Verde
+13649_1	Amarillo
+13649_2	Naranja
+13650_0	Rojo
+13650_1	Amarillo
+13650_2	Verde
+13650_3	Celeste
+13650_4	Azul
+13650_5	Rosa
+13650_6	Negro
+13650_7	Blanco
+13651_0	Verde
+13651_1	Blanco
+13651_2	Rojo
+13651_3	Azul oscuro
+13655_0	Natural
+13655_1	Marrón
+13655_2	Blanco
+13655_3	Negro
+13655_4	Dorado
+13655_5	Plateado
+13655_6	Rosa
+13655_7	Azul
+13657_0	Marrón
+13657_1	Negro
+13657_2	Marrón claro
+13657_3	Plateado
+13662_0	Marfil
+13662_1	Blanco
+13662_2	Marrón claro
+13662_3	Negro
+13662_4	Con musgo
+13666_0	Gris
+13666_1	Amarillo
+13676_0	Verde claro
+13676_1	Verde
+13676_2	Marrón
+13676_3	Verde pálido
+13678_0	Verde claro
+13678_1	Verde
+13678_2	Marrón
+13678_3	Verde pálido
+13680_0	Plateado
+13680_1	Negro
+13680_2	Rojo
+13680_3	Azul
+13690_0	Blanco
+13690_1	Plateado
+13690_2	Negro
+13690_3	Verde
+13691_0	Lima
+13691_1	Rojo
+13691_2	Lila claro
+13691_3	Celeste
+13691_4	Marfil
+13691_5	Azul marino
+13692_0	Rosa
+13692_1	Azul
+13692_2	Verde
+13692_3	Amarillo
+13692_4	Blanco
+13692_5	Negro
+13696_0	Liso
+13696_1	Etiquetado
+13696_2	Calabazas
+13696_3	Tomates
+13696_4	Patatas
+13696_5	Zanahorias
+13696_6	Caña de azúcar
+13696_7	Harina
+13712_0	Azul
+13712_1	Rojo
+13712_2	Verde
+13717_0	Negro
+13717_1	Celeste
+13717_2	Cobre
+13717_3	Plateado
+13719_0	Amarillo
+13719_1	Púrpura
+13719_2	Rosa
+13719_3	Negro
+13719_4	Blanco
+13719_5	Azul
+13722_0	Prensa japonesa
+13722_1	Prensa internacional
+13722_2	Catálogos de viaje
+13722_3	Revistas de moda
+13722_4	Diccionarios
+13722_5	Cómics
+13722_6	Libros técnicos
+13722_7	Libros viejos
+13729_0	Leche
+13729_1	Batido sabor café
+13729_2	Batido sabor fresa
+13729_3	Zumo de naranja
+13729_4	Zumo de manzana
+13729_5	Zumo de uva
+13729_6	Zumo de verduras
+13729_7	Caldo vegetal
+13740_0	Robots
+13740_1	Coches
+13740_2	Trenes
+13740_3	Transporte
+13740_4	Espacio
+13740_5	Edificios históricos
+13740_6	Edificios contemporáneos
+13744_0	Marrón
+13744_1	Gris
+13744_2	Blanco
+13744_3	Negro
+13744_4	Rojo
+13744_5	Azul
+13744_6	Amarillo
+13744_7	Verde
+13745_0	Liso
+13745_1	Marrón
+13745_2	Verde
+13745_3	A rayas
+13745_4	Kanjis de peces
+13745_5	Flor del ciruelo
+13745_6	Azul y blanco
+13747_0	Negro
+13747_1	Plateado
+13747_2	Blanco
+13748_0	Azul
+13748_1	Rojo
+13748_2	Verde
+13751_0	Natural
+13751_1	Blanco
+13751_2	Cereza
+13751_3	Marrón
+13751_4	Ceniza
+13751_5	Verde
+13751_6	Azul
+13751_7	Rosa
+13756_0	Amarillo
+13756_1	Rojo
+13756_2	Verde
+13756_3	Azul
+13756_4	Negro
+13756_5	Blanco
+13756_6	Gris
+13765_0	Madera oscura
+13765_1	Madera roja
+13765_2	Madera clara
+13765_3	Madera blanca
+13767_0	Verde
+13767_1	Rojo
+13767_2	Azul
+13767_3	Púrpura
+13767_4	Arcoíris
+13770_0	Verde
+13770_1	Rojo
+13770_2	Azul
+13770_3	Púrpura
+13770_4	Arcoíris
+13772_0	Verde
+13772_1	Rojo
+13772_2	Azul
+13772_3	Púrpura
+13772_4	Arcoíris
+13773_0	Verde
+13773_1	Rojo
+13773_2	Azul
+13773_3	Púrpura
+13773_4	Arcoíris
+13774_0	Verde
+13774_1	Rojo
+13774_2	Azul
+13774_3	Púrpura
+13774_4	Arcoíris
+13775_0	Verde
+13775_1	Rojo
+13775_2	Azul
+13775_3	Púrpura
+13775_4	Arcoíris
+13776_0	Verde
+13776_1	Rojo
+13776_2	Azul
+13776_3	Púrpura
+13776_4	Arcoíris
+13777_0	Verde
+13777_1	Rojo
+13777_2	Azul
+13777_3	Púrpura
+13777_4	Arcoíris
+13778_0	Verde
+13778_1	Rojo
+13778_2	Azul
+13778_3	Púrpura
+13778_4	Arcoíris
+13818_0	Otoñal
+13818_1	Primaveral
+13819_0	Otoñal
+13819_1	Primaveral
+13820_0	Otoñal
+13820_1	Primaveral
+13829_0	Verde
+13829_1	Rojo
+13831_0	Rojo
+13831_1	Azul
+13831_2	Verde
+13832_0	Amarillo
+13832_1	Rosa
+13832_2	Verde
+13884_0	Natural
+13884_1	Marrón oscuro
+13884_2	Blanco
+13884_3	Azul
+13884_4	Rosa
+13884_5	Verde
+13884_6	Madera envejecida
+13897_0	Rojo
+13897_1	Blanco
+13897_2	Gris
+13901_0	Rojo
+13901_1	Blanco
+13901_2	Gris
+13902_0	Madera clara
+13902_1	Madera natural
+13902_2	Madera oscura
+13925_0	Negro
+13925_1	Blanco
+13925_2	Plateado
+13926_0	Blanco
+13926_1	Negro
+13926_2	Rojo
+13926_3	Azul
+13926_4	Amarillo
+13926_5	Verde
+13926_6	Marrón
+13927_0	Turquesa
+13927_1	Gris
+13927_2	Coral
+13927_3	Amarilla
+13930_0	Multicolor
+13930_1	Adorable
+13930_2	Moderno
+13930_3	Chic
+13930_4	Elegante
+13930_5	Natural
+14017_0	Marrón
+14017_1	Gris
+14017_2	Negra
+14017_3	Con musgo
+14018_0	Marfil
+14018_1	Blanco
+14018_2	Marrón claro
+14018_3	Negro
+14018_4	Con musgo
+14019_0	Verde
+14019_1	Verde claro
+14019_2	Verde oscuro
+14019_3	Marrón
+14019_4	Gris
+14029_0	Rojo
+14029_1	Rosa
+14029_2	Amarillo
+14029_3	Púrpura
+14029_4	Blanco
+14029_5	Negro
+14046_0	Amarillo
+14046_1	Azul
+14046_2	Rosa
+14046_3	Blanco
+14046_4	Marrón
+14047_0	Azul
+14047_1	Rosa
+14047_2	Verde
+14047_3	Púrpura
+14047_4	Marrón
+14047_5	Blanco
+14049_0	Blanco
+14049_1	Negro
+14049_2	Plateado
+14049_3	Rojo
+14049_4	Amarillo
+14049_5	Naranja
+14049_6	Verde
+14049_7	Azul
+14050_0	Rojo
+14050_1	Verde
+14050_2	Amarillo
+14050_3	Negro
+14050_4	Azul
+14050_5	Blanco
+14050_6	Naranja
+14051_0	Dorado
+14051_1	Plateado
+14051_2	Marrón
+14051_3	Blanco
+14051_4	Negro
+14051_5	Verde
+14051_6	Rosa
+14051_7	Marrón claro
+14053_0	Marrón claro
+14053_1	Blanco
+14053_2	Negro
+14053_3	Gris
+14053_4	Rojo
+14053_5	Amarillo
+14053_6	Celeste
+14053_7	Marrón oscuro
+14054_0	Natural
+14054_1	Marrón oscuro
+14054_2	Blanco
+14054_3	Azul
+14054_4	Rosa
+14054_5	Verde
+14054_6	Madera envejecida
+14055_0	Blanco
+14055_1	Beis
+14055_2	Rojo
+14055_3	Verde bosque
+14055_4	Azul
+14055_5	Negro
+14056_0	Amarillo
+14056_1	Marrón
+14056_2	Verde
+14056_3	Rosa
+14056_4	Azul
+14057_0	Azul
+14057_1	Marrón
+14057_2	Amarillo
+14057_3	Verde
+14057_4	Rosa
+14057_5	Blanco
+14058_0	Marrón
+14058_1	Amarillo
+14058_2	Verde
+14058_3	Azul
+14059_0	Marrón
+14059_1	Amarillo
+14059_2	Verde
+14059_3	Azul
+14059_4	Negro
+14060_0	Verde
+14060_1	Amarillo
+14060_2	Rosa
+14060_3	Azul
+14060_4	Plateado
+14061_0	Amarillo
+14061_1	Blanco
+14061_2	Marrón
+14061_3	Rosa
+14061_4	Azul
+14062_0	Pop
+14062_1	Natural
+14062_2	Moderno
+14062_3	Adorable
+14062_4	Chic
+14063_0	Rojo
+14063_1	Amarillo
+14063_2	Verde
+14063_3	Azul
+14063_4	Púrpura
+14063_5	Blanco
+14064_0	Beis
+14064_1	Marrón
+14064_2	Amarillo
+14064_3	Azul
+14064_4	Rosa
+14064_5	Negro
+14065_0	Azul
+14065_1	Amarillo
+14065_2	Verde
+14065_3	Púrpura
+14065_4	Blanco
+14066_0	Marrón
+14066_1	Verde
+14066_2	Rosa
+14066_3	Púrpura
+14066_4	Blanco
+14067_0	Verde
+14067_1	Marrón
+14067_2	Amarillo
+14067_3	Azul
+14067_4	Rosa
+14067_5	Púrpura
+14067_6	Blanco
+14074_0	Plateado
+14074_1	Cobre
+14074_2	Azul
+14074_3	Negro
+14075_0	Pardo
+14075_1	Marrón
+14075_2	Verde
+14075_3	Azul
+14075_4	Blanco
+14075_5	Negro
+14076_0	Azul
+14076_1	Verde
+14076_2	Marrón
+14076_3	Púrpura
+14076_4	Gris
+14077_0	Gris
+14077_1	Marrón
+14077_2	Verde
+14077_3	Rosa
+14077_4	Azul
+14077_5	Blanco
+14077_6	Negro
+14078_0	Azul
+14078_1	Rojo
+14078_2	Dorado
+14078_3	Plateado
+14080_0	Rosa
+14080_1	Beis
+14080_2	Verde
+14080_3	Gris
+14081_0	Púrpura
+14081_1	Amarillo
+14081_2	Verde
+14081_3	Rosa
+14081_4	Azul
+14081_5	Blanco
+14081_6	Gris
+14082_0	Naranja
+14082_1	Beis
+14082_2	Verde
+14082_3	Marrón
+14082_4	Azul
+14082_5	Gris
+14083_0	Marrón
+14083_1	Pardo
+14083_2	Verde
+14083_3	Azul
+14083_4	Púrpura
+14083_5	Negro
+14086_0	Azul
+14086_1	Rojo
+14086_2	Verde
+14086_3	Púrpura
+14087_0	Pardo
+14087_1	Verde
+14087_2	Rojo
+14087_3	Azul
+14088_0	Amarillo
+14088_1	Marrón
+14088_2	Azul
+14088_3	Rojo
+14088_4	Verde
+14088_5	Negro
+14089_0	Pop
+14089_1	Natural
+14089_2	Moderno
+14089_3	Adorable
+14089_4	Chic
+14092_0	Marrón claro
+14092_1	Marrón
+14092_2	Verde
+14092_3	Rosa
+14092_4	Blanco
+14093_0	Verde
+14093_1	Naranja
+14093_2	Marrón
+14093_3	Verde claro
+14093_4	Azul
+14093_5	Pardo
+14093_6	Gris
+14094_0	Beis
+14094_1	Amarillo
+14094_2	Rosa
+14094_3	Azul
+14094_4	Blanco
+14094_5	Negro
+14095_0	Naranja
+14095_1	Amarillo
+14095_2	Verde
+14095_3	Rosa
+14095_4	Púrpura
+14098_0	Naranja
+14098_1	Verde
+14098_2	Azul
+14098_3	Púrpura
+14098_4	Negro
+14098_5	Pino
+14099_0	Verde
+14099_1	Amarillo
+14099_2	Azul
+14099_3	Blanco
+14099_4	Negro
+14100_0	Púrpura
+14100_1	Dorado
+14100_2	Rosa
+14100_3	Plateado
+14100_4	Azul
+14101_0	Rojo
+14101_1	Marrón
+14101_2	Blanco
+14101_3	Azul
+14101_4	Verde
+14101_5	Negro
+14106_0	Blanco
+14106_1	Marrón claro
+14106_2	Verde
+14106_3	Negro
+14106_4	Gris
+14106_5	Azul
+14106_6	Rosa
+14106_7	Óxido
+14108_0	Natural
+14108_1	Marrón claro
+14108_2	Marrón oscuro
+14108_3	Con musgo
+14184_0	Hiedra
+14184_1	Flores azules
+14184_2	Flores lilas
+14184_3	Flores rosadas
+14184_4	Flores blancas
+14184_5	Flores amarillas
+14184_6	Flores naranjas
+14192_0	Verde
+14192_1	Verde claro
+14192_2	Verde oscuro
+14192_3	Marrón
+14192_4	Gris
+14193_0	Verde
+14193_1	Verde claro
+14193_2	Verde oscuro
+14193_3	Marrón
+14193_4	Gris
+14205_0	Verde
+14205_1	Verde claro
+14205_2	Verde oscuro
+14205_3	Marrón
+14205_4	Gris
+14206_0	Verde
+14206_1	Verde claro
+14206_2	Verde oscuro
+14206_3	Marrón
+14206_4	Gris
+14207_0	Verde
+14207_1	Turquesa
+14207_2	Azul
+14207_3	Rojo
+14207_4	Amarillo
+14207_5	Rosa
+14207_6	Blanco
+14207_7	Gris
+14208_0	Verde
+14208_1	Turquesa
+14208_2	Azul
+14208_3	Rojo
+14208_4	Amarillo
+14208_5	Rosa
+14208_6	Blanco
+14208_7	Gris
+14209_0	Verde
+14209_1	Turquesa
+14209_2	Azul
+14209_3	Rojo
+14209_4	Amarillo
+14209_5	Rosa
+14209_6	Blanco
+14209_7	Gris
+14210_0	Verde
+14210_1	Turquesa
+14210_2	Azul
+14210_3	Rojo
+14210_4	Amarillo
+14210_5	Rosa
+14210_6	Blanco
+14210_7	Gris
+14211_0	Verde
+14211_1	Turquesa
+14211_2	Azul
+14211_3	Rojo
+14211_4	Amarillo
+14211_5	Rosa
+14211_6	Blanco
+14211_7	Gris
+14212_0	Turquesa
+14212_1	Verde
+14212_2	Púrpura
+14213_0	Gris
+14213_1	Marrón claro
+14213_2	Negro
+14213_3	Con musgo
+14214_0	Plateado
+14214_1	Negro
+14214_2	Blanco
+14214_3	Óxido
+14216_0	Verde
+14216_1	Azul
+14216_2	Rosa
+14216_3	Amarillo
+14216_4	Iridiscente
+14308_0	Blanco
+14308_1	Rosa
+14308_2	Azul pálido
+14308_3	Amarillo
+14308_4	Rojo
+14308_5	Azul
+14308_6	Gris
+14308_7	Negro
+14310_0	Blanco
+14310_1	Rosa
+14310_2	Azul pálido
+14310_3	Amarillo
+14310_4	Rojo
+14310_5	Azul
+14310_6	Gris
+14310_7	Negro
+14313_0	Madera clara
+14313_1	Madera natural
+14313_2	Madera oscura
+14332_0	Gris
+14332_1	Blanco
+14332_2	Negro
+14337_0	Gris
+14337_1	Blanco
+14337_2	Negro
+14340_0	Rojo
+14340_1	Verde
+14340_2	Amarillo
+14352_0	Púrpura
+14352_1	Azul
+14352_2	Verde
+14352_3	Amarillo
+14352_4	Rosa
+14352_5	Negro
+14353_0	Azul
+14353_1	Celeste
+14353_2	Amarillo
+14353_3	Naranja
+14353_4	Rojo
+14353_5	Púrpura
+14354_0	Rosa
+14354_1	Celeste
+14354_2	Blanco
+14354_3	Amarillo
+14354_4	Naranja
+14354_5	Púrpura
+14414_0	Estrellas
+14414_1	Lunas
+14414_2	Vidriera
+14414_3	Soles
+14414_4	Gansos
+14414_5	Hojas
+14475_0	Blanco
+14475_1	Azul
+14475_2	Blanco y rojo
+14476_0	Blanco
+14476_1	Azul
+14476_2	Marrón
+14477_0	Blanco
+14477_1	Azul
+14477_2	Blanco y rojo
+14520_0	Celeste
+14520_1	Verde
+14520_2	Amarillo
+14520_3	Rojo
+14520_4	Rosa
+14520_5	Púrpura
+14520_6	Azul
+14520_7	Blanco
+14523_0	Blanco y negro
+14523_1	Rojo y negro
+14523_2	Azul y rojo
+14523_3	Multicolor
+14524_0	Blanco
+14524_1	Celeste
+14524_2	Rosa
+14524_3	Púrpura
+14524_4	Amarillo
+14524_5	Pátina
+14525_0	Blanco
+14525_1	Marrón
+14525_2	Verde
+14525_3	Azul
+14525_4	Rosa
+14525_5	Púrpura
+14525_6	Plateado
+14526_0	Marrón claro
+14526_1	Natural
+14526_2	Marrón oscuro
+14527_0	Azul
+14527_1	Negro
+14527_2	Rojo
+14527_3	Amarillo
+14527_4	Verde
+14527_5	Blanco
+14527_6	Marrón
+14528_0	Azul
+14528_1	Rojo
+14528_2	Amarillo
+14528_3	Verde
+14528_4	Negro
+14528_5	Blanco
+14528_6	Plateado
+14528_7	Óxido
+14530_0	Blanco
+14530_1	Marrón claro
+14530_2	Marrón
+14530_3	Gris
+14531_0	Madera natural
+14531_1	Madera oscura
+14531_2	Blanco
+14534_0	Ramen a la salsa de soja
+14534_1	Ramen salado
+14534_2	Ramen de miso
+14534_3	Curry verde
+14534_4	Sopa tailandesa tom yum
+14534_5	Ramen picante
+14538_0	Rojo
+14538_1	Azul
+14538_2	Verde
+14538_3	Rosa
+14539_0	Negro
+14539_1	Blanco
+14539_2	Rojo
+14539_3	Amarillo
+14539_4	Dorado
+14539_5	Plateado
+14542_0	Naranja
+14542_1	Amarillo
+14542_2	Verde
+14542_3	Blanco
+14549_0	Marrón
+14549_1	Marrón oscuro
+14549_2	Blanco
+14549_3	Con musgo
+14550_0	Naranja
+14550_1	Amarillo
+14550_2	Verde
+14550_3	Blanco
+14551_0	Naranja
+14551_1	Amarillo
+14551_2	Verde
+14551_3	Blanco
+14556_0	Negro
+14556_1	Rojo
+14556_2	Blanco
+14556_3	Madera
+14561_0	Vacía
+14561_1	Ensalada caprese
+14561_2	Entrante frío con salsa
+14561_3	Quesos y cremas para untar
+14561_4	Pastel de arroz tteokbokki
+14561_5	Pasta al pesto
+14561_6	Arroz pilaf
+14572_0	Celeste
+14572_1	Azul
+14572_2	Verde
+14572_3	Rojo
+14572_4	Beis
+14572_5	Negro
+14572_6	Rosa
+14572_7	Óxido
+14574_0	Mezcla
+14574_1	Moca
+14574_2	Kilimanjaro
+14574_3	Blue Mountain
+14574_4	Descafeinado
+14575_0	Plateado
+14575_1	Azul
+14575_2	Amarillo
+14575_3	Rojo
+14575_4	Verde
+14591_0	Rojo
+14591_1	Verde
+14591_2	Azul
+14591_3	Rosa
+14591_4	Púrpura
+14592_0	Madera clara
+14592_1	Blanco
+14592_2	Cereza
+14592_3	Madera oscura
+14592_4	Negro
+14592_5	Verde
+14592_6	Azul
+14592_7	Rosa
+14593_0	Rojo
+14593_1	Verde
+14593_2	Azul
+14593_3	Rosa
+14593_4	Púrpura
+14594_0	Rojo
+14594_1	Verde
+14594_2	Azul
+14594_3	Rosa
+14594_4	Púrpura
+14596_0	Rojo
+14596_1	Blanco
+14596_2	Gris
+14597_0	Gris
+14597_1	Blanco
+14597_2	Negro
+14598_0	Blanco
+14598_1	Rosa
+14598_2	Azul pálido
+14598_3	Amarillo
+14598_4	Rojo
+14598_5	Azul
+14598_6	Gris
+14598_7	Negro
+14601_0	Madera clara
+14601_1	Madera natural
+14601_2	Madera oscura
+14604_0	Verde
+14604_1	Turquesa
+14604_2	Azul
+14604_3	Rojo
+14604_4	Amarillo
+14604_5	Rosa
+14604_6	Blanco
+14604_7	Gris
+14619_0	Marrón
+14619_1	Negro
+14619_2	Blanco
+14620_0	Marrón
+14620_1	Negro
+14620_2	Blanco
+14639_0	Novela
+14639_1	Guía de jardinería
+14639_2	Guía de insectos
+14639_3	Guía de pesca
+14639_4	Guía de fósiles
+14640_0	Moda
+14640_1	Música
+14640_2	Deportes
+14640_3	Historietas
+14714_0	Marrón claro
+14714_1	Blanco
+14714_2	Marrón
+14728_0	Rojo
+14728_1	Verde
+14728_2	Azul
+14728_3	Rosa
+14728_4	Púrpura
+14735_0	
+14735_1	
+14756_0	Natural
+14756_1	Azul
+14756_2	Rosa
+14756_3	Amarilla
+14756_4	Naranja
+14756_5	Verde
+14756_6	Morada
+14758_0	Gris
+14758_1	Amarillo
+14758_2	Verde
+14758_3	Azul
+14758_4	Rojo
+14758_5	Blanco
+14758_6	Negro
+14758_7	Marrón
+14759_0	Azul
+14759_1	Rojo
+14759_2	Amarillo
+14759_3	Lima
+14759_4	Rosa
+14759_5	Amarillo y rojo
+14759_6	Azul y rosa
+14759_7	Verde y naranja
+14799_0	Rojo
+14799_1	Azul
+14799_2	Amarillo
+14799_3	Verde
+14799_4	Púrpura
+14799_5	Rosa
+14799_6	Blanco
+14799_7	Negro
+14821_0	Blanco
+14821_1	Amarillo
+14821_2	Naranja
+14821_3	Rojo
+14821_4	Rosa
+14821_5	Púrpura
+14821_6	Azul
+14821_7	Verde
+14826_0	Gris
+14826_1	Blanco
+14826_2	Negro
+14826_3	Madera oscura
+14826_4	Madera clara
+14831_0	Marrón
+14831_1	Marfil
+14831_2	Verde
+14831_3	Azul
+14831_4	Rojo
+14831_5	Marrón oscuro
+14831_6	Ceniza
+14831_7	Negro
+14882_0	Marfil
+14882_1	Blanco
+14882_2	Marrón claro
+14882_3	Negro
+14882_4	Con musgo
+14887_0	Marfil
+14887_1	Blanco
+14887_2	Marrón claro
+14887_3	Negro
+14887_4	Con musgo

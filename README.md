@@ -1,9 +1,5 @@
 NHSE
 =====
-<div>
-  <span>English</span> / <a href=".github/README-jp.md">日本語</a> / <a href=".github/README-zh-CN.md">简体中文</a> / <a href=".github/README-es.md">Español</a> / <a href=".github/README-it.md">Italiano</a> / <a href=".github/README-fr.md">Français</a>
-</div>
-
 ![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
 Save editor for **Animal Crossing: New Horizons**, rewritten in Rust with a native
@@ -35,18 +31,18 @@ Optional: **Settings → Item images** downloads a community pack (~90 MB) with 
 
 Save reading and writing was cross-checked byte for byte against the original C# NHSE across game versions.
 
-### Improvements over the original
+### Improvements
 
-- Compact backups that store only the save files, plus a page to manage them (#782).
-- Item search with wildcards (`*`, `?`), regular expressions (`/…/`) and hex ids (#780).
-- Villager greetings use the game's full 47-character storage, with a counter that shows how much fits in a speech bubble (#770).
-- Find and replace across a player's mailbox (#757).
-- Room furniture can overhang the room edge, like in the game (Settings, #586).
-- "Give all items" skips items that crash the game (#535).
-- Fill storage with every wearable, variants included (#473).
-- Export bulletin board posts as files or text (#344).
-- Clearer map colours for shores, cliffs, waterfalls and elevation (#251).
-- Flower gene and watering editor (#300).
+- Compact backups that store only the save files, plus a page to manage them.
+- Item search with wildcards (`*`, `?`), regular expressions (`/…/`) and hex ids.
+- Villager greetings use the game's full 47-character storage, with a counter that shows how much fits in a speech bubble.
+- Find and replace across a player's mailbox.
+- Room furniture can overhang the room edge, like in the game (Settings).
+- "Give all items" skips items that crash the game.
+- Fill storage with every wearable, variants included.
+- Export bulletin board posts as files or text.
+- Clearer map colours for shores, cliffs, waterfalls and elevation.
+- Flower gene and watering editor.
 - ZIP saves where the files sit inside a sub-folder now open.
 
 ## Building from source
@@ -68,6 +64,6 @@ Layout:
 
 ## Other
 
-Refer to the [original NHSE wiki](https://github.com/kwsch/NHSE/wiki) for background on the save format.
+This project is a rewrite of NHSE by Kaphotics and contributors, and like the original it is licensed under the GNU GPL v3 (see `LICENSE`).
 
 **We do not support or condone cheating at the expense of others.** Please be responsible!

@@ -285,7 +285,7 @@ pub fn import_player_mail(
     })
 }
 
-/// Find & replace text across every letter of a player's postbox (issue #757).
+/// Find & replace text across every letter of a player's postbox.
 #[tauri::command]
 pub fn replace_in_mail(
     state: State<AppState>,

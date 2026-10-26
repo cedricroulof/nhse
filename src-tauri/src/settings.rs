@@ -19,7 +19,7 @@ pub struct Settings {
     pub map_auto_extensions: bool,
     /// Map editor: refuse to overwrite occupied tiles.
     pub map_prevent_overlap: bool,
-    /// Allow placing room items partially outside the room grid (issue #586).
+    /// Allow placing room items partially outside the room grid.
     pub room_allow_overhang: bool,
     /// Show hex values and other advanced controls.
     pub advanced: bool,

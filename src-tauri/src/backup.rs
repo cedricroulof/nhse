@@ -1,9 +1,9 @@
 //! Save backups.
 //!
 //! The original editor copied the *entire folder* containing `main.dat` on every load, so opening
-//! a save from e.g. Downloads produced backups of tens of gigabytes that could not be deleted
-//! (upstream issue #782). Here only the save files themselves are archived, compressed, into the
-//! app's data folder, duplicates are skipped and old backups are pruned automatically.
+//! a save from e.g. Downloads produced backups of tens of gigabytes that could not be deleted.
+//! Here only the save files themselves are archived, compressed, into the app's data folder,
+//! duplicates are skipped and old backups are pruned automatically.
 use nhse_core::save::SaveSource;
 use serde::Serialize;
 use std::io::Write;

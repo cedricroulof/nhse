@@ -617,7 +617,7 @@ pub fn import_bulletin_post(state: State<AppState>, slot: usize, path: String) -
     with_save_mut!(state, |s| Ok(s.set_bulletin_post_raw(slot, &d)?))
 }
 
-/// Exports every post's text as a readable text file (issue #344).
+/// Exports every post's text as a readable text file.
 #[tauri::command]
 pub fn export_bulletin_text(state: State<AppState>, path: String) -> CmdResult<usize> {
     with_save!(state, |s| {

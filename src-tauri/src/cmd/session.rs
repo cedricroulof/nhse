@@ -17,6 +17,8 @@ pub struct AppInfo {
     pub languages: Vec<(String, String)>,
     pub settings: Settings,
     pub has_image_pack: bool,
+    /// Changes whenever the image pack is installed or removed (cache-busting for item images).
+    pub image_pack_stamp: u64,
     pub backups_dir: String,
     pub platform: String,
     pub supported_versions: Vec<String>,
@@ -27,12 +29,19 @@ pub fn app_info(state: State<AppState>) -> CmdResult<AppInfo> {
     let settings = state.settings.lock()?.clone();
     Ok(AppInfo {
         version: env!("CARGO_PKG_VERSION").into(),
-        languages: nhse_core::data::LANGUAGES.iter().map(|(a, b)| (a.to_string(), b.to_string())).collect(),
+        languages: nhse_core::data::LANGUAGES
+            .iter()
+            .map(|(a, b)| (a.to_string(), b.to_string()))
+            .collect(),
         settings,
         has_image_pack: sprites::has_image_pack(&state.paths.images()),
+        image_pack_stamp: sprites::image_pack_stamp(&state.paths.images()),
         backups_dir: state.paths.backups().to_string_lossy().into(),
         platform: std::env::consts::OS.into(),
-        supported_versions: nhse_core::save::REVISIONS.iter().map(|r| r.version.to_string()).collect(),
+        supported_versions: nhse_core::save::REVISIONS
+            .iter()
+            .map(|r| r.version.to_string())
+            .collect(),
     })
 }
 
@@ -81,7 +90,13 @@ fn summary(sess: &Session, backup: Option<String>) -> SaveSummary {
         revision_index: s.revision.index,
         compatibility_mode: s.revision.compatibility_mode,
         warnings: s.warnings.clone(),
-        players: (0..s.players.len()).map(|i| PlayerRef { index: i, dir: s.players[i].dir.clone(), name: s.player_name(i) }).collect(),
+        players: (0..s.players.len())
+            .map(|i| PlayerRef {
+                index: i,
+                dir: s.players[i].dir.clone(),
+                name: s.player_name(i),
+            })
+            .collect(),
         dirty: sess.dirty,
         revision: sess.revision,
         last_saved: s.island_settings().last_saved,
@@ -103,7 +118,12 @@ pub fn open_save(state: State<AppState>, path: String) -> CmdResult<SaveSummary>
     };
     let mut warnings = Vec::new();
     let backup = if do_backup {
-        match backup::create(&state.paths.backups(), &save.source, &save.town_name(), keep) {
+        match backup::create(
+            &state.paths.backups(),
+            &save.source,
+            &save.town_name(),
+            keep,
+        ) {
             Ok(b) => b.map(|x| x.to_string_lossy().to_string()),
             Err(e) => {
                 warnings.push(format!("Automatic backup failed: {e}"));
@@ -118,7 +138,11 @@ pub fn open_save(state: State<AppState>, path: String) -> CmdResult<SaveSummary>
         st.push_recent(&save.source.location().to_string_lossy());
         st.save(&state.paths.settings_file());
     }
-    let mut sess = Session { save, revision: 1, dirty: false };
+    let mut sess = Session {
+        save,
+        revision: 1,
+        dirty: false,
+    };
     sess.save.warnings.extend(warnings);
     let sum = summary(&sess, backup);
     *state.session.lock()? = Some(sess);
@@ -140,8 +164,11 @@ pub fn close_save(state: State<AppState>) -> CmdResult<()> {
 #[tauri::command]
 pub fn save_changes(state: State<AppState>) -> CmdResult<SaveSummary> {
     let mut g = state.session.lock()?;
-    let sess = g.as_mut().ok_or_else(|| crate::error::CmdError("No save is open.".into()))?;
-    let seed = (chrono::Local::now().timestamp_nanos_opt().unwrap_or(0) as u64 ^ 0x5DEE_CE66) as u32;
+    let sess = g
+        .as_mut()
+        .ok_or_else(|| crate::error::CmdError("No save is open.".into()))?;
+    let seed =
+        (chrono::Local::now().timestamp_nanos_opt().unwrap_or(0) as u64 ^ 0x5DEE_CE66) as u32;
     sess.save.save(seed)?;
     sess.dirty = false;
     Ok(summary(sess, None))
@@ -152,7 +179,11 @@ pub fn save_changes(state: State<AppState>) -> CmdResult<SaveSummary> {
 pub fn revert_save(state: State<AppState>) -> CmdResult<SaveSummary> {
     let path = with_save!(state, |s| s.source.location().to_path_buf());
     let save = HorizonSave::open(&path)?;
-    let sess = Session { save, revision: 1, dirty: false };
+    let sess = Session {
+        save,
+        revision: 1,
+        dirty: false,
+    };
     let sum = summary(&sess, None);
     *state.session.lock()? = Some(sess);
     Ok(sum)
@@ -186,8 +217,13 @@ pub fn delete_backup(state: State<AppState>, path: String) -> CmdResult<()> {
 #[tauri::command]
 pub fn create_backup(state: State<AppState>) -> CmdResult<Option<String>> {
     let keep = state.settings.lock()?.backup_keep;
-    with_save!(state, |s| Ok(backup::create(&state.paths.backups(), &s.source, &s.town_name(), keep)?
-        .map(|p| p.to_string_lossy().to_string())))
+    with_save!(state, |s| Ok(backup::create(
+        &state.paths.backups(),
+        &s.source,
+        &s.town_name(),
+        keep
+    )?
+    .map(|p| p.to_string_lossy().to_string())))
 }
 
 #[derive(Clone, Serialize)]
@@ -197,7 +233,10 @@ struct Progress {
 }
 
 #[tauri::command]
-pub async fn download_images(app: tauri::AppHandle, state: State<'_, AppState>) -> CmdResult<usize> {
+pub async fn download_images(
+    app: tauri::AppHandle,
+    state: State<'_, AppState>,
+) -> CmdResult<usize> {
     let dir = state.paths.images();
     let handle = app.clone();
     let res = tauri::async_runtime::spawn_blocking(move || {

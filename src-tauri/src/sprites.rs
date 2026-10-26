@@ -54,8 +54,14 @@ pub fn item_png(img_dir: &Path, id: u16, variant: u16) -> Vec<u8> {
 pub fn menu_icon_png(id: u16) -> Vec<u8> {
     let icon = item_menu_icon(id);
     let name = enum_name("ItemMenuIconType", icon as i64).unwrap_or("Leaf");
-    let file = if name == "Leaf" { "Leaf1".to_string() } else { name.to_string() };
-    embedded(&format!("MenuIcon/{file}.png")).or_else(|| embedded("Misc/leaf.png")).unwrap_or_default()
+    let file = if name == "Leaf" {
+        "Leaf1".to_string()
+    } else {
+        name.to_string()
+    };
+    embedded(&format!("MenuIcon/{file}.png"))
+        .or_else(|| embedded("Misc/leaf.png"))
+        .unwrap_or_default()
 }
 
 pub fn villager_png(internal: &str) -> Option<Vec<u8>> {
@@ -63,15 +69,38 @@ pub fn villager_png(internal: &str) -> Option<Vec<u8>> {
 }
 
 pub fn has_image_pack(img_dir: &Path) -> bool {
-    std::fs::read_dir(img_dir).map(|mut d| d.next().is_some()).unwrap_or(false)
+    std::fs::read_dir(img_dir)
+        .map(|mut d| d.next().is_some())
+        .unwrap_or(false)
 }
 
-pub const IMAGE_PACK_URL: &str = "https://github.com/berichan/NHSE-USB/releases/download/0.01/raw.zip";
+/// Modification time of the image folder (0 when absent), used to bust cached item images.
+pub fn image_pack_stamp(img_dir: &Path) -> u64 {
+    std::fs::metadata(img_dir)
+        .and_then(|m| m.modified())
+        .ok()
+        .and_then(|t| t.duration_since(std::time::UNIX_EPOCH).ok())
+        .map(|d| d.as_secs())
+        .unwrap_or(0)
+}
+
+pub const IMAGE_PACK_URL: &str =
+    "https://github.com/berichan/NHSE-USB/releases/download/0.01/raw.zip";
 
 /// Downloads and extracts the community item image pack into `img_dir`.
-pub fn download_image_pack(img_dir: &Path, progress: impl Fn(u64, Option<u64>)) -> Result<usize, String> {
-    let resp = ureq::get(IMAGE_PACK_URL).call().map_err(|e| format!("download failed: {e}"))?;
-    let total = resp.header("Content-Length").and_then(|v| v.parse::<u64>().ok());
+pub fn download_image_pack(
+    img_dir: &Path,
+    progress: impl Fn(u64, Option<u64>),
+) -> Result<usize, String> {
+    // OS certificate store + system proxy settings, so it also works behind corporate proxies
+    let agent = ureq::AgentBuilder::new().try_proxy_from_env(true).build();
+    let resp = agent
+        .get(IMAGE_PACK_URL)
+        .call()
+        .map_err(|e| format!("download failed: {e}"))?;
+    let total = resp
+        .header("Content-Length")
+        .and_then(|v| v.parse::<u64>().ok());
     let mut reader = resp.into_reader();
     let mut buf = Vec::with_capacity(total.unwrap_or(0) as usize);
     let mut chunk = [0u8; 1 << 16];
@@ -91,7 +120,9 @@ pub fn download_image_pack(img_dir: &Path, progress: impl Fn(u64, Option<u64>)) 
         if f.is_dir() {
             continue;
         }
-        let Some(name) = Path::new(f.name()).file_name().map(|n| n.to_owned()) else { continue };
+        let Some(name) = Path::new(f.name()).file_name().map(|n| n.to_owned()) else {
+            continue;
+        };
         if !name.to_string_lossy().ends_with(".png") {
             continue;
         }

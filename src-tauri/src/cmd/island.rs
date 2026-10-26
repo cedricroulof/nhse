@@ -49,7 +49,12 @@ pub fn villager_templates() -> CmdResult<Vec<String>> {
 }
 
 #[tauri::command]
-pub fn replace_villager(state: State<AppState>, index: usize, internal: String, move_out: bool) -> CmdResult<Vec<Villager>> {
+pub fn replace_villager(
+    state: State<AppState>,
+    index: usize,
+    internal: String,
+    move_out: bool,
+) -> CmdResult<Vec<Villager>> {
     with_save_mut!(state, |s| {
         nhse_core::editing::villagers::replace_villager(s, index, &internal, move_out)?;
         Ok(s.villagers())
@@ -73,12 +78,21 @@ pub struct ImportResult {
 /// Imports a villager dump (`.nhv`/`.nhv2`). If it came from another island, the town/player
 /// identities can be rewritten to the host's (`adopt`).
 #[tauri::command]
-pub fn import_villager(state: State<AppState>, index: usize, path: String, adopt: bool) -> CmdResult<ImportResult> {
+pub fn import_villager(
+    state: State<AppState>,
+    index: usize,
+    path: String,
+    adopt: bool,
+) -> CmdResult<ImportResult> {
     let raw = std::fs::read(&path)?;
     with_save_mut!(state, |s| {
         let expect = s.main_ofs.villager_size;
         let Some(mut data) = formats::villager_compatible(&raw, expect) else {
-            return err(format!("This file is {} bytes; a villager for this game version is {} bytes.", raw.len(), expect));
+            return err(format!(
+                "This file is {} bytes; a villager for this game version is {} bytes.",
+                raw.len(),
+                expect
+            ));
         };
         let town = s.town_identity();
         let player = s.player_identity(0);
@@ -137,7 +151,11 @@ pub fn import_villager_house(state: State<AppState>, index: usize, path: String)
     with_save_mut!(state, |s| {
         let expect = s.main_ofs.villager_house_size;
         let Some(data) = formats::villager_house_compatible(&raw, expect) else {
-            return err(format!("This file is {} bytes; expected {}.", raw.len(), expect));
+            return err(format!(
+                "This file is {} bytes; expected {}.",
+                raw.len(),
+                expect
+            ));
         };
         // keep links to the current resident
         let cur = s.villager_houses()[index].clone();
@@ -172,7 +190,12 @@ pub fn player_room(state: State<AppState>, house: usize, room: usize) -> CmdResu
 }
 
 #[tauri::command]
-pub fn set_player_room(state: State<AppState>, house: usize, room: usize, data: PlayerRoom) -> CmdResult<()> {
+pub fn set_player_room(
+    state: State<AppState>,
+    house: usize,
+    room: usize,
+    data: PlayerRoom,
+) -> CmdResult<()> {
     with_save_mut!(state, |s| Ok(s.set_player_room(house, room, &data)?))
 }
 
@@ -190,14 +213,23 @@ pub fn import_player_house(state: State<AppState>, index: usize, path: String) -
     with_save_mut!(state, |s| {
         let expect = s.main_ofs.player_house_size;
         let Some(data) = formats::player_house_compatible(&raw, expect) else {
-            return err(format!("This file is {} bytes; expected {}.", raw.len(), expect));
+            return err(format!(
+                "This file is {} bytes; expected {}.",
+                raw.len(),
+                expect
+            ));
         };
         Ok(s.set_player_house_raw(index, &data)?)
     })
 }
 
 #[tauri::command]
-pub fn export_player_room(state: State<AppState>, house: usize, room: usize, path: String) -> CmdResult<()> {
+pub fn export_player_room(
+    state: State<AppState>,
+    house: usize,
+    room: usize,
+    path: String,
+) -> CmdResult<()> {
     with_save!(state, |s| {
         std::fs::write(path, s.player_room_raw(house, room))?;
         Ok(())
@@ -205,12 +237,21 @@ pub fn export_player_room(state: State<AppState>, house: usize, room: usize, pat
 }
 
 #[tauri::command]
-pub fn import_player_room(state: State<AppState>, house: usize, room: usize, path: String) -> CmdResult<()> {
+pub fn import_player_room(
+    state: State<AppState>,
+    house: usize,
+    room: usize,
+    path: String,
+) -> CmdResult<()> {
     let raw = std::fs::read(&path)?;
     with_save_mut!(state, |s| {
         let expect = s.player_room_raw(house, room).len();
         let Some(data) = formats::room_compatible(&raw, expect) else {
-            return err(format!("This file is {} bytes; expected {}.", raw.len(), expect));
+            return err(format!(
+                "This file is {} bytes; expected {}.",
+                raw.len(),
+                expect
+            ));
         };
         Ok(s.set_player_room_raw(house, room, &data)?)
     })
@@ -226,7 +267,9 @@ fn is_pro(kind: DesignKind) -> bool {
 pub fn designs(state: State<AppState>, kind: DesignKind) -> CmdResult<Vec<DesignInfo>> {
     with_save!(state, |s| {
         let n = s.design_count(kind);
-        (0..n).map(|i| Ok(design::info(s.design_raw(kind, i)?, i, is_pro(kind)))).collect()
+        (0..n)
+            .map(|i| Ok(design::info(s.design_raw(kind, i)?, i, is_pro(kind))))
+            .collect()
     })
 }
 
@@ -239,7 +282,11 @@ pub struct DesignPixels {
 }
 
 #[tauri::command]
-pub fn design_pixels(state: State<AppState>, kind: DesignKind, index: usize) -> CmdResult<DesignPixels> {
+pub fn design_pixels(
+    state: State<AppState>,
+    kind: DesignKind,
+    index: usize,
+) -> CmdResult<DesignPixels> {
     with_save!(state, |s| {
         let d = s.design_raw(kind, index)?;
         let pro = is_pro(kind);
@@ -251,12 +298,23 @@ pub fn design_pixels(state: State<AppState>, kind: DesignKind, index: usize) -> 
                 }
             }
         }
-        Ok(DesignPixels { info: design::info(d, index, pro), palette: design::palette(d).to_vec(), pixels })
+        Ok(DesignPixels {
+            info: design::info(d, index, pro),
+            palette: design::palette(d).to_vec(),
+            pixels,
+        })
     })
 }
 
 #[tauri::command]
-pub fn set_design_pixels(state: State<AppState>, kind: DesignKind, index: usize, name: String, palette: Vec<[u8; 3]>, pixels: Vec<u8>) -> CmdResult<()> {
+pub fn set_design_pixels(
+    state: State<AppState>,
+    kind: DesignKind,
+    index: usize,
+    name: String,
+    palette: Vec<[u8; 3]>,
+    pixels: Vec<u8>,
+) -> CmdResult<()> {
     with_save_mut!(state, |s| {
         let mut d = s.design_raw(kind, index)?.to_vec();
         let pro = is_pro(kind);
@@ -270,13 +328,22 @@ pub fn set_design_pixels(state: State<AppState>, kind: DesignKind, index: usize,
 }
 
 #[tauri::command]
-pub fn design_png(state: State<AppState>, kind: DesignKind, index: usize, path: String, scale: Option<usize>) -> CmdResult<()> {
+pub fn design_png(
+    state: State<AppState>,
+    kind: DesignKind,
+    index: usize,
+    path: String,
+    scale: Option<usize>,
+) -> CmdResult<()> {
     with_save!(state, |s| {
         let d = s.design_raw(kind, index)?;
         let pro = is_pro(kind);
         let sc = scale.unwrap_or(8).clamp(1, 32);
         let sheets = design::sheets(pro);
-        let (w, h) = (32 * sc * if sheets == 4 { 2 } else { 1 }, 32 * sc * if sheets == 4 { 2 } else { 1 });
+        let (w, h) = (
+            32 * sc * if sheets == 4 { 2 } else { 1 },
+            32 * sc * if sheets == 4 { 2 } else { 1 },
+        );
         let mut out = vec![0u8; w * h * 4];
         for sheet in 0..sheets {
             let rgba = design::render_rgba(d, sheet);
@@ -296,10 +363,18 @@ pub fn design_png(state: State<AppState>, kind: DesignKind, index: usize, path: 
 
 /// Imports a PNG (32×32, or 64×64 = 4 sheets for PRO), scaling down by sampling if larger.
 #[tauri::command]
-pub fn import_design_png(state: State<AppState>, kind: DesignKind, index: usize, path: String, name: Option<String>) -> CmdResult<()> {
+pub fn import_design_png(
+    state: State<AppState>,
+    kind: DesignKind,
+    index: usize,
+    path: String,
+    name: Option<String>,
+) -> CmdResult<()> {
     let bytes = std::fs::read(&path)?;
     let Some((w, h, rgba)) = decode_png(&bytes) else {
-        return err("Could not read this PNG (indexed PNGs are not supported, please re-save as RGB/RGBA).");
+        return err(
+            "Could not read this PNG (indexed PNGs are not supported, please re-save as RGB/RGBA).",
+        );
     };
     with_save_mut!(state, |s| {
         let pro = is_pro(kind);
@@ -320,7 +395,10 @@ pub fn import_design_png(state: State<AppState>, kind: DesignKind, index: usize,
         }
         let mut d = s.design_raw(kind, index)?.to_vec();
         design::import_rgba(&mut d, &sheet_imgs);
-        let default_name = std::path::Path::new(&path).file_stem().map(|x| x.to_string_lossy().chars().take(20).collect()).unwrap_or_default();
+        let default_name = std::path::Path::new(&path)
+            .file_stem()
+            .map(|x| x.to_string_lossy().chars().take(20).collect())
+            .unwrap_or_default();
         design::set_name(&mut d, &name.unwrap_or(default_name));
         let p = s.player_profile(0)?;
         design::set_author(&mut d, p.town_id, &p.town_name, p.player_id, &p.name);
@@ -329,7 +407,12 @@ pub fn import_design_png(state: State<AppState>, kind: DesignKind, index: usize,
 }
 
 #[tauri::command]
-pub fn export_design(state: State<AppState>, kind: DesignKind, index: usize, path: String) -> CmdResult<()> {
+pub fn export_design(
+    state: State<AppState>,
+    kind: DesignKind,
+    index: usize,
+    path: String,
+) -> CmdResult<()> {
     with_save!(state, |s| {
         std::fs::write(path, s.design_raw(kind, index)?)?;
         Ok(())
@@ -338,12 +421,23 @@ pub fn export_design(state: State<AppState>, kind: DesignKind, index: usize, pat
 
 /// Imports a raw design dump (`.nhd` / `.nhpd`). `adopt` rewrites the author to player 1.
 #[tauri::command]
-pub fn import_design(state: State<AppState>, kind: DesignKind, index: usize, path: String, adopt: bool) -> CmdResult<()> {
+pub fn import_design(
+    state: State<AppState>,
+    kind: DesignKind,
+    index: usize,
+    path: String,
+    adopt: bool,
+) -> CmdResult<()> {
     let data = std::fs::read(&path)?;
     with_save_mut!(state, |s| {
         let expect = s.design_raw(kind, index)?.len();
         if data.len() != expect {
-            return err(format!("This file is {} bytes; a {} design is {} bytes.", data.len(), if is_pro(kind) { "PRO" } else { "normal" }, expect));
+            return err(format!(
+                "This file is {} bytes; a {} design is {} bytes.",
+                data.len(),
+                if is_pro(kind) { "PRO" } else { "normal" },
+                expect
+            ));
         }
         let mut d = data.clone();
         if adopt {
@@ -355,7 +449,11 @@ pub fn import_design(state: State<AppState>, kind: DesignKind, index: usize, pat
 }
 
 #[tauri::command]
-pub fn set_design_author_all(state: State<AppState>, kind: DesignKind, player: usize) -> CmdResult<usize> {
+pub fn set_design_author_all(
+    state: State<AppState>,
+    kind: DesignKind,
+    player: usize,
+) -> CmdResult<usize> {
     with_save_mut!(state, |s| {
         let p = s.player_profile(player)?;
         let n = s.design_count(kind);
@@ -437,7 +535,12 @@ pub fn set_museum(state: State<AppState>, museum: Museum) -> CmdResult<()> {
 
 /// Donates everything of the given categories (fish, bugs, sea, fossils, art) not yet donated.
 #[tauri::command]
-pub fn museum_donate_all(state: State<AppState>, categories: Vec<String>, player: u8, per_day: usize) -> CmdResult<(Museum, usize)> {
+pub fn museum_donate_all(
+    state: State<AppState>,
+    categories: Vec<String>,
+    player: u8,
+    per_day: usize,
+) -> CmdResult<(Museum, usize)> {
     with_save_mut!(state, |s| {
         let t = nhse_core::data::tables();
         let en = nhse_core::data::strings("en");
@@ -449,7 +552,11 @@ pub fn museum_donate_all(state: State<AppState>, categories: Vec<String>, player
                 "sea" => ids.extend(t.list("Dive")),
                 "fossils" => ids.extend(t.list("Fossils")),
                 // genuine pieces only (forgeries have a parenthesised suffix)
-                "art" => ids.extend(t.list("Art").iter().filter(|i| !en.items.get(**i as usize).is_some_and(|n| n.contains('(')))),
+                "art" => ids.extend(
+                    t.list("Art")
+                        .iter()
+                        .filter(|i| !en.items.get(**i as usize).is_some_and(|n| n.contains('('))),
+                ),
                 _ => {}
             }
         }
@@ -517,9 +624,21 @@ pub fn export_bulletin_text(state: State<AppState>, path: String) -> CmdResult<u
         let b = s.bulletin();
         let mut out = String::new();
         let mut n = 0;
-        for p in b.posts.iter().filter(|p| !p.body.is_empty() || p.has_handwriting) {
+        for p in b
+            .posts
+            .iter()
+            .filter(|p| !p.body.is_empty() || p.has_handwriting)
+        {
             n += 1;
-            out.push_str(&format!("── #{} · {} · {} ({})\n{}\n{}\n\n", p.slot + 1, p.date, p.author.player_name, p.author.town_name, p.body, p.footer));
+            out.push_str(&format!(
+                "── #{} · {} · {} ({})\n{}\n{}\n\n",
+                p.slot + 1,
+                p.date,
+                p.author.player_name,
+                p.author.town_name,
+                p.body,
+                p.footer
+            ));
         }
         std::fs::write(path, out)?;
         Ok(n)

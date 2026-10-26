@@ -40,7 +40,8 @@ impl SaveFile {
     }
 
     pub fn exists(src: &SaveSource, dir: &str, name: &str) -> bool {
-        src.exists(&Self::rel(dir, &format!("{name}.dat"))) && src.exists(&Self::rel(dir, &format!("{name}Header.dat")))
+        src.exists(&Self::rel(dir, &format!("{name}.dat")))
+            && src.exists(&Self::rel(dir, &format!("{name}Header.dat")))
     }
 
     /// Reads and decrypts a file pair.
@@ -56,7 +57,13 @@ impl SaveFile {
         }
         crypto::decrypt(&header, &mut data);
         let info = FileHeaderInfo::read(&header);
-        Ok(Self { name: name.to_string(), dir: dir.to_string(), data, header, info })
+        Ok(Self {
+            name: name.to_string(),
+            dir: dir.to_string(),
+            data,
+            header,
+            info,
+        })
     }
 
     /// Creates a file pair from already decrypted data (used by "load decrypted").

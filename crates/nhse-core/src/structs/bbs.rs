@@ -53,12 +53,18 @@ impl Board {
                     author: PlayerId::read(d, p + 0x777C),
                     design_id: u16le(d, p + 0x77B6),
                     unique_id: u32le(d, p + 0x77C8),
-                    has_handwriting: d[p + 0x244..p + 0x244 + HANDWRITING_BYTES].iter().any(|b| *b != 0),
+                    has_handwriting: d[p + 0x244..p + 0x244 + HANDWRITING_BYTES]
+                        .iter()
+                        .any(|b| *b != 0),
                     index_table: i32le(d, o + INDEX_TABLE + i * 4),
                 }
             })
             .collect();
-        Self { built: GDate::read(d, o), latest_unique_id: u32le(d, o + 0xE0AE0), posts }
+        Self {
+            built: GDate::read(d, o),
+            latest_unique_id: u32le(d, o + 0xE0AE0),
+            posts,
+        }
     }
 
     /// Updates text fields of posts (the drawing, ids and author are preserved).

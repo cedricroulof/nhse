@@ -28,7 +28,10 @@ impl SaveSource {
     pub fn folder(path: impl Into<PathBuf>) -> Result<Self> {
         let path = path.into();
         if !path.join("main.dat").is_file() {
-            return Err(Error::MissingFile(format!("main.dat not found in {}", path.display())));
+            return Err(Error::MissingFile(format!(
+                "main.dat not found in {}",
+                path.display()
+            )));
         }
         Ok(SaveSource::Folder(path))
     }
@@ -46,7 +49,9 @@ impl SaveSource {
             }
             let name = normalize(entry.name());
             // Skip macOS resource fork junk.
-            if name.starts_with("__MACOSX/") || name.rsplit('/').next().is_some_and(|n| n.starts_with("._")) {
+            if name.starts_with("__MACOSX/")
+                || name.rsplit('/').next().is_some_and(|n| n.starts_with("._"))
+            {
                 continue;
             }
             let mut buf = Vec::with_capacity(entry.size() as usize);
@@ -59,7 +64,9 @@ impl SaveSource {
             .filter(|k| k.rsplit('/').next() == Some("main.dat"))
             .min_by_key(|k| k.matches('/').count())
             .map(|k| k[..k.len() - "main.dat".len()].to_string())
-            .ok_or_else(|| Error::MissingFile("main.dat not found inside the ZIP archive".into()))?;
+            .ok_or_else(|| {
+                Error::MissingFile("main.dat not found inside the ZIP archive".into())
+            })?;
         Ok(SaveSource::Zip { path, files, root })
     }
 
@@ -97,7 +104,9 @@ impl SaveSource {
     pub fn exists(&self, rel: &str) -> bool {
         match self {
             SaveSource::Folder(root) => root.join(rel).is_file(),
-            SaveSource::Zip { files, root, .. } => files.contains_key(&format!("{root}{}", normalize(rel))),
+            SaveSource::Zip { files, root, .. } => {
+                files.contains_key(&format!("{root}{}", normalize(rel)))
+            }
         }
     }
 
@@ -139,7 +148,10 @@ impl SaveSource {
         };
         dirs.sort_by_key(|d| player_dir_index(d));
         // Only keep folders that actually hold a player.
-        dirs.retain(|d| self.exists(&format!("{d}/personal.dat")) && self.exists(&format!("{d}/personalHeader.dat")));
+        dirs.retain(|d| {
+            self.exists(&format!("{d}/personal.dat"))
+                && self.exists(&format!("{d}/personalHeader.dat"))
+        });
         Ok(dirs)
     }
 
@@ -190,10 +202,18 @@ impl SaveSource {
 }
 
 /// Files stored per player folder.
-pub const PLAYER_FILES: [&str; 5] = ["personal", "photo_studio_island", "postbox", "profile", "wherearen"];
+pub const PLAYER_FILES: [&str; 5] = [
+    "personal",
+    "photo_studio_island",
+    "postbox",
+    "profile",
+    "wherearen",
+];
 
 fn is_player_dir(name: &str) -> bool {
-    name.len() > 8 && name[..8].eq_ignore_ascii_case("villager") && name[8..].chars().all(|c| c.is_ascii_digit())
+    name.len() > 8
+        && name[..8].eq_ignore_ascii_case("villager")
+        && name[8..].chars().all(|c| c.is_ascii_digit())
 }
 
 fn player_dir_index(name: &str) -> u32 {

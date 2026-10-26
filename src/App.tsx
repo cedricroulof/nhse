@@ -31,6 +31,26 @@ const pages: Record<Route, React.LazyExoticComponent<React.ComponentType>> = {
   settings: lazy(() => import("./pages/SettingsPage")),
 };
 
+/** Keeps a crashing page from taking the whole window down. */
+class PageBoundary extends React.Component<{ children: React.ReactNode }, { error: Error | null }> {
+  state = { error: null as Error | null };
+  static getDerivedStateFromError(error: Error) { return { error }; }
+  componentDidCatch(error: Error, info: React.ErrorInfo) { console.error("page crashed", error, info.componentStack); }
+  render() {
+    if (!this.state.error) return this.props.children;
+    return (
+      <div className="content"><div className="page">
+        <div className="card card-pad col" style={{ gap: 10 }}>
+          <h2>This page ran into a problem</h2>
+          <div className="muted">Your save files on disk are untouched. You can keep using the other pages.</div>
+          <pre className="mono small" style={{ whiteSpace: "pre-wrap", margin: 0, color: "var(--danger)" }}>{String(this.state.error?.message ?? this.state.error)}</pre>
+          <div><button className="btn" onClick={() => this.setState({ error: null })}>Try again</button></div>
+        </div>
+      </div></div>
+    );
+  }
+}
+
 export default function App() {
   const { save, route, persist, dirty, confirm, gd, player } = useStore();
 
@@ -65,7 +85,7 @@ export default function App() {
             <Topbar title={TITLES[route]} subtitle={route !== "overview" && save ? save.town_name : undefined} />
             {gd ? (
               <Suspense fallback={<Loading />}>
-                <Page key={`${route}:${player}`} />
+                <PageBoundary key={`${route}:${player}`}><Page /></PageBoundary>
               </Suspense>
             ) : <Loading />}
           </>

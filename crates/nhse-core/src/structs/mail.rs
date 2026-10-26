@@ -57,8 +57,16 @@ impl Mail {
             status: d[o],
             favorite: d[o + 1] != 0,
             sender_type,
-            sender_island_id: if player { u32le(d, o + 4) } else { u32le(d, o + 8) },
-            sender_island_name: if player { get_string(d, o + 8, 10) } else { get_string(d, o + 0xC, 10) },
+            sender_island_id: if player {
+                u32le(d, o + 4)
+            } else {
+                u32le(d, o + 8)
+            },
+            sender_island_name: if player {
+                get_string(d, o + 8, 10)
+            } else {
+                get_string(d, o + 0xC, 10)
+            },
             sender_species: d[o + 4],
             sender_variant: d[o + 5],
             sender_id: u32le(d, o + 0x20),
@@ -76,7 +84,11 @@ impl Mail {
             from_line: get_string(d, o + 0x30E, FROM_LEN),
             stationery: u16le(d, o + 0x36E),
             sort_index: u16le(d, o + 0x374),
-            language: lang_bytes.iter().take_while(|b| **b != 0).map(|b| *b as char).collect(),
+            language: lang_bytes
+                .iter()
+                .take_while(|b| **b != 0)
+                .map(|b| *b as char)
+                .collect(),
         }
     }
 
@@ -118,9 +130,23 @@ impl Mail {
             d[o + 0xCC] = 0;
         }
         set_string_if_changed(d, o + 0xCE, TO_LEN, &self.to_line.replace(['\r', '\n'], ""));
-        set_string_if_changed(d, o + 0x12E, MESSAGE_LEN, &self.message.replace("\r\n", "\n"));
-        set_string_if_changed(d, o + 0x30E, FROM_LEN, &self.from_line.replace(['\r', '\n'], ""));
-        put_u16(d, o + 0x36E, if self.is_letter { self.stationery } else { 0 });
+        set_string_if_changed(
+            d,
+            o + 0x12E,
+            MESSAGE_LEN,
+            &self.message.replace("\r\n", "\n"),
+        );
+        set_string_if_changed(
+            d,
+            o + 0x30E,
+            FROM_LEN,
+            &self.from_line.replace(['\r', '\n'], ""),
+        );
+        put_u16(
+            d,
+            o + 0x36E,
+            if self.is_letter { self.stationery } else { 0 },
+        );
         put_u16(d, o + 0x374, self.sort_index);
         let lang = &mut d[o + 0x390..o + 0x395];
         lang.fill(0);
@@ -180,13 +206,20 @@ pub const NPC_SENDERS: &[(u8, &str, &str)] = &[
 
 /// Stationery skin codes in in-game order (index = `mailNN` string key).
 pub const STATIONERY: &[u16] = &[
-    0, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379,
-    380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 402, 403, 404, 405,
-    406, 407, 408, 409, 410, 411, 412, 413, 414, 416, 427, 428, 429, 430, 431, 432, 433, 434, 435, 437, 438, 439, 440, 443,
-    444, 445, 448,
+    0, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 370, 371, 372, 373, 374,
+    375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393,
+    394, 395, 396, 397, 398, 399, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414,
+    416, 427, 428, 429, 430, 431, 432, 433, 434, 435, 437, 438, 439, 440, 443, 444, 445, 448,
 ];
 
 /// Parcel box skins (wrapping byte, name).
-pub const BOX_SKINS: &[(u8, &str)] = &[(0x00, "Standard box"), (0x43, "Nook Shopping box"), (0x6B, "Hotel box"), (0x6F, "Paradise Planning box")];
+pub const BOX_SKINS: &[(u8, &str)] = &[
+    (0x00, "Standard box"),
+    (0x43, "Nook Shopping box"),
+    (0x6B, "Hotel box"),
+    (0x6F, "Paradise Planning box"),
+];
 
-pub const LANGUAGES: &[&str] = &["en-US", "en-GB", "ja-JP", "de-DE", "es-ES", "fr-FR", "it-IT", "ko-KR", "zh-CN", "zh-TW"];
+pub const LANGUAGES: &[&str] = &[
+    "en-US", "en-GB", "ja-JP", "de-DE", "es-ES", "fr-FR", "it-IT", "ko-KR", "zh-CN", "zh-TW",
+];

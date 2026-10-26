@@ -31,7 +31,12 @@ fn fingerprint(src: &SaveSource) -> nhse_core::Result<u64> {
 
 /// Creates a compressed backup of the save files. Returns the backup path, or `None` when an
 /// identical backup already exists.
-pub fn create(dir: &Path, src: &SaveSource, label: &str, keep: usize) -> nhse_core::Result<Option<PathBuf>> {
+pub fn create(
+    dir: &Path,
+    src: &SaveSource,
+    label: &str,
+    keep: usize,
+) -> nhse_core::Result<Option<PathBuf>> {
     std::fs::create_dir_all(dir)?;
     let fp = fingerprint(src)?;
     let tag = format!("{fp:016x}");
@@ -64,7 +69,10 @@ fn prune(dir: &Path, prefix: &str, keep: usize) {
     if keep == 0 {
         return;
     }
-    let mut mine: Vec<BackupInfo> = list(dir).into_iter().filter(|b| b.name.starts_with(prefix)).collect();
+    let mut mine: Vec<BackupInfo> = list(dir)
+        .into_iter()
+        .filter(|b| b.name.starts_with(prefix))
+        .collect();
     mine.sort_by(|a, b| b.modified.cmp(&a.modified));
     for old in mine.into_iter().skip(keep) {
         let _ = std::fs::remove_file(&old.path);
@@ -72,7 +80,9 @@ fn prune(dir: &Path, prefix: &str, keep: usize) {
 }
 
 pub fn list(dir: &Path) -> Vec<BackupInfo> {
-    let Ok(rd) = std::fs::read_dir(dir) else { return Vec::new() };
+    let Ok(rd) = std::fs::read_dir(dir) else {
+        return Vec::new();
+    };
     let mut v: Vec<BackupInfo> = rd
         .filter_map(|e| e.ok())
         .filter(|e| e.path().extension().is_some_and(|x| x == "zip"))
@@ -97,7 +107,9 @@ pub fn delete(dir: &Path, path: &str) -> nhse_core::Result<()> {
     let canon_dir = dir.canonicalize()?;
     let canon = p.canonicalize()?;
     if !canon.starts_with(&canon_dir) {
-        return Err(nhse_core::Error::Invalid("refusing to delete a file outside the backup folder".into()));
+        return Err(nhse_core::Error::Invalid(
+            "refusing to delete a file outside the backup folder".into(),
+        ));
     }
     std::fs::remove_file(canon)?;
     Ok(())

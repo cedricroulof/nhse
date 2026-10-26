@@ -16,7 +16,11 @@ pub fn player_profile(state: State<AppState>, player: usize) -> CmdResult<Player
 }
 
 #[tauri::command]
-pub fn set_player_profile(state: State<AppState>, player: usize, profile: PlayerProfile) -> CmdResult<PlayerProfile> {
+pub fn set_player_profile(
+    state: State<AppState>,
+    player: usize,
+    profile: PlayerProfile,
+) -> CmdResult<PlayerProfile> {
     with_save_mut!(state, |s| {
         s.set_player_profile(player, &profile)?;
         Ok(s.player_profile(player)?)
@@ -31,7 +35,10 @@ pub fn player_photo(state: State<AppState>, player: usize) -> CmdResult<String> 
         if jpg.is_empty() {
             return Ok(String::new());
         }
-        Ok(format!("data:image/jpeg;base64,{}", base64::engine::general_purpose::STANDARD.encode(jpg)))
+        Ok(format!(
+            "data:image/jpeg;base64,{}",
+            base64::engine::general_purpose::STANDARD.encode(jpg)
+        ))
     })
 }
 
@@ -48,12 +55,21 @@ pub fn export_player_photo(state: State<AppState>, player: usize, path: String) 
 }
 
 #[tauri::command]
-pub fn player_items(state: State<AppState>, player: usize, list: PlayerList) -> CmdResult<Vec<Item>> {
+pub fn player_items(
+    state: State<AppState>,
+    player: usize,
+    list: PlayerList,
+) -> CmdResult<Vec<Item>> {
     with_save!(state, |s| Ok(s.player_items(player, list)?))
 }
 
 #[tauri::command]
-pub fn set_player_items(state: State<AppState>, player: usize, list: PlayerList, items: Vec<Item>) -> CmdResult<()> {
+pub fn set_player_items(
+    state: State<AppState>,
+    player: usize,
+    list: PlayerList,
+    items: Vec<Item>,
+) -> CmdResult<()> {
     with_save_mut!(state, |s| Ok(s.set_player_items(player, list, &items)?))
 }
 
@@ -63,13 +79,19 @@ pub fn player_recipes(state: State<AppState>, player: usize) -> CmdResult<Vec<u8
     with_save!(state, |s| Ok(s
         .recipes(player)?
         .iter()
-        .map(|f| f.iter().enumerate().fold(0u8, |a, (i, b)| a | ((*b as u8) << i)))
+        .map(|f| f
+            .iter()
+            .enumerate()
+            .fold(0u8, |a, (i, b)| a | ((*b as u8) << i)))
         .collect()))
 }
 
 #[tauri::command]
 pub fn set_player_recipes(state: State<AppState>, player: usize, flags: Vec<u8>) -> CmdResult<()> {
-    let f: Vec<[bool; 4]> = flags.iter().map(|b| std::array::from_fn(|i| b & (1 << i) != 0)).collect();
+    let f: Vec<[bool; 4]> = flags
+        .iter()
+        .map(|b| std::array::from_fn(|i| b & (1 << i) != 0))
+        .collect();
     with_save_mut!(state, |s| Ok(s.set_recipes(player, &f)?))
 }
 
@@ -79,7 +101,11 @@ pub fn player_reactions(state: State<AppState>, player: usize) -> CmdResult<Reac
 }
 
 #[tauri::command]
-pub fn set_player_reactions(state: State<AppState>, player: usize, reactions: Reactions) -> CmdResult<()> {
+pub fn set_player_reactions(
+    state: State<AppState>,
+    player: usize,
+    reactions: Reactions,
+) -> CmdResult<()> {
     with_save_mut!(state, |s| Ok(s.set_reactions(player, &reactions)?))
 }
 
@@ -89,13 +115,21 @@ pub fn player_achievements(state: State<AppState>, player: usize) -> CmdResult<A
 }
 
 #[tauri::command]
-pub fn set_player_achievements(state: State<AppState>, player: usize, achievements: Achievements) -> CmdResult<()> {
+pub fn set_player_achievements(
+    state: State<AppState>,
+    player: usize,
+    achievements: Achievements,
+) -> CmdResult<()> {
     with_save_mut!(state, |s| Ok(s.set_achievements(player, &achievements)?))
 }
 
 /// Completes every achievement tier (dates staggered from today).
 #[tauri::command]
-pub fn complete_achievements(state: State<AppState>, player: usize, indices: Option<Vec<usize>>) -> CmdResult<Achievements> {
+pub fn complete_achievements(
+    state: State<AppState>,
+    player: usize,
+    indices: Option<Vec<usize>>,
+) -> CmdResult<Achievements> {
     with_save_mut!(state, |s| {
         let mut a = s.achievements(player)?;
         let list: Vec<usize> = indices.unwrap_or_else(|| (0..Achievements::MAX).collect());
@@ -154,7 +188,12 @@ pub fn player_received(state: State<AppState>, player: usize) -> CmdResult<Recei
 }
 
 #[tauri::command]
-pub fn set_player_received(state: State<AppState>, player: usize, items: Vec<u8>, remake: Vec<u8>) -> CmdResult<()> {
+pub fn set_player_received(
+    state: State<AppState>,
+    player: usize,
+    items: Vec<u8>,
+    remake: Vec<u8>,
+) -> CmdResult<()> {
     let i: Vec<bool> = items.iter().map(|b| *b != 0).collect();
     let r: Vec<bool> = remake.iter().map(|b| *b != 0).collect();
     with_save_mut!(state, |s| Ok(s.set_received_items(player, &i, &r)?))
@@ -170,12 +209,19 @@ pub struct MailBox {
 
 #[tauri::command]
 pub fn player_mail(state: State<AppState>, player: usize) -> CmdResult<MailBox> {
-    with_save!(state, |s| Ok(MailBox { mails: s.mails(player)?, next_id: s.postbox_next_id(player)? }))
+    with_save!(state, |s| Ok(MailBox {
+        mails: s.mails(player)?,
+        next_id: s.postbox_next_id(player)?
+    }))
 }
 
 /// Saves a letter. New letters get the next postbox sort index assigned.
 #[tauri::command]
-pub fn set_player_mail(state: State<AppState>, player: usize, mut mail: Mail) -> CmdResult<MailBox> {
+pub fn set_player_mail(
+    state: State<AppState>,
+    player: usize,
+    mut mail: Mail,
+) -> CmdResult<MailBox> {
     with_save_mut!(state, |s| {
         let existing = &s.mails(player)?[mail.slot];
         if !existing.is_used() || existing.sort_index == 0 {
@@ -187,7 +233,10 @@ pub fn set_player_mail(state: State<AppState>, player: usize, mut mail: Mail) ->
             mail.status = 3;
         }
         s.set_mail(player, &mail)?;
-        Ok(MailBox { mails: s.mails(player)?, next_id: s.postbox_next_id(player)? })
+        Ok(MailBox {
+            mails: s.mails(player)?,
+            next_id: s.postbox_next_id(player)?,
+        })
     })
 }
 
@@ -197,7 +246,12 @@ pub fn clear_player_mail(state: State<AppState>, player: usize, slot: usize) -> 
 }
 
 #[tauri::command]
-pub fn export_player_mail(state: State<AppState>, player: usize, slot: usize, path: String) -> CmdResult<()> {
+pub fn export_player_mail(
+    state: State<AppState>,
+    player: usize,
+    slot: usize,
+    path: String,
+) -> CmdResult<()> {
     with_save!(state, |s| {
         std::fs::write(path, s.mail_raw(player, slot)?)?;
         Ok(())
@@ -205,7 +259,12 @@ pub fn export_player_mail(state: State<AppState>, player: usize, slot: usize, pa
 }
 
 #[tauri::command]
-pub fn import_player_mail(state: State<AppState>, player: usize, slot: usize, path: String) -> CmdResult<()> {
+pub fn import_player_mail(
+    state: State<AppState>,
+    player: usize,
+    slot: usize,
+    path: String,
+) -> CmdResult<()> {
     let data = std::fs::read(path)?;
     with_save_mut!(state, |s| {
         let existing = &s.mails(player)?[slot];
@@ -228,7 +287,14 @@ pub fn import_player_mail(state: State<AppState>, player: usize, slot: usize, pa
 
 /// Find & replace text across every letter of a player's postbox (issue #757).
 #[tauri::command]
-pub fn replace_in_mail(state: State<AppState>, player: usize, find: String, replace: String, names: bool, text: bool) -> CmdResult<usize> {
+pub fn replace_in_mail(
+    state: State<AppState>,
+    player: usize,
+    find: String,
+    replace: String,
+    names: bool,
+    text: bool,
+) -> CmdResult<usize> {
     if find.is_empty() {
         return Ok(0);
     }
@@ -280,7 +346,10 @@ pub fn export_items_file(items: Vec<Item>, path: String) -> CmdResult<()> {
 pub fn import_items_file(path: String) -> CmdResult<Vec<Item>> {
     let d = std::fs::read(path)?;
     if d.len() % 8 != 0 {
-        return err(format!("Item list files must be a multiple of 8 bytes (got {}).", d.len()));
+        return err(format!(
+            "Item list files must be a multiple of 8 bytes (got {}).",
+            d.len()
+        ));
     }
     Ok(Item::read_array(&d, 0, d.len() / 8))
 }

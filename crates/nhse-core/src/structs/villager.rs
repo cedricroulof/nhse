@@ -101,7 +101,9 @@ impl Memory {
             player: PlayerId::read(d, o),
             friendship: d[o + 0x38 + 10],
             nickname: get_string(d, o + 0x138, 10),
-            greetings: (0..GREETING_COUNT).map(|i| get_string(d, o + 0x14C + 0x60 * i, GREETING_MAX)).collect(),
+            greetings: (0..GREETING_COUNT)
+                .map(|i| get_string(d, o + 0x14C + 0x60 * i, GREETING_MAX))
+                .collect(),
             greeting_set_date: GDate::read(d, o + 0x56C),
             flags: d[o + 0x38..o + 0x138].to_vec(),
         }
@@ -184,9 +186,15 @@ impl Villager {
             diy_end: [d[l.diy_end], d[l.diy_end + 1], d[l.diy_end + 2]],
             diy_recipe: u16le(d, l.diy_end + 3),
             room: RoomFloorWall::read(d, l.room),
-            wear: (0..WEAR_COUNT).map(|i| Item::read(d, l.wear + i * VILLAGER_ITEM_SIZE)).collect(),
-            furniture: (0..FTR_COUNT).map(|i| Item::read(d, l.ftr + i * VILLAGER_ITEM_SIZE)).collect(),
-            memories: (0..MEMORY_COUNT).map(|i| Memory::read(d, 4 + i * MEMORY_SIZE)).collect(),
+            wear: (0..WEAR_COUNT)
+                .map(|i| Item::read(d, l.wear + i * VILLAGER_ITEM_SIZE))
+                .collect(),
+            furniture: (0..FTR_COUNT)
+                .map(|i| Item::read(d, l.ftr + i * VILLAGER_ITEM_SIZE))
+                .collect(),
+            memories: (0..MEMORY_COUNT)
+                .map(|i| Memory::read(d, 4 + i * MEMORY_SIZE))
+                .collect(),
             event_flags: read_u16_array(&d[l.event_flags..l.event_flags + EVENT_FLAG_COUNT * 2]),
         }
     }
@@ -213,7 +221,10 @@ impl Villager {
             m.write(d, 4 + i * MEMORY_SIZE);
         }
         if self.event_flags.len() == EVENT_FLAG_COUNT {
-            write_u16_array(&mut d[l.event_flags..l.event_flags + EVENT_FLAG_COUNT * 2], &self.event_flags);
+            write_u16_array(
+                &mut d[l.event_flags..l.event_flags + EVENT_FLAG_COUNT * 2],
+                &self.event_flags,
+            );
         }
     }
 

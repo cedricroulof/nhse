@@ -19,7 +19,7 @@ export function ItemSlot({ item, selected, multi, locked, onMouseDown, onDoubleC
   const showCount = !empty && stack > 0 && gd && isStackable(gd, id);
   return (
     <div
-      className={["slot", empty && "empty", selected && "sel", multi && "multi", locked && "locked", drop && "drop"].filter(Boolean).join(" ")}
+      className={["slot", empty && "vacant", selected && "sel", multi && "multi", locked && "locked", drop && "drop"].filter(Boolean).join(" ")}
       style={size ? ({ "--slot": `${size}px` } as React.CSSProperties) : undefined}
       title={title ?? (empty ? "Empty" : name)}
       onMouseDown={onMouseDown}

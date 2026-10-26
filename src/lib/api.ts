@@ -10,7 +10,7 @@ export interface Settings {
   recent: string[]; map_auto_extensions: boolean; map_prevent_overlap: boolean; room_allow_overhang: boolean; advanced: boolean;
 }
 export interface AppInfo {
-  version: string; languages: [string, string][]; settings: Settings; has_image_pack: boolean;
+  version: string; languages: [string, string][]; settings: Settings; has_image_pack: boolean; image_pack_stamp: number;
   backups_dir: string; platform: string; supported_versions: string[];
 }
 export interface FieldLayout { acres_w: number; acres_h: number; width: number; height: number; offset_x: number; offset_y: number; }

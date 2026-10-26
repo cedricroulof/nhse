@@ -64,7 +64,11 @@ impl HorizonSave {
 
     pub fn field_layer(&self, layer: usize) -> ItemGrid {
         let l = self.field_layout();
-        let tiles = Item::read_array(&self.main.data, self.field_layer_offset(layer.min(1)), l.width * l.height);
+        let tiles = Item::read_array(
+            &self.main.data,
+            self.field_layer_offset(layer.min(1)),
+            l.width * l.height,
+        );
         ItemGrid::new(l.width, l.height, tiles)
     }
 
@@ -82,7 +86,10 @@ impl HorizonSave {
     pub fn set_field_layer_bytes(&mut self, layer: usize, bytes: &[u8]) -> crate::Result<()> {
         let n = self.field_tile_count() * Item::SIZE;
         if bytes.len() != n {
-            return Err(crate::Error::Invalid(format!("field layer must be {n} bytes, got {}", bytes.len())));
+            return Err(crate::Error::Invalid(format!(
+                "field layer must be {n} bytes, got {}",
+                bytes.len()
+            )));
         }
         let o = self.field_layer_offset(layer.min(1));
         self.main.data[o..o + n].copy_from_slice(bytes);
@@ -92,7 +99,11 @@ impl HorizonSave {
     /// "Active" (animated) flag of a field item tile. Flags are row-major over the tile grid.
     pub fn field_flag(&self, layer: usize, x: usize, y: usize) -> bool {
         let l = self.field_layout();
-        get_flag(&self.main.data, self.field_flag_offset(layer), y * l.width + x)
+        get_flag(
+            &self.main.data,
+            self.field_flag_offset(layer),
+            y * l.width + x,
+        )
     }
 
     pub fn set_field_flag(&mut self, layer: usize, x: usize, y: usize, v: bool) {
@@ -111,7 +122,9 @@ impl HorizonSave {
 
     pub fn terrain(&self) -> Vec<TerrainTile> {
         let o = self.main_ofs.land_making_map;
-        (0..TILES_W * TILES_H).map(|i| TerrainTile::read(&self.main.data, o + i * TILE_SIZE)).collect()
+        (0..TILES_W * TILES_H)
+            .map(|i| TerrainTile::read(&self.main.data, o + i * TILE_SIZE))
+            .collect()
     }
 
     pub fn set_terrain(&mut self, tiles: &[TerrainTile]) {
@@ -129,7 +142,10 @@ impl HorizonSave {
     pub fn set_terrain_bytes(&mut self, bytes: &[u8]) -> crate::Result<()> {
         let n = TILES_W * TILES_H * TILE_SIZE;
         if bytes.len() != n {
-            return Err(crate::Error::Invalid(format!("terrain must be {n} bytes, got {}", bytes.len())));
+            return Err(crate::Error::Invalid(format!(
+                "terrain must be {n} bytes, got {}",
+                bytes.len()
+            )));
         }
         let o = self.main_ofs.land_making_map;
         self.main.data[o..o + n].copy_from_slice(bytes);
@@ -151,7 +167,10 @@ impl HorizonSave {
 
     pub fn plaza(&self) -> Plaza {
         let o = self.main_ofs.outside_field + ACRE_BYTES;
-        Plaza { x: u32le(&self.main.data, o + 4), z: u32le(&self.main.data, o + 8) }
+        Plaza {
+            x: u32le(&self.main.data, o + 4),
+            z: u32le(&self.main.data, o + 8),
+        }
     }
 
     pub fn set_plaza(&mut self, p: Plaza) {
@@ -205,7 +224,10 @@ impl HorizonSave {
             // older dumps appended unrelated trailing data
             bytes[..large].to_vec()
         } else {
-            return Err(crate::Error::Invalid(format!("design map dump must be {expect} bytes (got {})", bytes.len())));
+            return Err(crate::Error::Invalid(format!(
+                "design map dump must be {expect} bytes (got {})",
+                bytes.len()
+            )));
         };
         let o = self.main_ofs.my_design_map;
         self.main.data[o..o + expect].copy_from_slice(&data);

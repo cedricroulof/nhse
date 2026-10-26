@@ -108,7 +108,10 @@ impl HorizonSave {
 
     pub fn villager_raw(&self, i: usize) -> Result<&[u8]> {
         if i >= VILLAGER_COUNT {
-            return Err(Error::OutOfRange { index: i, max: VILLAGER_COUNT });
+            return Err(Error::OutOfRange {
+                index: i,
+                max: VILLAGER_COUNT,
+            });
         }
         Ok(&self.main.data[self.villager_range(i)])
     }
@@ -116,7 +119,11 @@ impl HorizonSave {
     pub fn set_villager_raw(&mut self, i: usize, data: &[u8]) -> Result<()> {
         let r = self.villager_range(i);
         if i >= VILLAGER_COUNT || data.len() != r.len() {
-            return Err(Error::Invalid(format!("villager data must be {} bytes (got {})", r.len(), data.len())));
+            return Err(Error::Invalid(format!(
+                "villager data must be {} bytes (got {})",
+                r.len(),
+                data.len()
+            )));
         }
         self.main.data[r].copy_from_slice(data);
         Ok(())
@@ -124,12 +131,17 @@ impl HorizonSave {
 
     pub fn villagers(&self) -> Vec<Villager> {
         let f = self.main_ofs.villager_format;
-        (0..VILLAGER_COUNT).map(|i| Villager::read(&self.main.data[self.villager_range(i)], f, i)).collect()
+        (0..VILLAGER_COUNT)
+            .map(|i| Villager::read(&self.main.data[self.villager_range(i)], f, i))
+            .collect()
     }
 
     pub fn set_villager(&mut self, v: &Villager) -> Result<()> {
         if v.index >= VILLAGER_COUNT {
-            return Err(Error::OutOfRange { index: v.index, max: VILLAGER_COUNT });
+            return Err(Error::OutOfRange {
+                index: v.index,
+                max: VILLAGER_COUNT,
+            });
         }
         let r = self.villager_range(v.index);
         v.write(&mut self.main.data[r]);
@@ -149,7 +161,11 @@ impl HorizonSave {
     pub fn set_villager_house_raw(&mut self, i: usize, data: &[u8]) -> Result<()> {
         let r = self.villager_house_range(i);
         if data.len() != r.len() {
-            return Err(Error::Invalid(format!("villager house data must be {} bytes (got {})", r.len(), data.len())));
+            return Err(Error::Invalid(format!(
+                "villager house data must be {} bytes (got {})",
+                r.len(),
+                data.len()
+            )));
         }
         self.main.data[r].copy_from_slice(data);
         Ok(())
@@ -157,7 +173,9 @@ impl HorizonSave {
 
     pub fn villager_houses(&self) -> Vec<VillagerHouse> {
         let f = self.main_ofs.villager_house_format;
-        (0..VILLAGER_COUNT).map(|i| VillagerHouse::read(self.villager_house_raw(i), f, i)).collect()
+        (0..VILLAGER_COUNT)
+            .map(|i| VillagerHouse::read(self.villager_house_raw(i), f, i))
+            .collect()
     }
 
     pub fn set_villager_house(&mut self, h: &VillagerHouse) {
@@ -175,7 +193,9 @@ impl HorizonSave {
 
     pub fn player_houses(&self) -> Vec<PlayerHouse> {
         let f = self.main_ofs.player_house_format;
-        (0..PLAYER_COUNT).map(|i| PlayerHouse::read(&self.main.data[self.player_house_range(i)], f, i)).collect()
+        (0..PLAYER_COUNT)
+            .map(|i| PlayerHouse::read(&self.main.data[self.player_house_range(i)], f, i))
+            .collect()
     }
 
     pub fn set_player_house(&mut self, h: &PlayerHouse) {
@@ -190,7 +210,11 @@ impl HorizonSave {
     pub fn set_player_house_raw(&mut self, i: usize, data: &[u8]) -> Result<()> {
         let r = self.player_house_range(i);
         if data.len() != r.len() {
-            return Err(Error::Invalid(format!("player house data must be {} bytes (got {})", r.len(), data.len())));
+            return Err(Error::Invalid(format!(
+                "player house data must be {} bytes (got {})",
+                r.len(),
+                data.len()
+            )));
         }
         self.main.data[r].copy_from_slice(data);
         Ok(())
@@ -204,14 +228,23 @@ impl HorizonSave {
 
     pub fn player_room(&self, house: usize, room: usize) -> Result<PlayerRoom> {
         if house >= PLAYER_COUNT || room >= house::ROOM_COUNT {
-            return Err(Error::OutOfRange { index: room, max: house::ROOM_COUNT });
+            return Err(Error::OutOfRange {
+                index: room,
+                max: house::ROOM_COUNT,
+            });
         }
-        Ok(PlayerRoom::read(&self.main.data[self.room_abs_range(house, room)], self.main_ofs.player_house_format))
+        Ok(PlayerRoom::read(
+            &self.main.data[self.room_abs_range(house, room)],
+            self.main_ofs.player_house_format,
+        ))
     }
 
     pub fn set_player_room(&mut self, house: usize, room: usize, r: &PlayerRoom) -> Result<()> {
         if house >= PLAYER_COUNT || room >= house::ROOM_COUNT {
-            return Err(Error::OutOfRange { index: room, max: house::ROOM_COUNT });
+            return Err(Error::OutOfRange {
+                index: room,
+                max: house::ROOM_COUNT,
+            });
         }
         let rr = self.room_abs_range(house, room);
         let f = self.main_ofs.player_house_format;
@@ -226,7 +259,11 @@ impl HorizonSave {
     pub fn set_player_room_raw(&mut self, house: usize, room: usize, data: &[u8]) -> Result<()> {
         let r = self.room_abs_range(house, room);
         if data.len() != r.len() {
-            return Err(Error::Invalid(format!("room data must be {} bytes (got {})", r.len(), data.len())));
+            return Err(Error::Invalid(format!(
+                "room data must be {} bytes (got {})",
+                r.len(),
+                data.len()
+            )));
         }
         self.main.data[r].copy_from_slice(data);
         Ok(())
@@ -245,10 +282,16 @@ impl HorizonSave {
     pub fn design_range(&self, kind: DesignKind, i: usize) -> Result<std::ops::Range<usize>> {
         let o = self.main_ofs;
         if i >= self.design_count(kind) {
-            return Err(Error::OutOfRange { index: i, max: self.design_count(kind) });
+            return Err(Error::OutOfRange {
+                index: i,
+                max: self.design_count(kind),
+            });
         }
         let (start, size) = match kind {
-            DesignKind::Normal => (o.land_my_design + i * design::NORMAL_SIZE, design::NORMAL_SIZE),
+            DesignKind::Normal => (
+                o.land_my_design + i * design::NORMAL_SIZE,
+                design::NORMAL_SIZE,
+            ),
             DesignKind::Pro => (o.patterns_pro + i * design::PRO_SIZE, design::PRO_SIZE),
             DesignKind::Flag => (o.pattern_flag, design::NORMAL_SIZE),
             DesignKind::Tailor => (o.pattern_tailor + i * design::PRO_SIZE, design::PRO_SIZE),
@@ -264,7 +307,11 @@ impl HorizonSave {
     pub fn set_design_raw(&mut self, kind: DesignKind, i: usize, data: &[u8]) -> Result<()> {
         let r = self.design_range(kind, i)?;
         if data.len() != r.len() {
-            return Err(Error::Invalid(format!("design must be {} bytes (got {})", r.len(), data.len())));
+            return Err(Error::Invalid(format!(
+                "design must be {} bytes (got {})",
+                r.len(),
+                data.len()
+            )));
         }
         self.main.data[r].copy_from_slice(data);
         let o = self.main_ofs;
@@ -289,7 +336,9 @@ impl HorizonSave {
 
     pub fn buildings(&self) -> Vec<Building> {
         let o = self.main_ofs.main_field_structure;
-        (0..building::COUNT).map(|i| Building::read(self.m(), o + i * building::SIZE)).collect()
+        (0..building::COUNT)
+            .map(|i| Building::read(self.m(), o + i * building::SIZE))
+            .collect()
     }
 
     pub fn set_buildings(&mut self, b: &[Building]) {
@@ -347,12 +396,20 @@ impl HorizonSave {
     }
 
     pub fn bulletin_post_raw(&self, slot: usize) -> Vec<u8> {
-        Board::post_bytes(self.m(), self.main_ofs.bulletin_board, slot.min(bbs::POST_COUNT - 1)).to_vec()
+        Board::post_bytes(
+            self.m(),
+            self.main_ofs.bulletin_board,
+            slot.min(bbs::POST_COUNT - 1),
+        )
+        .to_vec()
     }
 
     pub fn set_bulletin_post_raw(&mut self, slot: usize, data: &[u8]) -> Result<()> {
         if slot >= bbs::POST_COUNT || data.len() != bbs::POST_SIZE {
-            return Err(Error::Invalid(format!("bulletin post must be {} bytes", bbs::POST_SIZE)));
+            return Err(Error::Invalid(format!(
+                "bulletin post must be {} bytes",
+                bbs::POST_SIZE
+            )));
         }
         let o = self.main_ofs.bulletin_board;
         Board::set_post_bytes(self.mm(), o, slot, data);
@@ -360,6 +417,10 @@ impl HorizonSave {
     }
 
     pub fn bulletin_handwriting(&self, slot: usize) -> Vec<u8> {
-        Board::handwriting_rgba(self.m(), self.main_ofs.bulletin_board, slot.min(bbs::POST_COUNT - 1))
+        Board::handwriting_rgba(
+            self.m(),
+            self.main_ofs.bulletin_board,
+            slot.min(bbs::POST_COUNT - 1),
+        )
     }
 }

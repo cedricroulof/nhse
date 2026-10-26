@@ -13,7 +13,11 @@ pub fn parse_items(text: &str, s: &GameStrings) -> (Vec<Item>, Vec<String>) {
             continue;
         }
         let hex = entry.trim_start_matches("0x").trim_start_matches("0X");
-        if !hex.is_empty() && hex.len() <= 16 && hex.chars().all(|c| c.is_ascii_hexdigit()) && !is_name(entry, s) {
+        if !hex.is_empty()
+            && hex.len() <= 16
+            && hex.chars().all(|c| c.is_ascii_hexdigit())
+            && !is_name(entry, s)
+        {
             if let Ok(v) = u64::from_str_radix(hex, 16) {
                 items.push(Item::from_raw(v));
                 continue;
@@ -28,7 +32,10 @@ pub fn parse_items(text: &str, s: &GameStrings) -> (Vec<Item>, Vec<String>) {
 }
 
 fn norm(s: &str) -> String {
-    s.chars().filter(|c| c.is_alphanumeric()).flat_map(|c| c.to_lowercase()).collect()
+    s.chars()
+        .filter(|c| c.is_alphanumeric())
+        .flat_map(|c| c.to_lowercase())
+        .collect()
 }
 
 fn is_name(entry: &str, s: &GameStrings) -> bool {
@@ -45,7 +52,11 @@ pub fn find_by_name(name: &str, s: &GameStrings) -> Option<u16> {
     if let Some(i) = s.items.iter().position(|x| norm(x) == n) {
         return Some(i as u16);
     }
-    let mut hits = s.items.iter().enumerate().filter(|(_, x)| norm(x).starts_with(&n));
+    let mut hits = s
+        .items
+        .iter()
+        .enumerate()
+        .filter(|(_, x)| norm(x).starts_with(&n));
     match (hits.next(), hits.next()) {
         (Some((i, _)), None) => Some(i as u16),
         _ => None,
@@ -59,7 +70,10 @@ mod tests {
     fn parses_hex_and_names() {
         let s = crate::data::strings("en");
         let name = s.items[3082].clone(); // "flimsy shovel"
-        let (items, errs) = parse_items(&format!("0A54\n0000000500000A54, {name}\nnot a real item zzz"), s);
+        let (items, errs) = parse_items(
+            &format!("0A54\n0000000500000A54, {name}\nnot a real item zzz"),
+            s,
+        );
         assert_eq!(items.len(), 3);
         assert_eq!(items[0].id, 0x0A54);
         assert_eq!(items[1].count(), 5);

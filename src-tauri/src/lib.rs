@@ -25,7 +25,11 @@ fn png(bytes: Vec<u8>) -> Response<Vec<u8>> {
 }
 
 fn not_found() -> Response<Vec<u8>> {
-    Response::builder().status(StatusCode::NOT_FOUND).header("Access-Control-Allow-Origin", "*").body(Vec::new()).unwrap()
+    Response::builder()
+        .status(StatusCode::NOT_FOUND)
+        .header("Access-Control-Allow-Origin", "*")
+        .body(Vec::new())
+        .unwrap()
 }
 
 /// `nhse://localhost/<kind>/<arg>?…` image endpoint used by `<img>` tags in the UI.
@@ -42,18 +46,26 @@ fn serve(app: &tauri::AppHandle, uri: &tauri::http::Uri) -> Response<Vec<u8>> {
     let mut parts = path.split('/');
     match (parts.next(), parts.next(), parts.next()) {
         (Some("item"), Some(id), _) => {
-            let Ok(id) = id.trim_end_matches(".png").parse::<u16>() else { return not_found() };
+            let Ok(id) = id.trim_end_matches(".png").parse::<u16>() else {
+                return not_found();
+            };
             let variant = query.get("v").and_then(|v| v.parse().ok()).unwrap_or(0);
             png(sprites::item_png(&state.paths.images(), id, variant))
         }
         (Some("icon"), Some(id), _) => {
-            let Ok(id) = id.trim_end_matches(".png").parse::<u16>() else { return not_found() };
+            let Ok(id) = id.trim_end_matches(".png").parse::<u16>() else {
+                return not_found();
+            };
             png(sprites::menu_icon_png(id))
         }
-        (Some("villager"), Some(name), _) => match sprites::villager_png(name.trim_end_matches(".png")) {
-            Some(b) => png(b),
-            None => sprites::embedded("Misc/leaf.png").map(png).unwrap_or_else(not_found),
-        },
+        (Some("villager"), Some(name), _) => {
+            match sprites::villager_png(name.trim_end_matches(".png")) {
+                Some(b) => png(b),
+                None => sprites::embedded("Misc/leaf.png")
+                    .map(png)
+                    .unwrap_or_else(not_found),
+            }
+        }
         (Some("design"), Some(kind), Some(index)) => {
             let kind = match kind {
                 "normal" => DesignKind::Normal,
@@ -62,14 +74,26 @@ fn serve(app: &tauri::AppHandle, uri: &tauri::http::Uri) -> Response<Vec<u8>> {
                 "tailor" => DesignKind::Tailor,
                 _ => return not_found(),
             };
-            let Ok(index) = index.trim_end_matches(".png").parse::<usize>() else { return not_found() };
+            let Ok(index) = index.trim_end_matches(".png").parse::<usize>() else {
+                return not_found();
+            };
             let sheet: Option<usize> = query.get("sheet").and_then(|v| v.parse().ok());
-            let Ok(guard) = state.session.lock() else { return not_found() };
-            let Some(sess) = guard.as_ref() else { return not_found() };
-            let Ok(d) = sess.save.design_raw(kind, index) else { return not_found() };
+            let Ok(guard) = state.session.lock() else {
+                return not_found();
+            };
+            let Some(sess) = guard.as_ref() else {
+                return not_found();
+            };
+            let Ok(d) = sess.save.design_raw(kind, index) else {
+                return not_found();
+            };
             let pro = matches!(kind, DesignKind::Pro | DesignKind::Tailor);
             if !pro || sheet.is_some() {
-                return png(encode_png(32, 32, &design::render_rgba(d, sheet.unwrap_or(0))));
+                return png(encode_png(
+                    32,
+                    32,
+                    &design::render_rgba(d, sheet.unwrap_or(0)),
+                ));
             }
             // PRO overview: 2×2 sheets (front, back, right, left)
             let mut out = vec![0u8; 64 * 64 * 4];
@@ -84,11 +108,21 @@ fn serve(app: &tauri::AppHandle, uri: &tauri::http::Uri) -> Response<Vec<u8>> {
             png(encode_png(64, 64, &out))
         }
         (Some("handwriting"), Some(slot), _) => {
-            let Ok(slot) = slot.trim_end_matches(".png").parse::<usize>() else { return not_found() };
-            let Ok(guard) = state.session.lock() else { return not_found() };
-            let Some(sess) = guard.as_ref() else { return not_found() };
+            let Ok(slot) = slot.trim_end_matches(".png").parse::<usize>() else {
+                return not_found();
+            };
+            let Ok(guard) = state.session.lock() else {
+                return not_found();
+            };
+            let Some(sess) = guard.as_ref() else {
+                return not_found();
+            };
             let rgba = sess.save.bulletin_handwriting(slot);
-            png(encode_png(nhse_core::structs::bbs::HANDWRITING_W, nhse_core::structs::bbs::HANDWRITING_H, &rgba))
+            png(encode_png(
+                nhse_core::structs::bbs::HANDWRITING_W,
+                nhse_core::structs::bbs::HANDWRITING_H,
+                &rgba,
+            ))
         }
         _ => not_found(),
     }
@@ -99,9 +133,14 @@ pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
-        .register_uri_scheme_protocol("nhse", |ctx, request| serve(ctx.app_handle(), request.uri()))
+        .register_uri_scheme_protocol("nhse", |ctx, request| {
+            serve(ctx.app_handle(), request.uri())
+        })
         .setup(|app| {
-            let paths = Paths { config: app.path().app_config_dir()?, data: app.path().app_data_dir()? };
+            let paths = Paths {
+                config: app.path().app_config_dir()?,
+                data: app.path().app_data_dir()?,
+            };
             let _ = std::fs::create_dir_all(&paths.config);
             let _ = std::fs::create_dir_all(&paths.data);
             app.manage(AppState::new(paths));

@@ -31,7 +31,9 @@ fn raw_body<'a>(req: &'a Request) -> CmdResult<&'a [u8]> {
 /// Field item layer as raw bytes (column-major, 8 bytes per tile).
 #[tauri::command]
 pub fn field_layer(state: State<AppState>, layer: usize) -> CmdResult<Response> {
-    with_save!(state, |s| Ok(Response::new(s.field_layer_bytes(layer).to_vec())))
+    with_save!(state, |s| Ok(Response::new(
+        s.field_layer_bytes(layer).to_vec()
+    )))
 }
 
 #[tauri::command]
@@ -59,7 +61,13 @@ pub fn terrain_png(state: State<AppState>, px: Option<usize>) -> CmdResult<Respo
     with_save!(state, |s| {
         let tiles = s.terrain();
         let acres = s.acres();
-        let (w, h, rgba) = render_terrain(&TerrainView { tiles: &tiles, acres: &acres }, px.unwrap_or(8));
+        let (w, h, rgba) = render_terrain(
+            &TerrainView {
+                tiles: &tiles,
+                acres: &acres,
+            },
+            px.unwrap_or(8),
+        );
         Ok(Response::new(encode_png(w, h, &rgba)))
     })
 }
@@ -116,7 +124,11 @@ pub struct Rect {
     pub h: usize,
 }
 
-fn with_layer<T>(s: &mut nhse_core::HorizonSave, layer: usize, f: impl FnOnce(&mut ItemGrid) -> T) -> T {
+fn with_layer<T>(
+    s: &mut nhse_core::HorizonSave,
+    layer: usize,
+    f: impl FnOnce(&mut ItemGrid) -> T,
+) -> T {
     let mut g = s.field_layer(layer);
     let r = f(&mut g);
     s.set_field_layer(layer, &g);
@@ -124,40 +136,98 @@ fn with_layer<T>(s: &mut nhse_core::HorizonSave, layer: usize, f: impl FnOnce(&m
 }
 
 #[tauri::command]
-pub fn field_clear(state: State<AppState>, layer: usize, kind: ClearKind, rect: Option<Rect>) -> CmdResult<usize> {
+pub fn field_clear(
+    state: State<AppState>,
+    layer: usize,
+    kind: ClearKind,
+    rect: Option<Rect>,
+) -> CmdResult<usize> {
     with_save_mut!(state, |s| {
         let l = s.field_layout();
-        let r = rect.unwrap_or(Rect { x: 0, y: 0, w: l.width, h: l.height });
-        Ok(with_layer(s, layer, |g| fieldtools::clear(g, kind, r.x, r.y, r.w, r.h)))
+        let r = rect.unwrap_or(Rect {
+            x: 0,
+            y: 0,
+            w: l.width,
+            h: l.height,
+        });
+        Ok(with_layer(s, layer, |g| {
+            fieldtools::clear(g, kind, r.x, r.y, r.w, r.h)
+        }))
     })
 }
 
 #[tauri::command]
-pub fn field_water(state: State<AppState>, layer: usize, all: bool, rect: Option<Rect>) -> CmdResult<usize> {
+pub fn field_water(
+    state: State<AppState>,
+    layer: usize,
+    all: bool,
+    rect: Option<Rect>,
+) -> CmdResult<usize> {
     with_save_mut!(state, |s| {
         let l = s.field_layout();
-        let r = rect.unwrap_or(Rect { x: 0, y: 0, w: l.width, h: l.height });
-        Ok(with_layer(s, layer, |g| fieldtools::water_flowers(g, all, r.x, r.y, r.w, r.h)))
+        let r = rect.unwrap_or(Rect {
+            x: 0,
+            y: 0,
+            w: l.width,
+            h: l.height,
+        });
+        Ok(with_layer(s, layer, |g| {
+            fieldtools::water_flowers(g, all, r.x, r.y, r.w, r.h)
+        }))
     })
 }
 
 #[derive(Deserialize)]
 #[serde(tag = "type", rename_all = "snake_case")]
 pub enum SpawnSource {
-    Item { item: Item, count: usize },
-    Diy { min: u16, max: u16, alphabetical: bool, count: usize },
-    List { items: Vec<Item>, dropped: bool },
+    Item {
+        item: Item,
+        count: usize,
+    },
+    Diy {
+        min: u16,
+        max: u16,
+        alphabetical: bool,
+        count: usize,
+    },
+    List {
+        items: Vec<Item>,
+        dropped: bool,
+    },
 }
 
 #[tauri::command]
-pub fn field_spawn(state: State<AppState>, layer: usize, x: usize, y: usize, arrange: Arrangement, source: SpawnSource, overwrite: bool) -> CmdResult<usize> {
+pub fn field_spawn(
+    state: State<AppState>,
+    layer: usize,
+    x: usize,
+    y: usize,
+    arrange: Arrangement,
+    source: SpawnSource,
+    overwrite: bool,
+) -> CmdResult<usize> {
     let lang = state.lang();
     with_save_mut!(state, |s| {
         let items: Vec<Item> = match source {
             SpawnSource::Item { item, count } => vec![item; count.min(10_000)],
-            SpawnSource::Diy { min, max, alphabetical, count } => {
-                let cards = fieldtools::diy_cards(min, max, alphabetical, Some(nhse_core::data::strings(&lang)));
-                cards.iter().cycle().take(cards.len() * count.clamp(1, 20)).copied().collect()
+            SpawnSource::Diy {
+                min,
+                max,
+                alphabetical,
+                count,
+            } => {
+                let cards = fieldtools::diy_cards(
+                    min,
+                    max,
+                    alphabetical,
+                    Some(nhse_core::data::strings(&lang)),
+                );
+                cards
+                    .iter()
+                    .cycle()
+                    .take(cards.len() * count.clamp(1, 20))
+                    .copied()
+                    .collect()
             }
             SpawnSource::List { items, dropped } => items
                 .into_iter()
@@ -170,15 +240,29 @@ pub fn field_spawn(state: State<AppState>, layer: usize, x: usize, y: usize, arr
                 })
                 .collect(),
         };
-        Ok(with_layer(s, layer, |g| fieldtools::spawn(g, &items, x, y, arrange, overwrite)))
+        Ok(with_layer(s, layer, |g| {
+            fieldtools::spawn(g, &items, x, y, arrange, overwrite)
+        }))
     })
 }
 
 #[tauri::command]
-pub fn field_replace(state: State<AppState>, layer: usize, old: Item, new: Item, id_only: bool, rect: Option<Rect>) -> CmdResult<usize> {
+pub fn field_replace(
+    state: State<AppState>,
+    layer: usize,
+    old: Item,
+    new: Item,
+    id_only: bool,
+    rect: Option<Rect>,
+) -> CmdResult<usize> {
     with_save_mut!(state, |s| {
         let l = s.field_layout();
-        let r = rect.unwrap_or(Rect { x: 0, y: 0, w: l.width, h: l.height });
+        let r = rect.unwrap_or(Rect {
+            x: 0,
+            y: 0,
+            w: l.width,
+            h: l.height,
+        });
         match with_layer(s, layer, |g| g.replace_all(&old, &new, r.x, r.y, r.w, r.h, id_only)) {
             Some(n) => Ok(n),
             None => err("The new item has a different footprint than the old one; use \"match by item only\" or pick a same-sized item."),
@@ -188,13 +272,17 @@ pub fn field_replace(state: State<AppState>, layer: usize, old: Item, new: Item,
 
 #[tauri::command]
 pub fn field_clean_extensions(state: State<AppState>, layer: usize) -> CmdResult<usize> {
-    with_save_mut!(state, |s| Ok(with_layer(s, layer, |g| g.clear_dangling_extensions())))
+    with_save_mut!(state, |s| Ok(
+        with_layer(s, layer, |g| g.clear_dangling_extensions())
+    ))
 }
 
 /// Tiles on the upper layer (1) with nothing underneath.
 #[tauri::command]
 pub fn field_unsupported(state: State<AppState>) -> CmdResult<Vec<(usize, usize)>> {
-    with_save!(state, |s| Ok(s.field_layer(1).unsupported_tiles(&s.field_layer(0))))
+    with_save!(state, |s| Ok(s
+        .field_layer(1)
+        .unsupported_tiles(&s.field_layer(0))))
 }
 
 // --- dumps --------------------------------------------------------------------------------
@@ -228,14 +316,26 @@ fn flags_range(s: &nhse_core::HorizonSave, layer: usize) -> std::ops::Range<usiz
 }
 
 #[tauri::command]
-pub fn map_export(state: State<AppState>, kind: DumpKind, path: String, layer: Option<usize>, acre_x: Option<usize>, acre_y: Option<usize>) -> CmdResult<()> {
+pub fn map_export(
+    state: State<AppState>,
+    kind: DumpKind,
+    path: String,
+    layer: Option<usize>,
+    acre_x: Option<usize>,
+    acre_y: Option<usize>,
+) -> CmdResult<()> {
     with_save!(state, |s| {
         let layer = layer.unwrap_or(0);
         let data: Vec<u8> = match kind {
             DumpKind::FieldLayer => s.field_layer_bytes(layer).to_vec(),
             DumpKind::FieldAcre => {
                 let g = s.field_layer(layer);
-                let items = g.extract((acre_x.unwrap_or(0) * 32) as i64, (acre_y.unwrap_or(0) * 32) as i64, 32, 32);
+                let items = g.extract(
+                    (acre_x.unwrap_or(0) * 32) as i64,
+                    (acre_y.unwrap_or(0) * 32) as i64,
+                    32,
+                    32,
+                );
                 let mut d = vec![0u8; items.len() * 8];
                 Item::write_array(&mut d, 0, &items);
                 d
@@ -248,7 +348,11 @@ pub fn map_export(state: State<AppState>, kind: DumpKind, path: String, layer: O
                 let mut d = vec![0u8; 16 * 16 * 14];
                 for y in 0..16 {
                     for x in 0..16 {
-                        let tile = if ax + x < TILES_W && ay + y < TILES_H { t[(ax + x) * TILES_H + ay + y] } else { TerrainTile::default() };
+                        let tile = if ax + x < TILES_W && ay + y < TILES_H {
+                            t[(ax + x) * TILES_H + ay + y]
+                        } else {
+                            TerrainTile::default()
+                        };
                         tile.write(&mut d, (y * 16 + x) * 14);
                     }
                 }
@@ -271,11 +375,24 @@ pub fn map_export(state: State<AppState>, kind: DumpKind, path: String, layer: O
 }
 
 #[tauri::command]
-pub fn map_import(state: State<AppState>, kind: DumpKind, path: String, layer: Option<usize>, acre_x: Option<usize>, acre_y: Option<usize>) -> CmdResult<()> {
+pub fn map_import(
+    state: State<AppState>,
+    kind: DumpKind,
+    path: String,
+    layer: Option<usize>,
+    acre_x: Option<usize>,
+    acre_y: Option<usize>,
+) -> CmdResult<()> {
     let data = std::fs::read(&path)?;
     with_save_mut!(state, |s| {
         let layer = layer.unwrap_or(0);
-        let size_err = |expect: usize| err(format!("This file is {} bytes; expected {} bytes.", data.len(), expect));
+        let size_err = |expect: usize| {
+            err(format!(
+                "This file is {} bytes; expected {} bytes.",
+                data.len(),
+                expect
+            ))
+        };
         match kind {
             DumpKind::FieldLayer => {
                 let expect = s.field_layer_bytes(layer).len();
@@ -289,7 +406,16 @@ pub fn map_import(state: State<AppState>, kind: DumpKind, path: String, layer: O
                     return size_err(32 * 32 * 8);
                 }
                 let items = Item::read_array(&data, 0, 32 * 32);
-                with_layer(s, layer, |g| g.paste((acre_x.unwrap_or(0) * 32) as i64, (acre_y.unwrap_or(0) * 32) as i64, 32, 32, &items, false));
+                with_layer(s, layer, |g| {
+                    g.paste(
+                        (acre_x.unwrap_or(0) * 32) as i64,
+                        (acre_y.unwrap_or(0) * 32) as i64,
+                        32,
+                        32,
+                        &items,
+                        false,
+                    )
+                });
             }
             DumpKind::FieldFlags => {
                 let r = flags_range(s, layer);
@@ -308,7 +434,8 @@ pub fn map_import(state: State<AppState>, kind: DumpKind, path: String, layer: O
                 for y in 0..16 {
                     for x in 0..16 {
                         if ax + x < TILES_W && ay + y < TILES_H {
-                            t[(ax + x) * TILES_H + ay + y] = TerrainTile::read(&data, (y * 16 + x) * 14);
+                            t[(ax + x) * TILES_H + ay + y] =
+                                TerrainTile::read(&data, (y * 16 + x) * 14);
                         }
                     }
                 }

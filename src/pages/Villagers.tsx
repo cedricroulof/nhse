@@ -44,7 +44,7 @@ export default function Villagers() {
             {x.moving_out && <span className="flag"><Badge kind="warn">moving</Badge></span>}
             <img src={villagerSprite(x.internal_name)} className="portrait" alt="" style={{ opacity: x.species === EMPTY ? 0.3 : 1 }} />
             <div className="n ellipsis" style={{ maxWidth: "100%" }}>{name(x)}</div>
-            <div className="p">{x.species === EMPTY ? "—" : prettify(gd.enums.VillagerPersonality.find(([, p]) => p === x.personality)?.[0] ?? "")}</div>
+            <div className="p">{x.species === EMPTY ? "—" : prettify((gd.enums.VillagerPersonality ?? []).find(([, p]) => p === x.personality)?.[0] ?? "")}</div>
           </button>
         ))}
       </div>
@@ -141,7 +141,7 @@ function General({ v, update }: { v: Villager; update: (v: Villager, now?: boole
         {settings?.advanced && (
           <Field label="Species & variant (identity only)" hint="Changes who this villager is without updating their house or belongings. Prefer “Replace villager…”.">
             <VillagerPicker value={v.internal_name} onChange={(n) => {
-              const sp = gd.enums.VillagerSpecies.find(([k]) => k === n.slice(0, 3));
+              const sp = (gd.enums.VillagerSpecies ?? []).find(([k]) => k === n.slice(0, 3));
               if (sp) update({ ...v, species: sp[1], variant: Number(n.slice(3)), internal_name: n }, true);
             }} />
           </Field>

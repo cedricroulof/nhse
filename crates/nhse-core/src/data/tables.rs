@@ -126,7 +126,10 @@ impl Tables {
         self.achievements.iter().find(|a| a.index as usize == index)
     }
     pub fn list(&self, name: &str) -> &[u16] {
-        self.game_lists.get(name).map(|v| v.as_slice()).unwrap_or(&[])
+        self.game_lists
+            .get(name)
+            .map(|v| v.as_slice())
+            .unwrap_or(&[])
     }
     pub fn remake_for_item(&self, item: u16) -> Option<&RemakeInfo> {
         let idx = self.remake_map.get(&item)?;
@@ -138,9 +141,11 @@ static TABLES: OnceLock<Tables> = OnceLock::new();
 
 pub fn tables() -> &'static Tables {
     TABLES.get_or_init(|| {
-        let raw: RawTables = serde_json::from_str(include_str!("../../data/tables.json")).expect("embedded tables.json");
+        let raw: RawTables = serde_json::from_str(include_str!("../../data/tables.json"))
+            .expect("embedded tables.json");
         let enums: HashMap<String, Vec<(String, i64)>> =
-            serde_json::from_str(include_str!("../../data/enums.json")).expect("embedded enums.json");
+            serde_json::from_str(include_str!("../../data/enums.json"))
+                .expect("embedded enums.json");
         let mut field_items_sorted = raw.field_items.clone();
         field_items_sorted.sort_by_key(|f| f.id);
         Tables {
@@ -164,17 +169,31 @@ pub fn tables() -> &'static Tables {
 
 /// Name of an enum value (e.g. `enum_name("Reaction", 3) == "Joy"`).
 pub fn enum_name(enum_name: &str, value: i64) -> Option<&'static str> {
-    tables().enums.get(enum_name)?.iter().find(|(_, v)| *v == value).map(|(n, _)| n.as_str())
+    tables()
+        .enums
+        .get(enum_name)?
+        .iter()
+        .find(|(_, v)| *v == value)
+        .map(|(n, _)| n.as_str())
 }
 
 /// All `(name, value)` pairs of an enum.
 pub fn enum_values(enum_name: &str) -> &'static [(String, i64)] {
-    tables().enums.get(enum_name).map(|v| v.as_slice()).unwrap_or(&[])
+    tables()
+        .enums
+        .get(enum_name)
+        .map(|v| v.as_slice())
+        .unwrap_or(&[])
 }
 
 /// Value of an enum member by name.
 pub fn enum_value(enum_name: &str, member: &str) -> Option<i64> {
-    tables().enums.get(enum_name)?.iter().find(|(n, _)| n == member).map(|(_, v)| *v)
+    tables()
+        .enums
+        .get(enum_name)?
+        .iter()
+        .find(|(n, _)| n == member)
+        .map(|(_, v)| *v)
 }
 
 #[cfg(test)]

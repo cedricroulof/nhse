@@ -99,7 +99,7 @@ export default function Overview() {
             <Card title={<span className="row"><Tent size={16} /> Campsite</span>} desc="The villager currently staying at the campsite">
               <div className="grid cols-2" style={{ gap: 12 }}>
                 <Field label="Visitor"><VillagerPicker value={campName} onChange={(n) => {
-                  const sp = gd.enums.VillagerSpecies.find(([k]) => k === n.slice(0, 3));
+                  const sp = (gd.enums.VillagerSpecies ?? []).find(([k]) => k === n.slice(0, 3));
                   if (sp) upd({ camp_species: sp[1], camp_variant: Number(n.slice(3)) });
                 }} /></Field>
                 <Field label="Status"><NumberInput value={s.camp_status} max={255} onChange={(v) => upd({ camp_status: v })} /></Field>

@@ -10,13 +10,32 @@ fn tmp(name: &str) -> std::path::PathBuf {
 
 #[test]
 fn open_edit_save_reopen_all_revisions() {
-    for rev in [0usize, 1, 6, 8, 10, 13, 15, 16, 17, 18, 19, 20, 22, 31, REVISIONS.len() - 1] {
+    for rev in [
+        0usize,
+        1,
+        6,
+        8,
+        10,
+        13,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        31,
+        REVISIONS.len() - 1,
+    ] {
         let dir = tmp(&format!("rt{rev}"));
         nhse_core::testing::write_synthetic_save(&dir, rev, 2, 42);
         let mut s = HorizonSave::open(&dir).unwrap();
         assert_eq!(s.revision.index, rev);
         assert!(!s.revision.compatibility_mode);
-        assert!(s.invalid_hashes().is_empty(), "rev {rev}: hashes invalid on load");
+        assert!(
+            s.invalid_hashes().is_empty(),
+            "rev {rev}: hashes invalid on load"
+        );
         assert_eq!(s.players.len(), 2);
 
         let mut p = s.player_profile(1).unwrap();
@@ -32,11 +51,17 @@ fn open_edit_save_reopen_all_revisions() {
         s.save(7).unwrap();
 
         let s2 = HorizonSave::open(&dir).unwrap();
-        assert!(s2.invalid_hashes().is_empty(), "rev {rev}: hashes invalid after save");
+        assert!(
+            s2.invalid_hashes().is_empty(),
+            "rev {rev}: hashes invalid after save"
+        );
         let p2 = s2.player_profile(1).unwrap();
         assert_eq!(p2.wallet, 99_999);
         assert_eq!(p2.name, "Zoë");
-        assert_eq!(s2.player_items(0, PlayerList::Pocket).unwrap()[5].id, 0x0A54);
+        assert_eq!(
+            s2.player_items(0, PlayerList::Pocket).unwrap()[5].id,
+            0x0A54
+        );
         let _ = std::fs::remove_dir_all(&dir);
     }
 }
@@ -52,7 +77,11 @@ fn zip_with_nested_folder_roundtrip() {
         let mut z = zip::ZipWriter::new(f);
         let opts = zip::write::SimpleFileOptions::default();
         for entry in walk(&dir) {
-            let rel = entry.strip_prefix(&dir).unwrap().to_string_lossy().replace('\\', "/");
+            let rel = entry
+                .strip_prefix(&dir)
+                .unwrap()
+                .to_string_lossy()
+                .replace('\\', "/");
             z.start_file(format!("My Save/{rel}"), opts).unwrap();
             z.write_all(&std::fs::read(&entry).unwrap()).unwrap();
         }

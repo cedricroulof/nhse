@@ -1,9 +1,9 @@
-import { Brush, Building2, ClipboardPaste, Copy, Crosshair, Download, Droplets, Eraser, Grid3x3, Hand, Layers, Map as MapIcon, MousePointer2, Redo2, Replace, RotateCw, Scissors, Sparkles, SquareDashed, Trash2, Undo2, Upload, ZoomIn, ZoomOut } from "lucide-react";
+import { Brush, Building2, Check as CheckIcon, Eye, ClipboardPaste, Copy, Crosshair, Download, Droplets, Eraser, Grid3x3, Hand, Layers, Map as MapIcon, MousePointer2, Redo2, Replace, RotateCw, Scissors, Sparkles, SquareDashed, Trash2, Undo2, Upload, ZoomIn, ZoomOut } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { PasteListModal } from "../components/ItemGridEditor";
 import { ItemEditor } from "../components/ItemEditor";
 import { ItemPicker } from "../components/ItemPicker";
-import { Badge, Button, Callout, Check, Field, Loading, NumberInput, Segmented, Select, Tabs } from "../components/ui";
+import { Badge, Button, Callout, Check, Field, Loading, MenuButton, NumberInput, Segmented, Select, Tabs } from "../components/ui";
 import { enumOptions, prettify } from "../components/Widgets";
 import { api, type Arrangement, type Building, type ClearKind, type DumpKind, type Item, type MapMeta, type Rect } from "../lib/api";
 import { F, pickFile, saveFile } from "../lib/dialog";
@@ -290,7 +290,7 @@ export default function MapEditor() {
     return () => { cancelAnimationFrame(frame); ro.disconnect(); };
   });
 
-  const buildingName = (k: number) => prettify(gd.enums.BuildingType.find(([, v]) => v === k)?.[0] ?? `Type ${k}`);
+  const buildingName = (k: number) => prettify((gd.enums.BuildingType ?? []).find(([, v]) => v === k)?.[0] ?? `Type ${k}`);
 
   // ------------------------------------------------------------- interaction
   const drag = useRef<{ mode: "pan" | "paint" | "erase" | "rect"; sx: number; sy: number; vx: number; vy: number; tx: number; ty: number; dirty: boolean; last: string } | null>(null);
@@ -482,10 +482,9 @@ export default function MapEditor() {
           )}
           {tool === "rect" && clip.current && <Button size="sm" icon={<ClipboardPaste />} onClick={() => { pasteMode.current = true; toast("info", "Click on the map to paste"); }}>Paste</Button>}
           <div style={{ flex: 1 }} />
-          <Check label="Other layer" checked={show.other} onChange={(v) => setShow({ ...show, other: v })} />
-          <Check label="Grid" checked={show.grid} onChange={(v) => setShow({ ...show, grid: v })} />
-          <Check label="Buildings" checked={show.buildings} onChange={(v) => setShow({ ...show, buildings: v })} />
-          <Check label="Plaza" checked={show.plaza} onChange={(v) => setShow({ ...show, plaza: v })} />
+          <MenuButton label="View" icon={<Eye />} size="sm" align="right" items={([
+            ["other", "Other layer (dimmed)"], ["grid", "Grid & acre names"], ["buildings", "Buildings"], ["plaza", "Plaza"], ["sprites", "Item pictures when zoomed in"],
+          ] as [keyof typeof show, string][]).map(([k, label]) => ({ label, icon: show[k] ? <CheckIcon /> : <span style={{ width: 14 }} />, onClick: () => setShow({ ...show, [k]: !show[k] }) }))} />
           <div className="row" style={{ gap: 4 }}>
             <Button size="sm" iconOnly icon={<ZoomOut />} onClick={() => zoomBy(0.8)} title="Zoom out (−)" />
             <span className="small faint mono" style={{ width: 44, textAlign: "center" }}>{Math.round(view.s * 100 / 4)}%</span>
@@ -717,7 +716,7 @@ export default function MapEditor() {
           {settings?.advanced ? (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(9, 1fr)", gap: 3 }}>
               {m.acres.map((a, i) => (
-                <input key={`${i}-${a}`} className="input mono" style={{ padding: "0 2px", height: 26, fontSize: 10, textAlign: "center" }} title={`${String.fromCharCode(65 + (i % 9))}${Math.floor(i / 9) + 1}: ${gd.enums.OutsideAcre.find(([, v]) => v === a)?.[0] ?? a}`}
+                <input key={`${i}-${a}`} className="input mono" style={{ padding: "0 2px", height: 26, fontSize: 10, textAlign: "center" }} title={`${String.fromCharCode(65 + (i % 9))}${Math.floor(i / 9) + 1}: ${(gd.enums.OutsideAcre ?? []).find(([, v]) => v === a)?.[0] ?? a}`}
                   defaultValue={hex(a, 3)} onBlur={(e) => { const v = parseInt(e.target.value, 16); if (!Number.isNaN(v) && v !== a && v >= 0 && v <= 0xffff) setAcre(i, v); else e.target.value = hex(a, 3); }} />
               ))}
             </div>

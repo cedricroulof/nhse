@@ -101,7 +101,11 @@ pub fn pixel(d: &[u8], sheet: usize, x: usize, y: usize) -> u8 {
 pub fn set_pixel(d: &mut [u8], sheet: usize, x: usize, y: usize, value: u8) {
     let index = y * DIM + x;
     let o = PIXEL_START + sheet * SHEET_BYTES + index / 2;
-    d[o] = if index & 1 == 0 { (d[o] & 0xF0) | (value & 0xF) } else { ((value & 0xF) << 4) | (d[o] & 0xF) };
+    d[o] = if index & 1 == 0 {
+        (d[o] & 0xF0) | (value & 0xF)
+    } else {
+        ((value & 0xF) << 4) | (d[o] & 0xF)
+    };
 }
 
 /// Renders one sheet to RGBA (transparent pixels have alpha 0).
@@ -143,7 +147,11 @@ pub fn import_rgba(d: &mut [u8], sheets_rgba: &[Vec<u8>]) {
         for y in 0..DIM {
             for x in 0..DIM {
                 let o = (y * DIM + x) * 4;
-                let v = if img[o + 3] < 128 { 15 } else { nearest(&pal, [img[o], img[o + 1], img[o + 2]]) as u8 };
+                let v = if img[o + 3] < 128 {
+                    15
+                } else {
+                    nearest(&pal, [img[o], img[o + 1], img[o + 2]]) as u8
+                };
                 set_pixel(d, s, x, y, v);
             }
         }
@@ -159,7 +167,11 @@ fn dist(a: [u8; 3], b: [u8; 3]) -> u32 {
 }
 
 fn nearest(pal: &[[u8; 3]], c: [u8; 3]) -> usize {
-    pal.iter().enumerate().min_by_key(|(_, p)| dist(**p, c)).map(|(i, _)| i).unwrap_or(0)
+    pal.iter()
+        .enumerate()
+        .min_by_key(|(_, p)| dist(**p, c))
+        .map(|(i, _)| i)
+        .unwrap_or(0)
 }
 
 /// Median-cut quantization followed by a few k-means refinement passes.
@@ -207,7 +219,9 @@ pub fn quantize(pixels: &[[u8; 3]], k: usize) -> Vec<[u8; 3]> {
         .filter(|b| !b.is_empty())
         .map(|b| {
             let n = b.len() as u64;
-            let s = b.iter().fold([0u64; 3], |a, p| [a[0] + p[0] as u64, a[1] + p[1] as u64, a[2] + p[2] as u64]);
+            let s = b.iter().fold([0u64; 3], |a, p| {
+                [a[0] + p[0] as u64, a[1] + p[1] as u64, a[2] + p[2] as u64]
+            });
             [(s[0] / n) as u8, (s[1] / n) as u8, (s[2] / n) as u8]
         })
         .collect();
@@ -221,8 +235,12 @@ pub fn quantize(pixels: &[[u8; 3]], k: usize) -> Vec<[u8; 3]> {
             sums[i][3] += 1;
         }
         for (c, s) in centers.iter_mut().zip(&sums) {
-            if s[3] > 0 {
-                *c = [(s[0] / s[3]) as u8, (s[1] / s[3]) as u8, (s[2] / s[3]) as u8];
+            if let (Some(r), Some(g), Some(b)) = (
+                s[0].checked_div(s[3]),
+                s[1].checked_div(s[3]),
+                s[2].checked_div(s[3]),
+            ) {
+                *c = [r as u8, g as u8, b as u8];
             }
         }
     }

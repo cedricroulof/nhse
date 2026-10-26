@@ -73,7 +73,12 @@ pub fn road_family(m: u16) -> Option<&'static str> {
 
 pub type Rgb = [u8; 3];
 
-const GRASS: [Rgb; 4] = [[76, 154, 74], [92, 170, 84], [108, 184, 96], [124, 197, 110]];
+const GRASS: [Rgb; 4] = [
+    [76, 154, 74],
+    [92, 170, 84],
+    [108, 184, 96],
+    [124, 197, 110],
+];
 const WATER: Rgb = [104, 196, 214];
 const WATER_DEEP: Rgb = [84, 176, 200];
 const SHORE: Rgb = [214, 199, 140];
@@ -105,7 +110,15 @@ fn in_tri(px: i32, py: i32, a: (i32, i32), b: (i32, i32), c: (i32, i32)) -> bool
     tri_area2(a, b, c) == tri_area2(p, b, c) + tri_area2(a, p, c) + tri_area2(a, b, p)
 }
 
-fn in_multi(px: i32, py: i32, a: (i32, i32), b: (i32, i32), c: (i32, i32), va: (i32, i32), vb: (i32, i32)) -> bool {
+fn in_multi(
+    px: i32,
+    py: i32,
+    a: (i32, i32),
+    b: (i32, i32),
+    c: (i32, i32),
+    va: (i32, i32),
+    vb: (i32, i32),
+) -> bool {
     in_tri(px, py, a, va, b) || in_tri(px, py, a, b, c) || in_tri(px, py, c, b, vb)
 }
 
@@ -128,22 +141,42 @@ pub fn river_is_land(m: u16, angle: u16, x: i32, y: i32) -> bool {
     let a = angle & 3;
     let edge = |lo: bool, hi: bool| lo || hi;
     match m {
-        0x01 => edge(x < 4 || x >= 12, y < 4 || y >= 12),
+        0x01 => edge(!(4..12).contains(&x), !(4..12).contains(&y)),
         0x04 => match a {
-            0 => x < 4 || x >= 12 || y < 4,
-            1 => x < 4 || y < 4 || y >= 12,
-            2 => x < 4 || x >= 12 || y >= 12,
-            _ => y < 4 || y >= 12 || x >= 12,
+            0 => !(4..12).contains(&x) || y < 4,
+            1 => x < 4 || !(4..12).contains(&y),
+            2 => !(4..12).contains(&x) || y >= 12,
+            _ => !(4..12).contains(&y) || x >= 12,
         },
         0x07 => match a {
-            0 | 2 => x < 4 || x >= 12,
-            _ => y < 4 || y >= 12,
+            0 | 2 => !(4..12).contains(&x),
+            _ => !(4..12).contains(&y),
         },
         0x08 => match a {
-            0 => in_multi(x, y, (4, 15), (0, 0), (15, 4), (0, 15), (15, 0)) || nub_br(x, y) || x < 4 || y < 4,
-            1 => in_multi(x, y, (4, 0), (0, 15), (15, 12), (0, 0), (15, 15)) || nub_tr(x, y) || x < 4 || y >= 12,
-            2 => in_multi(x, y, (0, 12), (15, 15), (12, 0), (0, 15), (15, 0)) || nub_tl(x, y) || x >= 12 || y >= 12,
-            _ => in_multi(x, y, (0, 4), (15, 0), (12, 15), (0, 0), (15, 15)) || nub_bl(x, y) || x >= 12 || y < 4,
+            0 => {
+                in_multi(x, y, (4, 15), (0, 0), (15, 4), (0, 15), (15, 0))
+                    || nub_br(x, y)
+                    || x < 4
+                    || y < 4
+            }
+            1 => {
+                in_multi(x, y, (4, 0), (0, 15), (15, 12), (0, 0), (15, 15))
+                    || nub_tr(x, y)
+                    || x < 4
+                    || y >= 12
+            }
+            2 => {
+                in_multi(x, y, (0, 12), (15, 15), (12, 0), (0, 15), (15, 0))
+                    || nub_tl(x, y)
+                    || x >= 12
+                    || y >= 12
+            }
+            _ => {
+                in_multi(x, y, (0, 4), (15, 0), (12, 15), (0, 0), (15, 15))
+                    || nub_bl(x, y)
+                    || x >= 12
+                    || y < 4
+            }
         },
         0x09 => match a {
             0 => x < 4 || y < 4 || nub_br(x, y),
@@ -219,7 +252,11 @@ fn grass(elev: u16) -> Rgb {
 }
 
 fn shade(c: Rgb, f: f32) -> Rgb {
-    [(c[0] as f32 * f).min(255.0) as u8, (c[1] as f32 * f).min(255.0) as u8, (c[2] as f32 * f).min(255.0) as u8]
+    [
+        (c[0] as f32 * f).min(255.0) as u8,
+        (c[1] as f32 * f).min(255.0) as u8,
+        (c[2] as f32 * f).min(255.0) as u8,
+    ]
 }
 
 /// Color of pixel (x, y) (0..16) inside a terrain tile.
@@ -243,16 +280,28 @@ pub fn tile_pixel(t: &TerrainTile, x: i32, y: i32) -> Rgb {
                 let (nx, ny) = (x + dx, y + dy);
                 (0..16).contains(&nx) && (0..16).contains(&ny) && !land(nx, ny)
             });
-            return if near_water { SHORE } else { grass(t.elevation) };
+            return if near_water {
+                SHORE
+            } else {
+                grass(t.elevation)
+            };
         }
-        return if (x * 3 + y * 5) % 11 == 0 { WATER_DEEP } else { WATER };
+        return if (x * 3 + y * 5) % 11 == 0 {
+            WATER_DEEP
+        } else {
+            WATER
+        };
     }
     if is_fall(m) {
         return if (y + (x % 4)) % 5 == 0 { FOAM } else { FALL };
     }
     if is_cliff(m) {
         let base = CLIFF[(t.elevation as usize).min(3)];
-        return if x == 0 || y == 0 || x == 15 || y == 15 { CLIFF_EDGE } else { base };
+        return if x == 0 || y == 0 || x == 15 || y == 15 {
+            CLIFF_EDGE
+        } else {
+            base
+        };
     }
     grass(t.elevation)
 }

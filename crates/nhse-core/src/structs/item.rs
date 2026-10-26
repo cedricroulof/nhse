@@ -28,18 +28,36 @@ impl Item {
     pub const DIY_RECIPE: u16 = 0x16A2;
     pub const MESSAGE_BOTTLE_EGG: u16 = 0x3100;
 
-    pub const NONE: Item = Item { id: Self::NONE_ID, system: 0, additional: 0, free: 0 };
+    pub const NONE: Item = Item {
+        id: Self::NONE_ID,
+        system: 0,
+        additional: 0,
+        free: 0,
+    };
 
     pub fn new(id: u16) -> Self {
-        Self { id, system: 0, additional: 0, free: 0 }
+        Self {
+            id,
+            system: 0,
+            additional: 0,
+            free: 0,
+        }
     }
 
     pub fn from_raw(raw: u64) -> Self {
-        Self { id: raw as u16, system: (raw >> 16) as u8, additional: (raw >> 24) as u8, free: (raw >> 32) as u32 }
+        Self {
+            id: raw as u16,
+            system: (raw >> 16) as u8,
+            additional: (raw >> 24) as u8,
+            free: (raw >> 32) as u32,
+        }
     }
 
     pub fn raw(&self) -> u64 {
-        self.id as u64 | (self.system as u64) << 16 | (self.additional as u64) << 24 | (self.free as u64) << 32
+        self.id as u64
+            | (self.system as u64) << 16
+            | (self.additional as u64) << 24
+            | (self.free as u64) << 32
     }
 
     pub fn read(d: &[u8], o: usize) -> Self {
@@ -152,7 +170,11 @@ impl Item {
 
     // --- wrapping -----------------------------------------------------------
     pub fn is_wrapped(&self) -> bool {
-        self.additional != 0 && !matches!(self.display_id(), Self::MESSAGE_BOTTLE | Self::MESSAGE_BOTTLE_EGG)
+        self.additional != 0
+            && !matches!(
+                self.display_id(),
+                Self::MESSAGE_BOTTLE | Self::MESSAGE_BOTTLE_EGG
+            )
     }
     /// 0 nothing, 1 wrapping paper, 2 present, 3 delivery, 4 festive (special-cased).
     pub fn wrapping_type(&self) -> u8 {
@@ -182,7 +204,8 @@ impl Item {
             4 => (3, 15),
             w => (w, 0),
         };
-        self.additional = (w & 3) | (p << 2) | if show_item { 0x40 } else { 0 } | if item80 { 0x80 } else { 0 };
+        self.additional =
+            (w & 3) | (p << 2) | if show_item { 0x40 } else { 0 } | if item80 { 0x80 } else { 0 };
     }
 
     // --- flowers --------------------------------------------------------------
@@ -213,7 +236,11 @@ impl Item {
             return;
         }
         let bit = 1u16 << (5 + v);
-        let w = if val { self.watered() | bit } else { self.watered() & !bit };
+        let w = if val {
+            self.watered() | bit
+        } else {
+            self.watered() & !bit
+        };
         self.set_watered(w);
     }
     pub fn is_watered(&self) -> bool {
@@ -250,7 +277,12 @@ impl Item {
         (self.free >> 24) as u8
     }
     pub fn extension(root_id: u16, x: u8, y: u8) -> Self {
-        Self { id: Self::EXTENSION_ID, system: 0, additional: 0, free: root_id as u32 | (x as u32) << 16 | (y as u32) << 24 }
+        Self {
+            id: Self::EXTENSION_ID,
+            system: 0,
+            additional: 0,
+            free: root_id as u32 | (x as u32) << 16 | (y as u32) << 24,
+        }
     }
 
     /// Item id displayed for a wrapped present (the wrapper itself).
@@ -283,7 +315,11 @@ impl Item {
         }
         if kind == kd.diy_recipe || kind == kd.message_bottle {
             let recipe = self.free as u16;
-            let makes = tables().recipe_map.get(&recipe).map(|r| s.item_name(*r)).unwrap_or_else(|| format!("{recipe:03}"));
+            let makes = tables()
+                .recipe_map
+                .get(&recipe)
+                .map(|r| s.item_name(*r))
+                .unwrap_or_else(|| format!("{recipe:03}"));
             return format!("{} - {}", s.item_name(id), makes);
         }
         if kind == kd.fossil_unknown {
@@ -302,7 +338,13 @@ impl Item {
         }
         let kd = kinds();
         let k = self.kind();
-        !(k == kd.insect || k == kd.dummy_presentbox || k == kd.fish || k == kd.dive_fish || k == kd.flower_bud || k == kd.bush || k == kd.tree)
+        !(k == kd.insect
+            || k == kd.dummy_presentbox
+            || k == kd.fish
+            || k == kd.dive_fish
+            || k == kd.flower_bud
+            || k == kd.bush
+            || k == kd.tree)
     }
 }
 
@@ -330,7 +372,12 @@ mod tests {
     use super::*;
     #[test]
     fn raw_roundtrip() {
-        let it = Item { id: 0x1234, system: 0x56, additional: 0x78, free: 0x9ABC_DEF0 };
+        let it = Item {
+            id: 0x1234,
+            system: 0x56,
+            additional: 0x78,
+            free: 0x9ABC_DEF0,
+        };
         assert_eq!(Item::from_raw(it.raw()), it);
         let mut buf = [0u8; 8];
         it.write(&mut buf, 0);

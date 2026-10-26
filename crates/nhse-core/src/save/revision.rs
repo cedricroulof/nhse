@@ -52,7 +52,13 @@ impl Revision {
 
 macro_rules! rev {
     ($v:expr, $maj:expr, $min:expr, $sr:expr, $h:ident) => {
-        Revision { version: $v, major: $maj, minor: $min, save_revision: $sr, hash: HashRev::$h }
+        Revision {
+            version: $v,
+            major: $maj,
+            minor: $min,
+            save_revision: $sr,
+            hash: HashRev::$h,
+        }
     };
 }
 
@@ -117,7 +123,10 @@ pub fn exact_revision(info: &FileHeaderInfo) -> Option<usize> {
 /// back to the newest known revision with the same major/minor version and identical file size.
 pub fn detect(info: &FileHeaderInfo, main_size: usize) -> Option<DetectedRevision> {
     if let Some(index) = exact_revision(info) {
-        return Some(DetectedRevision { index, compatibility_mode: false });
+        return Some(DetectedRevision {
+            index,
+            compatibility_mode: false,
+        });
     }
     REVISIONS
         .iter()
@@ -129,7 +138,10 @@ pub fn detect(info: &FileHeaderInfo, main_size: usize) -> Option<DetectedRevisio
                 && info.save_revision > r.save_revision
                 && details_for(r.hash, "main.dat").map(|d| d.file_size as usize) == Some(main_size)
         })
-        .map(|(index, _)| DetectedRevision { index, compatibility_mode: true })
+        .map(|(index, _)| DetectedRevision {
+            index,
+            compatibility_mode: true,
+        })
 }
 
 /// Expected size of a file for a revision.
@@ -152,7 +164,14 @@ mod tests {
     #[test]
     fn compat_mode() {
         let latest = REVISIONS.last().unwrap();
-        let info = FileHeaderInfo { major: latest.major, minor: latest.minor, unk1: 2, header_revision: 0, unk2: 2, save_revision: 35 };
+        let info = FileHeaderInfo {
+            major: latest.major,
+            minor: latest.minor,
+            unk1: 2,
+            header_revision: 0,
+            unk2: 2,
+            save_revision: 35,
+        };
         let size = expected_size(REVISIONS.len() - 1, "main.dat").unwrap();
         let d = detect(&info, size).unwrap();
         assert!(d.compatibility_mode);

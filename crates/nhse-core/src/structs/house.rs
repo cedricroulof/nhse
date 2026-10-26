@@ -96,9 +96,15 @@ struct PlayerHouseLayout {
 
 fn ph_layout(format: u8) -> PlayerHouseLayout {
     if format >= 2 {
-        PlayerHouseLayout { room_size: PLAYER_ROOM2_SIZE, npc: 0x289F8 }
+        PlayerHouseLayout {
+            room_size: PLAYER_ROOM2_SIZE,
+            npc: 0x289F8,
+        }
     } else {
-        PlayerHouseLayout { room_size: PLAYER_ROOM1_SIZE, npc: 0x263D0 }
+        PlayerHouseLayout {
+            room_size: PLAYER_ROOM1_SIZE,
+            npc: 0x263D0,
+        }
     }
 }
 
@@ -189,7 +195,9 @@ pub struct PlayerRoom {
 impl PlayerRoom {
     pub fn read(d: &[u8], format: u8) -> Self {
         Self {
-            layers: (0..ROOM_LAYERS).map(|l| Item::read_array(d, l * ROOM_LAYER_SIZE, ROOM_DIM * ROOM_DIM)).collect(),
+            layers: (0..ROOM_LAYERS)
+                .map(|l| Item::read_array(d, l * ROOM_LAYER_SIZE, ROOM_DIM * ROOM_DIM))
+                .collect(),
             surfaces: RoomFloorWall::read(d, 0x65A4),
             music: i16le(d, 0x65A0),
             music_shuffle: d[0x65A3] != 0,

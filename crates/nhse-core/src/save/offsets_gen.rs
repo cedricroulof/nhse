@@ -1450,5 +1450,5 @@ pub fn postbox_offsets(revision: usize) -> Option<&'static PostBoxOffsets> {
 /// Offset of the Poki currency in wherearen.dat (2.0.0+).
 pub const WHEREAREN_POKI: usize = 0xB84228;
 pub fn wherearen_supported(revision: usize) -> bool {
-    matches!(revision, 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34)
+    matches!(revision, 22..=34)
 }

@@ -55,7 +55,13 @@ impl HashRegion {
 
 impl std::fmt::Display for HashRegion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "0x{:X}: (0x{:X}-0x{:X})", self.offset, self.begin(), self.end())
+        write!(
+            f,
+            "0x{:X}: (0x{:X}-0x{:X})",
+            self.offset,
+            self.begin(),
+            self.end()
+        )
     }
 }
 
@@ -129,7 +135,12 @@ pub fn invalid_hashes(data: &[u8], details: &FileHashDetails) -> Vec<HashRegion>
         .filter(|r| {
             r.end() > data.len()
                 || murmur3(&data[r.begin()..r.end()], 0)
-                    != u32::from_le_bytes([data[r.offset], data[r.offset + 1], data[r.offset + 2], data[r.offset + 3]])
+                    != u32::from_le_bytes([
+                        data[r.offset],
+                        data[r.offset + 1],
+                        data[r.offset + 2],
+                        data[r.offset + 3],
+                    ])
         })
         .copied()
         .collect()

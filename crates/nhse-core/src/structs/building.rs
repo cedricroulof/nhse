@@ -50,20 +50,20 @@ impl Building {
 /// Approximate exterior footprint (width, height) in game tiles (16 per acre) for drawing.
 pub fn footprint(kind: u16) -> (u16, u16) {
     match kind {
-        1..=8 => (5, 4),       // player houses
-        9..=18 => (5, 4),      // villager houses
-        19 => (7, 4),          // Nook's Cranny
-        20 => (12, 6),         // Resident Services building
-        21 => (7, 4),          // Museum
-        22 => (10, 6),         // Airport
-        23 => (6, 4),          // Resident Services tent
-        24 => (5, 4),          // Able Sisters
-        25 => (5, 4),          // Campsite
-        26 => (4, 6),          // Bridge
-        27 => (2, 5),          // Incline
-        28 => (6, 4),          // Redd's Treasure Trawler
-        29 => (5, 4),          // Photo studio
-        42 => (8, 6),          // Hotel
+        1..=8 => (5, 4),  // player houses
+        9..=18 => (5, 4), // villager houses
+        19 => (7, 4),     // Nook's Cranny
+        20 => (12, 6),    // Resident Services building
+        21 => (7, 4),     // Museum
+        22 => (10, 6),    // Airport
+        23 => (6, 4),     // Resident Services tent
+        24 => (5, 4),     // Able Sisters
+        25 => (5, 4),     // Campsite
+        26 => (4, 6),     // Bridge
+        27 => (2, 5),     // Incline
+        28 => (6, 4),     // Redd's Treasure Trawler
+        29 => (5, 4),     // Photo studio
+        42 => (8, 6),     // Hotel
         _ => (2, 2),
     }
 }

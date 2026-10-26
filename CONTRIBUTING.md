@@ -4,7 +4,7 @@ Thank you for taking the time to contribute to this project's development. These
 
 This is a community driven project based off of shared information and tools. Even if you can't write code, community documentation of in-game behaviors can go a long way to help implement new features.
 
-This project is written in C#, and tries to keep up to date with the latest standard language style.
+This project is written in Rust (save library and desktop backend) and TypeScript/React (user interface).
 
 ### Issues
 
@@ -16,10 +16,10 @@ Have a question? Please contact us on the associated forums (or IRC/Discord, whe
 
 When submitting a pull request, please try to have everything ready for merging and passing all tests. Draft pull requests may be rejected as we value having a minimal amount of open issues/pull requests!
 
-Please make sure your code is maintainable; provide comments and xmldoc when appropriate. If you are coding new GUI features, ensure any non-GUI logic is separate from the GUI specific logic; separating concerns is important for maintainability and portability!
+Please make sure your code is maintainable; provide doc comments when appropriate. If you are coding new GUI features, ensure any non-GUI logic is separate from the GUI specific logic; separating concerns is important for maintainability and portability!
 
 If you are providing something that interacts with game data, try to model things to match the way the game interacts with the data. When done this way, it is easiest for others to replicate your research and expand upon your improvements.
 
 ### Formatting
 
-Spaces instead of tabs. Please follow the standard C# formatting rules provided by Visual Studio.
+Spaces instead of tabs. Format Rust code with `cargo fmt` and keep `cargo clippy` and `npx tsc --noEmit` clean.
